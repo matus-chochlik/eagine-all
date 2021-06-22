@@ -1,0 +1,27 @@
+@startuml
+
+component [Core] as core
+component [SSL] as ssl
+component [Shapes] as shapes
+component [Message\nBus] as msgbus
+component [EGLplus] as eglplus
+component [OGLplus] as oglplus
+component [OALplus] as oalplus
+component [OALplus] as oalplus
+component [Application] as app
+
+ssl --> core
+shapes --> core
+msgbus --> ssl
+msgbus --> core
+eglplus --> core
+oglplus --> core
+oglplus --> shapes
+oalplus --> core
+app --> core
+app --> eglplus
+app --> oglplus
+app --> oalplus
+app --> shapes
+
+@enduml
