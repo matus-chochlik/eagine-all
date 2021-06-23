@@ -99,7 +99,7 @@ project_include_dirs = [
     os.path.join(binaryDir(), "include"),
     'include',
     'submodules/eagine-core/include',
-    'submodules/eagine-ssl/include',
+    'submodules/eagine-sslplus/include',
     'submodules/eagine-shapes/include',
     'submodules/eagine-eglplus/include',
     'submodules/eagine-oglplus/include',

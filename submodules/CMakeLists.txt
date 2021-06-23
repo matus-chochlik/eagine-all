@@ -17,17 +17,17 @@ if(NOT TARGET EAGine::Core)
 	add_subdirectory(eagine-core)
 endif()
 
-if(NOT TARGET EAGine::SSL)
-	if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/eagine-ssl/CMakeLists.txt")
+if(NOT TARGET EAGine::SSLplus)
+	if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/eagine-sslplus/CMakeLists.txt")
 		unset(SUBMODULE_INIT_ARG)
 	else()
 		set(SUBMODULE_INIT_ARG --init)
 	endif()
 	execute_process(
 		COMMAND git submodule update ${SUBMODULE_INIT_ARG}
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/eagine-ssl"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/eagine-sslplus"
 	)
-	add_subdirectory(eagine-ssl)
+	add_subdirectory(eagine-sslplus)
 endif()
 
 if(NOT TARGET EAGine::MsgBus)
