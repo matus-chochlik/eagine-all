@@ -95,6 +95,19 @@ if(NOT TARGET EAGine::OALplus)
 	add_subdirectory(eagine-oalplus)
 endif()
 
+if(NOT TARGET EAGine::ECS)
+	if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/eagine-ecs/CMakeLists.txt")
+		unset(SUBMODULE_INIT_ARG)
+	else()
+		set(SUBMODULE_INIT_ARG --init)
+	endif()
+	execute_process(
+		COMMAND git submodule update ${SUBMODULE_INIT_ARG}
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/eagine-ecs"
+	)
+	add_subdirectory(eagine-ecs)
+endif()
+
 if(NOT TARGET EAGine::App)
 	if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/eagine-app/CMakeLists.txt")
 		unset(SUBMODULE_INIT_ARG)

@@ -26,6 +26,12 @@
 	path = submodules/eagine-oalplus
 	url = https://github.com/matus-chochlik/eagine-oalplus.git
 	branch = develop
+[submodule "submodules/eagine-ecs"]
+	path = submodules/eagine-ecs
+	url = https://github.com/matus-chochlik/eagine-ecs.git
+	branch = develop
 [submodule "submodules/eagine-app"]
 	path = submodules/eagine-app
 	url = https://github.com/matus-chochlik/eagine-app.git
+	branch = develop
+
