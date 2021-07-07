@@ -2,9 +2,9 @@
 	path = submodules/eagine-core
 	url = https://github.com/matus-chochlik/eagine-core.git
 	branch = develop
-[submodule "submodules/eagine-ssl"]
-	path = submodules/eagine-ssl
-	url = https://github.com/matus-chochlik/eagine-ssl.git
+[submodule "submodules/eagine-sslplus"]
+	path = submodules/eagine-sslplus
+	url = https://github.com/matus-chochlik/eagine-sslplus.git
 	branch = develop
 [submodule "submodules/eagine-msgbus"]
 	path = submodules/eagine-msgbus
@@ -26,6 +26,12 @@
 	path = submodules/eagine-oalplus
 	url = https://github.com/matus-chochlik/eagine-oalplus.git
 	branch = develop
+[submodule "submodules/eagine-ecs"]
+	path = submodules/eagine-ecs
+	url = https://github.com/matus-chochlik/eagine-ecs.git
+	branch = develop
 [submodule "submodules/eagine-app"]
 	path = submodules/eagine-app
 	url = https://github.com/matus-chochlik/eagine-app.git
+	branch = develop
+
