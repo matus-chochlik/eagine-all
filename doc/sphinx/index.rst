@@ -17,7 +17,15 @@ For the API reference see the `Doxygen-generated docs`_.
    :maxdepth: 3
 
    intro
-   core
+   core/core
+   sslplus/sslplus
+   msgbus/msgbus
+   shapes/shapes
+   eglplus/eglplus
+   oglplus/oglplus
+   oalplus/oalplus
+   ecs/ecs
+   app/app
 
 Indices and tables
 ------------------

@@ -5,7 +5,17 @@
 #
 unset(DOC_INPUT_SOURCES)
 
-foreach(EAGINE_MODULE core)
+foreach(EAGINE_MODULE
+	core
+	sslplus
+	msgbus
+	shapes
+	eglplus
+	oglplus
+	oalplus
+	ecs
+	app
+)
 	configure_file(Doxyfile-module.in Doxyfile-${EAGINE_MODULE} @ONLY)
 	file(
 		GLOB_RECURSE MODULE_INPUT_SOURCES
