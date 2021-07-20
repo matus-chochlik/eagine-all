@@ -4,6 +4,30 @@ EAGine All
 
 :Author: Matúš Chochlík <chochlik@gmail.com>
 
+EAGine is a collection of C++ libraries providing set of basic utilities, C++
+wrappers for OpenGL, OpenAL, EGL, SSL, and a message bus useful for writing
+potentially distributed, multi-process applications with graphics rendering
+and/or audio playback.
+
+This is the main repository for the whole project and implements a build system
+for the following sub-modules:
+
+ * https://github.com/matus-chochlik/eagine-core
+ * https://github.com/matus-chochlik/eagine-sslplus
+ * https://github.com/matus-chochlik/eagine-msgbus
+ * https://github.com/matus-chochlik/eagine-shapes
+ * https://github.com/matus-chochlik/eagine-eglplus
+ * https://github.com/matus-chochlik/eagine-oglplus
+ * https://github.com/matus-chochlik/eagine-oalplus
+ * https://github.com/matus-chochlik/eagine-ecs
+ * https://github.com/matus-chochlik/eagine-app
+
+
+This diagram shows the dependencies between the sub-modules:
+
+.. figure:: doc/diagrams/eagine/components.svg
+   :alt: Component dependency graph
+
 Cloning the repo
 ================
 ::

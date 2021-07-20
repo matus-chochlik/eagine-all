@@ -18,4 +18,6 @@ list(APPEND CMAKE_MODULE_PATH ${EAGINE_CORE_ROOT}/config)
 add_subdirectory(submodules)
 
 include(EAGineCoreCommon)
+file(STRINGS submodules/eagine-core/VERSION EAGINE_VERSION)
 
+add_subdirectory(doc)
