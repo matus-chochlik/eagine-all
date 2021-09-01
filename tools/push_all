@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Copyright Matus Chochlik.
+# Distributed under the Boost Software License, Version 1.0.
+# See accompanying file LICENSE_1_0.txt or copy at
+#  http://www.boost.org/LICENSE_1_0.txt
+
+repo_root=$(realpath $(dirname ${0})/..)
+remote=origin
+branch=develop
+
+while getopts "r:b:" optname
+do
+	case ${optname} in
+		r) remote="${OPTARG}";;
+		b) branch="${OPTARG}";;
+		?) printf "Usage: %s [-r remote] [-b branch]\n" ${0}
+			exit 1;;
+	esac
+done
+
+for repo_dir in "${repo_root}" "${repo_root}/submodules/eagine-"*
+do
+	pushd "${repo_dir}"
+	git checkout "${branch}" &&\
+	git push "${remote}" "${branch}"
+	popd
+done
