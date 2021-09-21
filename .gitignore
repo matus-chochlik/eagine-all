@@ -1,3 +1,4 @@
 /INSTALL_PREFIX
 /BINARY_DIR
 .*.swp
+*.deb
