@@ -5,24 +5,43 @@
 #  http://www.boost.org/LICENSE_1_0.txt
 
 repo_root=$(realpath $(dirname ${0})/..)
+sub_remote=
 remote=origin
 branch=develop
 
-while getopts "r:b:" optname
+while getopts "r:s:b:" optname
 do
 	case ${optname} in
+		s) sub_remote="${OPTARG}";;
 		r) remote="${OPTARG}";;
 		b) branch="${OPTARG}";;
-		?) printf "Usage: %s [-r remote] [-b branch]\n" ${0}
+		?) printf "Usage: %s [-r remote] [-s submodule-remote] [-b branch]\n" ${0}
 			exit 1;;
 	esac
 done
 
-for repo_dir in "${repo_root}" "${repo_root}/submodules/eagine-"*
-do
-	pushd "${repo_dir}"
+function do_pull() {
+	submod_dir="${1}"
+	remote="${2}"
+	branch="${3}"
+
+	pushd "${submod_dir}"
 	git remote update --prune "${remote}" &&\
 	git checkout "${branch}" &&\
 	git pull "${remote}" "${branch}"
 	popd
+}
+
+for repo_dir in "${repo_root}" "${repo_root}/submodules/eagine-"*
+do
+	do_pull "${repo_dir}" "${remote}" "${branch}"
+	if [[ "${sub_remote}" != "" ]]
+	then
+		for submod_dir in "${repo_dir}/submodules/eagine-"*
+		do
+			if [[ -f "${submod_dir}/CMakeLists.txt" ]]
+			then do_pull "${submod_dir}" "${sub_remote}" "${branch}"
+			fi
+		done
+	fi
 done
