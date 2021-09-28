@@ -21,3 +21,4 @@ include(EAGineCoreCommon)
 file(STRINGS submodules/eagine-core/VERSION EAGINE_VERSION)
 
 add_subdirectory(doc)
+add_subdirectory(deploy)
