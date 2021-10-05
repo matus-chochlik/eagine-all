@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+repodir="$(dirname $(realpath ${0}))"
+cpucores="$(grep -c -i -e 'processor\s\+:\s*[0-9]\+' /proc/cpuinfo)"
+
+mkdir "${repodir}/_build" &&\
+pushd "${repodir}/_build" &&\
+cmake "-DCMAKE_INSTALL_PREFIX=/tmp/eagine" "-DCMAKE_BUILD_TYPE=Release" .. &&\
+cmake --build . --target install-eagine-deb-packages --parallel ${cpucores}
