@@ -22,6 +22,5 @@ COPY entrypoint /tmp/eagine
 COPY CMakeLists.txt /tmp/eagine
 COPY example/* /tmp/eagine/example/
 
-
 WORKDIR /tmp/eagine
 ENTRYPOINT /bin/sh /tmp/eagine/entrypoint
