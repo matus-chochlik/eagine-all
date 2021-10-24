@@ -10,7 +10,16 @@ set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set (CMAKE_CXX_EXTENSIONS OFF)
 
-find_package(EAGine REQUIRED COMPONENTS Shapes SSLplus MsgBus App)
+find_package(EAGine REQUIRED COMPONENTS
+	ECS
+	SSLplus
+	MsgBus
+	Shapes
+	EGLplus
+	OGLplus
+	OALplus
+	App
+)
 
 if(EAGineApp_FOUND)
 	if(TARGET EAGine::App)
