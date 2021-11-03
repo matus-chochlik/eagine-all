@@ -8,7 +8,8 @@ apt --yes install \
 	/tmp/eagine-eglplus-dev.deb \
 	/tmp/eagine-oglplus-dev.deb \
 	/tmp/eagine-oalplus-dev.deb \
-	/tmp/eagine-app-dev.deb
+	/tmp/eagine-app-dev.deb \
+	/tmp/eagine-all-dev.deb
 mkdir -p /tmp/eagine/_build
 cd /tmp/eagine/_build
 cmake /tmp/eagine

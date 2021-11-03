@@ -17,6 +17,7 @@ COPY \
 	debian/eagine-oglplus-dev.deb \
 	debian/eagine-oalplus-dev.deb \
 	debian/eagine-app-dev.deb \
+	debian/eagine-all-dev.deb \
 	/tmp/
 COPY entrypoint /tmp/eagine
 COPY CMakeLists.txt /tmp/eagine
