@@ -11,7 +11,7 @@ Package: eagine-all-dev
 Version: @PKG_VERSION@
 Architecture: @PKG_ARCH@
 Installed-Size: 0
-Depends: eagine-core-dev (>= @PKG_VERSION@),eagine-ecs-dev (>= @PKG_VERSION@),eagine-sslplus-dev (>= @PKG_VERSION@),eagine-msgbus-dev (>= @PKG_VERSION@),eagine-shapes-dev (>= @PKG_VERSION@),eagine-eglplus-dev (>= @PKG_VERSION@),eagine-oglplus-dev (>= @PKG_VERSION@),eagine-oalplus-dev (>= @PKG_VERSION@),eagine-app-dev (>= @PKG_VERSION@)
+Depends: eagine-core-dev,eagine-ecs-dev,eagine-sslplus-dev,eagine-msgbus-dev,eagine-shapes-dev,eagine-eglplus-dev,eagine-oglplus-dev,eagine-oalplus-dev,eagine-app-dev
 Maintainer: Matus Chochlik <chochlik@gmail.com>
 Description: Metapackage installing all eagine sub-packages.
 EOD
