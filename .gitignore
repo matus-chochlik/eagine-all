@@ -2,3 +2,5 @@
 /BINARY_DIR
 .*.swp
 *.deb
+Packages
+Packages.gz
