@@ -18,6 +18,7 @@ set(PKG_NAME "eagine-all-dev_${EAGINE_VERSION}-1_${PKG_ARCH}")
 set(PKG_DIR "${CMAKE_CURRENT_BINARY_DIR}/${PKG_NAME}")
 
 configure_file(build-pkg.sh.in build-pkg.sh @ONLY)
+configure_file(build-Release.sh.in build-Release.sh @ONLY)
 
 add_custom_command(
 	OUTPUT "${PKG_DIR}/DEBIAN/control"
@@ -106,8 +107,19 @@ add_custom_command(
 	COMMENT "Compressing Debian package list"
 )
 
+add_custom_command(
+	OUTPUT Release
+	COMMAND ${BASH_COMMAND}
+	ARGS "${CMAKE_CURRENT_BINARY_DIR}/build-Release.sh" "${CMAKE_INSTALL_PREFIX}/opt/eagine/debian"
+	WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+	DEPENDS Packages.gz
+	COMMENT "Generating Debian package release manifest"
+)
+
 install(
-	FILES "${CMAKE_CURRENT_BINARY_DIR}/Packages.gz"
+	FILES
+		"${CMAKE_CURRENT_BINARY_DIR}/Packages.gz"
+		"${CMAKE_CURRENT_BINARY_DIR}/Release"
 	DESTINATION opt/eagine/debian/
 	COMPONENT deb-packages
 	EXCLUDE_FROM_ALL
@@ -115,16 +127,16 @@ install(
 )
 
 add_custom_command(
-	OUTPUT "${CMAKE_INSTALL_PREFIX}/opt/eagine/debian/Packages.gz"
+	OUTPUT "${CMAKE_INSTALL_PREFIX}/opt/eagine/debian/Release"
 	COMMAND ${CMAKE_COMMAND}
 	ARGS -DCOMPONENT=deb-packages -P cmake_install.cmake
 	WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-	MAIN_DEPENDENCY "${CMAKE_CURRENT_BINARY_DIR}/Packages.gz"
-	DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/Packages.gz"
+	MAIN_DEPENDENCY "${CMAKE_CURRENT_BINARY_DIR}/Release"
+	DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/Release"
 )
 
 add_custom_target(
 	install-eagine-deb-packages
-	DEPENDS "${CMAKE_INSTALL_PREFIX}/opt/eagine/debian/Packages.gz"
+	DEPENDS "${CMAKE_INSTALL_PREFIX}/opt/eagine/debian/Release"
 )
 
