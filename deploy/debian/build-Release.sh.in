@@ -16,11 +16,11 @@ echo "Architectures: @PKG_ARCH@"
 echo "Components:"
 echo "Description: EAGine packages"
 echo "MD5Sum:"
-for f in Packages* *.deb
+for f in Packages.gz *.deb
 do printf " %s %20d %s\n" "$(md5sum ${f} | cut -d' ' -f1)" "$(stat -c%s ${f})"  "${f}"
 done
 echo "SHA256:"
-for f in Packages* *.deb
+for f in Packages.gz *.deb
 do printf " %s %20d %s\n" "$(sha256sum ${f} | cut -d' ' -f1)" "$(stat -c%s ${f})"  "${f}"
 done
 
