@@ -6,6 +6,14 @@
 
 @INCLUDE                = @CMAKE_CURRENT_SOURCE_DIR@/Doxyfile-common
 @INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-core
+@INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-ecs
+@INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-sslplus
+@INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-msgbus
+@INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-shapes
+@INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-oalplus
+@INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-eglplus
+@INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-oglplus
+@INCLUDE                = @CMAKE_CURRENT_BINARY_DIR@/Doxyfile-app
 PROJECT_NUMBER          = @EAGINE_VERSION@
 OUTPUT_DIRECTORY        = @CMAKE_CURRENT_BINARY_DIR@
 
