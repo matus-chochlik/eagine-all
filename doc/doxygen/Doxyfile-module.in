@@ -15,3 +15,5 @@ INPUT                  += @CMAKE_CURRENT_SOURCE_DIR@/@EAGINE_MODULE@/include
 INPUT                  += @PROJECT_BINARY_DIR@/submodules/eagine-@EAGINE_MODULE@/include
 INPUT                  += @PROJECT_SOURCE_DIR@/submodules/eagine-@EAGINE_MODULE@/include
 INPUT                  += @PROJECT_SOURCE_DIR@/submodules/eagine-@EAGINE_MODULE@/example
+
+EXAMPLE_PATH           += @PROJECT_SOURCE_DIR@/submodules/eagine-@EAGINE_MODULE@/example
