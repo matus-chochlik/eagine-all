@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/identifier_t.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,36 +73,46 @@ $(function() {
 <div class="title">identifier_t.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="identifier__t_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_IDENTIFIER_T_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_IDENTIFIER_T_HPP</span></div>
+<a href="identifier__t_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_IDENTIFIER_T_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_IDENTIFIER_T_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstdint</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">   19</a></span>&#160;<span class="comment"></span><span class="keyword">using</span> <a class="code" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">identifier_t</a> = std::uint64_t;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// @brief The underlying integer type for eagine::identifier.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @ingroup identifiers</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @see identifier</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">   19</a></span>&#160;<span class="keyword">using</span> identifier_t = std::uint64_t;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespaceeagine.html#ae1cd5e037637a528aafd313aa8debbde">   22</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceeagine.html#ae1cd5e037637a528aafd313aa8debbde">process_instance_id_t</a> = std::uint32_t;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// @brief Unique process identifier type (does not necessarily match to OS PID).</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespaceeagine.html#ae1cd5e037637a528aafd313aa8debbde">   22</a></span>&#160;<span class="keyword">using</span> process_instance_id_t = std::uint32_t;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceeagine.html#a448ed206a2fac61e5a1155eabee0de56">   25</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceeagine.html#a448ed206a2fac61e5a1155eabee0de56">host_id_t</a> = std::uint32_t;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/// @brief Unique host identifier type.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceeagine.html#a448ed206a2fac61e5a1155eabee0de56">   25</a></span>&#160;<span class="keyword">using</span> host_id_t = std::uint32_t;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#if __SIZEOF_INT128__</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group__identifiers.html#gaad4757c4f76133885919b478134ecba7">   31</a></span>&#160;<span class="keyword">using</span> <a class="code" href="group__identifiers.html#gaad4757c4f76133885919b478134ecba7">long_identifier_t</a> = __uint128_t;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> __SIZEOF_INT128__</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/// @brief The underlying integer type for eagine::long_identifier.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/// @ingroup identifiers</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/// @see long_identifier</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group__identifiers.html#gaad4757c4f76133885919b478134ecba7">   31</a></span>&#160;<span class="keyword">using</span> long_identifier_t = __uint128_t;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define EAGINE_HAS_LONG_ID 1</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define EAGINE_HAS_LONG_ID 0</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_HAS_LONG_ID</span> 1</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_HAS_LONG_ID</span> 0</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_IDENTIFIER_T_HPP</span></div>
-<div class="ttc" id="agroup__identifiers_html_ga95fc7f47f20633e9563dcaa76d1bce4b"><div class="ttname"><a href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">eagine::identifier_t</a></div><div class="ttdeci">std::uint64_t identifier_t</div><div class="ttdoc">The underlying integer type for eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier_t.hpp:19</div></div>
-<div class="ttc" id="agroup__identifiers_html_gaad4757c4f76133885919b478134ecba7"><div class="ttname"><a href="group__identifiers.html#gaad4757c4f76133885919b478134ecba7">eagine::long_identifier_t</a></div><div class="ttdeci">__uint128_t long_identifier_t</div><div class="ttdoc">The underlying integer type for eagine::long_identifier.</div><div class="ttdef"><b>Definition:</b> identifier_t.hpp:31</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="anamespaceeagine_html_a448ed206a2fac61e5a1155eabee0de56"><div class="ttname"><a href="namespaceeagine.html#a448ed206a2fac61e5a1155eabee0de56">eagine::host_id_t</a></div><div class="ttdeci">std::uint32_t host_id_t</div><div class="ttdoc">Unique host identifier type.</div><div class="ttdef"><b>Definition:</b> identifier_t.hpp:25</div></div>
-<div class="ttc" id="anamespaceeagine_html_ae1cd5e037637a528aafd313aa8debbde"><div class="ttname"><a href="namespaceeagine.html#ae1cd5e037637a528aafd313aa8debbde">eagine::process_instance_id_t</a></div><div class="ttdeci">std::uint32_t process_instance_id_t</div><div class="ttdoc">Unique process identifier type (does not necessarily match to OS PID).</div><div class="ttdef"><b>Definition:</b> identifier_t.hpp:22</div></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_IDENTIFIER_T_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

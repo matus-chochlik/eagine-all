@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Class Members - Functions</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -79,6 +79,7 @@ $(function() {
 </li>
 <li>unlink()
 : <a class="el" href="classeagine_1_1application__config.html#a19d914ea51a6b0779ff903a03df915af">eagine::application_config</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue.html#af07367554852d773efcc68c390437f0a">eagine::msgbus::posix_mqueue</a>
 </li>
 <li>unpack()
 : <a class="el" href="classeagine_1_1embedded__resource.html#adfbab3d4e3ebfd0d967572da6362d473">eagine::embedded_resource</a>
@@ -88,23 +89,79 @@ $(function() {
 , <a class="el" href="structeagine_1_1main__ctx__setters.html#a5c3d3e26d411fb63c071a48f028e0b33">eagine::main_ctx_setters</a>
 , <a class="el" href="structeagine_1_1progress__tracker__backend.html#ac7bcbbc96eef29451e0a4c88048182ea">eagine::progress_tracker_backend</a>
 </li>
+<li>unsubscribe()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a1f571c4ed00af88ce513c16524c1e96d">eagine::msgbus::endpoint</a>
+</li>
+<li>unsubscribe_from_stream()
+: <a class="el" href="classeagine_1_1msgbus_1_1stream__consumer.html#aed22393b4be3cf2f0de0b032dd1b05ea">eagine::msgbus::stream_consumer&lt; Base &gt;</a>
+</li>
 <li>update()
 : <a class="el" href="classeagine_1_1animated__value.html#acb86be13aed089ae3acb31a3f90e58fc">eagine::animated_value&lt; T, F, S &gt;</a>
+, <a class="el" href="classeagine_1_1app_1_1execution__context.html#a9d07305bc9e7b823f142cceb4b14c896">eagine::app::execution_context</a>
+, <a class="el" href="structeagine_1_1msgbus_1_1acceptor.html#a7b7c8345cfb0d7983da30c86e55fafe4">eagine::msgbus::acceptor</a>
+, <a class="el" href="structeagine_1_1msgbus_1_1connection.html#a12d78d7f5d426496ba3f6dbff89a8ef7">eagine::msgbus::connection</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a7e0a8ea53f34955c5cec29d178f6de1b">eagine::msgbus::endpoint</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1pending__promises.html#a3924fb8f7cee650c479d2dec5e78c86f">eagine::msgbus::pending_promises&lt; T &gt;</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__acceptor.html#aa24d38f015a946b3be3723942cd2f33f">eagine::msgbus::posix_mqueue_acceptor</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection.html#aceac395db2c63e1e54eb5b7f2c3e1f1a">eagine::msgbus::posix_mqueue_connection</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connector.html#ab3aea410c4cc7b2a7736bfc120fa5f3c">eagine::msgbus::posix_mqueue_connector</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1subscriber__base.html#a48c993e35f0c0f6fe4a5c0c8ebfa0ab2">eagine::msgbus::subscriber_base</a>
+</li>
+<li>update_activity()
+: <a class="el" href="classeagine_1_1app_1_1context__state.html#ae87234fab8f877c5e3da36b0acf15df3">eagine::app::context_state</a>
+</li>
+<li>update_and_process_all()
+: <a class="el" href="classeagine_1_1msgbus_1_1service__composition.html#ab14153f75c86d5461c9f7f41661e3775">eagine::msgbus::service_composition&lt; Base &gt;</a>
+, <a class="el" href="structeagine_1_1msgbus_1_1service__interface.html#a55093f2671c8f9c26af2247c9b0c80ba">eagine::msgbus::service_interface</a>
+</li>
+<li>update_orbit()
+: <a class="el" href="classeagine_1_1app_1_1orbiting__camera.html#a3587ffe44a19394ebbd639ae132cc35e">eagine::app::orbiting_camera</a>
+</li>
+<li>update_pitch()
+: <a class="el" href="classeagine_1_1app_1_1orbiting__camera.html#a6a817214827c6d2d8b1e6ee0b6cb8ba7">eagine::app::orbiting_camera</a>
 </li>
 <li>update_progress()
 : <a class="el" href="classeagine_1_1activity__progress.html#adb55dbb5fbaeb615e6db23aa09fca561">eagine::activity_progress</a>
 , <a class="el" href="classeagine_1_1default__progress__tracker__backend.html#a9cb21d9775654abcbaed3cab9e071a89">eagine::default_progress_tracker_backend</a>
 , <a class="el" href="structeagine_1_1progress__tracker__backend.html#a965265b1ca92bd7246abc4af1ab5625d">eagine::progress_tracker_backend</a>
 </li>
+<li>update_turns()
+: <a class="el" href="classeagine_1_1app_1_1orbiting__camera.html#ac5aabe68177e478c6bd9e4dcbf2bc808">eagine::app::orbiting_camera</a>
+</li>
+<li>updated_by_helper()
+: <a class="el" href="classeagine_1_1msgbus_1_1sudoku__solver.html#ae5b1058b8fa8100c92ff2d973abd4ae5">eagine::msgbus::sudoku_solver&lt; Base, Key &gt;</a>
+</li>
+<li>updated_count()
+: <a class="el" href="classeagine_1_1msgbus_1_1sudoku__solver.html#aa76e58ef77fe6e96855d97a8532a27a8">eagine::msgbus::sudoku_solver&lt; Base, Key &gt;</a>
+</li>
 <li>uptime()
-: <a class="el" href="classeagine_1_1system__info.html#a8d210237d07c4fd6d6fad5fb65356e91">eagine::system_info</a>
+: <a class="el" href="classeagine_1_1msgbus_1_1remote__node.html#a25472411745189e04919fea7cf594a69">eagine::msgbus::remote_node</a>
+, <a class="el" href="classeagine_1_1system__info.html#a8d210237d07c4fd6d6fad5fb65356e91">eagine::system_info</a>
 </li>
 <li>url()
 : <a class="el" href="classeagine_1_1url.html#a0da9a4adf782d94d1919b1f5e15eadf4">eagine::url</a>
 </li>
+<li>use()
+: <a class="el" href="classeagine_1_1oglplus_1_1geometry.html#a4bf84516c1c8e2163c1f5654322005ab">eagine::oglplus::geometry</a>
+</li>
 <li>user()
 : <a class="el" href="classeagine_1_1main__ctx.html#a0f99fc2a936a1f22b0d06d25cc97fd9b">eagine::main_ctx</a>
 , <a class="el" href="structeagine_1_1main__ctx__getters.html#ad8ea587a58c3f187a6a0e17f7a2ab383">eagine::main_ctx_getters</a>
+</li>
+<li>user_became_active()
+: <a class="el" href="classeagine_1_1app_1_1context__state__view.html#a7628b6494e90f9be42f7578a13d6d29a">eagine::app::context_state_view</a>
+</li>
+<li>user_became_idle()
+: <a class="el" href="classeagine_1_1app_1_1context__state__view.html#a115c6941a840a5115c385c0c99a615d6">eagine::app::context_state_view</a>
+</li>
+<li>user_idle_time()
+: <a class="el" href="classeagine_1_1app_1_1context__state__view.html#aa926aa9c4b7404822198d74e7a927e54">eagine::app::context_state_view</a>
+</li>
+<li>user_idle_too_long()
+: <a class="el" href="classeagine_1_1app_1_1context__state__view.html#a6f0a822a309b7740afb734a3e5b05dad">eagine::app::context_state_view</a>
+</li>
+<li>user_is_idle()
+: <a class="el" href="classeagine_1_1app_1_1context__state__view.html#a8a0fba172a2623776b0900325eebdadd">eagine::app::context_state_view</a>
 </li>
 </ul>
 </div><!-- contents -->

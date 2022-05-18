@@ -1,7 +1,23 @@
 var searchData=
 [
-  ['handle_5ftype_3155',['handle_type',['../classeagine_1_1c__api_1_1basic__handle.html#a5be699d04f7714c3493bd95cbcdc361b',1,'eagine::c_api::basic_handle::handle_type()'],['../classeagine_1_1executable__module.html#a7c646a54a23fcadf6332ba5100fd523e',1,'eagine::executable_module::handle_type()']]],
-  ['has_5fentry_5fadapter_5ft_3156',['has_entry_adapter_t',['../group__logging.html#ga0638b0f6e67228e669da9cd4c8037d72',1,'eagine']]],
-  ['host_5fid_5ft_3157',['host_id_t',['../namespaceeagine.html#a448ed206a2fac61e5a1155eabee0de56',1,'eagine']]],
-  ['host_5fid_5ftype_3158',['host_id_type',['../classeagine_1_1system__info.html#a13aa097bb2f8b40b01a32b45cce24d39',1,'eagine::system_info']]]
+  ['generator_5fcapabilities_10710',['generator_capabilities',['../group__shapes.html#ga39e4852b1f91bf5f9bca657884101caa',1,'eagine::shapes']]],
+  ['gl_5fany_5fenum_5fclass_10711',['gl_any_enum_class',['../group__gl__api__wrap.html#ga1ae2ed055847962d8788561001b4d498',1,'eagine::oglplus']]],
+  ['gl_5fany_5fenum_5fvalue_10712',['gl_any_enum_value',['../group__gl__api__wrap.html#gab114144498ffe89820aa4820e71139fe',1,'eagine::oglplus']]],
+  ['gl_5fapi_10713',['gl_api',['../group__gl__api__wrap.html#ga0b1e6d17e6e223d5bec1df69a3c1d1b2',1,'eagine::oglplus::gl_api()'],['../classeagine_1_1oglplus_1_1basic__gl__operations.html#abe297565267a3ce32e62a2b3c541db14',1,'eagine::oglplus::basic_gl_operations::gl_api()']]],
+  ['gl_5fapi_5ffunction_10714',['gl_api_function',['../classeagine_1_1oglplus_1_1basic__gl__c__api.html#aaa0290df59d578d97289212ae0d1ab40',1,'eagine::oglplus::basic_gl_c_api']]],
+  ['gl_5fbitfield_5fclass_10715',['gl_bitfield_class',['../group__gl__api__wrap.html#ga8efe2847768c290933051fafc71f4abe',1,'eagine::oglplus']]],
+  ['gl_5fbool_5fclass_10716',['gl_bool_class',['../group__gl__api__wrap.html#gabd1dbeb8758ed490a83173b41e8c09bb',1,'eagine::oglplus']]],
+  ['gl_5fc_5fapi_10717',['gl_c_api',['../group__gl__api__wrap.html#ga0a2f2f3a1b36357a820e306439ef2493',1,'eagine::oglplus']]],
+  ['gl_5fcombined_5fresult_10718',['gl_combined_result',['../group__gl__api__wrap.html#ga05dc60c149a0788d3f117022e606a70a',1,'eagine::oglplus']]],
+  ['gl_5fenum_5fclass_10719',['gl_enum_class',['../group__gl__api__wrap.html#ga2135ad9ef61f04dd8c45f05b2e55308e',1,'eagine::oglplus']]],
+  ['gl_5fno_5fresult_10720',['gl_no_result',['../group__gl__api__wrap.html#ga313a3d86a14f46951bbc18162c8eeb16',1,'eagine::oglplus']]],
+  ['gl_5fobject_5fname_10721',['gl_object_name',['../group__gl__api__wrap.html#gaca13fd924348d6d6b75ecd9617799c6f',1,'eagine::oglplus']]],
+  ['gl_5fobject_5fname_5farray_10722',['gl_object_name_array',['../group__gl__api__wrap.html#ga819a4adb0128ffbaf60087021b71375b',1,'eagine::oglplus']]],
+  ['gl_5fobject_5fname_5fspan_10723',['gl_object_name_span',['../group__gl__api__wrap.html#ga41b0f009dd96c2316f0b4dd8657d7c8e',1,'eagine::oglplus']]],
+  ['gl_5fobject_5fname_5fvector_10724',['gl_object_name_vector',['../group__gl__api__wrap.html#ga91798e7b8adcf76aacce8ee85330b223',1,'eagine::oglplus']]],
+  ['gl_5fobject_5fname_5fview_10725',['gl_object_name_view',['../group__gl__api__wrap.html#ga7bc8c9f8847d40cb411f1a1c77c99fc0',1,'eagine::oglplus']]],
+  ['gl_5fopt_5fresult_10726',['gl_opt_result',['../group__gl__api__wrap.html#ga64f26e8e063fc588c030b20881a40462',1,'eagine::oglplus']]],
+  ['gl_5fowned_5fobject_5fname_10727',['gl_owned_object_name',['../group__gl__api__wrap.html#gaa66aa59e2bd022106950e32970c37b00',1,'eagine::oglplus']]],
+  ['gl_5fresult_10728',['gl_result',['../group__gl__api__wrap.html#ga68c09de4221e296334bf713422aa16b1',1,'eagine::oglplus']]],
+  ['gl_5fubyte_5fclass_10729',['gl_ubyte_class',['../group__gl__api__wrap.html#gacb7d4d658593ae7d55fae6b41828c547',1,'eagine::oglplus']]]
 ];

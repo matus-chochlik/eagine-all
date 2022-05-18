@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/os_info.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,37 +73,41 @@ $(function() {
 <div class="title">os_info.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="home_2matus__chochlik_2Code_2eagine-all_2submodules_2eagine-core_2include_2eagine_2os__info_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_OS_INFO_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_OS_INFO_HPP</span></div>
+<a href="home_2matus__chochlik_2Code_2eagine-all_2submodules_2eagine-core_2include_2eagine_2os__info_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_OS_INFO_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_OS_INFO_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="string__span_8hpp.html">string_span.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nonnegative_8hpp.html">valid_if/nonnegative.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="not__empty_8hpp.html">valid_if/not_empty.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="string__span_8hpp.html">&quot;string_span.hpp&quot;</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;valid_if/nonnegative.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;valid_if/not_empty.hpp&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">tuple</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceeagine.html#ab625cbfd711fa6dbe789b90ca67d9b9f">config_os_name</a>() noexcept -&gt; <a class="code" href="group__valid__if.html#ga3acd644ce6c360550b0402d886e0d176">valid_if_not_empty</a>&lt;<a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>&gt;;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// @brief Returns the name of the OS on which the executable is built.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// @ingroup main_ctx</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// @see config_os_code_name</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceeagine.html#ab625cbfd711fa6dbe789b90ca67d9b9f">config_os_name</a>() <span class="keyword">noexcept</span> -&gt; <a class="code" href="namespaceeagine.html#ab625cbfd711fa6dbe789b90ca67d9b9f">valid_if_not_empty</a>&lt;<a class="code" href="namespaceeagine.html#ab625cbfd711fa6dbe789b90ca67d9b9f">string_view</a>&gt;;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;auto <a class="code" href="namespaceeagine.html#a1bd370b54f751a7242b3119d5d175bdd">config_os_code_name</a>() noexcept -&gt; <a class="code" href="group__valid__if.html#ga3acd644ce6c360550b0402d886e0d176">valid_if_not_empty</a>&lt;<a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>&gt;;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/// @brief Returns the code-name of the OS on which the executable is built.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/// @ingroup main_ctx</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/// @see config_os_name</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceeagine.html#a1bd370b54f751a7242b3119d5d175bdd">config_os_code_name</a>() <span class="keyword">noexcept</span> -&gt; <a class="code" href="namespaceeagine.html#a1bd370b54f751a7242b3119d5d175bdd">valid_if_not_empty</a>&lt;<a class="code" href="namespaceeagine.html#a1bd370b54f751a7242b3119d5d175bdd">string_view</a>&gt;;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if !EAGINE_CORE_LIBRARY || defined(EAGINE_IMPLEMENTING_CORE_LIBRARY)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="os__info_8inl.html">eagine/os_info.inl</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2basic_8hpp.html#a42b87b5f1b680c3bc7dac19c6741f7ad">EAGINE_CORE_LIBRARY</a> <span class="preprocessor">||</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">EAGINE_IMPLEMENTING_CORE_LIBRARY</span><span class="preprocessor">)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">eagine</span><span class="preprocessor">/</span><span class="preprocessor">os_info</span><span class="preprocessor">.</span><span class="preprocessor">inl</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_OS_INFO_HPP</span></div>
-<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
-<div class="ttc" id="agroup__valid__if_html_ga3acd644ce6c360550b0402d886e0d176"><div class="ttname"><a href="group__valid__if.html#ga3acd644ce6c360550b0402d886e0d176">eagine::valid_if_not_empty</a></div><div class="ttdeci">valid_if&lt; T, valid_if_not_empty_policy&lt; std::remove_reference_t&lt; T &gt; &gt;&gt; valid_if_not_empty</div><div class="ttdoc">Specialization of valid_if, for values valid if not empty.</div><div class="ttdef"><b>Definition:</b> not_empty.hpp:43</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="anamespaceeagine_html_a1bd370b54f751a7242b3119d5d175bdd"><div class="ttname"><a href="namespaceeagine.html#a1bd370b54f751a7242b3119d5d175bdd">eagine::config_os_code_name</a></div><div class="ttdeci">auto config_os_code_name() noexcept -&gt; valid_if_not_empty&lt; string_view &gt;</div><div class="ttdoc">Returns the code-name of the OS on which the executable is built.</div><div class="ttdef"><b>Definition:</b> os_info.inl:24</div></div>
-<div class="ttc" id="anamespaceeagine_html_ab625cbfd711fa6dbe789b90ca67d9b9f"><div class="ttname"><a href="namespaceeagine.html#ab625cbfd711fa6dbe789b90ca67d9b9f">eagine::config_os_name</a></div><div class="ttdeci">auto config_os_name() noexcept -&gt; valid_if_not_empty&lt; string_view &gt;</div><div class="ttdoc">Returns the name of the OS on which the executable is built.</div><div class="ttdef"><b>Definition:</b> os_info.inl:15</div></div>
-<div class="ttc" id="anonnegative_8hpp_html"><div class="ttname"><a href="nonnegative_8hpp.html">nonnegative.hpp</a></div></div>
-<div class="ttc" id="anot__empty_8hpp_html"><div class="ttname"><a href="not__empty_8hpp.html">not_empty.hpp</a></div></div>
-<div class="ttc" id="aos__info_8inl_html"><div class="ttname"><a href="os__info_8inl.html">os_info.inl</a></div></div>
-<div class="ttc" id="astring__span_8hpp_html"><div class="ttname"><a href="string__span_8hpp.html">string_span.hpp</a></div></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_OS_INFO_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

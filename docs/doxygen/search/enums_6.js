@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serialization_5ferror_5fcode_3285',['serialization_error_code',['../group__serialization.html#gafee717c442dcb978e0d9e9c163be4024',1,'eagine']]]
+  ['log_5fevent_5fseverity_11015',['log_event_severity',['../group__logging.html#ga724b65c5c81a873b5baabe72407177ea',1,'eagine']]]
 ];

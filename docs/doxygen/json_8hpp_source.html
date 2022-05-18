@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/value_tree/json.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,31 +73,34 @@ $(function() {
 <div class="title">json.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="json_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_VALUE_TREE_JSON_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_VALUE_TREE_JSON_HPP</span></div>
+<a href="json_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_VALUE_TREE_JSON_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_VALUE_TREE_JSON_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../config/basic.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../main_ctx_fwd.hpp&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="wrappers_8hpp.html">wrappers.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../config/basic.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../main_ctx_fwd.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="wrappers_8hpp.html">&quot;wrappers.hpp&quot;</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine_1_1valtree.html">eagine::valtree</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespaceeagine_1_1valtree.html">   16</a></span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::<a class="code" href="namespaceeagine_1_1valtree.html">valtree</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span><span class="keyword">auto</span> <a class="code" href="group__valtree.html#gaf1c1a1ef9c627a45bf109b5121beb361">from_json_text</a>(<a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>, <a class="code" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>) -&gt; compound;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @brief Creates a compound from a JSON text string view.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// @ingroup valtree</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">auto</span> <a class="code" href="group__valtree.html#gaf1c1a1ef9c627a45bf109b5121beb361">from_json_text</a>(string_view, main_ctx_parent) -&gt; <a class="code" href="classeagine_1_1valtree_1_1compound.html">compound</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <span class="comment">// namespace eagine::valtree</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#if !EAGINE_CORE_LIBRARY || defined(EAGINE_IMPLEMENTING_CORE_LIBRARY)</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="json_8inl.html">eagine/value_tree/json.inl</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2basic_8hpp.html#a42b87b5f1b680c3bc7dac19c6741f7ad">EAGINE_CORE_LIBRARY</a> <span class="preprocessor">||</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">EAGINE_IMPLEMENTING_CORE_LIBRARY</span><span class="preprocessor">)</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">eagine</span><span class="preprocessor">/</span><span class="preprocessor">value_tree</span><span class="preprocessor">/</span><span class="preprocessor">json</span><span class="preprocessor">.</span><span class="preprocessor">inl</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_VALUE_TREE_JSON_HPP</span></div>
-<div class="ttc" id="agroup__main__context_html_ga59362b2dde46bd0149d3c83950d879e9"><div class="ttname"><a href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">eagine::main_ctx_parent</a></div><div class="ttdeci">const main_ctx_object_parent_info &amp; main_ctx_parent</div><div class="ttdoc">Alias for main_ctx_object_parent_info parameter type.</div><div class="ttdef"><b>Definition:</b> main_ctx_fwd.hpp:47</div></div>
-<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
-<div class="ttc" id="agroup__valtree_html_gaf1c1a1ef9c627a45bf109b5121beb361"><div class="ttname"><a href="group__valtree.html#gaf1c1a1ef9c627a45bf109b5121beb361">eagine::valtree::from_json_text</a></div><div class="ttdeci">auto from_json_text(string_view, main_ctx_parent) -&gt; compound</div><div class="ttdoc">Creates a compound from a JSON text string view.</div><div class="ttdef"><b>Definition:</b> json.inl:676</div></div>
-<div class="ttc" id="ajson_8inl_html"><div class="ttname"><a href="json_8inl.html">json.inl</a></div></div>
-<div class="ttc" id="anamespaceeagine_1_1valtree_html"><div class="ttname"><a href="namespaceeagine_1_1valtree.html">eagine::valtree</a></div><div class="ttdoc">Value-tree code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:53</div></div>
-<div class="ttc" id="awrappers_8hpp_html"><div class="ttname"><a href="wrappers_8hpp.html">wrappers.hpp</a></div></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_VALUE_TREE_JSON_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

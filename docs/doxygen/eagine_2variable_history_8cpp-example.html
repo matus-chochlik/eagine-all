@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/variable_history.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,41 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="value__with__history_8hpp.html">eagine/value_with_history.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">using</span> <a name="_a0"></a><a class="code" href="classeagine_1_1value__with__history.html">val_t</a> = <a class="code" href="classeagine_1_1value__with__history.html">eagine::value_with_history&lt;int, 3&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> <a name="_a1"></a><a class="code" href="classeagine_1_1variable__with__history.html">var_t</a> = <a class="code" href="classeagine_1_1variable__with__history.html">eagine::variable_with_history&lt;int, 3&gt;</a>;</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> print(<span class="keyword">const</span> <a class="code" href="classeagine_1_1value__with__history.html">val_t</a>&amp; h) {</div>
+<div class="line">    std::cout &lt;&lt; h.<a name="a2"></a><a class="code" href="classeagine_1_1value__with__history.html#a1ed5e6ae222af66e92d6022229c105ed">old_value</a>() &lt;&lt; <span class="charliteral">&#39;|&#39;</span> &lt;&lt; h.<a name="a3"></a><a class="code" href="classeagine_1_1value__with__history.html#a6778d54512d607736204aa3cd4f8455d">value</a>() &lt;&lt; <span class="charliteral">&#39;|&#39;</span> &lt;&lt; h.<a name="a4"></a><a class="code" href="classeagine_1_1value__with__history.html#af780522b0b84a3444779cea5c875e2b7">delta</a>() &lt;&lt; <span class="charliteral">&#39;|&#39;</span></div>
+<div class="line">              &lt;&lt; h.<a name="a5"></a><a class="code" href="classeagine_1_1value__with__history.html#a6f3086bb22463359e9284a9b3ffcc430">distance</a>() &lt;&lt; <span class="charliteral">&#39;|&#39;</span> &lt;&lt; h.<a name="a6"></a><a class="code" href="classeagine_1_1value__with__history.html#a2b101cc0fa93f98065621f03d6467c98">deltas</a>().delta() &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> n = 20;</div>
+<div class="line">    <a class="code" href="classeagine_1_1variable__with__history.html">var_t</a> i2(n * n);</div>
+<div class="line">    i2.sync();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = -n; i &lt;= n; ++i) {</div>
+<div class="line">        i2.assign(i * i);</div>
+<div class="line">        print(i2);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasseagine_1_1value__with__history_html"><div class="ttname"><a href="classeagine_1_1value__with__history.html">eagine::value_with_history</a></div><div class="ttdoc">Class for read-only values with history.</div><div class="ttdef"><b>Definition:</b> value_with_history.hpp:160</div></div>
+<div class="ttc" id="aclasseagine_1_1value__with__history_html_a1ed5e6ae222af66e92d6022229c105ed"><div class="ttname"><a href="classeagine_1_1value__with__history.html#a1ed5e6ae222af66e92d6022229c105ed">eagine::value_with_history::old_value</a></div><div class="ttdeci">auto old_value() const noexcept</div><div class="ttdoc">Returns the previous revision of the value.</div><div class="ttdef"><b>Definition:</b> value_with_history.hpp:216</div></div>
+<div class="ttc" id="aclasseagine_1_1value__with__history_html_a2b101cc0fa93f98065621f03d6467c98"><div class="ttname"><a href="classeagine_1_1value__with__history.html#a2b101cc0fa93f98065621f03d6467c98">eagine::value_with_history::deltas</a></div><div class="ttdeci">auto deltas() const noexcept</div><div class="ttdoc">Returns the differences between the adjacent revisions.</div><div class="ttdef"><b>Definition:</b> value_with_history.hpp:244</div></div>
+<div class="ttc" id="aclasseagine_1_1value__with__history_html_a6778d54512d607736204aa3cd4f8455d"><div class="ttname"><a href="classeagine_1_1value__with__history.html#a6778d54512d607736204aa3cd4f8455d">eagine::value_with_history::value</a></div><div class="ttdeci">auto value() const noexcept</div><div class="ttdoc">Returns the current revision of the value.</div><div class="ttdef"><b>Definition:</b> value_with_history.hpp:209</div></div>
+<div class="ttc" id="aclasseagine_1_1value__with__history_html_a6f3086bb22463359e9284a9b3ffcc430"><div class="ttname"><a href="classeagine_1_1value__with__history.html#a6f3086bb22463359e9284a9b3ffcc430">eagine::value_with_history::distance</a></div><div class="ttdeci">auto distance() const noexcept</div><div class="ttdoc">Returns the distance between the current and the previous revisions.</div><div class="ttdef"><b>Definition:</b> value_with_history.hpp:254</div></div>
+<div class="ttc" id="aclasseagine_1_1value__with__history_html_af780522b0b84a3444779cea5c875e2b7"><div class="ttname"><a href="classeagine_1_1value__with__history.html#af780522b0b84a3444779cea5c875e2b7">eagine::value_with_history::delta</a></div><div class="ttdeci">auto delta() const noexcept</div><div class="ttdoc">Returns the difference between the current and the previous revision.</div><div class="ttdef"><b>Definition:</b> value_with_history.hpp:239</div></div>
+<div class="ttc" id="aclasseagine_1_1variable__with__history_html"><div class="ttname"><a href="classeagine_1_1variable__with__history.html">eagine::variable_with_history</a></div><div class="ttdoc">Class for mutable variables with history.</div><div class="ttdef"><b>Definition:</b> value_with_history.hpp:336</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="avalue__with__history_8hpp_html"><div class="ttname"><a href="value__with__history_8hpp.html">value_with_history.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

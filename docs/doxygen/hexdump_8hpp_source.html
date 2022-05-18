@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/hexdump.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,56 +73,63 @@ $(function() {
 <div class="title">hexdump.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="hexdump_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_HEXDUMP_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_HEXDUMP_HPP</span></div>
+<a href="hexdump_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_HEXDUMP_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_HEXDUMP_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="callable__ref_8hpp.html">callable_ref.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="basic_8hpp.html">config/basic.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="block_8hpp.html">memory/block.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">types.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="decl_8hpp.html">valid_if/decl.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iosfwd&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="callable__ref_8hpp.html">&quot;callable_ref.hpp&quot;</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;config/basic.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;memory/block.hpp&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="eagine-core_2include_2eagine_2types_8hpp.html">&quot;types.hpp&quot;</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;valid_if/decl.hpp&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">iosfwd</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classeagine_1_1hexdump.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeagine_1_1hexdump.html">hexdump</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// @brief Class for encoding byte blocks into hexdump-like format.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// @ingroup logging</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/// @see bindump</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/// @see base64dump</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/// This class stores a memory block and can be used to write the content of the</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/// block into an standard output stream in hexadecimal format similar to the</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/// output of the command-line hexdump tool.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classeagine_1_1hexdump.html">   29</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1hexdump.html">hexdump</a> {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classeagine_1_1hexdump.html#af6d1a488df019295491f4460c4ac207b">   32</a></span>&#160;    <a class="code" href="classeagine_1_1hexdump.html#af6d1a488df019295491f4460c4ac207b">hexdump</a>(<a class="code" href="classeagine_1_1memory_1_1basic__span.html">memory::const_block</a> mb) noexcept</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      : _mb{mb} {}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/// @brief Construction initializing the dumped memory block.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classeagine_1_1hexdump.html#af6d1a488df019295491f4460c4ac207b">   32</a></span>&#160;    <a class="code" href="classeagine_1_1hexdump.html#af6d1a488df019295491f4460c4ac207b">hexdump</a>(memory::const_block mb) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      : _mb<a class="code" href="classeagine_1_1memory_1_1basic__span.html#ad9e87c7954c13ae08032f45b75625c72">{</a>mb<a class="code" href="classeagine_1_1memory_1_1basic__span.html#ad9e87c7954c13ae08032f45b75625c72">}</a> {}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classeagine_1_1hexdump.html#a306d914399e4d89b3df5f1f27cbb7a75">   36</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classeagine_1_1basic__callable__ref.html">byte_getter</a> = <a class="code" href="classeagine_1_1basic__callable__ref.html">callable_ref&lt;optionally_valid&lt;byte&gt;</a>()&gt;;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">/// @brief Alias for source byte getter callable.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classeagine_1_1hexdump.html#a306d914399e4d89b3df5f1f27cbb7a75">   36</a></span>&#160;    <span class="keyword">using</span> byte_getter = callable_ref&lt;optionally_valid&lt;byte&gt;()&gt;;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classeagine_1_1hexdump.html#ad268cdfba68df8ff02b3c97ec8c6698f">   39</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classeagine_1_1basic__callable__ref.html">char_putter</a> = <a class="code" href="classeagine_1_1basic__callable__ref.html">callable_ref</a>&lt;bool(<span class="keywordtype">char</span>)&gt;;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/// @brief Alias for destination encoded char putter callable.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classeagine_1_1hexdump.html#ad268cdfba68df8ff02b3c97ec8c6698f">   39</a></span>&#160;    <span class="keyword">using</span> char_putter = callable_ref&lt;<span class="keywordtype">bool</span>(<span class="keywordtype">char</span>)&gt;;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classeagine_1_1hexdump.html#acd561aee46bb04a006940d9faaeb9926">apply</a>(<span class="keyword">const</span> <a class="code" href="classeagine_1_1basic__callable__ref.html">byte_getter</a> get_byte, <span class="keyword">const</span> <a class="code" href="classeagine_1_1basic__callable__ref.html">char_putter</a> put_char);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">/// @brief Uses get_byte to read input bytes, encodes them and calls put_char.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classeagine_1_1hexdump.html#acd561aee46bb04a006940d9faaeb9926">apply</a>(<span class="keyword">const</span> byte_getter get_byte, <span class="keyword">const</span> char_putter put_char);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">friend</span> <span class="keyword">auto</span> <a class="code" href="classeagine_1_1hexdump.html#a0bea9b1c73b786b4635288f51d3b60f4">operator&lt;&lt;</a>(std::ostream&amp;, <span class="keyword">const</span> <a class="code" href="classeagine_1_1hexdump.html">hexdump</a>&amp;) -&gt; std::ostream&amp;;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/// @brief Operator for writing instances of hexdump to standard output streams.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">friend</span> <span class="keyword">auto</span> <a class="code" href="classeagine_1_1hexdump.html#a0bea9b1c73b786b4635288f51d3b60f4">operator</a>&lt;&lt;(std::ostream&amp;, <span class="keyword">const</span> <a class="code" href="classeagine_1_1hexdump.html">hexdump</a>&amp;) -&gt; std::ostream&amp;;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classeagine_1_1memory_1_1basic__span.html">memory::const_block</a> _mb{};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    memory::const_block _mb<a class="code" href="classeagine_1_1memory_1_1basic__span.html#a857d9e4e61f16e6f1f921eb67dc0a115">{</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#a857d9e4e61f16e6f1f921eb67dc0a115">}</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#if !EAGINE_CORE_LIBRARY || defined(EAGINE_IMPLEMENTING_CORE_LIBRARY)</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="hexdump_8inl.html">eagine/hexdump.inl</a>&gt;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2basic_8hpp.html#a42b87b5f1b680c3bc7dac19c6741f7ad">EAGINE_CORE_LIBRARY</a> <span class="preprocessor">||</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">EAGINE_IMPLEMENTING_CORE_LIBRARY</span><span class="preprocessor">)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">eagine</span><span class="preprocessor">/</span><span class="preprocessor">hexdump</span><span class="preprocessor">.</span><span class="preprocessor">inl</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_HEXDUMP_HPP</span></div>
-<div class="ttc" id="abasic_8hpp_html"><div class="ttname"><a href="basic_8hpp.html">basic.hpp</a></div></div>
-<div class="ttc" id="ablock_8hpp_html"><div class="ttname"><a href="block_8hpp.html">block.hpp</a></div></div>
-<div class="ttc" id="acallable__ref_8hpp_html"><div class="ttname"><a href="callable__ref_8hpp.html">callable_ref.hpp</a></div></div>
-<div class="ttc" id="aclasseagine_1_1basic__callable__ref_html"><div class="ttname"><a href="classeagine_1_1basic__callable__ref.html">eagine::basic_callable_ref</a></div><div class="ttdoc">Declaration of class template storing a reference to a callable object.</div><div class="ttdef"><b>Definition:</b> callable_ref.hpp:24</div></div>
-<div class="ttc" id="aclasseagine_1_1hexdump_html"><div class="ttname"><a href="classeagine_1_1hexdump.html">eagine::hexdump</a></div><div class="ttdoc">Class for encoding byte blocks into hexdump-like format.</div><div class="ttdef"><b>Definition:</b> hexdump.hpp:29</div></div>
-<div class="ttc" id="aclasseagine_1_1hexdump_html_a0bea9b1c73b786b4635288f51d3b60f4"><div class="ttname"><a href="classeagine_1_1hexdump.html#a0bea9b1c73b786b4635288f51d3b60f4">eagine::hexdump::operator&lt;&lt;</a></div><div class="ttdeci">friend auto operator&lt;&lt;(std::ostream &amp;, const hexdump &amp;) -&gt; std::ostream &amp;</div><div class="ttdoc">Operator for writing instances of hexdump to standard output streams.</div><div class="ttdef"><b>Definition:</b> hexdump.inl:135</div></div>
-<div class="ttc" id="aclasseagine_1_1hexdump_html_acd561aee46bb04a006940d9faaeb9926"><div class="ttname"><a href="classeagine_1_1hexdump.html#acd561aee46bb04a006940d9faaeb9926">eagine::hexdump::apply</a></div><div class="ttdeci">static void apply(const byte_getter get_byte, const char_putter put_char)</div><div class="ttdoc">Uses get_byte to read input bytes, encodes them and calls put_char.</div><div class="ttdef"><b>Definition:</b> hexdump.inl:127</div></div>
-<div class="ttc" id="aclasseagine_1_1hexdump_html_af6d1a488df019295491f4460c4ac207b"><div class="ttname"><a href="classeagine_1_1hexdump.html#af6d1a488df019295491f4460c4ac207b">eagine::hexdump::hexdump</a></div><div class="ttdeci">hexdump(memory::const_block mb) noexcept</div><div class="ttdoc">Construction initializing the dumped memory block.</div><div class="ttdef"><b>Definition:</b> hexdump.hpp:32</div></div>
-<div class="ttc" id="aclasseagine_1_1memory_1_1basic__span_html"><div class="ttname"><a href="classeagine_1_1memory_1_1basic__span.html">eagine::memory::basic_span</a></div><div class="ttdoc">Non-owning view of a contiguous range of memory with ValueType elements.</div><div class="ttdef"><b>Definition:</b> span.hpp:103</div></div>
-<div class="ttc" id="adecl_8hpp_html"><div class="ttname"><a href="decl_8hpp.html">decl.hpp</a></div></div>
-<div class="ttc" id="ahexdump_8inl_html"><div class="ttname"><a href="hexdump_8inl.html">hexdump.inl</a></div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_HEXDUMP_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

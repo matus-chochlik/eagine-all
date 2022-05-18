@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/vect/esum.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,27 +73,34 @@ $(function() {
 <div class="title">esum.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="esum_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EAGINE_VECT_ESUM_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define EAGINE_VECT_ESUM_HPP</span></div>
+<a href="esum_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_VECT_ESUM_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_VECT_ESUM_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vect_2config_8hpp.html">config.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if EAGINE_VECT_OPTS</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hsum_8hpp.html">hsum.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="data_8hpp.html">data.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="eagine-core_2include_2eagine_2vect_2config_8hpp.html">&quot;config.hpp&quot;</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="eagine-core_2include_2eagine_2vect_2config_8hpp.html#a5fe128769202bdf4f65e3c7ad795abc4">EAGINE_VECT_OPTS</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="hsum_8hpp.html">&quot;hsum.hpp&quot;</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="stringliteral">&quot;data.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>eagine::vect {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::vect {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">struct </span>esum {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">struct</span> esum {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> M, <span class="keywordtype">bool</span> B&gt;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _hlp(</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      data_param_t&lt;T, N, V&gt; v,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      int_constant&lt;M&gt;,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      bool_constant&lt;B&gt;) noexcept -&gt; T {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        static_assert(M == N);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      bool_constant&lt;B&gt;) <span class="keyword">noexcept</span> -&gt; T {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">static_assert</span>(M == N);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        T r = T(0);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; N; ++i) {</div>
@@ -102,12 +109,12 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> r;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#if EAGINE_VECT_OPTS</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="eagine-core_2include_2eagine_2vect_2config_8hpp.html#a5fe128769202bdf4f65e3c7ad795abc4">EAGINE_VECT_OPTS</a></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> B&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">auto</span> _hlp(</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> _hlp(</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      data_param_t&lt;T, N, V&gt; v,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      int_constant&lt;1&gt;,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      bool_constant&lt;B&gt;) noexcept -&gt; T {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      bool_constant&lt;B&gt;) <span class="keyword">noexcept</span> -&gt; T {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> v[0];</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
@@ -115,23 +122,20 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _hlp(</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      data_param_t&lt;T, N, V&gt; v,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      int_constant&lt;M&gt;,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      std::true_type) noexcept -&gt; T {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        static_assert(M == N);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      std::true_type) <span class="keyword">noexcept</span> -&gt; T {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">static_assert</span>(M == N);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> hsum&lt;T, N, V&gt;::apply(v)[N - 1];</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> apply(data_param_t&lt;T, N, V&gt; v) noexcept -&gt; T {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> apply(data_param_t&lt;T, N, V&gt; v) <span class="keyword">noexcept</span> -&gt; T {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> _hlp(v, int_constant&lt;N&gt;(), has_vect_data&lt;T, N, V&gt;());</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace eagine::vect</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_VECT_ESUM_HPP</span></div>
-<div class="ttc" id="adata_8hpp_html"><div class="ttname"><a href="data_8hpp.html">data.hpp</a></div></div>
-<div class="ttc" id="ahsum_8hpp_html"><div class="ttname"><a href="hsum_8hpp.html">hsum.hpp</a></div></div>
-<div class="ttc" id="avect_2config_8hpp_html"><div class="ttname"><a href="vect_2config_8hpp.html">config.hpp</a></div></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_VECT_ESUM_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

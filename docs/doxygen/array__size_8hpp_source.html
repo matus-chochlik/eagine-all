@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/array_size.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,26 +73,31 @@ $(function() {
 <div class="title">array_size.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="array__size_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_ARRAY_SIZE_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_ARRAY_SIZE_HPP</span></div>
+<a href="array__size_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_ARRAY_SIZE_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_ARRAY_SIZE_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">types.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="eagine-core_2include_2eagine_2types_8hpp.html">&quot;types.hpp&quot;</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga8a72fe43272bd6f8f7e0cdbb41b3bce5">   19</a></span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__type__utils.html#ga8a72fe43272bd6f8f7e0cdbb41b3bce5">array_size</a>(<span class="keyword">const</span> T (&amp;)[N]) noexcept {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__type__utils.html#ga37d3047b5216d5051cfb6781ea922d21">span_size</a>(N);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// @brief Returns the number of elements in the array passed as argument.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::size_t N&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga8a72fe43272bd6f8f7e0cdbb41b3bce5">   19</a></span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="group__type__utils.html#ga8a72fe43272bd6f8f7e0cdbb41b3bce5">array_size</a>(<span class="keyword">const</span> T (&amp;)[N]) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__type__utils.html#ga37d3047b5216d5051cfb6781ea922d21">span_size</a><a class="code" href="group__type__utils.html#ga37d3047b5216d5051cfb6781ea922d21">(</a>N<a class="code" href="group__type__utils.html#ga37d3047b5216d5051cfb6781ea922d21">)</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_ARRAY_SIZE_HPP</span></div>
-<div class="ttc" id="agroup__type__utils_html_ga37d3047b5216d5051cfb6781ea922d21"><div class="ttname"><a href="group__type__utils.html#ga37d3047b5216d5051cfb6781ea922d21">eagine::span_size</a></div><div class="ttdeci">static constexpr auto span_size(const T v) noexcept</div><div class="ttdoc">Converts argument to span size type.</div><div class="ttdef"><b>Definition:</b> types.hpp:59</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><div class="ttname"><a href="group__type__utils.html#ga8a72fe43272bd6f8f7e0cdbb41b3bce5">eagine::array_size</a></div><div class="ttdeci">static constexpr auto array_size(const T(&amp;)[N]) noexcept</div><div class="ttdoc">Returns the number of elements in the array passed as argument.</div><div class="ttdef"><b>Definition:</b> array_size.hpp:19</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_ARRAY_SIZE_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

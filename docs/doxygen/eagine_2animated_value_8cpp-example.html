@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/animated_value.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,51 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"> </div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="animated__value_8hpp.html">eagine/animated_value.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="progress__bar_8hpp.html">eagine/progress_bar.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="signal__switch_8hpp.html">eagine/signal_switch.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line">    <span class="keyword">const</span> signal_switch interrupted;</div>
+<div class="line"> </div>
+<div class="line">    std::default_random_engine gen{std::random_device()()};</div>
+<div class="line">    std::uniform_real_distribution&lt;float&gt; dis{0.F, 1.F};</div>
+<div class="line">    std::normal_distribution&lt;float&gt; nrm{0.5F, 1.5F};</div>
+<div class="line"> </div>
+<div class="line">    animated_value&lt;float, std::chrono::duration&lt;float&gt;&gt; a, b;</div>
+<div class="line">    progress_bar pba, pbb;</div>
+<div class="line">    pba.set_min(0.F).set_max(1.F).set_width(20);</div>
+<div class="line">    pbb.set_min(0.F).set_max(1.F).set_width(20);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">using</span> step_t = std::chrono::duration&lt;float&gt;;</div>
+<div class="line">    step_t step{0.020F};</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">while</span>(!interrupted) {</div>
+<div class="line">        <span class="keywordflow">if</span>(a.is_done()) {</div>
+<div class="line">            a.set(dis(gen), step_t(<a name="a0"></a><a class="code" href="group__math.html#ga3ad2e7fbfc35ffcf40a2560f01d2ae40">math::clamp</a>(nrm(gen), 0.5F, 1.5F)));</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span>(b.is_done()) {</div>
+<div class="line">            b.set(dis(gen), step_t(<a class="code" href="group__math.html#ga3ad2e7fbfc35ffcf40a2560f01d2ae40">math::clamp</a>(nrm(gen), 0.5F, 1.5F)));</div>
+<div class="line">        }</div>
+<div class="line">        std::cout &lt;&lt; pba.update(a.update(step).get()).reformat().get()</div>
+<div class="line">                  &lt;&lt; pbb.update(b.update(step).get()).reformat().get()</div>
+<div class="line">                  &lt;&lt; std::endl;</div>
+<div class="line">        std::this_thread::sleep_for(step);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aanimated__value_8hpp_html"><div class="ttname"><a href="animated__value_8hpp.html">animated_value.hpp</a></div></div>
+<div class="ttc" id="agroup__math_html_ga3ad2e7fbfc35ffcf40a2560f01d2ae40"><div class="ttname"><a href="group__math.html#ga3ad2e7fbfc35ffcf40a2560f01d2ae40">eagine::math::clamp</a></div><div class="ttdeci">static constexpr auto clamp(const T x, const Min min, const Max max) noexcept</div><div class="ttdoc">Clamps x to be between min and max.</div><div class="ttdef"><b>Definition:</b> functions.hpp:104</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="aprogress__bar_8hpp_html"><div class="ttname"><a href="progress__bar_8hpp.html">progress_bar.hpp</a></div></div>
+<div class="ttc" id="asignal__switch_8hpp_html"><div class="ttname"><a href="signal__switch_8hpp.html">signal_switch.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

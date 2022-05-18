@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/progress.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,111 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="integer__range_8hpp.html">eagine/integer_range.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="logger_8hpp.html">eagine/logging/logger.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="main__ctx_8hpp.html">eagine/main_ctx.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="main__ctx__object_8hpp.html">eagine/main_ctx_object.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="activity_8hpp.html">eagine/progress/activity.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="progress_2backend_8hpp.html">eagine/progress/backend.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">class </span>example_observer final</div>
+<div class="line">  : <span class="keyword">public</span> main_ctx_object</div>
+<div class="line">  , <span class="keyword">public</span> progress_observer {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    example_observer(<a name="a0"></a><a class="code" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a> parent) noexcept</div>
+<div class="line">      : <a class="code" href="classeagine_1_1main__ctx__object.html#a9cb558ec84bd4ad63c3915fa51f43b50">main_ctx_object</a>{<a name="a1"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(Observer), parent} {}</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> activity_begun(</div>
+<div class="line">      <span class="keyword">const</span> <a name="a2"></a><a class="code" href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">activity_progress_id_t</a> parent_id,</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">activity_progress_id_t</a> activity_id,</div>
+<div class="line">      <span class="keyword">const</span> <a name="a3"></a><a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> title,</div>
+<div class="line">      <span class="keyword">const</span> <a name="a4"></a><a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> total_steps) noexcept <span class="keyword">final</span> {</div>
+<div class="line">        <a class="code" href="classeagine_1_1main__ctx__object.html#a014f06890d75fb0e693db357a436c774">cio_print</a>(</div>
+<div class="line">          <span class="stringliteral">&quot;activity ${parent}/${activity} has begun: &#39;${title}&#39; &quot;</span></div>
+<div class="line">          <span class="stringliteral">&quot;(total=${total})&quot;</span>)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(parent), parent_id)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(activity), activity_id)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(total), total_steps)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(title), title);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> activity_finished(</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">activity_progress_id_t</a> parent_id,</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">activity_progress_id_t</a> activity_id,</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> title,</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> total_steps) noexcept <span class="keyword">final</span> {</div>
+<div class="line">        <a class="code" href="classeagine_1_1main__ctx__object.html#a014f06890d75fb0e693db357a436c774">cio_print</a>(</div>
+<div class="line">          <span class="stringliteral">&quot;activity ${parent}/${activity} has ended: &#39;${title}&#39; &quot;</span></div>
+<div class="line">          <span class="stringliteral">&quot;(total=${total})&quot;</span>)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(parent), parent_id)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(activity), activity_id)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(total), total_steps)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(title), title);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> activity_updated(</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">activity_progress_id_t</a> parent_id,</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">activity_progress_id_t</a> activity_id,</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> current,</div>
+<div class="line">      <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> total) noexcept <span class="keyword">final</span> {</div>
+<div class="line">        <a class="code" href="classeagine_1_1main__ctx__object.html#a014f06890d75fb0e693db357a436c774">cio_print</a>(</div>
+<div class="line">          <span class="stringliteral">&quot;activity ${parent}/${activity} was updated: &quot;</span></div>
+<div class="line">          <span class="stringliteral">&quot;${current}&quot;</span>)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(parent), parent_id)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(activity), activity_id)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(current), current, total);</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    example_observer observer{ctx};</div>
+<div class="line">    <a name="a5"></a><a class="code" href="group__main__context.html#ga88d1f74362cb0f1554d099f68a903b74">register_progress_observer</a>(ctx, observer);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> callback = [&amp;]() {</div>
+<div class="line">        ctx.log().info(<span class="stringliteral">&quot;Progress callback called&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    };</div>
+<div class="line">    <a name="a6"></a><a class="code" href="group__main__context.html#ga2f9a6457858f5f8bc945b77e53b6cb91">set_progress_update_callback</a>(</div>
+<div class="line">      ctx, {<a name="a7"></a><a class="code" href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">construct_from</a>, callback}, std::chrono::milliseconds{100});</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> m = 100;</div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> n = 1000;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> main_act = ctx.progress().activity(<span class="stringliteral">&quot;Main activity&quot;</span>, m);</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> i : integer_range(m)) {</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span> sub_act = main_act.activity(<span class="stringliteral">&quot;Sub activity&quot;</span>, n);</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> j : integer_range(n)) {</div>
+<div class="line">            sub_act.update_progress(j);</div>
+<div class="line">        }</div>
+<div class="line">        main_act.update_progress(i);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aactivity_8hpp_html"><div class="ttname"><a href="activity_8hpp.html">activity.hpp</a></div></div>
+<div class="ttc" id="aclasseagine_1_1main__ctx__object_html_a014f06890d75fb0e693db357a436c774"><div class="ttname"><a href="classeagine_1_1main__ctx__object.html#a014f06890d75fb0e693db357a436c774">eagine::main_ctx_object::cio_print</a></div><div class="ttdeci">auto cio_print(const console_entry_kind kind, const string_view format) const noexcept -&gt; console_entry</div><div class="ttdoc">Shorthand for cio().print(...)</div><div class="ttdef"><b>Definition:</b> main_ctx.inl:96</div></div>
+<div class="ttc" id="aclasseagine_1_1main__ctx__object_html_a9cb558ec84bd4ad63c3915fa51f43b50"><div class="ttname"><a href="classeagine_1_1main__ctx__object.html#a9cb558ec84bd4ad63c3915fa51f43b50">eagine::main_ctx_object::main_ctx_object</a></div><div class="ttdeci">main_ctx_object(const identifier obj_id, main_ctx_parent parent) noexcept</div><div class="ttdoc">Initialization from object id and parent.</div><div class="ttdef"><b>Definition:</b> main_ctx_object.hpp:57</div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="agroup__main__context_html_ga2f9a6457858f5f8bc945b77e53b6cb91"><div class="ttname"><a href="group__main__context.html#ga2f9a6457858f5f8bc945b77e53b6cb91">eagine::set_progress_update_callback</a></div><div class="ttdeci">void set_progress_update_callback(main_ctx_getters &amp;ctx, const callable_ref&lt; bool() noexcept &gt; &amp;callback, const std::chrono::milliseconds min_interval) noexcept</div><div class="ttdoc">Assigns a progress update callback function.</div><div class="ttdef"><b>Definition:</b> main_ctx_fwd.hpp:166</div></div>
+<div class="ttc" id="agroup__main__context_html_ga59362b2dde46bd0149d3c83950d879e9"><div class="ttname"><a href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">eagine::main_ctx_parent</a></div><div class="ttdeci">const main_ctx_object_parent_info &amp; main_ctx_parent</div><div class="ttdoc">Alias for main_ctx_object_parent_info parameter type.</div><div class="ttdef"><b>Definition:</b> main_ctx_fwd.hpp:47</div></div>
+<div class="ttc" id="agroup__main__context_html_ga88d1f74362cb0f1554d099f68a903b74"><div class="ttname"><a href="group__main__context.html#ga88d1f74362cb0f1554d099f68a903b74">eagine::register_progress_observer</a></div><div class="ttdeci">auto register_progress_observer(main_ctx_getters &amp;ctx, progress_observer &amp;observer) noexcept -&gt; bool</div><div class="ttdoc">Registers the activity progress observer.</div><div class="ttdef"><b>Definition:</b> main_ctx_fwd.hpp:143</div></div>
+<div class="ttc" id="agroup__metaprogramming_html_ga4a036d64c1fd49335cc8ca2e2b01c1a7"><div class="ttname"><a href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">eagine::construct_from</a></div><div class="ttdeci">constexpr const construct_from_t construct_from</div><div class="ttdoc">The construct-from tag-dispatch constant.</div><div class="ttdef"><b>Definition:</b> selector.hpp:47</div></div>
+<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
+<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
+<div class="ttc" id="ainteger__range_8hpp_html"><div class="ttname"><a href="integer__range_8hpp.html">integer_range.hpp</a></div></div>
+<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div></div>
+<div class="ttc" id="amain__ctx_8hpp_html"><div class="ttname"><a href="main__ctx_8hpp.html">main_ctx.hpp</a></div></div>
+<div class="ttc" id="amain__ctx__object_8hpp_html"><div class="ttname"><a href="main__ctx__object_8hpp.html">main_ctx_object.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="anamespaceeagine_html_a6a7c42a4eeea0ef9deef0ac4bca30c7b"><div class="ttname"><a href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">eagine::activity_progress_id_t</a></div><div class="ttdeci">std::uintptr_t activity_progress_id_t</div><div class="ttdoc">Activity progress tracker instance id type.</div><div class="ttdef"><b>Definition:</b> fwd.hpp:18</div></div>
+<div class="ttc" id="aprogress_2backend_8hpp_html"><div class="ttname"><a href="progress_2backend_8hpp.html">backend.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

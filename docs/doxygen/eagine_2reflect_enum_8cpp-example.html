@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/reflect_enum.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,91 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="console_8hpp.html">eagine/console/console.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="enumerators_8hpp.html">eagine/reflect/enumerators.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">enum class</span> example_enum {</div>
+<div class="line">    value_a,</div>
+<div class="line">    value_b,</div>
+<div class="line">    value_c,</div>
+<div class="line">    value_d,</div>
+<div class="line">    value_e,</div>
+<div class="line">    value_f,</div>
+<div class="line">    value_g,</div>
+<div class="line">    value_h,</div>
+<div class="line">    value_i,</div>
+<div class="line">    value_j,</div>
+<div class="line">    value_k,</div>
+<div class="line">    value_l,</div>
+<div class="line">    value_m,</div>
+<div class="line">    value_n,</div>
+<div class="line">    value_o,</div>
+<div class="line">    value_p,</div>
+<div class="line">    value_q,</div>
+<div class="line">    value_r,</div>
+<div class="line">    value_s,</div>
+<div class="line">    value_t,</div>
+<div class="line">    value_u,</div>
+<div class="line">    value_v,</div>
+<div class="line">    value_w,</div>
+<div class="line">    value_x,</div>
+<div class="line">    value_y,</div>
+<div class="line">    value_z</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#if !EAGINE_CXX_REFLECTION</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Selector&gt;</div>
+<div class="line">constexpr <span class="keyword">auto</span> enumerator_mapping(</div>
+<div class="line">  <span class="keyword">const</span> type_identity&lt;example_enum&gt;,</div>
+<div class="line">  <span class="keyword">const</span> Selector) noexcept {</div>
+<div class="line">    <span class="keywordflow">return</span> enumerator_map_type&lt;example_enum, 26&gt;{</div>
+<div class="line">      {{<span class="stringliteral">&quot;value_a&quot;</span>, example_enum::value_a}, {<span class="stringliteral">&quot;value_b&quot;</span>, example_enum::value_b},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_c&quot;</span>, example_enum::value_c}, {<span class="stringliteral">&quot;value_d&quot;</span>, example_enum::value_d},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_e&quot;</span>, example_enum::value_e}, {<span class="stringliteral">&quot;value_f&quot;</span>, example_enum::value_f},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_g&quot;</span>, example_enum::value_g}, {<span class="stringliteral">&quot;value_h&quot;</span>, example_enum::value_h},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_i&quot;</span>, example_enum::value_i}, {<span class="stringliteral">&quot;value_j&quot;</span>, example_enum::value_j},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_k&quot;</span>, example_enum::value_k}, {<span class="stringliteral">&quot;value_l&quot;</span>, example_enum::value_l},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_m&quot;</span>, example_enum::value_m}, {<span class="stringliteral">&quot;value_n&quot;</span>, example_enum::value_n},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_o&quot;</span>, example_enum::value_o}, {<span class="stringliteral">&quot;value_p&quot;</span>, example_enum::value_p},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_q&quot;</span>, example_enum::value_q}, {<span class="stringliteral">&quot;value_r&quot;</span>, example_enum::value_r},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_s&quot;</span>, example_enum::value_s}, {<span class="stringliteral">&quot;value_t&quot;</span>, example_enum::value_t},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_u&quot;</span>, example_enum::value_u}, {<span class="stringliteral">&quot;value_v&quot;</span>, example_enum::value_v},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_w&quot;</span>, example_enum::value_w}, {<span class="stringliteral">&quot;value_x&quot;</span>, example_enum::value_x},</div>
+<div class="line">       {<span class="stringliteral">&quot;value_y&quot;</span>, example_enum::value_y}, {<span class="stringliteral">&quot;value_z&quot;</span>, example_enum::value_z}}};</div>
+<div class="line">}</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> type_identity&lt;example_enum&gt; tid{};</div>
+<div class="line">    ctx.cio()</div>
+<div class="line">      .print(<a name="a0"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(enums), <span class="stringliteral">&quot;enumerator count: ${count}&quot;</span>)</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(count), enumerator_count(tid));</div>
+<div class="line"> </div>
+<div class="line">    for_each_enumerator(</div>
+<div class="line">      [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="group__logging.html#gga724b65c5c81a873b5baabe72407177eaacaf9b6b99962bf5c2264824231d7a40c">info</a>) {</div>
+<div class="line">          ctx.cio()</div>
+<div class="line">            .print(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(enums), <span class="stringliteral">&quot;${name}: ${value}&quot;</span>)</div>
+<div class="line">            .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(name), <a class="code" href="group__logging.html#gga724b65c5c81a873b5baabe72407177eaacaf9b6b99962bf5c2264824231d7a40c">info</a>.name)</div>
+<div class="line">            .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(value), <a class="code" href="group__logging.html#gga724b65c5c81a873b5baabe72407177eaacaf9b6b99962bf5c2264824231d7a40c">info</a>.value);</div>
+<div class="line">      },</div>
+<div class="line">      type_identity&lt;example_enum&gt;{});</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="line"> </div>
+<div class="ttc" id="aconsole_8hpp_html"><div class="ttname"><a href="console_8hpp.html">console.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="aenumerators_8hpp_html"><div class="ttname"><a href="enumerators_8hpp.html">enumerators.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="agroup__logging_html_gga724b65c5c81a873b5baabe72407177eaacaf9b6b99962bf5c2264824231d7a40c"><div class="ttname"><a href="group__logging.html#gga724b65c5c81a873b5baabe72407177eaacaf9b6b99962bf5c2264824231d7a40c">eagine::log_event_severity::info</a></div><div class="ttdeci">@ info</div><div class="ttdoc">Informational log entries.</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

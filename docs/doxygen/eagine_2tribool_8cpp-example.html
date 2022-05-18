@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/tribool.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,75 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="preprocessor_8hpp.html">eagine/preprocessor.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="tribool_8hpp.html">eagine/tribool.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> print(<span class="keyword">const</span> <span class="keywordtype">char</span>* expr, <span class="keyword">const</span> <a name="_a0"></a><a class="code" href="classeagine_1_1weakbool.html">eagine::weakbool</a> v) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; expr &lt;&lt; <span class="stringliteral">&quot;&#39;: &quot;</span>;</div>
+<div class="line">    <span class="keywordflow">if</span>(!v) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;no&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(v) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;yes&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;maybe&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> print(<span class="keyword">const</span> <span class="keywordtype">char</span>* expr, <span class="keyword">const</span> <a name="_a1"></a><a class="code" href="classeagine_1_1tribool.html">eagine::tribool</a> v) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; expr &lt;&lt; <span class="stringliteral">&quot;&#39;: &quot;</span>;</div>
+<div class="line">    <span class="keywordflow">if</span>(v) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;yes&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!v) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;no&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;maybe&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define EAG_PRINT(EXPR) print(EAGINE_STRINGIFY(EXPR), EXPR)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    tribool yes{<span class="keyword">true</span>};</div>
+<div class="line">    tribool no{<span class="keyword">false</span>};</div>
+<div class="line">    tribool <a class="code" href="group__c__api__wrap.html#ggaa8c3aa41850e252412a5b34645ec3069a7e7aac930123145f5f0af775ca3e1c58">maybe</a>{<a name="a2"></a><a class="code" href="namespaceeagine.html#aab7f9ca48245069459a1906f6c24448a">indeterminate</a>};</div>
+<div class="line"> </div>
+<div class="line">    EAG_PRINT(yes);</div>
+<div class="line">    EAG_PRINT(no);</div>
+<div class="line">    EAG_PRINT(maybe);</div>
+<div class="line"> </div>
+<div class="line">    EAG_PRINT(~yes);</div>
+<div class="line">    EAG_PRINT(~no);</div>
+<div class="line">    EAG_PRINT(~maybe);</div>
+<div class="line"> </div>
+<div class="line">    EAG_PRINT(yes &amp;&amp; yes);</div>
+<div class="line">    EAG_PRINT(yes &amp;&amp; no);</div>
+<div class="line">    EAG_PRINT(yes &amp;&amp; maybe);</div>
+<div class="line">    EAG_PRINT(no &amp;&amp; yes);</div>
+<div class="line">    EAG_PRINT(no &amp;&amp; no);</div>
+<div class="line">    EAG_PRINT(no &amp;&amp; maybe);</div>
+<div class="line">    EAG_PRINT(maybe &amp;&amp; maybe);</div>
+<div class="line"> </div>
+<div class="line">    EAG_PRINT(yes || yes);</div>
+<div class="line">    EAG_PRINT(yes || no);</div>
+<div class="line">    EAG_PRINT(yes || maybe);</div>
+<div class="line">    EAG_PRINT(no || yes);</div>
+<div class="line">    EAG_PRINT(no || no);</div>
+<div class="line">    EAG_PRINT(no || maybe);</div>
+<div class="line">    EAG_PRINT(maybe || maybe);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasseagine_1_1tribool_html"><div class="ttname"><a href="classeagine_1_1tribool.html">eagine::tribool</a></div><div class="ttdoc">Tri-state boolean value.</div><div class="ttdef"><b>Definition:</b> tribool.hpp:62</div></div>
+<div class="ttc" id="aclasseagine_1_1weakbool_html"><div class="ttname"><a href="classeagine_1_1weakbool.html">eagine::weakbool</a></div><div class="ttdoc">Weak tri-state boolean value.</div><div class="ttdef"><b>Definition:</b> tribool.hpp:31</div></div>
+<div class="ttc" id="agroup__c__api__wrap_html_ggaa8c3aa41850e252412a5b34645ec3069a7e7aac930123145f5f0af775ca3e1c58"><div class="ttname"><a href="group__c__api__wrap.html#ggaa8c3aa41850e252412a5b34645ec3069a7e7aac930123145f5f0af775ca3e1c58">eagine::c_api::result_validity::maybe</a></div><div class="ttdeci">@ maybe</div><div class="ttdoc">Result is conditionally valid.</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="anamespaceeagine_html_aab7f9ca48245069459a1906f6c24448a"><div class="ttname"><a href="namespaceeagine.html#aab7f9ca48245069459a1906f6c24448a">eagine::indeterminate</a></div><div class="ttdeci">static constexpr const indeterminate_t indeterminate</div><div class="ttdoc">Constant representing unspecified tribool value.</div><div class="ttdef"><b>Definition:</b> tribool.hpp:24</div></div>
+<div class="ttc" id="apreprocessor_8hpp_html"><div class="ttname"><a href="preprocessor_8hpp.html">preprocessor.hpp</a></div></div>
+<div class="ttc" id="atribool_8hpp_html"><div class="ttname"><a href="tribool_8hpp.html">tribool.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

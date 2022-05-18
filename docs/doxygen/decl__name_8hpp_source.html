@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/reflect/decl_name.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,68 +73,67 @@ $(function() {
 <div class="title">decl_name.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="decl__name_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_REFLECT_DECL_NAME_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_REFLECT_DECL_NAME_HPP</span></div>
+<a href="decl__name_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_REFLECT_DECL_NAME_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_REFLECT_DECL_NAME_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../memory/span_algo.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../string_span.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../memory/span_algo.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../string_span.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">struct </span>decl_name : <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> max_length = 80;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">struct</span> decl_name : string_view {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> span_size_t max_length = 80;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    constexpr decl_name() noexcept = default;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">constexpr</span> decl_name() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#if EAGINE_CXX_REFLECTION</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    consteval decl_name(<a class="code" href="group__metaprogramming.html#ga03d75b9aa52ca00efedd7c853c5134ca">immediate_function_t</a> t, <span class="keyword">const</span> <span class="keywordtype">char</span>* s) noexcept</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      : <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>{t, s} {}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="eagine-core_2include_2eagine_2config_2site_8hpp.html#a1945e9f8fa0794531d11e7ef45e2fc4d">EAGINE_CXX_REFLECTION</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">consteval</span> decl_name(immediate_function_t t, <span class="keyword">const</span> <span class="keywordtype">char</span>* s) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      : string_view{t, s} {}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    constexpr decl_name(<span class="keyword">const</span> <span class="keywordtype">char</span> (&amp;array)[N]) noexcept</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      requires(N &lt;= <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a>(max_length))</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      : <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>{array} {}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">template</span> &lt;std::size_t N&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">constexpr</span> decl_name(<span class="keyword">const</span> <span class="keywordtype">char</span> (&amp;array)[N]) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keyword">requires</span>(N &lt;= span_size_t(max_length))</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      : string_view{array} {}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span>decl_name_storage {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class</span> decl_name_storage {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> max_length = decl_name::max_length;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> span_size_t max_length = decl_name::max_length;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">auto</span> assign(<span class="keyword">const</span> <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> str) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span>(str.size() &lt;= max_length) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="group__memory.html#ga617108b1fef48ea67b32f98c346b9b8e">memory::copy</a>(str, <a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(_storage));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            _length = str.size();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">auto</span> assign(<span class="keyword">const</span> string_view str) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span>(str<a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">.</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">size</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">(</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">)</a> &lt;= max_length) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            memory<a class="code" href="group__memory.html#ga5fe89faf981965c31cdc287612b0f4b4">::</a><a class="code" href="group__memory.html#ga5fe89faf981965c31cdc287612b0f4b4">copy</a><a class="code" href="group__memory.html#ga5fe89faf981965c31cdc287612b0f4b4">(</a>str<a class="code" href="group__memory.html#ga5fe89faf981965c31cdc287612b0f4b4">,</a> <a class="code" href="group__memory.html#ga4725f6799ac1b5c490e56260bbd789df">cover</a><a class="code" href="group__memory.html#ga4725f6799ac1b5c490e56260bbd789df">(</a>_storage<a class="code" href="group__memory.html#ga4725f6799ac1b5c490e56260bbd789df">)</a><a class="code" href="group__memory.html#ga5fe89faf981965c31cdc287612b0f4b4">)</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            _length = str<a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">.</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">size</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">(</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">)</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> get() noexcept {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">head</a>(<a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(_storage), _length);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> get() <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">head</a><a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">(</a><a class="code" href="group__memory.html#ga4725f6799ac1b5c490e56260bbd789df">cover</a><a class="code" href="group__memory.html#ga4725f6799ac1b5c490e56260bbd789df">(</a>_storage<a class="code" href="group__memory.html#ga4725f6799ac1b5c490e56260bbd789df">)</a><a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">,</a> _length<a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">)</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">auto</span> get() const noexcept {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">head</a>(<a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(_storage), _length);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">auto</span> get() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">head</a><a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">(</a><a class="code" href="group__memory.html#ga1e8fd3ed063cbc9db585861aac2262f9">view</a><a class="code" href="group__memory.html#ga1e8fd3ed063cbc9db585861aac2262f9">(</a>_storage<a class="code" href="group__memory.html#ga1e8fd3ed063cbc9db585861aac2262f9">)</a><a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">,</a> _length<a class="code" href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">)</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::array&lt;char, max_length&gt; _storage{};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> _length{0};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::array&lt;<span class="keywordtype">char</span>, max_length&gt; _storage{};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    span_size_t _length{0};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_REFLECT_DECL_NAME_HPP</span></div>
-<div class="ttc" id="agroup__memory_html_ga323cd8c49fef908990c9d5b5553576b4"><div class="ttname"><a href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">eagine::memory::cover</a></div><div class="ttdeci">static constexpr auto cover(T *addr, const S size) noexcept -&gt; span_if_mutable&lt; T &gt;</div><div class="ttdoc">Creates a span starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:485</div></div>
-<div class="ttc" id="agroup__memory_html_ga617108b1fef48ea67b32f98c346b9b8e"><div class="ttname"><a href="group__memory.html#ga617108b1fef48ea67b32f98c346b9b8e">eagine::memory::copy</a></div><div class="ttdeci">static auto copy(const const_block source, block dest) noexcept -&gt; block</div><div class="ttdoc">Copies the content of source block to destination block.</div><div class="ttdef"><b>Definition:</b> copy.hpp:23</div></div>
-<div class="ttc" id="agroup__memory_html_ga9534fdd13884329a5c5e5c10b3337f80"><div class="ttname"><a href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">eagine::memory::view</a></div><div class="ttdeci">static constexpr auto view(T *addr, const S size) noexcept -&gt; const_span&lt; T &gt;</div><div class="ttdoc">Creates a view starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:478</div></div>
-<div class="ttc" id="agroup__memory_html_gaea3e0f08a316739f8d30fc30443879da"><div class="ttname"><a href="group__memory.html#gaea3e0f08a316739f8d30fc30443879da">eagine::memory::head</a></div><div class="ttdeci">static constexpr auto head(const basic_span&lt; T, P, S &gt; s, const L l) noexcept -&gt; basic_span&lt; T, P, S &gt;</div><div class="ttdoc">Returns the first l elements from the front of a span.</div><div class="ttdef"><b>Definition:</b> span_algo.hpp:109</div></div>
-<div class="ttc" id="agroup__metaprogramming_html_ga03d75b9aa52ca00efedd7c853c5134ca"><div class="ttname"><a href="group__metaprogramming.html#ga03d75b9aa52ca00efedd7c853c5134ca">eagine::immediate_function_t</a></div><div class="ttdeci">selector&lt; 0x1FU &gt; immediate_function_t</div><div class="ttdoc">Type alias for immediate function selector.</div><div class="ttdef"><b>Definition:</b> selector.hpp:55</div></div>
-<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_REFLECT_DECL_NAME_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

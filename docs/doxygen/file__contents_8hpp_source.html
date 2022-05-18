@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/file_contents.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,95 +73,101 @@ $(function() {
 <div class="title">file_contents.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="file__contents_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_FILE_CONTENTS_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_FILE_CONTENTS_HPP</span></div>
+<a href="file__contents_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_FILE_CONTENTS_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_FILE_CONTENTS_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="basic_8hpp.html">config/basic.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="value__tree_2interface_8hpp.html">interface.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="protected__member_8hpp.html">protected_member.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="string__span_8hpp.html">string_span.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct__memory__block_8hpp.html">struct_memory_block.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;config/basic.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="eagine-core_2include_2eagine_2interface_8hpp.html">&quot;interface.hpp&quot;</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="protected__member_8hpp.html">&quot;protected_member.hpp&quot;</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="string__span_8hpp.html">&quot;string_span.hpp&quot;</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="struct__memory__block_8hpp.html">&quot;struct_memory_block.hpp&quot;</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structeagine_1_1file__contents__intf.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structeagine_1_1file__contents__intf.html">file_contents_intf</a> : <a class="code" href="classeagine_1_1interface.html">interface</a>&lt;file_contents_intf&gt; {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">auto</span> block() noexcept -&gt; <a class="code" href="classeagine_1_1memory_1_1basic__span.html">memory::const_block</a> = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// @brief Interface for file content getter implementations.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// @see file_contents</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structeagine_1_1file__contents__intf.html">   23</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1file__contents__intf.html">file_contents_intf</a> : <a class="code" href="classeagine_1_1interface.html">interface</a>&lt;<a class="code" href="structeagine_1_1file__contents__intf.html">file_contents_intf</a>&gt; {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">auto</span> block() <span class="keyword">noexcept</span> -&gt; memory::const_block = 0;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeagine_1_1file__contents.html">file_contents</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/// @brief Class providing access to the contents of a file.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/// @see structured_file_content</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html">   29</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1file__contents.html">file_contents</a> {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#a686328b11a87a3d7f7f5005e4093d2f2">   32</a></span>&#160;    <a class="code" href="classeagine_1_1file__contents.html#a686328b11a87a3d7f7f5005e4093d2f2">file_contents</a>() noexcept = default;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/// @brief Default constructor.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#a686328b11a87a3d7f7f5005e4093d2f2">   32</a></span>&#160;    <a class="code" href="classeagine_1_1file__contents.html#a686328b11a87a3d7f7f5005e4093d2f2">file_contents</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classeagine_1_1file__contents.html">file_contents</a>(const <a class="code" href="classeagine_1_1basic__string__span.html">string_view</a> path);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/// @brief Constructor that opens and loads contents of file at the given path.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classeagine_1_1file__contents.html#a01db18bb656bd3ab9795624e501ee4a7">file_contents</a>(<span class="keyword">const</span> string_view path);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">   39</a></span>&#160;    auto <a class="code" href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">is_loaded</a>() const noexcept -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> bool(_pimpl);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/// @brief Checks if the contents were loaded.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/// @see block</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">   39</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">is_loaded</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">bool</span>(_pimpl);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#a26ebfe3c9d0cb0ebc42ffd3bb3cb2845">   45</a></span>&#160;    <span class="keyword">explicit</span> <span class="keyword">operator</span> bool() const noexcept {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">is_loaded</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/// @brief Checks if the contents were loaded.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/// @see is_loaded</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#a26ebfe3c9d0cb0ebc42ffd3bb3cb2845">   45</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classeagine_1_1file__contents.html#a26ebfe3c9d0cb0ebc42ffd3bb3cb2845">operator</a> <span class="keywordtype">bool</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">is_loaded</a><a class="code" href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">(</a><a class="code" href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">)</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">   51</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">block</a>() const noexcept -&gt; memory::<a class="code" href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">const_block</a> {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">/// @brief Returns the block viewing the loaded file contents.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/// @see is_loaded</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">   51</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">block</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; memory::const_block {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span>(_pimpl) [[likely]] {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> _pimpl-&gt;block();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classeagine_1_1memory_1_1basic__span.html#a857d9e4e61f16e6f1f921eb67dc0a115">{</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#a857d9e4e61f16e6f1f921eb67dc0a115">}</a>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#a6e5b65d4c9dafddc645be368d0652da5">   62</a></span>&#160;    <span class="keyword">operator</span> <a class="code" href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">memory::const_block</a>() const noexcept {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">block</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">/// @brief Implicit conversion to the block viewing the loaded file contents.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">/// @see block</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">/// @see is_loaded</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classeagine_1_1file__contents.html#a6e5b65d4c9dafddc645be368d0652da5">   62</a></span>&#160;    <a class="code" href="classeagine_1_1file__contents.html#a6e5b65d4c9dafddc645be368d0652da5">operator</a> memory::const_block() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">block</a><a class="code" href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">(</a><a class="code" href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">)</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::shared_ptr&lt;file_contents_intf&gt; _pimpl{};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::shared_ptr&lt;<a class="code" href="structeagine_1_1file__contents__intf.html">file_contents_intf</a>&gt; _pimpl{};</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/// @brief Class loading a baked structured data from a file.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">/// @see file_contents</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classeagine_1_1structured__file__content.html">   73</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeagine_1_1structured__file__content.html">structured_file_content</a></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  : <a class="code" href="classeagine_1_1protected__member.html">protected_member</a>&lt;file_contents&gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  , <span class="keyword">public</span> structured_memory_block&lt;const T&gt; {</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classeagine_1_1structured__file__content.html">   73</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1structured__file__content.html">structured_file_content</a></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  : <a class="code" href="classeagine_1_1protected__member.html">protected_member</a>&lt;<a class="code" href="classeagine_1_1file__contents.html">file_contents</a>&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  , <span class="keyword">public</span> structured_memory_block&lt;<span class="keyword">const</span> T&gt; {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classeagine_1_1structured__file__content.html#a531711795d40a1ea845e95caf2bec2b5">   78</a></span>&#160;    <a class="code" href="classeagine_1_1structured__file__content.html#a531711795d40a1ea845e95caf2bec2b5">structured_file_content</a>(<span class="keyword">const</span> <a class="code" href="classeagine_1_1basic__string__span.html">string_view</a> path)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">/// @brief Constructor that opens and loads contents of file at the given path.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classeagine_1_1structured__file__content.html#a531711795d40a1ea845e95caf2bec2b5">   78</a></span>&#160;    <a class="code" href="classeagine_1_1structured__file__content.html#a531711795d40a1ea845e95caf2bec2b5">structured_file_content</a>(<span class="keyword">const</span> string_view path)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      : <a class="code" href="classeagine_1_1protected__member.html">protected_member</a>&lt;<a class="code" href="classeagine_1_1file__contents.html">file_contents</a>&gt;(path)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      , structured_memory_block&lt;const T&gt;(<a class="code" href="classeagine_1_1protected__member.html#a580b3292aef2c3924adf054589fc063d">get_the_member</a>()) {}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      , structured_memory_block&lt;<span class="keyword">const</span> T&gt;(get_the_member()) {}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">/// @brief Construction from a file contents instance.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/// @see file_contents</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classeagine_1_1structured__file__content.html#a84e9607bc665eaaa93586bfd61d7e144">   84</a></span>&#160;    <a class="code" href="classeagine_1_1structured__file__content.html#a84e9607bc665eaaa93586bfd61d7e144">structured_file_content</a>(<a class="code" href="classeagine_1_1file__contents.html">file_contents</a>&amp;&amp; fc)</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      : <a class="code" href="classeagine_1_1protected__member.html">protected_member</a>&lt;<a class="code" href="classeagine_1_1file__contents.html">file_contents</a>&gt;(std::move(fc))</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      , structured_memory_block&lt;const T&gt;(<a class="code" href="classeagine_1_1protected__member.html#a580b3292aef2c3924adf054589fc063d">get_the_member</a>()) {}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      , structured_memory_block&lt;<span class="keyword">const</span> T&gt;(get_the_member()) {}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#if !EAGINE_CORE_LIBRARY || defined(EAGINE_IMPLEMENTING_CORE_LIBRARY)</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="file__contents_8inl.html">eagine/file_contents.inl</a>&gt;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2basic_8hpp.html#a42b87b5f1b680c3bc7dac19c6741f7ad">EAGINE_CORE_LIBRARY</a> <span class="preprocessor">||</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">EAGINE_IMPLEMENTING_CORE_LIBRARY</span><span class="preprocessor">)</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">eagine</span><span class="preprocessor">/</span><span class="preprocessor">file_contents</span><span class="preprocessor">.</span><span class="preprocessor">inl</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_FILE_CONTENTS_HPP</span></div>
-<div class="ttc" id="abasic_8hpp_html"><div class="ttname"><a href="basic_8hpp.html">basic.hpp</a></div></div>
-<div class="ttc" id="aclasseagine_1_1basic__string__span_html"><div class="ttname"><a href="classeagine_1_1basic__string__span.html">eagine::basic_string_span&lt; const char &gt;</a></div></div>
-<div class="ttc" id="aclasseagine_1_1file__contents_html"><div class="ttname"><a href="classeagine_1_1file__contents.html">eagine::file_contents</a></div><div class="ttdoc">Class providing access to the contents of a file.</div><div class="ttdef"><b>Definition:</b> file_contents.hpp:29</div></div>
-<div class="ttc" id="aclasseagine_1_1file__contents_html_a686328b11a87a3d7f7f5005e4093d2f2"><div class="ttname"><a href="classeagine_1_1file__contents.html#a686328b11a87a3d7f7f5005e4093d2f2">eagine::file_contents::file_contents</a></div><div class="ttdeci">file_contents() noexcept=default</div><div class="ttdoc">Default constructor.</div></div>
-<div class="ttc" id="aclasseagine_1_1file__contents_html_abf04cdeeae52cb690bd08ac76f79180b"><div class="ttname"><a href="classeagine_1_1file__contents.html#abf04cdeeae52cb690bd08ac76f79180b">eagine::file_contents::block</a></div><div class="ttdeci">auto block() const noexcept -&gt; memory::const_block</div><div class="ttdoc">Returns the block viewing the loaded file contents.</div><div class="ttdef"><b>Definition:</b> file_contents.hpp:51</div></div>
-<div class="ttc" id="aclasseagine_1_1file__contents_html_ad760100cd631efe6f38742ed3c7ba7ba"><div class="ttname"><a href="classeagine_1_1file__contents.html#ad760100cd631efe6f38742ed3c7ba7ba">eagine::file_contents::is_loaded</a></div><div class="ttdeci">auto is_loaded() const noexcept -&gt; bool</div><div class="ttdoc">Checks if the contents were loaded.</div><div class="ttdef"><b>Definition:</b> file_contents.hpp:39</div></div>
-<div class="ttc" id="aclasseagine_1_1interface_html"><div class="ttname"><a href="classeagine_1_1interface.html">eagine::interface</a></div><div class="ttdoc">Base template for abstract interfaces, implements common functionality.</div><div class="ttdef"><b>Definition:</b> interface.hpp:18</div></div>
-<div class="ttc" id="aclasseagine_1_1memory_1_1basic__span_html"><div class="ttname"><a href="classeagine_1_1memory_1_1basic__span.html">eagine::memory::basic_span</a></div><div class="ttdoc">Non-owning view of a contiguous range of memory with ValueType elements.</div><div class="ttdef"><b>Definition:</b> span.hpp:103</div></div>
-<div class="ttc" id="aclasseagine_1_1protected__member_html"><div class="ttname"><a href="classeagine_1_1protected__member.html">eagine::protected_member</a></div><div class="ttdoc">Class holding a single tagged data member.</div><div class="ttdef"><b>Definition:</b> protected_member.hpp:20</div></div>
-<div class="ttc" id="aclasseagine_1_1protected__member_html_a580b3292aef2c3924adf054589fc063d"><div class="ttname"><a href="classeagine_1_1protected__member.html#a580b3292aef2c3924adf054589fc063d">eagine::protected_member&lt; file_contents &gt;::get_the_member</a></div><div class="ttdeci">auto get_the_member(type_identity&lt; file_contents &gt;=type_identity&lt; file_contents &gt;()) noexcept -&gt; file_contents &amp;</div><div class="ttdoc">Returns a reference to the stored member.</div><div class="ttdef"><b>Definition:</b> protected_member.hpp:23</div></div>
-<div class="ttc" id="aclasseagine_1_1structured__file__content_html"><div class="ttname"><a href="classeagine_1_1structured__file__content.html">eagine::structured_file_content</a></div><div class="ttdoc">Class loading a baked structured data from a file.</div><div class="ttdef"><b>Definition:</b> file_contents.hpp:75</div></div>
-<div class="ttc" id="aclasseagine_1_1structured__file__content_html_a531711795d40a1ea845e95caf2bec2b5"><div class="ttname"><a href="classeagine_1_1structured__file__content.html#a531711795d40a1ea845e95caf2bec2b5">eagine::structured_file_content::structured_file_content</a></div><div class="ttdeci">structured_file_content(const string_view path)</div><div class="ttdoc">Constructor that opens and loads contents of file at the given path.</div><div class="ttdef"><b>Definition:</b> file_contents.hpp:78</div></div>
-<div class="ttc" id="aclasseagine_1_1structured__file__content_html_a84e9607bc665eaaa93586bfd61d7e144"><div class="ttname"><a href="classeagine_1_1structured__file__content.html#a84e9607bc665eaaa93586bfd61d7e144">eagine::structured_file_content::structured_file_content</a></div><div class="ttdeci">structured_file_content(file_contents &amp;&amp;fc)</div><div class="ttdoc">Construction from a file contents instance.</div><div class="ttdef"><b>Definition:</b> file_contents.hpp:84</div></div>
-<div class="ttc" id="afile__contents_8inl_html"><div class="ttname"><a href="file__contents_8inl.html">file_contents.inl</a></div></div>
-<div class="ttc" id="agroup__memory_html_ga9abe6f67096b87cac1c3116a66379971"><div class="ttname"><a href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">eagine::memory::const_block</a></div><div class="ttdeci">basic_block&lt; true &gt; const_block</div><div class="ttdoc">Alias for const byte memory span.</div><div class="ttdef"><b>Definition:</b> block.hpp:32</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="aprotected__member_8hpp_html"><div class="ttname"><a href="protected__member_8hpp.html">protected_member.hpp</a></div></div>
-<div class="ttc" id="astring__span_8hpp_html"><div class="ttname"><a href="string__span_8hpp.html">string_span.hpp</a></div></div>
-<div class="ttc" id="astruct__memory__block_8hpp_html"><div class="ttname"><a href="struct__memory__block_8hpp.html">struct_memory_block.hpp</a></div></div>
-<div class="ttc" id="astructeagine_1_1file__contents__intf_html"><div class="ttname"><a href="structeagine_1_1file__contents__intf.html">eagine::file_contents_intf</a></div><div class="ttdoc">Interface for file content getter implementations.</div><div class="ttdef"><b>Definition:</b> file_contents.hpp:23</div></div>
-<div class="ttc" id="avalue__tree_2interface_8hpp_html"><div class="ttname"><a href="value__tree_2interface_8hpp.html">interface.hpp</a></div></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_FILE_CONTENTS_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

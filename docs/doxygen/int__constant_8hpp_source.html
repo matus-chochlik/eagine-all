@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/int_constant.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,40 +73,51 @@ $(function() {
 <div class="title">int_constant.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="int__constant_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_INT_CONSTANT_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_INT_CONSTANT_HPP</span></div>
+<a href="int__constant_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_INT_CONSTANT_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_INT_CONSTANT_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="identifier__t_8hpp.html">identifier_t.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="identifier__t_8hpp.html">&quot;identifier_t.hpp&quot;</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @brief Alias for boolean constant type.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> B&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">   20</a></span>&#160;<span class="keyword">using</span> <a class="code" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">bool_constant</a> = std::integral_constant&lt;bool, B&gt;;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">   20</a></span>&#160;<span class="keyword">using</span> bool_constant = std::integral_constant&lt;<span class="keywordtype">bool</span>, B&gt;;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// @brief Alias for signed int constant type.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> I&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga870c8270c3b77a0da93f276783d2f8f1">   25</a></span>&#160;<span class="keyword">using</span> <a class="code" href="group__type__utils.html#ga870c8270c3b77a0da93f276783d2f8f1">int_constant</a> = std::integral_constant&lt;int, I&gt;;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga870c8270c3b77a0da93f276783d2f8f1">   25</a></span>&#160;<span class="keyword">using</span> int_constant = std::integral_constant&lt;<span class="keywordtype">int</span>, I&gt;;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/// @brief Alias for unsigned int constant type.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">unsigned</span> U&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga60a0b020f0b6a0616a07c71440000c06">   30</a></span>&#160;<span class="keyword">using</span> <a class="code" href="group__type__utils.html#ga60a0b020f0b6a0616a07c71440000c06">unsigned_constant</a> = std::integral_constant&lt;unsigned, U&gt;;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga60a0b020f0b6a0616a07c71440000c06">   30</a></span>&#160;<span class="keyword">using</span> unsigned_constant = std::integral_constant&lt;<span class="keywordtype">unsigned</span>, U&gt;;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> S&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="group__type__utils.html#gacf4e8677167f3bbf423c824b1847e66f">   35</a></span>&#160;<span class="keyword">using</span> <a class="code" href="group__type__utils.html#gacf4e8677167f3bbf423c824b1847e66f">size_constant</a> = std::integral_constant&lt;std::size_t, S&gt;;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/// @brief Alias for size_t constant type.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;std::size_t S&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="group__type__utils.html#gacf4e8677167f3bbf423c824b1847e66f">   35</a></span>&#160;<span class="keyword">using</span> size_constant = std::integral_constant&lt;std::size_t, S&gt;;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">id</span>entifier_t Id&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="group__type__utils.html#gafbe944538990f9399b4ba44485e823fe">   41</a></span>&#160;<span class="keyword">using</span> <a class="code" href="group__type__utils.html#gafbe944538990f9399b4ba44485e823fe">id_constant</a> = std::integral_constant&lt;identifier_t, Id&gt;;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/// @brief Alias for identifier_t constant type.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/// @see identifier_t</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> &lt;identifier_t Id&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="group__type__utils.html#gafbe944538990f9399b4ba44485e823fe">   41</a></span>&#160;<span class="keyword">using</span> id_constant = std::integral_constant&lt;identifier_t, Id&gt;;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_INT_CONSTANT_HPP</span></div>
-<div class="ttc" id="agroup__type__utils_html_ga60a0b020f0b6a0616a07c71440000c06"><div class="ttname"><a href="group__type__utils.html#ga60a0b020f0b6a0616a07c71440000c06">eagine::unsigned_constant</a></div><div class="ttdeci">std::integral_constant&lt; unsigned, U &gt; unsigned_constant</div><div class="ttdoc">Alias for unsigned int constant type.</div><div class="ttdef"><b>Definition:</b> int_constant.hpp:30</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga870c8270c3b77a0da93f276783d2f8f1"><div class="ttname"><a href="group__type__utils.html#ga870c8270c3b77a0da93f276783d2f8f1">eagine::int_constant</a></div><div class="ttdeci">std::integral_constant&lt; int, I &gt; int_constant</div><div class="ttdoc">Alias for signed int constant type.</div><div class="ttdef"><b>Definition:</b> int_constant.hpp:25</div></div>
-<div class="ttc" id="agroup__type__utils_html_gacf4e8677167f3bbf423c824b1847e66f"><div class="ttname"><a href="group__type__utils.html#gacf4e8677167f3bbf423c824b1847e66f">eagine::size_constant</a></div><div class="ttdeci">std::integral_constant&lt; std::size_t, S &gt; size_constant</div><div class="ttdoc">Alias for size_t constant type.</div><div class="ttdef"><b>Definition:</b> int_constant.hpp:35</div></div>
-<div class="ttc" id="agroup__type__utils_html_gadda8aac5370bd7ae56cb5a16defd16f4"><div class="ttname"><a href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">eagine::bool_constant</a></div><div class="ttdeci">std::integral_constant&lt; bool, B &gt; bool_constant</div><div class="ttdoc">Alias for boolean constant type.</div><div class="ttdef"><b>Definition:</b> int_constant.hpp:20</div></div>
-<div class="ttc" id="agroup__type__utils_html_gafbe944538990f9399b4ba44485e823fe"><div class="ttname"><a href="group__type__utils.html#gafbe944538990f9399b4ba44485e823fe">eagine::id_constant</a></div><div class="ttdeci">std::integral_constant&lt; identifier_t, Id &gt; id_constant</div><div class="ttdoc">Alias for identifier_t constant type.</div><div class="ttdef"><b>Definition:</b> int_constant.hpp:41</div></div>
-<div class="ttc" id="aidentifier__t_8hpp_html"><div class="ttname"><a href="identifier__t_8hpp.html">identifier_t.hpp</a></div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_INT_CONSTANT_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

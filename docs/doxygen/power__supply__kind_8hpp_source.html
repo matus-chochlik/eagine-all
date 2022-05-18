@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/power_supply_kind.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,42 +73,49 @@ $(function() {
 <div class="title">power_supply_kind.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="power__supply__kind_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_POWER_SUPPLY_KIND_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_POWER_SUPPLY_KIND_HPP</span></div>
+<a href="power__supply__kind_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_POWER_SUPPLY_KIND_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_POWER_SUPPLY_KIND_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="map__enumerators_8hpp.html">reflect/map_enumerators.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;reflect/map_enumerators.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstdint</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">   20</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">power_supply_kind</a> : std::uint8_t {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @brief System power supply kind.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @ingroup msgbus</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// @see system_info</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">   20</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">power_supply_kind</a> : <a class="code" href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">std</a>::<a class="code" href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">uint8_t</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/// @brief Unknown power supply.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55aad921d60486366258809553a3db49a4a">unknown</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/// @brief Battery.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55a20c1d18791a246001f5df7867d4e6bf5">battery</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/// @brief AC power supply.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55a49a0b21df7104ef3c144251257a37fbb">ac_supply</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#if !EAGINE_CXX_REFLECTION</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2site_8hpp.html#a1945e9f8fa0794531d11e7ef45e2fc4d">EAGINE_CXX_REFLECTION</a></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Selector&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;constexpr <span class="keyword">auto</span> enumerator_mapping(</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> type_identity&lt;power_supply_kind&gt;,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> Selector) noexcept {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">constexpr</span> <span class="keyword">auto</span> enumerator_mapping(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> <a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;<a class="code" href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">power_supply_kind</a>&gt;,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> Selector) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> enumerator_map_type&lt;power_supply_kind, 3&gt;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      {{<span class="stringliteral">&quot;unknown&quot;</span>, <a class="code" href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55aad921d60486366258809553a3db49a4a">power_supply_kind::unknown</a>},</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;       {<span class="stringliteral">&quot;battery&quot;</span>, <a class="code" href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55a20c1d18791a246001f5df7867d4e6bf5">power_supply_kind::battery</a>},</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;       {<span class="stringliteral">&quot;ac_supply&quot;</span>, <a class="code" href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55a49a0b21df7104ef3c144251257a37fbb">power_supply_kind::ac_supply</a>}}};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      {{<span class="stringliteral">&quot;unknown&quot;</span>, power_supply_kind::unknown},</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;       {<span class="stringliteral">&quot;battery&quot;</span>, power_supply_kind::battery},</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;       {<span class="stringliteral">&quot;ac_supply&quot;</span>, power_supply_kind::ac_supply}}};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agroup__msgbus_html_ga998425c412dcbd4db5627c566229fa55"><div class="ttname"><a href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">eagine::power_supply_kind</a></div><div class="ttdeci">power_supply_kind</div><div class="ttdoc">System power supply kind.</div><div class="ttdef"><b>Definition:</b> power_supply_kind.hpp:20</div></div>
-<div class="ttc" id="agroup__msgbus_html_gga998425c412dcbd4db5627c566229fa55a20c1d18791a246001f5df7867d4e6bf5"><div class="ttname"><a href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55a20c1d18791a246001f5df7867d4e6bf5">eagine::power_supply_kind::battery</a></div><div class="ttdeci">@ battery</div><div class="ttdoc">Battery.</div></div>
-<div class="ttc" id="agroup__msgbus_html_gga998425c412dcbd4db5627c566229fa55a49a0b21df7104ef3c144251257a37fbb"><div class="ttname"><a href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55a49a0b21df7104ef3c144251257a37fbb">eagine::power_supply_kind::ac_supply</a></div><div class="ttdeci">@ ac_supply</div><div class="ttdoc">AC power supply.</div></div>
-<div class="ttc" id="agroup__msgbus_html_gga998425c412dcbd4db5627c566229fa55aad921d60486366258809553a3db49a4a"><div class="ttname"><a href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55aad921d60486366258809553a3db49a4a">eagine::power_supply_kind::unknown</a></div><div class="ttdeci">@ unknown</div><div class="ttdoc">Unknown power supply.</div></div>
-<div class="ttc" id="amap__enumerators_8hpp_html"><div class="ttname"><a href="map__enumerators_8hpp.html">map_enumerators.hpp</a></div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

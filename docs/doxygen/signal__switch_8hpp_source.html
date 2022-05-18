@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/signal_switch.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,78 +73,93 @@ $(function() {
 <div class="title">signal_switch.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="signal__switch_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_SIGNAL_SWITCH_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_SIGNAL_SWITCH_HPP</span></div>
+<a href="signal__switch_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_SIGNAL_SWITCH_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_SIGNAL_SWITCH_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;csignal&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">csignal</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// @brief Installs handlers for interrupt signals and flips switch on receipt.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// This class installs handlers for the interrupt and terminate OS IPC signals</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// and if one of the signals is received it flips a boolean indicator from</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// false to true.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// @note Only a single instance per process should be created.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html">   23</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a79cb6c20aecdaab04e7e8c9cd893fa0c">   27</a></span>&#160;    <a class="code" href="classeagine_1_1signal__switch.html#a79cb6c20aecdaab04e7e8c9cd893fa0c">signal_switch</a>() noexcept</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/// @brief Default constructor. Stores the original handlers if any.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">/// @post !bool(*this)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a79cb6c20aecdaab04e7e8c9cd893fa0c">   27</a></span>&#160;    <a class="code" href="classeagine_1_1signal__switch.html#a79cb6c20aecdaab04e7e8c9cd893fa0c">signal_switch</a>() <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      : _intr_handler{std::signal(SIGINT, &amp;_flip)}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      , _term_handler{std::signal(SIGTERM, &amp;_flip)} {}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a5bc4876a65296b647fb3c53bf0d91623">   32</a></span>&#160;    <a class="code" href="classeagine_1_1signal__switch.html#a5bc4876a65296b647fb3c53bf0d91623">~signal_switch</a>() noexcept {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/// @brief Destructor. Restores the original signal handlers.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a5bc4876a65296b647fb3c53bf0d91623">   32</a></span>&#160;    ~<a class="code" href="classeagine_1_1signal__switch.html#a5bc4876a65296b647fb3c53bf0d91623">signal_switch</a>() <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">auto</span> unused_int{</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          std::signal(SIGINT, _intr_handler)};</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">auto</span> unused_trm{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;          std::signal(SIGTERM, _term_handler)};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">/// @brief Not moveable.</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a9fdcafbc0e9675b68e4163c77b6bade8">   40</a></span>&#160;    <a class="code" href="classeagine_1_1signal__switch.html#a9fdcafbc0e9675b68e4163c77b6bade8">signal_switch</a>(<a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">/// @brief Not copyable.</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a58dad1245f61e97e7f891248e1545600">   42</a></span>&#160;    <a class="code" href="classeagine_1_1signal__switch.html#a58dad1245f61e97e7f891248e1545600">signal_switch</a>(<span class="keyword">const</span> <a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a5c122fe4fa8231a4714470ad68e46721">   44</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a5c122fe4fa8231a4714470ad68e46721">operator=</a>(<a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a863f3ecf2a055741022de854bc9c688a">   46</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a863f3ecf2a055741022de854bc9c688a">operator=</a>(<span class="keyword">const</span> <a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/// @brief Not move-assignable.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a5c122fe4fa8231a4714470ad68e46721">   44</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a5c122fe4fa8231a4714470ad68e46721">operator</a>=(<a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">/// @brief Not copy-assignable.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a863f3ecf2a055741022de854bc9c688a">   46</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a863f3ecf2a055741022de854bc9c688a">operator</a>=(<span class="keyword">const</span> <a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a6f8149b9b58e474a971a0a1566872044">   50</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a6f8149b9b58e474a971a0a1566872044">reset</a>() noexcept -&gt; <a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a>&amp; {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/// @brief Resets the signal state as if no signal was received.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">/// @post !bool(*this)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a6f8149b9b58e474a971a0a1566872044">   50</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a6f8149b9b58e474a971a0a1566872044">reset</a>() <span class="keyword">noexcept</span> -&gt; <a class="code" href="classeagine_1_1signal__switch.html">signal_switch</a>&amp; {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        _state() = 0;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a37941c1416f5f5655677b30c8de97005">   56</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a37941c1416f5f5655677b30c8de97005">interrupted</a>() const noexcept -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/// @brief Indicates if the interrupt signal was received.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a37941c1416f5f5655677b30c8de97005">   56</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a37941c1416f5f5655677b30c8de97005">interrupted</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> _state() == SIGINT;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a09089f3a8e227f506c0edd93cc8c4657">   61</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a09089f3a8e227f506c0edd93cc8c4657">terminated</a>() const noexcept -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">/// @brief Indicates if the terminate signal was received.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#a09089f3a8e227f506c0edd93cc8c4657">   61</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1signal__switch.html#a09089f3a8e227f506c0edd93cc8c4657">terminated</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> _state() == SIGTERM;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#abd1bf7240a8dd910cace620197820ef1">   66</a></span>&#160;    <span class="keyword">explicit</span> <span class="keyword">operator</span> bool() const noexcept {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> bool(_state());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/// @brief Indicates if one of the tracked signals was received.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classeagine_1_1signal__switch.html#abd1bf7240a8dd910cace620197820ef1">   66</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classeagine_1_1signal__switch.html#abd1bf7240a8dd910cace620197820ef1">operator</a> <span class="keywordtype">bool</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> <span class="keywordtype">bool</span>(_state());</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _state() noexcept -&gt; volatile std::sig_atomic_t&amp; {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _state() <span class="keyword">noexcept</span> -&gt; <span class="keyword">volatile</span> std::sig_atomic_t&amp; {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">static</span> <span class="keyword">volatile</span> std::sig_atomic_t state{0};</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> state;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> _flip(<span class="keyword">const</span> <span class="keywordtype">int</span> sig_num) noexcept {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> _flip(<span class="keyword">const</span> <span class="keywordtype">int</span> sig_num) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        _state() = sig_num;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">using</span> _sighandler_t = void(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    _sighandler_t* _intr_handler{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    _sighandler_t* _term_handler{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">using</span> _sighandler_t = <span class="keywordtype">void</span>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    _sighandler_t* _intr_handler{<span class="keywordtype">nullptr</span>};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    _sighandler_t* _term_handler{<span class="keywordtype">nullptr</span>};</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_SIGNAL_SWITCH_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html"><div class="ttname"><a href="classeagine_1_1signal__switch.html">eagine::signal_switch</a></div><div class="ttdoc">Installs handlers for interrupt signals and flips switch on receipt.</div><div class="ttdef"><b>Definition:</b> signal_switch.hpp:23</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a09089f3a8e227f506c0edd93cc8c4657"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a09089f3a8e227f506c0edd93cc8c4657">eagine::signal_switch::terminated</a></div><div class="ttdeci">auto terminated() const noexcept -&gt; bool</div><div class="ttdoc">Indicates if the terminate signal was received.</div><div class="ttdef"><b>Definition:</b> signal_switch.hpp:61</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a37941c1416f5f5655677b30c8de97005"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a37941c1416f5f5655677b30c8de97005">eagine::signal_switch::interrupted</a></div><div class="ttdeci">auto interrupted() const noexcept -&gt; bool</div><div class="ttdoc">Indicates if the interrupt signal was received.</div><div class="ttdef"><b>Definition:</b> signal_switch.hpp:56</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a58dad1245f61e97e7f891248e1545600"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a58dad1245f61e97e7f891248e1545600">eagine::signal_switch::signal_switch</a></div><div class="ttdeci">signal_switch(const signal_switch &amp;)=delete</div><div class="ttdoc">Not copyable.</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a5bc4876a65296b647fb3c53bf0d91623"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a5bc4876a65296b647fb3c53bf0d91623">eagine::signal_switch::~signal_switch</a></div><div class="ttdeci">~signal_switch() noexcept</div><div class="ttdoc">Destructor. Restores the original signal handlers.</div><div class="ttdef"><b>Definition:</b> signal_switch.hpp:32</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a5c122fe4fa8231a4714470ad68e46721"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a5c122fe4fa8231a4714470ad68e46721">eagine::signal_switch::operator=</a></div><div class="ttdeci">auto operator=(signal_switch &amp;&amp;)=delete</div><div class="ttdoc">Not move-assignable.</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a6f8149b9b58e474a971a0a1566872044"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a6f8149b9b58e474a971a0a1566872044">eagine::signal_switch::reset</a></div><div class="ttdeci">auto reset() noexcept -&gt; signal_switch &amp;</div><div class="ttdoc">Resets the signal state as if no signal was received.</div><div class="ttdef"><b>Definition:</b> signal_switch.hpp:50</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a79cb6c20aecdaab04e7e8c9cd893fa0c"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a79cb6c20aecdaab04e7e8c9cd893fa0c">eagine::signal_switch::signal_switch</a></div><div class="ttdeci">signal_switch() noexcept</div><div class="ttdoc">Default constructor. Stores the original handlers if any.</div><div class="ttdef"><b>Definition:</b> signal_switch.hpp:27</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a863f3ecf2a055741022de854bc9c688a"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a863f3ecf2a055741022de854bc9c688a">eagine::signal_switch::operator=</a></div><div class="ttdeci">auto operator=(const signal_switch &amp;)=delete</div><div class="ttdoc">Not copy-assignable.</div></div>
-<div class="ttc" id="aclasseagine_1_1signal__switch_html_a9fdcafbc0e9675b68e4163c77b6bade8"><div class="ttname"><a href="classeagine_1_1signal__switch.html#a9fdcafbc0e9675b68e4163c77b6bade8">eagine::signal_switch::signal_switch</a></div><div class="ttdeci">signal_switch(signal_switch &amp;&amp;)=delete</div><div class="ttdoc">Not moveable.</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_SIGNAL_SWITCH_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

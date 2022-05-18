@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Class Members - Functions</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -74,6 +74,9 @@ $(function() {
 <li>packed_block_data_source()
 : <a class="el" href="classeagine_1_1packed__block__data__source.html#a465f1639c9359b4c7ed68963cd22326f">eagine::packed_block_data_source</a>
 </li>
+<li>parent()
+: <a class="el" href="classeagine_1_1app_1_1video__context.html#a7179ae545c931164ee916e060a8916e6">eagine::app::video_context</a>
+</li>
 <li>parent_id()
 : <a class="el" href="classeagine_1_1console__entry.html#af15a301d600e0ab722ce16aeb5f7757b">eagine::console_entry</a>
 </li>
@@ -82,6 +85,9 @@ $(function() {
 </li>
 <li>parse_next()
 : <a class="el" href="classeagine_1_1program__arg.html#a8bf7c44909134a692fced0e9e9f4ad61">eagine::program_arg</a>
+</li>
+<li>parts()
+: <a class="el" href="classeagine_1_1oglplus_1_1glsl__source__ref.html#a3cb4ae00142937388a09ef38a2f09236">eagine::oglplus::glsl_source_ref</a>
 </li>
 <li>password()
 : <a class="el" href="classeagine_1_1url.html#a600814e2c96f787fb15bbe54f6813d91">eagine::url</a>
@@ -99,17 +105,41 @@ $(function() {
 <li>perspective()
 : <a class="el" href="classeagine_1_1math_1_1perspective_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#ae56096c23c816c32e3a468e026cd4ad5">eagine::math::perspective&lt; matrix&lt; T, 4, 4, RM, V &gt; &gt;</a>
 </li>
+<li>perspective_matrix()
+: <a class="el" href="classeagine_1_1oglplus_1_1orbiting__camera.html#a4585b07661a0daff076742b0044c1c95">eagine::oglplus::orbiting_camera</a>
+</li>
+<li>phase()
+: <a class="el" href="classeagine_1_1oglplus_1_1shape__draw__operation.html#a38453028878a966cfaf0755dc31f1115">eagine::oglplus::shape_draw_operation</a>
+</li>
+<li>ping()
+: <a class="el" href="classeagine_1_1msgbus_1_1pinger.html#ae3053fa6bb30ec1dbe4bbee570104c33">eagine::msgbus::pinger&lt; Base &gt;</a>
+</li>
+<li>ping_msg_id()
+: <a class="el" href="classeagine_1_1msgbus_1_1pinger.html#abf1c683b4c76c6f6b2cd9d1c6402c339">eagine::msgbus::pinger&lt; Base &gt;</a>
+</li>
+<li>ping_roundtrip_time()
+: <a class="el" href="classeagine_1_1msgbus_1_1remote__node.html#a9116b8a1c9db9261edf70e043a996686">eagine::msgbus::remote_node</a>
+</li>
+<li>ping_success_rate()
+: <a class="el" href="classeagine_1_1msgbus_1_1remote__node.html#a01daead81b242e204328966356bc3fbc">eagine::msgbus::remote_node</a>
+</li>
+<li>pivot_loc()
+: <a class="el" href="classeagine_1_1oglplus_1_1vertex__attrib__bindings.html#a479a4ae33ad584b7ab57a30b4711349f">eagine::oglplus::vertex_attrib_bindings</a>
+</li>
 <li>plus()
 : <a class="el" href="classeagine_1_1math_1_1sign.html#a214e97f072681a74bac97f859277dda9">eagine::math::sign&lt; T &gt;</a>
 </li>
 <li>point_at()
 : <a class="el" href="classeagine_1_1math_1_1basic__line.html#a0fd008eda98f8a8393cf3d80e5938013">eagine::math::basic_line&lt; T, N, V &gt;</a>
 </li>
+<li>pointer_ray()
+: <a class="el" href="classeagine_1_1oglplus_1_1orbiting__camera.html#a77bfab251366be62fd3752cbfd48554d">eagine::oglplus::orbiting_camera</a>
+</li>
 <li>points_are_ok()
 : <a class="el" href="classeagine_1_1math_1_1bezier__curves.html#aa32437fe603b4d509d775ad8c61ee2a7">eagine::math::bezier_curves&lt; Type, Parameter, Order &gt;</a>
 </li>
 <li>policy()
-: <a class="el" href="classeagine_1_1basic__valid__if.html#a9cb0a5f3820a0eef51c017111497b077">eagine::basic_valid_if&lt; T, Policy, DoLog, P &gt;</a>
+: <a class="el" href="classeagine_1_1basic__valid__if.html#aba47a24764ed62b1a5157451986363bd">eagine::basic_valid_if&lt; T, Policy, DoLog, P &gt;</a>
 </li>
 <li>pop()
 : <a class="el" href="classeagine_1_1block__data__source.html#a33bccfd42fe92ea8071ea3f1124c0a5d">eagine::block_data_source</a>
@@ -127,13 +157,63 @@ $(function() {
 </li>
 <li>position()
 : <a class="el" href="classeagine_1_1math_1_1bezier__curves.html#a6a2b07fe455abbeaed0eb3080a942c4f">eagine::math::bezier_curves&lt; Type, Parameter, Order &gt;</a>
+, <a class="el" href="classeagine_1_1oglplus_1_1orbiting__camera.html#aa40f74bbc5a44a844a6171ea8337b086">eagine::oglplus::orbiting_camera</a>
 , <a class="el" href="classeagine_1_1program__arg.html#af24795526edbb9c122b709c9ce4c3759">eagine::program_arg</a>
 </li>
 <li>position01()
 : <a class="el" href="classeagine_1_1math_1_1bezier__curves.html#a78fb610bd27a627e291437f95d00d3fc">eagine::math::bezier_curves&lt; Type, Parameter, Order &gt;</a>
 </li>
+<li>position_loc()
+: <a class="el" href="classeagine_1_1oglplus_1_1vertex__attrib__bindings.html#af2e46903e610afe3277d6879eaaa5cff">eagine::oglplus::vertex_attrib_bindings</a>
+</li>
+<li>posix_mqueue()
+: <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue.html#ae00b236fdd87d1350da3dcb5799d8d46">eagine::msgbus::posix_mqueue</a>
+</li>
+<li>posix_mqueue_acceptor()
+: <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__acceptor.html#a6786e0cdade3d3fdbe3f41808a5313c2">eagine::msgbus::posix_mqueue_acceptor</a>
+</li>
+<li>posix_mqueue_connection()
+: <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection.html#a4df6547ca75be5d4a6913a6cc1e12335">eagine::msgbus::posix_mqueue_connection</a>
+</li>
+<li>posix_mqueue_connection_factory()
+: <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection__factory.html#a260dc9b9eb19e9d99f4ff6402ea86992">eagine::msgbus::posix_mqueue_connection_factory</a>
+</li>
+<li>posix_mqueue_connector()
+: <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connector.html#a486a7925b1c10542fcee66594ba509ba">eagine::msgbus::posix_mqueue_connector</a>
+</li>
+<li>post()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a7c4f836a671b4f5878da726037661c64">eagine::msgbus::endpoint</a>
+</li>
+<li>post_blob()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#adf59be0177ac5bb5e3de97fa252ed9fb">eagine::msgbus::endpoint</a>
+</li>
+<li>post_callable()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a23febaeb6adf8754029ab3ba405b831e">eagine::msgbus::endpoint</a>
+</li>
+<li>post_certificate()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#ab41fb6a41b860b85b10cff1e30271872">eagine::msgbus::endpoint</a>
+</li>
+<li>post_meta_message()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a59e518de68bec5d67c21279372216027">eagine::msgbus::endpoint</a>
+</li>
+<li>post_meta_message_to()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a91442d2b6ec1bc6d3de87bacef2c2c79">eagine::msgbus::endpoint</a>
+</li>
+<li>post_signed()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#af9aa01df56c8597ee2b6a8665be87242">eagine::msgbus::endpoint</a>
+</li>
+<li>post_value()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a1e07399d49ceb3a841df18d8d3d44b09">eagine::msgbus::endpoint</a>
+</li>
 <li>power_supply()
-: <a class="el" href="classeagine_1_1system__info.html#afca620dd6f51597234e9a13056a3759a">eagine::system_info</a>
+: <a class="el" href="classeagine_1_1msgbus_1_1remote__host.html#a0984f756cf95331079ba4e7cd95e59a4">eagine::msgbus::remote_host</a>
+, <a class="el" href="classeagine_1_1system__info.html#afca620dd6f51597234e9a13056a3759a">eagine::system_info</a>
+</li>
+<li>preconfigure_id()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a581fd341b2160e2aa6f40517197a42e0">eagine::msgbus::endpoint</a>
+</li>
+<li>prefer_gles()
+: <a class="el" href="classeagine_1_1app_1_1video__options.html#a5d53ca3c47407d1d9081a45c3e440358">eagine::app::video_options</a>
 </li>
 <li>preinitialize()
 : <a class="el" href="classeagine_1_1application__config.html#a99a23e50edd2ce666a30555d0c801d6c">eagine::application_config</a>
@@ -141,11 +221,50 @@ $(function() {
 , <a class="el" href="structeagine_1_1main__ctx__getters.html#a104996b56823f6b27b527c6f51e50877">eagine::main_ctx_getters</a>
 , <a class="el" href="classeagine_1_1system__info.html#a9b457105d90c962856c9fa950c1f9ed1">eagine::system_info</a>
 </li>
+<li>prepare()
+: <a class="el" href="classeagine_1_1app_1_1execution__context.html#a4fabcfbb002b5d0a927d414a819723a3">eagine::app::execution_context</a>
+</li>
+<li>pressure_input()
+: <a class="el" href="classeagine_1_1app_1_1orbiting__camera.html#a206c5dad8f4b4a7038412b36021b60cf">eagine::app::orbiting_camera</a>
+</li>
 <li>prev()
 : <a class="el" href="classeagine_1_1program__arg.html#ac26b54f1beabdb8608fc4e924e421e7e">eagine::program_arg</a>
 </li>
+<li>primitive_restart()
+: <a class="el" href="structeagine_1_1shapes_1_1generator.html#a318dcab7ebba1eaf577ab3fa82f2298e">eagine::shapes::generator</a>
+</li>
+<li>print()
+: <a class="el" href="classeagine_1_1msgbus_1_1sudoku__tiles.html#a62a402bf6f4cd20ead7b65dba15d4481">eagine::msgbus::sudoku_tiles&lt; S &gt;</a>
+</li>
+<li>print_progress()
+: <a class="el" href="classeagine_1_1msgbus_1_1sudoku__tiles.html#a9ca3c1ef1a83e4a8abca5446067d3b71">eagine::msgbus::sudoku_tiles&lt; S &gt;</a>
+</li>
+<li>process_accepted()
+: <a class="el" href="structeagine_1_1msgbus_1_1acceptor.html#aad1e20ccdc3325ef248b2587bc0da021">eagine::msgbus::acceptor</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1direct__acceptor.html#aab2215d07e72dc491c4bb0c7101687ce">eagine::msgbus::direct_acceptor</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__acceptor.html#a004ffc7228b06ba8274a81ef10833495">eagine::msgbus::posix_mqueue_acceptor</a>
+</li>
+<li>process_all()
+: <a class="el" href="classeagine_1_1msgbus_1_1actor.html#a8eae4846fb0f18bc395af24c7d6e96be">eagine::msgbus::actor&lt; N, Subscriber &gt;</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1direct__connection__address.html#ac0b89416bf8a599909bd2148fab5d0d3">eagine::msgbus::direct_connection_address</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a0c2f11f69cc77923efdcd4ec7f6cc229">eagine::msgbus::endpoint</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1static__subscriber.html#a74db9eaa8e66ca9ae0a7618b00f3baf0">eagine::msgbus::static_subscriber&lt; N &gt;</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1subscriber.html#afd4a65be9362abaf03e75ef5ddf82b89">eagine::msgbus::subscriber</a>
+</li>
+<li>process_everything()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a3863953f31b550d8340745cf9f9b5861">eagine::msgbus::endpoint</a>
+</li>
 <li>process_instance_id()
 : <a class="el" href="classeagine_1_1main__ctx__object.html#afb1f82d8044e0ab9e24cc9cb144cd959">eagine::main_ctx_object</a>
+</li>
+<li>process_one()
+: <a class="el" href="classeagine_1_1msgbus_1_1actor.html#a2d090a910a3ec913866779fa77a7784e">eagine::msgbus::actor&lt; N, Subscriber &gt;</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#aefd94cc2d04326228dfb862421813809">eagine::msgbus::endpoint</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1static__subscriber.html#ac2e8f7a6e05facd50781c02be1bc2abb">eagine::msgbus::static_subscriber&lt; N &gt;</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1subscriber.html#a9dedf199c928d3f8373ed46e8e2a6b52">eagine::msgbus::subscriber</a>
+</li>
+<li>prog_var_location()
+: <a class="el" href="classeagine_1_1oglplus_1_1prog__var__location.html#a6516656e55ae5ae388d4abf7e0d29959">eagine::oglplus::prog_var_location&lt; TagId &gt;</a>
 </li>
 <li>program_arg()
 : <a class="el" href="classeagine_1_1program__arg.html#a4d2eff53962fbd719eb7ff1d194d6c6b">eagine::program_arg</a>
@@ -158,11 +277,26 @@ $(function() {
 , <a class="el" href="structeagine_1_1main__ctx__getters.html#a2aae729029f29804edd88f60693d4f34">eagine::main_ctx_getters</a>
 , <a class="el" href="classeagine_1_1main__ctx__object.html#a39289a3d0f5ccd0e64efc5c897e1fd0e">eagine::main_ctx_object</a>
 </li>
+<li>promise()
+: <a class="el" href="classeagine_1_1msgbus_1_1promise.html#a2c324daff0c38bbcc8afda56c6d6aef2">eagine::msgbus::promise&lt; T &gt;</a>
+</li>
+<li>provided_endpoint_info()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint__info__provider.html#a4b938db96703ccf55b7ef1fd71a77006">eagine::msgbus::endpoint_info_provider&lt; Base &gt;</a>
+</li>
+<li>provider()
+: <a class="el" href="classeagine_1_1app_1_1video__options.html#a34a2506bdedecdfac28dea254c14bb22">eagine::app::video_options</a>
+</li>
 <li>ptr()
 : <a class="el" href="classeagine_1_1memory_1_1basic__address.html#a8ec4a275ef7d727e8a8dac4822ab7c7a">eagine::memory::basic_address&lt; IsConst &gt;</a>
 </li>
+<li>push()
+: <a class="el" href="classeagine_1_1msgbus_1_1message__storage.html#a85f6e228c2e6e4acaafe62c47c116f3c">eagine::msgbus::message_storage</a>
+</li>
 <li>push_back()
 : <a class="el" href="classeagine_1_1basic__string__path.html#ae580d09936c35e76646882a13ecc8eae">eagine::basic_string_path</a>
+</li>
+<li>push_if()
+: <a class="el" href="classeagine_1_1msgbus_1_1message__storage.html#a264a5096c905d8f1004b2685094b0a9a">eagine::msgbus::message_storage</a>
 </li>
 </ul>
 </div><!-- contents -->

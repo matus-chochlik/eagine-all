@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/c_api/buffer_data.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,114 +73,114 @@ $(function() {
 <div class="title">buffer_data.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="buffer__data_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EAGINE_C_API_BUFFER_DATA_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define EAGINE_C_API_BUFFER_DATA_HPP</span></div>
+<a href="buffer__data_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_C_API_BUFFER_DATA_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_C_API_BUFFER_DATA_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../memory/block.hpp&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../span.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../type_identity.hpp&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../types.hpp&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../memory/block.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../span.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../type_identity.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../types.hpp&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>eagine::c_api {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::c_api {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class </span>buffer_size {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class</span> buffer_size {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    constexpr buffer_size() noexcept = default;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">constexpr</span> buffer_size() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    explicit constexpr buffer_size(const S v) noexcept</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">explicit</span> <span class="keyword">constexpr</span> buffer_size(<span class="keyword">const</span> S v) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      : _v{v} {}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    constexpr buffer_size(</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keyword">const</span> type_identity&lt;T&gt;,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> count) noexcept</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">constexpr</span> buffer_size(</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keyword">const</span> <a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;T&gt;,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keyword">const</span> span_size_t count) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      : _v{S(span_size_of&lt;T&gt;() * count)} {}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> P, <span class="keyword">typename</span> Z&gt;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    constexpr buffer_size(<span class="keyword">const</span> memory::basic_span&lt;T, P, Z&gt; s) noexcept</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      : _v{S(span_size_of&lt;T&gt;() * <a class="code" href="group__type__utils.html#ga37d3047b5216d5051cfb6781ea922d21">span_size</a>(s.size()))} {}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">constexpr</span> buffer_size(<span class="keyword">const</span> memory::<a class="code" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt;T, P, Z&gt; s) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      : _v{S(span_size_of&lt;T&gt;() * span_size(s.size()))} {}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    constexpr <span class="keyword">auto</span> get() const noexcept -&gt; S {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> get() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; S {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> _v;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    constexpr <span class="keyword">operator</span> S() const noexcept {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">constexpr</span> operator S() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> _v;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">explicit</span> constexpr <span class="keyword">operator</span> T()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">explicit</span> <span class="keyword">constexpr</span> operator T() <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> T(_v);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">friend</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__string__utils.html#ga88ecee40c099e16bfd49dfc61eeb0d37">operator+</a>(buffer_size a, buffer_size b) noexcept</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">friend</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> operator+(buffer_size a, buffer_size b) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      -&gt; buffer_size {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> {a._v + b._v};</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    static_assert(std::is_integral_v&lt;S&gt;);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">static_assert</span>(std::is_integral_v&lt;S&gt;);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    S _v{0};</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">class </span>buffer_data_spec {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">class</span> buffer_data_spec {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    buffer_data_spec() noexcept = default;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    buffer_data_spec() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    buffer_data_spec(const memory::<a class="code" href="group__memory.html#ga5dd5ce1a14209336eb031bc930d736f4">block</a>&amp; blk) noexcept</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      : _size{S(blk.size())}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      , _data{blk.data()} {}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    buffer_data_spec(<span class="keyword">const</span> memory::block&amp; blk) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      : _size{S(blk<a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">.</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">size</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">(</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#acfe00749993ad5c0d7eac29e0f14b6ee">)</a>)}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      , _data{blk<a class="code" href="classeagine_1_1memory_1_1basic__span.html#a3a5937034c53385030e419e141f81ef2">.</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#a3a5937034c53385030e419e141f81ef2">data</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#a3a5937034c53385030e419e141f81ef2">(</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#a3a5937034c53385030e419e141f81ef2">)</a>} {}</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, span_<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    buffer_data_spec(<span class="keyword">const</span> T (&amp;data)[N]) noexcept</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      : _size{type_identity&lt;T&gt;(), N}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      , _data{<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(data)} {}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, span_size_t N&gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    buffer_data_spec(<span class="keyword">const</span> T (&amp;data)[N]) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      : _size{<a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;T&gt;(), N}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      , _data{<span class="keyword">static_cast</span>&lt;<span class="keyword">const</span> <span class="keywordtype">void</span>*&gt;(data)} {}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    buffer_data_spec(<span class="keyword">const</span> T* data, <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> n) noexcept</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      : _size(type_identity&lt;T&gt;(), n)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    buffer_data_spec(<span class="keyword">const</span> T* data, span_size_t n) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      : _size(<a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;T&gt;(), n)</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      , _data(data) {}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    buffer_data_spec(span&lt;T&gt; av) noexcept</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    buffer_data_spec(span&lt;T&gt; av) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      : _size{av}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      , _data{av.data()} {}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__valtree.html#ga563e08e23d7b171acd73bc62bb24ee5b">empty</a>() const noexcept -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">auto</span> empty() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> _size.get() == 0;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">auto</span> size() const noexcept -&gt; buffer_size&lt;S&gt; {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">auto</span> size() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; buffer_size&lt;S&gt; {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> _size;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">auto</span> data() const noexcept -&gt; const <span class="keywordtype">void</span>* {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">auto</span> data() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keyword">const</span> <span class="keywordtype">void</span>* {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> _data;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">auto</span> <a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>() const noexcept -&gt; <a class="code" href="group__memory.html#gad51eebf35c26db72a8735cf80a569099">span</a>&lt;const <span class="keywordtype">byte</span>&gt; {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">auto</span> view() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; span&lt;<span class="keyword">const</span> byte&gt; {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">byte</span>*<span class="keyword">&gt;</span>(_data), <span class="keyword">static_cast&lt;</span>std::ptrdiff_t<span class="keyword">&gt;</span>(_size)};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          <span class="keyword">static_cast</span>&lt;<span class="keyword">const</span> byte*&gt;(_data), <span class="keyword">static_cast</span>&lt;std::ptrdiff_t&gt;(_size)};</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    buffer_size&lt;S&gt; _size{};</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span>* _data{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span>* _data{<span class="keywordtype">nullptr</span>};</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;} <span class="comment">// namespace eagine::c_api</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agroup__memory_html_ga5dd5ce1a14209336eb031bc930d736f4"><div class="ttname"><a href="group__memory.html#ga5dd5ce1a14209336eb031bc930d736f4">eagine::memory::block</a></div><div class="ttdeci">basic_block&lt; false &gt; block</div><div class="ttdoc">Alias for non-const byte memory span.</div><div class="ttdef"><b>Definition:</b> block.hpp:27</div></div>
-<div class="ttc" id="agroup__memory_html_ga9534fdd13884329a5c5e5c10b3337f80"><div class="ttname"><a href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">eagine::memory::view</a></div><div class="ttdeci">static constexpr auto view(T *addr, const S size) noexcept -&gt; const_span&lt; T &gt;</div><div class="ttdoc">Creates a view starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:478</div></div>
-<div class="ttc" id="agroup__memory_html_gad51eebf35c26db72a8735cf80a569099"><div class="ttname"><a href="group__memory.html#gad51eebf35c26db72a8735cf80a569099">eagine::memory::span</a></div><div class="ttdeci">basic_span&lt; T, T *, S &gt; span</div><div class="ttdoc">Default alias for basic memory spans with native pointer type.</div><div class="ttdef"><b>Definition:</b> span.hpp:435</div></div>
-<div class="ttc" id="agroup__string__utils_html_ga88ecee40c099e16bfd49dfc61eeb0d37"><div class="ttname"><a href="group__string__utils.html#ga88ecee40c099e16bfd49dfc61eeb0d37">eagine::operator+</a></div><div class="ttdeci">static constexpr auto operator+(const fixed_size_string&lt; N1 &gt; &amp;s1, const fixed_size_string&lt; N2 &gt; &amp;s2) noexcept</div><div class="ttdoc">Concatenation operator for fixed_size_string.</div><div class="ttdef"><b>Definition:</b> fixed_size_str.hpp:129</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga37d3047b5216d5051cfb6781ea922d21"><div class="ttname"><a href="group__type__utils.html#ga37d3047b5216d5051cfb6781ea922d21">eagine::span_size</a></div><div class="ttdeci">static constexpr auto span_size(const T v) noexcept</div><div class="ttdoc">Converts argument to span size type.</div><div class="ttdef"><b>Definition:</b> types.hpp:59</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
-<div class="ttc" id="agroup__valtree_html_ga563e08e23d7b171acd73bc62bb24ee5b"><div class="ttname"><a href="group__valtree.html#ga563e08e23d7b171acd73bc62bb24ee5b">eagine::valtree::empty</a></div><div class="ttdeci">auto empty(main_ctx_parent) -&gt; compound</div><div class="ttdoc">Creates a compound representing an empty subtree.</div><div class="ttdef"><b>Definition:</b> empty.inl:91</div></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

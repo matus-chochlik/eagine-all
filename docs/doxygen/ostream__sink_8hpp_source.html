@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/serialize/ostream_sink.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,65 +73,76 @@ $(function() {
 <div class="title">ostream_sink.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ostream__sink_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_SERIALIZE_OSTREAM_SINK_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_SERIALIZE_OSTREAM_SINK_HPP</span></div>
+<a href="ostream__sink_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_SERIALIZE_OSTREAM_SINK_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_SERIALIZE_OSTREAM_SINK_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="data__sink_8hpp.html">data_sink.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="data__sink_8hpp.html">&quot;data_sink.hpp&quot;</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">limits</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">ostream</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">sstream</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stack</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html">   23</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classeagine_1_1ostream__data__sink.html">ostream_data_sink</a> : <span class="keyword">public</span> <a class="code" href="structeagine_1_1serializer__data__sink.html">serializer_data_sink</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// @brief Serialization data sink backed by an output stream.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// @ingroup serialization</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// @see istream_data_source</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html">   23</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1ostream__data__sink.html">ostream_data_sink</a> : <span class="keyword">public</span> <a class="code" href="structeagine_1_1serializer__data__sink.html">serializer_data_sink</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#a3908f5a83f439b979f6e50a9836eb752">   26</a></span>&#160;    <a class="code" href="classeagine_1_1ostream__data__sink.html#a3908f5a83f439b979f6e50a9836eb752">ostream_data_sink</a>(std::ostream&amp; out) noexcept</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/// @brief Constructor setting the target stream.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#a3908f5a83f439b979f6e50a9836eb752">   26</a></span>&#160;    <a class="code" href="classeagine_1_1ostream__data__sink.html#a3908f5a83f439b979f6e50a9836eb752">ostream_data_sink</a>(std::ostream&amp; out) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      : _out{out} {}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#a0237a2a0d44f797c996fb949e85a5b37">   29</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1ostream__data__sink.html#a0237a2a0d44f797c996fb949e85a5b37">remaining_size</a>() noexcept -&gt; <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> final {</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#a0237a2a0d44f797c996fb949e85a5b37">   29</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1ostream__data__sink.html#a0237a2a0d44f797c996fb949e85a5b37">remaining_size</a>() <span class="keyword">noexcept</span> -&gt; span_size_t <span class="keyword">final</span> {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> std::numeric_limits&lt;span_size_t&gt;::max();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="structeagine_1_1serializer__data__sink.html#abf45f61c01f923d07cee419edf34573f">serializer_data_sink::write</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="structeagine_1_1serializer__data__sink.html">serializer_data_sink</a>::write;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#ac134fedf9c847af68a949b608fa09dcc">   35</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1ostream__data__sink.html#ac134fedf9c847af68a949b608fa09dcc">write</a>(<a class="code" href="classeagine_1_1memory_1_1basic__span.html">memory::const_block</a> blk) noexcept -&gt; <a class="code" href="classeagine_1_1bitfield.html">serialization_errors</a> <span class="keyword">final</span> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#ac134fedf9c847af68a949b608fa09dcc">   35</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1ostream__data__sink.html#ac134fedf9c847af68a949b608fa09dcc">write</a>(memory::const_block blk) <span class="keyword">noexcept</span> -&gt; serialization_errors <span class="keyword">final</span> {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        write_to_stream(current(), blk);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span>(current().eof()) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> {<a class="code" href="group__serialization.html#ggafee717c442dcb978e0d9e9c163be4024ab7df96beba6144b45fbddaf6c5a609ff">serialization_error_code::too_much_data</a>};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> {serialization_error_code::too_much_data};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span>(!current().good()) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> {<a class="code" href="group__serialization.html#ggafee717c442dcb978e0d9e9c163be4024a81026d4f703e33fed82d32f4c52319bf">serialization_error_code::data_sink_error</a>};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> {serialization_error_code::data_sink_error};</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> {};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#a60fa5a9b8e2fa9931ab6798349d20d19">   46</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1ostream__data__sink.html#a60fa5a9b8e2fa9931ab6798349d20d19">begin_work</a>() noexcept -&gt; <a class="code" href="structeagine_1_1serializer__data__sink.html#adf622401a082c5666698ace663a281b7">transaction_handle</a> final {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#a60fa5a9b8e2fa9931ab6798349d20d19">   46</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1ostream__data__sink.html#a60fa5a9b8e2fa9931ab6798349d20d19">begin_work</a>() <span class="keyword">noexcept</span> -&gt; transaction_handle <span class="keyword">final</span> {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        _subs.emplace();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structeagine_1_1serializer__data__sink.html#adf622401a082c5666698ace663a281b7">transaction_handle</a>(_subs.size());</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> transaction_handle(_subs.size());</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">auto</span> commit([[maybe_unused]] <span class="keyword">const</span> <a class="code" href="structeagine_1_1serializer__data__sink.html#adf622401a082c5666698ace663a281b7">transaction_handle</a> th) noexcept</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      -&gt; <a class="code" href="classeagine_1_1bitfield.html">serialization_errors</a> <span class="keyword">final</span> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        EAGINE_ASSERT(th == <a class="code" href="structeagine_1_1serializer__data__sink.html#adf622401a082c5666698ace663a281b7">transaction_handle</a>(_subs.size()));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">auto</span> commit([[maybe_unused]] <span class="keyword">const</span> transaction_handle th) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      -&gt; serialization_errors <span class="keyword">final</span> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="assert_8hpp.html#a3921302d367472812669849fd0b5f616">EAGINE_ASSERT</a>(th == transaction_handle(_subs.size()));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::stringstream top{std::move(_subs.top())};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        _subs.pop();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        current() &lt;&lt; top.rdbuf();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> {};</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> rollback([[maybe_unused]] <span class="keyword">const</span> <a class="code" href="structeagine_1_1serializer__data__sink.html#adf622401a082c5666698ace663a281b7">transaction_handle</a> th) noexcept <span class="keyword">final</span> {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        EAGINE_ASSERT(th == <a class="code" href="structeagine_1_1serializer__data__sink.html#adf622401a082c5666698ace663a281b7">transaction_handle</a>(_subs.size()));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> rollback([[maybe_unused]] <span class="keyword">const</span> transaction_handle th) <span class="keyword">noexcept</span> <span class="keyword">final</span> {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="assert_8hpp.html#a3921302d367472812669849fd0b5f616">EAGINE_ASSERT</a>(th == transaction_handle(_subs.size()));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        _subs.pop();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#a9123c70cebe8ac9c19fd67b53c913608">   65</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1ostream__data__sink.html#a9123c70cebe8ac9c19fd67b53c913608">finalize</a>() noexcept -&gt; <a class="code" href="classeagine_1_1bitfield.html">serialization_errors</a> final {</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classeagine_1_1ostream__data__sink.html#a9123c70cebe8ac9c19fd67b53c913608">   65</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1ostream__data__sink.html#a9123c70cebe8ac9c19fd67b53c913608">finalize</a>() <span class="keyword">noexcept</span> -&gt; serialization_errors <span class="keyword">final</span> {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> {};</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">auto</span> current() noexcept -&gt; std::ostream&amp; {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">auto</span> current() <span class="keyword">noexcept</span> -&gt; std::ostream&amp; {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(_subs.empty()) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> _out;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
@@ -144,23 +155,7 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_SERIALIZE_OSTREAM_SINK_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1bitfield_html"><div class="ttname"><a href="classeagine_1_1bitfield.html">eagine::bitfield</a></div><div class="ttdoc">Class for manipulating and testing a group of enumeration-based bits.</div><div class="ttdef"><b>Definition:</b> bitfield.hpp:19</div></div>
-<div class="ttc" id="aclasseagine_1_1memory_1_1basic__span_html"><div class="ttname"><a href="classeagine_1_1memory_1_1basic__span.html">eagine::memory::basic_span</a></div><div class="ttdoc">Non-owning view of a contiguous range of memory with ValueType elements.</div><div class="ttdef"><b>Definition:</b> span.hpp:103</div></div>
-<div class="ttc" id="aclasseagine_1_1ostream__data__sink_html"><div class="ttname"><a href="classeagine_1_1ostream__data__sink.html">eagine::ostream_data_sink</a></div><div class="ttdoc">Serialization data sink backed by an output stream.</div><div class="ttdef"><b>Definition:</b> ostream_sink.hpp:23</div></div>
-<div class="ttc" id="aclasseagine_1_1ostream__data__sink_html_a0237a2a0d44f797c996fb949e85a5b37"><div class="ttname"><a href="classeagine_1_1ostream__data__sink.html#a0237a2a0d44f797c996fb949e85a5b37">eagine::ostream_data_sink::remaining_size</a></div><div class="ttdeci">auto remaining_size() noexcept -&gt; span_size_t final</div><div class="ttdoc">Returns the remaining available size for data in this sink.</div><div class="ttdef"><b>Definition:</b> ostream_sink.hpp:29</div></div>
-<div class="ttc" id="aclasseagine_1_1ostream__data__sink_html_a3908f5a83f439b979f6e50a9836eb752"><div class="ttname"><a href="classeagine_1_1ostream__data__sink.html#a3908f5a83f439b979f6e50a9836eb752">eagine::ostream_data_sink::ostream_data_sink</a></div><div class="ttdeci">ostream_data_sink(std::ostream &amp;out) noexcept</div><div class="ttdoc">Constructor setting the target stream.</div><div class="ttdef"><b>Definition:</b> ostream_sink.hpp:26</div></div>
-<div class="ttc" id="aclasseagine_1_1ostream__data__sink_html_a60fa5a9b8e2fa9931ab6798349d20d19"><div class="ttname"><a href="classeagine_1_1ostream__data__sink.html#a60fa5a9b8e2fa9931ab6798349d20d19">eagine::ostream_data_sink::begin_work</a></div><div class="ttdeci">auto begin_work() noexcept -&gt; transaction_handle final</div><div class="ttdoc">Begins a write transaction on this data sink.</div><div class="ttdef"><b>Definition:</b> ostream_sink.hpp:46</div></div>
-<div class="ttc" id="aclasseagine_1_1ostream__data__sink_html_a9123c70cebe8ac9c19fd67b53c913608"><div class="ttname"><a href="classeagine_1_1ostream__data__sink.html#a9123c70cebe8ac9c19fd67b53c913608">eagine::ostream_data_sink::finalize</a></div><div class="ttdeci">auto finalize() noexcept -&gt; serialization_errors final</div><div class="ttdoc">Does additional finalization, like compression after serialization operation.</div><div class="ttdef"><b>Definition:</b> ostream_sink.hpp:65</div></div>
-<div class="ttc" id="aclasseagine_1_1ostream__data__sink_html_ac134fedf9c847af68a949b608fa09dcc"><div class="ttname"><a href="classeagine_1_1ostream__data__sink.html#ac134fedf9c847af68a949b608fa09dcc">eagine::ostream_data_sink::write</a></div><div class="ttdeci">auto write(memory::const_block blk) noexcept -&gt; serialization_errors final</div><div class="ttdoc">Writes a block of data into this sink.</div><div class="ttdef"><b>Definition:</b> ostream_sink.hpp:35</div></div>
-<div class="ttc" id="adata__sink_8hpp_html"><div class="ttname"><a href="data__sink_8hpp.html">data_sink.hpp</a></div></div>
-<div class="ttc" id="agroup__serialization_html_ggafee717c442dcb978e0d9e9c163be4024a81026d4f703e33fed82d32f4c52319bf"><div class="ttname"><a href="group__serialization.html#ggafee717c442dcb978e0d9e9c163be4024a81026d4f703e33fed82d32f4c52319bf">eagine::serialization_error_code::data_sink_error</a></div><div class="ttdeci">@ data_sink_error</div><div class="ttdoc">Internal error in the serialization data sink.</div></div>
-<div class="ttc" id="agroup__serialization_html_ggafee717c442dcb978e0d9e9c163be4024ab7df96beba6144b45fbddaf6c5a609ff"><div class="ttname"><a href="group__serialization.html#ggafee717c442dcb978e0d9e9c163be4024ab7df96beba6144b45fbddaf6c5a609ff">eagine::serialization_error_code::too_much_data</a></div><div class="ttdeci">@ too_much_data</div><div class="ttdoc">Too much data to fit into serialization data sink.</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="astructeagine_1_1serializer__data__sink_html"><div class="ttname"><a href="structeagine_1_1serializer__data__sink.html">eagine::serializer_data_sink</a></div><div class="ttdoc">Abstract base class for serialization data sinks.</div><div class="ttdef"><b>Definition:</b> data_sink.hpp:24</div></div>
-<div class="ttc" id="astructeagine_1_1serializer__data__sink_html_abf45f61c01f923d07cee419edf34573f"><div class="ttname"><a href="structeagine_1_1serializer__data__sink.html#abf45f61c01f923d07cee419edf34573f">eagine::serializer_data_sink::write</a></div><div class="ttdeci">virtual auto write(memory::const_block data) noexcept -&gt; result=0</div><div class="ttdoc">Writes a block of data into this sink.</div></div>
-<div class="ttc" id="astructeagine_1_1serializer__data__sink_html_adf622401a082c5666698ace663a281b7"><div class="ttname"><a href="structeagine_1_1serializer__data__sink.html#adf622401a082c5666698ace663a281b7">eagine::serializer_data_sink::transaction_handle</a></div><div class="ttdeci">std::uintptr_t transaction_handle</div><div class="ttdoc">Alias for type indentifying sink transaction that can be rolled back.</div><div class="ttdef"><b>Definition:</b> data_sink.hpp:60</div></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_SERIALIZE_OSTREAM_SINK_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

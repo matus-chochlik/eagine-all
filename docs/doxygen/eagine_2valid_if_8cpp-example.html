@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/valid_if.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,47 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="valid__if_2filesystem_8hpp.html">eagine/valid_if/filesystem.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="positive_8hpp.html">eagine/valid_if/positive.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>** argv) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line">    <a name="_a0"></a><a class="code" href="classeagine_1_1basic__valid__if.html">eagine::valid_if_positive&lt;int&amp;&gt;</a> vi{i};</div>
+<div class="line">    <span class="keywordflow">if</span>(has_value(vi)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;A&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">    i = argc;</div>
+<div class="line">    <span class="keywordflow">if</span>(has_value(vi)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;B&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">    vi = 0;</div>
+<div class="line">    <span class="keywordflow">if</span>(has_value(vi)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;C|&quot;</span> &lt;&lt; i &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="classeagine_1_1basic__valid__if.html">eagine::valid_if_existing_file&lt;eagine::basic_string_path&gt;</a> vf{</div>
+<div class="line">      <a name="_a1"></a><a class="code" href="classeagine_1_1basic__string__span.html">eagine::string_view</a>{argv[0]}};</div>
+<div class="line">    <span class="keywordflow">if</span>(has_value(vf)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;D|&quot;</span> &lt;&lt; <a name="a2"></a><a class="code" href="classeagine_1_1ok.html#a2bb07174336aa5d62490da969b885f20">extract</a>(vf) &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="classeagine_1_1basic__valid__if.html">eagine::valid_if_in_writable_directory&lt;eagine::basic_string_path&gt;</a> vd{</div>
+<div class="line">      <a class="code" href="classeagine_1_1basic__string__span.html">eagine::string_view</a>{argv[0]}};</div>
+<div class="line">    <span class="keywordflow">if</span>(has_value(vd)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;E&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="ttc" id="aclasseagine_1_1basic__string__span_html"><div class="ttname"><a href="classeagine_1_1basic__string__span.html">eagine::basic_string_span&lt; const char &gt;</a></div></div>
+<div class="ttc" id="aclasseagine_1_1basic__valid__if_html"><div class="ttname"><a href="classeagine_1_1basic__valid__if.html">eagine::basic_valid_if</a></div><div class="ttdoc">Basic template for conditionally-valid values.</div><div class="ttdef"><b>Definition:</b> base.hpp:55</div></div>
+<div class="ttc" id="aclasseagine_1_1ok_html_a2bb07174336aa5d62490da969b885f20"><div class="ttname"><a href="classeagine_1_1ok.html#a2bb07174336aa5d62490da969b885f20">eagine::ok::extract</a></div><div class="ttdeci">auto extract(const ok&lt; Outcome &gt; &amp;x) noexcept -&gt; const auto &amp;</div><div class="ttdoc">Overload of extract for instantiations of the ok template.</div><div class="ttdef"><b>Definition:</b> extract.hpp:194</div></div>
+<div class="ttc" id="apositive_8hpp_html"><div class="ttname"><a href="positive_8hpp.html">positive.hpp</a></div></div>
+<div class="ttc" id="avalid__if_2filesystem_8hpp_html"><div class="ttname"><a href="valid__if_2filesystem_8hpp.html">filesystem.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

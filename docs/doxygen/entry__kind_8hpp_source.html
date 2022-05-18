@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/console/entry_kind.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,43 +73,50 @@ $(function() {
 <div class="title">entry_kind.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="entry__kind_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_CONSOLE_ENTRY_KIND_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_CONSOLE_ENTRY_KIND_HPP</span></div>
+<a href="entry__kind_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_CONSOLE_ENTRY_KIND_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_CONSOLE_ENTRY_KIND_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../reflect/enumerators.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../reflect/enumerators.hpp&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">   18</a></span>&#160;<span class="comment"></span><span class="keyword">enum class</span> <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">console_entry_kind</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// @brief Console entry kind enumeration.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @ingroup console</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">   18</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">console_entry_kind</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/// @brief Statistic entries.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba77ddcb5f19832f4145345889013ab3a4">stat</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/// @brief Informational entries.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacaf9b6b99962bf5c2264824231d7a40c">info</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/// @brief Warning entries, indicating potential problems.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba7b83d3f08fa392b79e3f553b585971cd">warning</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/// @brief Error entries, indicating serious problems.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacb5e100e5a9a3e7f6d1fd97512215282">error</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#if !EAGINE_CXX_REFLECTION</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2site_8hpp.html#a1945e9f8fa0794531d11e7ef45e2fc4d">EAGINE_CXX_REFLECTION</a></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Selector&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;constexpr <span class="keyword">auto</span> enumerator_mapping(</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> type_identity&lt;console_entry_kind&gt;,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> Selector) noexcept {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> enumerator_map_type&lt;console_entry_kind, 4&gt;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      {{<span class="stringliteral">&quot;stat&quot;</span>, <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba77ddcb5f19832f4145345889013ab3a4">console_entry_kind::stat</a>},</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;       {<span class="stringliteral">&quot;info&quot;</span>, <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacaf9b6b99962bf5c2264824231d7a40c">console_entry_kind::info</a>},</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;       {<span class="stringliteral">&quot;warning&quot;</span>, <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba7b83d3f08fa392b79e3f553b585971cd">console_entry_kind::warning</a>},</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;       {<span class="stringliteral">&quot;error&quot;</span>, <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacb5e100e5a9a3e7f6d1fd97512215282">console_entry_kind::error</a>}}};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">constexpr</span> <span class="keyword">auto</span> enumerator_mapping(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> <a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;<a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">console_entry_kind</a>&gt;,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> Selector) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> enumerator_map_type&lt;<a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">console_entry_kind</a>, 4&gt;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      {{<span class="stringliteral">&quot;stat&quot;</span>, <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">console_entry_kind</a><a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba77ddcb5f19832f4145345889013ab3a4">::</a><a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba77ddcb5f19832f4145345889013ab3a4">stat</a>},</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;       {<span class="stringliteral">&quot;info&quot;</span>, <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">console_entry_kind</a><a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacaf9b6b99962bf5c2264824231d7a40c">::</a><a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacaf9b6b99962bf5c2264824231d7a40c">info</a>},</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;       {<span class="stringliteral">&quot;warning&quot;</span>, <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">console_entry_kind</a><a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba7b83d3f08fa392b79e3f553b585971cd">::</a><a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba7b83d3f08fa392b79e3f553b585971cd">warning</a>},</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;       {<span class="stringliteral">&quot;error&quot;</span>, <a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">console_entry_kind</a><a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacb5e100e5a9a3e7f6d1fd97512215282">::</a><a class="code" href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacb5e100e5a9a3e7f6d1fd97512215282">error</a>}}};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="anamespaceeagine_html_a35b4984c1aa44f5ef40813943648ba9b"><div class="ttname"><a href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b">eagine::console_entry_kind</a></div><div class="ttdeci">console_entry_kind</div><div class="ttdoc">Console entry kind enumeration.</div><div class="ttdef"><b>Definition:</b> entry_kind.hpp:18</div></div>
-<div class="ttc" id="anamespaceeagine_html_a35b4984c1aa44f5ef40813943648ba9ba77ddcb5f19832f4145345889013ab3a4"><div class="ttname"><a href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba77ddcb5f19832f4145345889013ab3a4">eagine::console_entry_kind::stat</a></div><div class="ttdeci">@ stat</div><div class="ttdoc">Statistic entries.</div></div>
-<div class="ttc" id="anamespaceeagine_html_a35b4984c1aa44f5ef40813943648ba9ba7b83d3f08fa392b79e3f553b585971cd"><div class="ttname"><a href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9ba7b83d3f08fa392b79e3f553b585971cd">eagine::console_entry_kind::warning</a></div><div class="ttdeci">@ warning</div><div class="ttdoc">Warning entries, indicating potential problems.</div></div>
-<div class="ttc" id="anamespaceeagine_html_a35b4984c1aa44f5ef40813943648ba9bacaf9b6b99962bf5c2264824231d7a40c"><div class="ttname"><a href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacaf9b6b99962bf5c2264824231d7a40c">eagine::console_entry_kind::info</a></div><div class="ttdeci">@ info</div><div class="ttdoc">Informational entries.</div></div>
-<div class="ttc" id="anamespaceeagine_html_a35b4984c1aa44f5ef40813943648ba9bacb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9bacb5e100e5a9a3e7f6d1fd97512215282">eagine::console_entry_kind::error</a></div><div class="ttdeci">@ error</div><div class="ttdoc">Error entries, indicating serious problems.</div></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

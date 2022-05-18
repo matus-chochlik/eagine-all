@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/memoized.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,53 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="console_8hpp.html">eagine/console/console.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="memoized_8hpp.html">eagine/memoized.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using</span> N = std::int64_t;</div>
+<div class="line">    memoized&lt;N(N)&gt; fib_memo([](N i, <span class="keyword">auto</span>&amp; memo) -&gt; N {</div>
+<div class="line">        <span class="keywordflow">if</span>(i &lt; 2) {</div>
+<div class="line">            <span class="keywordflow">return</span> 1;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> memo(i, [](N n, <span class="keyword">auto</span>&amp; f) { <span class="keywordflow">return</span> f(n - 2) + f(n - 1); });</div>
+<div class="line">    });</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(N n = 1; n &lt;= 91; ++n) {</div>
+<div class="line">        ctx.cio()</div>
+<div class="line">          .print(<a name="a0"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(memo), <span class="stringliteral">&quot;fib(${n}) = ${f}&quot;</span>)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(n), n)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(f), fib_memo(n));</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    memoized&lt;N(N)&gt; fact_memo([](N i, <span class="keyword">auto</span>&amp; memo) -&gt; N {</div>
+<div class="line">        <span class="keywordflow">if</span>(i &lt; 2) {</div>
+<div class="line">            <span class="keywordflow">return</span> i;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> memo(i, [](N n, <span class="keyword">auto</span>&amp; f) { <span class="keywordflow">return</span> n * f(n - 1); });</div>
+<div class="line">    });</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(N n = 1; n &lt;= 20; ++n) {</div>
+<div class="line">        ctx.cio()</div>
+<div class="line">          .print(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(memo), <span class="stringliteral">&quot;${n}! = ${f}&quot;</span>)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(n), n)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(f), fact_memo(n));</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aconsole_8hpp_html"><div class="ttname"><a href="console_8hpp.html">console.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="amemoized_8hpp_html"><div class="ttname"><a href="memoized_8hpp.html">memoized.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

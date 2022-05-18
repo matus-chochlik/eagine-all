@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Class Members</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -78,11 +78,29 @@ $(function() {
 : <a class="el" href="classeagine_1_1main__ctx__object.html#a9cb558ec84bd4ad63c3915fa51f43b50">eagine::main_ctx_object</a>
 </li>
 <li>main_ctx_object_parent_info()
-: <a class="el" href="classeagine_1_1main__ctx__object__parent__info.html#a2d2e54bda88f9f4f6316299dc37d7e65">eagine::main_ctx_object_parent_info</a>
+: <a class="el" href="classeagine_1_1main__ctx__object__parent__info.html#ad0f71f992e27b6ce43f0d8bae55b8e5d">eagine::main_ctx_object_parent_info</a>
+</li>
+<li>major_version
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__alc__constants.html#a22702f5a31fc8dbbacb3f8c458da2daa">eagine::oalplus::basic_alc_constants&lt; ApiTraits &gt;</a>
+, <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#abbaa14fc43a03c03bb59b481fce8ba9e">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
 </li>
 <li>make()
 : <a class="el" href="structeagine_1_1math_1_1scalar.html#a762d036c31ac2792f2448553a30c233a">eagine::math::scalar&lt; T, N, V &gt;</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1pending__promises.html#a91c8b55a73842cda67ff708b384072b0">eagine::msgbus::pending_promises&lt; T &gt;</a>
 , <a class="el" href="classeagine_1_1valtree_1_1compound.html#a0ed5c59bed140dafac05a45432915e5c">eagine::valtree::compound</a>
+</li>
+<li>make_acceptor()
+: <a class="el" href="structeagine_1_1msgbus_1_1connection__factory.html#a615d5def3fbe3e3886122fba04b568d7">eagine::msgbus::connection_factory</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1direct__connection__factory.html#a615d5def3fbe3e3886122fba04b568d7">eagine::msgbus::direct_connection_factory</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection__factory.html#a4d824d8d79c0393184f2200c4300ceea">eagine::msgbus::posix_mqueue_connection_factory</a>
+</li>
+<li>make_connection()
+: <a class="el" href="classeagine_1_1msgbus_1_1direct__acceptor.html#a23cbd5eee327949bd2f5cdd95d760455">eagine::msgbus::direct_acceptor</a>
+</li>
+<li>make_connector()
+: <a class="el" href="structeagine_1_1msgbus_1_1connection__factory.html#af4e1e88efcd284f26b8ab1c774cbfa5d">eagine::msgbus::connection_factory</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1direct__connection__factory.html#a71cbff6b9fc34ff7e288c8801423a9aa">eagine::msgbus::direct_connection_factory</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection__factory.html#a16aed0b044d1d0fdef9686f4a9624a71">eagine::msgbus::posix_mqueue_connection_factory</a>
 </li>
 <li>make_free()
 : <a class="el" href="structeagine_1_1member__function__constant_3_01RV_07C_1_1_5_08_07P_8_8_8_08_00_01Ptr_01_4.html#a39790cce38e57d6a23c20a125987d203">eagine::member_function_constant&lt; RV(C::*)(P...), Ptr &gt;</a>
@@ -93,31 +111,451 @@ $(function() {
 <li>make_span_putter()
 : <a class="el" href="group__memory.html#ga6e1777a757360856d19eb7ead9dc7cbd">eagine::memory::basic_span&lt; ValueType, Pointer, SizeType &gt;</a>
 </li>
+<li>MakeContextCurrent
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__alc__c__api.html#a545004997d9cddc49257269d654c6a00">eagine::oalplus::basic_alc_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MakeCurrent
+: <a class="el" href="classeagine_1_1eglplus_1_1basic__egl__c__api.html#adba38bf10ed889643d66a8016e9c49d7">eagine::eglplus::basic_egl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>map_coherent_bit
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a12455ecd85bfbbda41e4d4b5817cd563">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>map_flush_explicit_bit
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#afa93aff41c3e1ed8f1f0f5f07e7e2f96">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>map_input()
+: <a class="el" href="classeagine_1_1app_1_1execution__context.html#a6c672602ca1f2203bb267893082275f0">eagine::app::execution_context</a>
+</li>
+<li>map_inputs()
+: <a class="el" href="classeagine_1_1app_1_1execution__context.html#af333f2c87beb92990169a951fdd1c46f">eagine::app::execution_context</a>
+</li>
+<li>map_invalidate_buffer_bit
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#aa7b0d97d13920702411056ce98fe39b4">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>map_invalidate_range_bit
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#adbe595899cfbb84453ea1f250a0dc5c7">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>map_persistent_bit
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a87eacee4233d974c7e9ec8414c1aa8eb">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>map_read_bit
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ac063427782c0378dd0abd46721ca5f18">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>map_unsynchronized_bit
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#af751ba3d0f545ab22de55c59f1b357b0">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>map_write_bit
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a5228f37bbe5252c09c0a1d6ea9af940e">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>MapBuffer
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a75e0a8217b359a1612333e25e102d287">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MapBufferRange
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#af4909cc59547bcc329d8e0a76b80de72">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MapNamedBuffer
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a99aefa26381f8c7643ccd8b6786b5f59">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MapNamedBufferRange
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a5056b9e84a1464ddaa423bc22dcebec0">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>mark_changed()
+: <a class="el" href="classeagine_1_1app_1_1orbiting__camera.html#a23fe4d242ef45822ec19541a9230388f">eagine::app::orbiting_camera</a>
+</li>
 <li>mark_used()
 : <a class="el" href="classeagine_1_1block__data__sink.html#ac56092173cef33dc23485a2dc7dc3c24">eagine::block_data_sink</a>
+</li>
+<li>matrix()
+: <a class="el" href="classeagine_1_1app_1_1orbiting__camera.html#aa0fa85b9cff0dded7aa4e70274758a17">eagine::app::orbiting_camera</a>
+, <a class="el" href="classeagine_1_1oglplus_1_1orbiting__camera.html#a906bbf5231aa04b8a02f14748a33672d">eagine::oglplus::orbiting_camera</a>
+</li>
+<li>matrix_stride
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#affd81df0ce90f10ef0bc9391b2aebee1">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixFrustumEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#ac4cebf621cb2db90dc61c89acd3ca614">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixLoad3x3fNV
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a64593bd454c4dd337f6d3fc88293656e">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixLoaddEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#ab712fce66c305e3568e250c57c41750d">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixLoadfEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#aa1f597977cb453d051e62f13164e9549">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixLoadIdentityEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#adf040c2c32e740a4c2d5ef9957e2a446">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixLoadTranspose3x3fNV
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#aa495d79c6cc2cdfe43f78ed01530c218">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixLoadTransposedEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#ac2433ddb1a8a6dc3f2bb9d5ae0c56bf4">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixLoadTransposefEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a26e81b94480be841502d354c9d2be503">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixMode
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a24fe2a9ca6193a398cf0839a52ada7c2">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixMult3x2fNV
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a58d1ef41074664659bfc290c276d62ca">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixMult3x3fNV
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#afc4753f7c8d45ec38dd515ae95431e06">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixMultdEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a97488fa5c48803d16c08985155194a02">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixMultfEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a5874443869c24e2e70bbfb5b7bfc232a">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixMultTranspose3x3fNV
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a9526a09127b9ef7836b3a225a0c9647a">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixMultTransposedEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#aab460be43ab7d0f25b30e74402dfe2a3">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixMultTransposefEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#af8f6e83f91691eb06e9d6008eda18811">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixOrthoEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a74207798b6feeb9f50095f32a528e856">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixPopEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a314e7cb6bf002004119913038af642bf">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixPushEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#ab7c5c55fe18dc6d9030e15e0207b59d5">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixRotatedEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a86bf384aef28900fac25045ba1858c93">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixRotatefEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#ab4c1e359da25baa31b86409ed9d50dae">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixScaledEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a74232405f71198358e43f7be336e8dbe">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixScalefEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a70e4af38f4ee913336a5fa132379e3cc">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixTranslatedEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#aadf04896f718eee578eafad2174c10d5">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MatrixTranslatefEXT
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a23c66dfdedfff233656480284986bee8">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>max
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a6c24ee62fe9416772a474be619f11adf">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_combined_dimensions
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ae59f49dbf7082bc5916089e337138ec2">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_combined_uniform_blocks
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a125ae5b719027b087bbcbc8d43817dea">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_compute_uniform_blocks
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a8e461a8ce8a29dc65a229921fe2220dc">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_data_size()
+: <a class="el" href="structeagine_1_1msgbus_1_1connection.html#a4fe536afebff88df5177dfa2f4a50730">eagine::msgbus::connection</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#aa599f40665ddde22a5f279a7f5d19ca0">eagine::msgbus::endpoint</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue.html#af9a16c4567d145840a877168e2513f8f">eagine::msgbus::posix_mqueue</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection.html#a61d403a1c359dad40e293276150f2d50">eagine::msgbus::posix_mqueue_connection</a>
+</li>
+<li>max_debug_group_stack_depth
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ab73614c7a8467c395f00d2621ca75708">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_debug_logged_messages
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ac49a8708c9c4d78064b2194bae84b91d">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_debug_message_length
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a6904490073ff8fed9ce55b0377eb8b0f">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_depth
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ab942bbaa20853671a1bad6a7ce8062e9">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_distance
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__al__constants.html#aba58415a151db8355a929bbd031f449d">eagine::oalplus::basic_al_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_fragment_interpolation_offset
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#aec52ef580f7b8ea23e68577e66633daa">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_fragment_uniform_blocks
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ad7f8de39ce88a1c1df07050f327dbf7d">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_gain
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__al__constants.html#a13579d9b52807713c7725ec01d9a3d59">eagine::oalplus::basic_al_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_geometry_uniform_blocks
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a8514ac4925dc215463492cb4dcae2abc">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_height
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a22c90e8c5454d584c2f082587510b8e7">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_hops()
+: <a class="el" href="structeagine_1_1msgbus_1_1subscriber__info.html#acfc7c9ecf3d230a28794fd07f9728f25">eagine::msgbus::subscriber_info</a>
+</li>
+<li>max_label_length
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a1e75f80fb427f439049879d29fdf433e">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_layers
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a1636f87ef4b024bc46dc7f087797dd38">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_shader_compiler_threads
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a214a9b593ed803df18f0c1a8867f6c97">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_temperature()
+: <a class="el" href="classeagine_1_1msgbus_1_1remote__host.html#a35a9064acaeeb5ded42ac4b0e1ff7f67">eagine::msgbus::remote_host</a>
+</li>
+<li>max_temperature_change()
+: <a class="el" href="classeagine_1_1msgbus_1_1remote__host.html#aec432a87175252a54d37ce1f496516a5">eagine::msgbus::remote_host</a>
+</li>
+<li>max_tess_control_uniform_blocks
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a5b7f86c89d348213d5c90dc930e7ae4c">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_tess_evaluation_uniform_blocks
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ab3e81bebbccc341bc02af8bdd620bfea">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_texture_lod_bias
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ac56be917d694872a4005a28af10892ef">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_texture_max_anisotropy
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#afcd6d0e0c4db03d9a125fe88dfef327c">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_uniform_block_size
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a5ac2c4ac2c09ea92dd33edff0c6d27d7">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_vertex_uniform_blocks
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#aa7f98ea44ae363c1f5072404c3990fec">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_viewport_dims
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a048b862f618895de9d67d2c3c5f00f08">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>max_width
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#aadaca880f14ee0dfe2c08208cdcb4fe2">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>MaxShaderCompilerThreadsARB
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#afd3d4e03e3c2370e2914de0d54f17649">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>medium_float
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a9191ee7c3c827ed6fca56983697d5121">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>medium_int
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ab7518a91f6de3feee34c160141abd9d9">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
 </li>
 <li>memory_page_size()
 : <a class="el" href="classeagine_1_1system__info.html#aa0e786a4b1bf686007052fe320273675">eagine::system_info</a>
 </li>
+<li>memory_page_size_received
+: <a class="el" href="classeagine_1_1msgbus_1_1system__info__consumer.html#aaafd1e66c5bed6f54985df86c7979f03">eagine::msgbus::system_info_consumer&lt; Base &gt;</a>
+</li>
+<li>MemoryBarrier
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#aacc9b4ccd0a2e0a14bdce97be18a7909">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MemoryBarrierByRegion
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a87c189be335cc62e48a803f94c082f48">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>message()
+: <a class="el" href="classeagine_1_1eglplus_1_1egl__no__result__info.html#a8a0c475e097ba01a658bedd1dc382cef">eagine::eglplus::egl_no_result_info</a>
+, <a class="el" href="classeagine_1_1eglplus_1_1egl__result__info.html#a52da43d4192792944bfbedfc608c2449">eagine::eglplus::egl_result_info</a>
+, <a class="el" href="classeagine_1_1oalplus_1_1al__no__result__info.html#a908e28910eb82c04afe2be3f2bb9327e">eagine::oalplus::al_no_result_info</a>
+, <a class="el" href="classeagine_1_1oalplus_1_1al__result__info.html#a834f1c916961adaabb4f102b60a897b4">eagine::oalplus::al_result_info</a>
+, <a class="el" href="classeagine_1_1oalplus_1_1alc__no__result__info.html#a998435cf5f349ca32d693a8d2c902ce6">eagine::oalplus::alc_no_result_info</a>
+, <a class="el" href="classeagine_1_1oalplus_1_1alc__result__info.html#ae93b4bcd41bcc04d4c7d1e15f828d197">eagine::oalplus::alc_result_info</a>
+, <a class="el" href="classeagine_1_1oalplus_1_1alut__no__result__info.html#a2b30381f6d6ff159afe96efa306d989c">eagine::oalplus::alut_no_result_info</a>
+, <a class="el" href="classeagine_1_1oalplus_1_1alut__result__info.html#a8e1609f9e0838bd225ef159924bd264f">eagine::oalplus::alut_result_info</a>
+, <a class="el" href="classeagine_1_1oglplus_1_1gl__no__result__info.html#a391e5f211262ae58e70e2e8d515c494b">eagine::oglplus::gl_no_result_info</a>
+, <a class="el" href="classeagine_1_1oglplus_1_1gl__result__info.html#a9b70365203d77df7898ba2b6406e0ff0">eagine::oglplus::gl_result_info</a>
+</li>
+<li>message_age_milliseconds
+: <a class="el" href="structeagine_1_1msgbus_1_1bridge__statistics.html#a4e0100456588b3903fb658df53bb2c36">eagine::msgbus::bridge_statistics</a>
+</li>
+<li>message_age_us
+: <a class="el" href="structeagine_1_1msgbus_1_1router__statistics.html#af8f5d3e86573b32bd78393b6058759c3">eagine::msgbus::router_statistics</a>
+</li>
+<li>message_handler_map()
+: <a class="el" href="structeagine_1_1msgbus_1_1message__handler__map.html#a9f7c14c92850b5b4a77ece8f1a2408e3">eagine::msgbus::message_handler_map&lt; MemFuncConst &gt;</a>
+</li>
 <li>message_id()
 : <a class="el" href="structeagine_1_1message__id.html#a7a612fcaa2b7e3f4a82989c38ebea996">eagine::message_id</a>
 </li>
+<li>message_storage()
+: <a class="el" href="classeagine_1_1msgbus_1_1message__storage.html#a6a5b61354f2d214d33e8e6da00e8ba48">eagine::msgbus::message_storage</a>
+</li>
+<li>message_view()
+: <a class="el" href="classeagine_1_1msgbus_1_1message__view.html#a02fd6d28139b04d0761caa6b97ca627e">eagine::msgbus::message_view</a>
+</li>
+<li>messages_per_second
+: <a class="el" href="structeagine_1_1msgbus_1_1bridge__statistics.html#adf902b74d361acf146dce8070dcd24bb">eagine::msgbus::bridge_statistics</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1remote__node.html#a09b077eda6edc11b7ca4b00bbe57c005">eagine::msgbus::remote_node</a>
+, <a class="el" href="structeagine_1_1msgbus_1_1router__statistics.html#a6b280aad51b198208f29591a6da0bbda">eagine::msgbus::router_statistics</a>
+</li>
+<li>meters_per_unit
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__al__constants.html#a6ff294606720527edc86a5b107927107">eagine::oalplus::basic_al_constants&lt; ApiTraits &gt;</a>
+</li>
 <li>method()
 : <a class="el" href="structeagine_1_1message__id.html#a6b58bfefa85da3b41745f2101e2faa65">eagine::message_id</a>
+, <a class="el" href="structeagine_1_1msgbus_1_1message__handler__map.html#a84dd11553bba0b8b9811ab1b6d81e6f2">eagine::msgbus::message_handler_map&lt; MemFuncConst &gt;</a>
+, <a class="el" href="structeagine_1_1msgbus_1_1static__message__handler__map.html#af293c2f0c6de235db62853524df8d3b0">eagine::msgbus::static_message_handler_map&lt; MessageId, MemFuncConst &gt;</a>
 , <a class="el" href="structeagine_1_1static__message__id.html#ae2d6b1a2faa6b3c6082172dc027d9f9f">eagine::static_message_id&lt; ClassId, MethodId &gt;</a>
+</li>
+<li>method_handler
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a05f0c6257fbac37287459c0ab217df4c">eagine::msgbus::endpoint</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1static__subscriber.html#af3019763452bc77fb6da4f7ee123fd62">eagine::msgbus::static_subscriber&lt; N &gt;</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1subscriber.html#a56ac7fd962410afa2cc700c0c410831d">eagine::msgbus::subscriber</a>
 </li>
 <li>method_id()
 : <a class="el" href="structeagine_1_1message__id.html#afe3795a856ceb7b3e475023c049a6009">eagine::message_id</a>
 , <a class="el" href="structeagine_1_1static__message__id.html#ac8cc46a133bb2afbdee8876b7d3d7cfe">eagine::static_message_id&lt; ClassId, MethodId &gt;</a>
 </li>
+<li>midpoint()
+: <a class="el" href="classeagine_1_1oglplus_1_1orbiting__camera.html#ac2267bfa72c9293f06b1e86898017677">eagine::oglplus::orbiting_camera</a>
+</li>
+<li>min
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a0f1ade0c41eaa3ce8d353903278ddf9d">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>min_distance
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__al__constants.html#a0d19c77a75c6f0ba1f3efa441a88a3e8">eagine::oalplus::basic_al_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>min_fragment_interpolation_offset
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a1a3db49bd7d4438976a3cc8027eb9bc8">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>min_gain
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__al__constants.html#a4660bfb5a823eb3d132062b2cd97193d">eagine::oalplus::basic_al_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>min_sample_shading_value
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a58a1775f23c9b05eb3cd8eef5b06b6f1">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
 <li>min_severity
 : <a class="el" href="structeagine_1_1log__stream__info.html#afcc9ee91487c0728ade628185fc9e0e1">eagine::log_stream_info</a>
+</li>
+<li>min_temperature()
+: <a class="el" href="classeagine_1_1msgbus_1_1remote__host.html#a9f43e299e3d5bed227a8bf930114086a">eagine::msgbus::remote_host</a>
+</li>
+<li>min_temperature_change()
+: <a class="el" href="classeagine_1_1msgbus_1_1remote__host.html#aa639b82f2232901baf8243e62727cd17">eagine::msgbus::remote_host</a>
+</li>
+<li>minor_version
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__alc__constants.html#a0868e4aed798a4cb57b3d665b5dfaf99">eagine::oalplus::basic_alc_constants&lt; ApiTraits &gt;</a>
+, <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a813ec0afbfe5673cc7ade6a2837ae50c">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>MinSampleShading
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#abcabf4d0912b7cee6e79127c51fb78ac">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
 </li>
 <li>minus()
 : <a class="el" href="classeagine_1_1math_1_1sign.html#a19f21043f73b207ff42e24412f62dc44">eagine::math::sign&lt; T &gt;</a>
 </li>
+<li>mipmap
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ab7291e9790b08053255cb6e13d2e6134">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>mirror_clamp_to_edge
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a7158b8128e9892064bbe3c9b8dfeb76e">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>mirrored_repeat
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a2be00f657d25ac322709288f3a9f0932">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
 <li>misalignment()
 : <a class="el" href="classeagine_1_1memory_1_1basic__address.html#a6b91a3cf7ab9362e700e31378c7d877c">eagine::memory::basic_address&lt; IsConst &gt;</a>
+</li>
+<li>miter_revert_nv
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a2c95c66ef4b55c9ab3a7609fc275fba8">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>miter_truncate_nv
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ab7cac387c6a821d7644e9bdb0b9e8ca7">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>mode
+: <a class="el" href="structeagine_1_1shapes_1_1draw__operation.html#af3f920700cc03a9c1f00763198f4663a">eagine::shapes::draw_operation</a>
+</li>
+<li>modelview
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a24994f09fc11f3e42ef8a908f880e568">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>mono_sources
+: <a class="el" href="classeagine_1_1oalplus_1_1basic__alc__constants.html#ac2c07983ab301930bb04890b33b64a22">eagine::oalplus::basic_alc_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>move_to_continues_nv
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a2b6dba8b468a2483c97e530227ed7346">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>move_to_nv
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a8b73d184a5051ab068e53d4cd47159de">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>move_to_resets_nv
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#abdfa68d242be34a8617e07e30d8769b4">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>msg_id()
+: <a class="el" href="structeagine_1_1msgbus_1_1message__handler__map.html#aabb61885f3e711c09b190d1e9c9ec0d6">eagine::msgbus::message_handler_map&lt; MemFuncConst &gt;</a>
+, <a class="el" href="structeagine_1_1msgbus_1_1static__message__handler__map.html#af06bbf8ef7dcfc5a346c2f79ab7c44c6">eagine::msgbus::static_message_handler_map&lt; MessageId, MemFuncConst &gt;</a>
+</li>
+<li>MultiDrawArrays
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a5513cba187862392809bba7d4fb6e5c4">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiDrawArraysIndirect
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a75988cad677cdb1a43591d5eb44a2adf">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiDrawArraysIndirectCount
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#acca1a8910120dd32c34d61ac2693f172">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiDrawElements
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a51d99c701af1d67bd0f4c918b65aabdf">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiDrawElementsBaseVertex
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#aff363cee2035d9775e187b1f49ca735d">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiDrawElementsIndirect
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#afcdc352e052778f6ca1aeb900333b3a2">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiDrawElementsIndirectCount
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a491915762743e4e09ea415e016df162c">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>multiplier()
+: <a class="el" href="classeagine_1_1app_1_1input__setup.html#a94832ab20cc2f6759d4f22bbf6819664">eagine::app::input_setup</a>
+</li>
+<li>multiply()
+: <a class="el" href="classeagine_1_1app_1_1input__setup.html#ad8777655b4de6977aa9f711210170910">eagine::app::input_setup</a>
+</li>
+<li>multiply_khr
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#a147bc2de7db80393249b545f6d6a165c">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>multisample
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__constants.html#ad4b3c8305191c4c86f57b98be3c9aeeb">eagine::oglplus::basic_gl_constants&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiTexCoord1f
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#ab42692f516860903849fbdd316c269f4">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiTexCoord1i
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#ae3b9bf42c254f106046f66362b70e794">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiTexCoord2f
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#ab97c1b744d6e270db381e116dcf62c37">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiTexCoord2i
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a42c9972060696ee00b4aa09fceb54582">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiTexCoord3f
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a393f6054ff13cfc286876575139dd016">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiTexCoord3i
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a79ad8975907f603b739d7a898d425a1a">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiTexCoord4f
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a53cc3d60625f272ceb3697ec7ba604c9">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultiTexCoord4i
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a2a53d8e8fb26234deb40d98f716a8211">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultMatrixd
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a3c3640285277b6b013949497e401c413">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultMatrixf
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a9815d9a36d20dea447f4e183b9f96470">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultTransposeMatrixd
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a707d209fba4e71c4f6f3caee0700055a">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
+</li>
+<li>MultTransposeMatrixf
+: <a class="el" href="classeagine_1_1oglplus_1_1basic__gl__c__api.html#a766801cd5b69bc79f0c34a00a49792f6">eagine::oglplus::basic_gl_c_api&lt; ApiTraits &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

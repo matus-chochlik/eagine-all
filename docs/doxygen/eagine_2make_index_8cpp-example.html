@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/make_index.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,44 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="span__algo_8hpp.html">eagine/memory/span_algo.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="span_8hpp.html">eagine/span.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line">    <span class="keyword">using namespace </span>eagine::memory;</div>
+<div class="line"> </div>
+<div class="line">    std::array&lt;const std::string, 4&gt; list{{<span class="stringliteral">&quot;foo&quot;</span>, <span class="stringliteral">&quot;baz&quot;</span>, <span class="stringliteral">&quot;qux&quot;</span>, <span class="stringliteral">&quot;bar&quot;</span>}};</div>
+<div class="line">    std::vector&lt;std::size_t&gt; index(list.size());</div>
+<div class="line"> </div>
+<div class="line">    <a name="a0"></a><a class="code" href="group__memory.html#gae7a70ad3483da892c69fb46406573938">generate</a>(<a name="a1"></a><a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(index), [i{std::size_t{0}}]() <span class="keyword">mutable</span> { <span class="keywordflow">return</span> i++; });</div>
+<div class="line"> </div>
+<div class="line">    <a name="a2"></a><a class="code" href="group__memory.html#ga2e4a02dfe8ba4eede729d5211f5c3ad6">make_index</a>(<a name="a3"></a><a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(list), <a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(index));</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> i : index) {</div>
+<div class="line">        std::cout &lt;&lt; list[i] &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="group__memory.html#ga2e4a02dfe8ba4eede729d5211f5c3ad6">make_index</a>(<a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(list), <a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(index), std::greater&lt;&gt;());</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> i : index) {</div>
+<div class="line">        std::cout &lt;&lt; list[i] &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__memory_html_ga2e4a02dfe8ba4eede729d5211f5c3ad6"><div class="ttname"><a href="group__memory.html#ga2e4a02dfe8ba4eede729d5211f5c3ad6">eagine::memory::make_index</a></div><div class="ttdeci">static auto make_index(const basic_span&lt; T, P, S &gt; spn, basic_span&lt; I, PI, SI &gt; idx, Compare compare) -&gt; bool</div><div class="ttdoc">Makes the index of a span according to compare, into another span.</div><div class="ttdef"><b>Definition:</b> span_algo.hpp:669</div></div>
+<div class="ttc" id="agroup__memory_html_ga323cd8c49fef908990c9d5b5553576b4"><div class="ttname"><a href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">eagine::memory::cover</a></div><div class="ttdeci">static constexpr auto cover(T *addr, const S size) noexcept -&gt; span_if_mutable&lt; T &gt;</div><div class="ttdoc">Creates a span starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:485</div></div>
+<div class="ttc" id="agroup__memory_html_ga9534fdd13884329a5c5e5c10b3337f80"><div class="ttname"><a href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">eagine::memory::view</a></div><div class="ttdeci">static constexpr auto view(T *addr, const S size) noexcept -&gt; const_span&lt; T &gt;</div><div class="ttdoc">Creates a view starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:478</div></div>
+<div class="ttc" id="agroup__memory_html_gae7a70ad3483da892c69fb46406573938"><div class="ttname"><a href="group__memory.html#gae7a70ad3483da892c69fb46406573938">eagine::memory::generate</a></div><div class="ttdeci">static auto generate(basic_span&lt; T, P, S &gt; spn, Generator gen) -&gt; basic_span&lt; T, P, S &gt;</div><div class="ttdoc">Fills a span with elements generated by a generator callable.</div><div class="ttdef"><b>Definition:</b> span_algo.hpp:613</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="aspan_8hpp_html"><div class="ttname"><a href="span_8hpp.html">span.hpp</a></div></div>
+<div class="ttc" id="aspan__algo_8hpp_html"><div class="ttname"><a href="span__algo_8hpp.html">span_algo.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

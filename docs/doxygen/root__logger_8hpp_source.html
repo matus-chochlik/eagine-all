@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/logging/root_logger.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,25 +73,35 @@ $(function() {
 <div class="title">root_logger.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="root__logger_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_LOGGING_ROOT_LOGGER_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_LOGGING_ROOT_LOGGER_HPP</span></div>
+<a href="root__logger_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_LOGGING_ROOT_LOGGER_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_LOGGING_ROOT_LOGGER_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../program_args.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logger_8hpp.html">logger.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="root__logger__opts_8hpp.html">root_logger_opts.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../program_args.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="logger_8hpp.html">&quot;logger.hpp&quot;</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="root__logger__opts_8hpp.html">&quot;root_logger_opts.hpp&quot;</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>application_config;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1application__config.html">application_config</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classeagine_1_1root__logger.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeagine_1_1root__logger.html">root_logger</a> : <span class="keyword">public</span> <a class="code" href="classeagine_1_1logger.html">logger</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// @brief Class typically used as the per-application single root of logger hierarchy.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/// @ingroup logging</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classeagine_1_1root__logger.html">   22</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1root__logger.html">root_logger</a> : <span class="keyword">public</span> <a class="code" href="classeagine_1_1logger.html">logger</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">/// @brief Constructor initializing from and id, program arguments and options.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classeagine_1_1root__logger.html#a201a295902b901ef4d02104659dc2f15">   25</a></span>&#160;    <a class="code" href="classeagine_1_1root__logger.html#a201a295902b901ef4d02104659dc2f15">root_logger</a>(</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <a class="code" href="classeagine_1_1basic__identifier.html">identifier</a> logger_id,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      identifier logger_id,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keyword">const</span> <a class="code" href="classeagine_1_1program__args.html">program_args</a>&amp; args,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <a class="code" href="structeagine_1_1root__logger__options.html">root_logger_options</a>&amp; opts)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      : <a class="code" href="classeagine_1_1logger.html">logger</a>{logger_id, {_init_backend(args, opts)}} {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      : <a class="code" href="classeagine_1_1logger.html">logger</a><a class="code" href="classeagine_1_1logger.html#a84bb68b73832bd107da2b2b5726c1ce1">{</a>logger_id<a class="code" href="classeagine_1_1logger.html#a84bb68b73832bd107da2b2b5726c1ce1">,</a> {_init_backend(args, opts)}<a class="code" href="classeagine_1_1logger.html#a84bb68b73832bd107da2b2b5726c1ce1">}</a> {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        _log_args(args);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        _log_instance_info();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        _log_git_info();</div>
@@ -99,39 +109,28 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        _log_compiler_info();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/// @brief Constructor initializing from program arguments and logger options.</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classeagine_1_1root__logger.html#aa49f3d9d021d2d0d082e8e864db6e563">   38</a></span>&#160;    <a class="code" href="classeagine_1_1root__logger.html#aa49f3d9d021d2d0d082e8e864db6e563">root_logger</a>(<span class="keyword">const</span> <a class="code" href="classeagine_1_1program__args.html">program_args</a>&amp; args, <a class="code" href="structeagine_1_1root__logger__options.html">root_logger_options</a>&amp; opts)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      : <a class="code" href="classeagine_1_1root__logger.html">root_logger</a>{<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(RootLogger), args, opts} {}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      : <a class="code" href="classeagine_1_1root__logger.html">root_logger</a><a class="code" href="classeagine_1_1root__logger.html#a201a295902b901ef4d02104659dc2f15">{</a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(RootLogger)<a class="code" href="classeagine_1_1root__logger.html#a201a295902b901ef4d02104659dc2f15">,</a> args<a class="code" href="classeagine_1_1root__logger.html#a201a295902b901ef4d02104659dc2f15">,</a> opts<a class="code" href="classeagine_1_1root__logger.html#a201a295902b901ef4d02104659dc2f15">}</a> {}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _init_backend(<span class="keyword">const</span> <a class="code" href="classeagine_1_1program__args.html">program_args</a>&amp;, <a class="code" href="structeagine_1_1root__logger__options.html">root_logger_options</a>&amp;)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      -&gt; std::unique_ptr&lt;logger_backend&gt;;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      -&gt; std::unique_ptr&lt;<a class="code" href="structeagine_1_1logger__backend.html">logger_backend</a>&gt;;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">auto</span> _log_os_info() -&gt; void;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> _log_git_info() -&gt; void;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> _log_compiler_info() -&gt; void;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">auto</span> _log_instance_info() -&gt; void;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">auto</span> _log_args(<span class="keyword">const</span> <a class="code" href="classeagine_1_1program__args.html">program_args</a>&amp;) -&gt; void;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">auto</span> _log_os_info() -&gt; <span class="keywordtype">void</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> _log_git_info() -&gt; <span class="keywordtype">void</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> _log_compiler_info() -&gt; <span class="keywordtype">void</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">auto</span> _log_instance_info() -&gt; <span class="keywordtype">void</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">auto</span> _log_args(<span class="keyword">const</span> <a class="code" href="classeagine_1_1program__args.html">program_args</a>&amp;) -&gt; <span class="keywordtype">void</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#if !EAGINE_CORE_LIBRARY || defined(EAGINE_IMPLEMENTING_CORE_LIBRARY)</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="root__logger_8inl.html">eagine/logging/root_logger.inl</a>&gt;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2basic_8hpp.html#a42b87b5f1b680c3bc7dac19c6741f7ad">EAGINE_CORE_LIBRARY</a> <span class="preprocessor">||</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">EAGINE_IMPLEMENTING_CORE_LIBRARY</span><span class="preprocessor">)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">eagine</span><span class="preprocessor">/</span><span class="preprocessor">logging</span><span class="preprocessor">/</span><span class="preprocessor">root_logger</span><span class="preprocessor">.</span><span class="preprocessor">inl</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_LOGGING_ROOT_LOGGER_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1basic__identifier_html"><div class="ttname"><a href="classeagine_1_1basic__identifier.html">eagine::basic_identifier&lt; 10, 6, default_identifier_char_set, identifier_t &gt;</a></div></div>
-<div class="ttc" id="aclasseagine_1_1logger_html"><div class="ttname"><a href="classeagine_1_1logger.html">eagine::logger</a></div><div class="ttdoc">Standalone logger object type.</div><div class="ttdef"><b>Definition:</b> logger.hpp:440</div></div>
-<div class="ttc" id="aclasseagine_1_1program__args_html"><div class="ttname"><a href="classeagine_1_1program__args.html">eagine::program_args</a></div><div class="ttdoc">Class wrapping the main function arguments, providing a convenient API.</div><div class="ttdef"><b>Definition:</b> program_args.hpp:606</div></div>
-<div class="ttc" id="aclasseagine_1_1root__logger_html"><div class="ttname"><a href="classeagine_1_1root__logger.html">eagine::root_logger</a></div><div class="ttdoc">Class typically used as the per-application single root of logger hierarchy.</div><div class="ttdef"><b>Definition:</b> root_logger.hpp:22</div></div>
-<div class="ttc" id="aclasseagine_1_1root__logger_html_a201a295902b901ef4d02104659dc2f15"><div class="ttname"><a href="classeagine_1_1root__logger.html#a201a295902b901ef4d02104659dc2f15">eagine::root_logger::root_logger</a></div><div class="ttdeci">root_logger(identifier logger_id, const program_args &amp;args, root_logger_options &amp;opts)</div><div class="ttdoc">Constructor initializing from and id, program arguments and options.</div><div class="ttdef"><b>Definition:</b> root_logger.hpp:25</div></div>
-<div class="ttc" id="aclasseagine_1_1root__logger_html_aa49f3d9d021d2d0d082e8e864db6e563"><div class="ttname"><a href="classeagine_1_1root__logger.html#aa49f3d9d021d2d0d082e8e864db6e563">eagine::root_logger::root_logger</a></div><div class="ttdeci">root_logger(const program_args &amp;args, root_logger_options &amp;opts)</div><div class="ttdoc">Constructor initializing from program arguments and logger options.</div><div class="ttdef"><b>Definition:</b> root_logger.hpp:38</div></div>
-<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
-<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="aroot__logger_8inl_html"><div class="ttname"><a href="root__logger_8inl.html">root_logger.inl</a></div></div>
-<div class="ttc" id="aroot__logger__opts_8hpp_html"><div class="ttname"><a href="root__logger__opts_8hpp.html">root_logger_opts.hpp</a></div></div>
-<div class="ttc" id="astructeagine_1_1root__logger__options_html"><div class="ttname"><a href="structeagine_1_1root__logger__options.html">eagine::root_logger_options</a></div><div class="ttdoc">Structure holding root logger customization options.</div><div class="ttdef"><b>Definition:</b> root_logger_opts.hpp:19</div></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_LOGGING_ROOT_LOGGER_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

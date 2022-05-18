@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/value_tree_overlay.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,95 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="logger_8hpp.html">eagine/logging/logger.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="json_8hpp.html">eagine/value_tree/json.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="overlay_8hpp.html">eagine/value_tree/overlay.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="yaml_8hpp.html">eagine/value_tree/yaml.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">auto</span> overlay = <a name="a0"></a><a class="code" href="group__valtree.html#gaedde78d19d79cbb7efd8c2be4fdfd516">valtree::make_overlay</a>(ctx);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <a name="a1"></a><a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> json_text(R<span class="stringliteral">&quot;({</span></div>
+<div class="line"><span class="stringliteral">        &quot;attribA&quot; : {</span></div>
+<div class="line"><span class="stringliteral">            &quot;attribB&quot;: 123</span></div>
+<div class="line"><span class="stringliteral">        },</span></div>
+<div class="line"><span class="stringliteral">        &quot;attribC&quot; : [</span></div>
+<div class="line"><span class="stringliteral">            45, &quot;six&quot;, 78.9, {&quot;zero&quot;: false}</span></div>
+<div class="line"><span class="stringliteral">        ],</span></div>
+<div class="line"><span class="stringliteral">        &quot;attribD&quot; : &quot;VGhpcyBpcyBhIGJhc2U2NC1lbmNvZGVkIEJMT0IK&quot;</span></div>
+<div class="line"><span class="stringliteral">    })&quot;);</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">    valtree::add_overlay(overlay, <a name="a2"></a><a class="code" href="group__valtree.html#gaf1c1a1ef9c627a45bf109b5121beb361">valtree::from_json_text</a>(json_text, ctx));</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">    </span><span class="keyword">const</span> <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> yaml_text(</div>
+<div class="line">      <span class="stringliteral">&quot;attribA:\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;    attribB: 1234\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;attribC: [56, seven, 8.9]\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    valtree::add_overlay(overlay, <a name="a3"></a><a class="code" href="group__valtree.html#ga7587a1eed7f7916eb2902cf7482b8eac">valtree::from_yaml_text</a>(yaml_text, ctx));</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> visitor = [&amp;ctx](</div>
+<div class="line">                           <span class="keyword">const</span> valtree::compound&amp; c,</div>
+<div class="line">                           <span class="keyword">const</span> valtree::attribute&amp; a,</div>
+<div class="line">                           <span class="keyword">const</span> basic_string_path&amp; p) {</div>
+<div class="line">        <span class="keyword">auto</span> ca{c / a};</div>
+<div class="line">        ctx.log()</div>
+<div class="line">          .info(<span class="stringliteral">&quot;visit&quot;</span>)</div>
+<div class="line">          .arg(<a name="a4"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(nested), ca.nested_count())</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(values), ca.value_count())</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(isLink), <a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(<span class="keywordtype">bool</span>), ca.is_link())</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(canonType), ca.canonical_type())</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(path), p.as_string(<span class="stringliteral">&quot;/&quot;</span>, ca.nested_count() &gt; 0))</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(name), ca.name());</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(ca.canonical_type() == <a name="a5"></a><a class="code" href="group__valtree.html#gga0e53392d6125e3cce82766e30b728449a4905f4dc7799bd11b2949fcdcd60b2c3">valtree::value_type::byte_type</a>) {</div>
+<div class="line">            <span class="keyword">const</span> <span class="keyword">auto</span> s{ca.value_count()};</div>
+<div class="line">            <span class="keywordflow">if</span>(s &lt;= 256) {</div>
+<div class="line">                std::array&lt;byte, 256&gt; temp{};</div>
+<div class="line">                <span class="keyword">auto</span> content{ca.fetch_blob(<a name="a6"></a><a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(temp))};</div>
+<div class="line">                ctx.log().info(<span class="stringliteral">&quot;content&quot;</span>).arg(</div>
+<div class="line">                  <a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(content), <a name="a7"></a><a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(content));</div>
+<div class="line">            }</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ca.canonical_type() == <a name="a8"></a><a class="code" href="group__valtree.html#gga0e53392d6125e3cce82766e30b728449a4771e2c3115bb1af6ce17d9d35a0eb48">valtree::value_type::string_type</a>) {</div>
+<div class="line">            <span class="keywordflow">if</span>(ca.value_count() == 1) {</div>
+<div class="line">                std::array&lt;char, 64&gt; temp{};</div>
+<div class="line">                <span class="keyword">auto</span> content{ca.fetch_values(<a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(temp))};</div>
+<div class="line">                ctx.log().info(<span class="stringliteral">&quot;content&quot;</span>).arg(</div>
+<div class="line">                  <a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(content), <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>(content));</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    overlay.traverse(<a name="a9"></a><a class="code" href="classeagine_1_1valtree_1_1compound.html#a9807a789ee977488af723e9ae89f8e16">valtree::compound::visit_handler</a>{<a name="a10"></a><a class="code" href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">construct_from</a>, visitor});</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aclasseagine_1_1valtree_1_1compound_html_a9807a789ee977488af723e9ae89f8e16"><div class="ttname"><a href="classeagine_1_1valtree_1_1compound.html#a9807a789ee977488af723e9ae89f8e16">eagine::valtree::compound::visit_handler</a></div><div class="ttdeci">callable_ref&lt; bool(const compound &amp;, const attribute &amp;, const basic_string_path &amp;)&gt; visit_handler</div><div class="ttdoc">Type of traverse/visit handler.</div><div class="ttdef"><b>Definition:</b> wrappers.hpp:740</div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="agroup__memory_html_ga323cd8c49fef908990c9d5b5553576b4"><div class="ttname"><a href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">eagine::memory::cover</a></div><div class="ttdeci">static constexpr auto cover(T *addr, const S size) noexcept -&gt; span_if_mutable&lt; T &gt;</div><div class="ttdoc">Creates a span starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:485</div></div>
+<div class="ttc" id="agroup__memory_html_ga9534fdd13884329a5c5e5c10b3337f80"><div class="ttname"><a href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">eagine::memory::view</a></div><div class="ttdeci">static constexpr auto view(T *addr, const S size) noexcept -&gt; const_span&lt; T &gt;</div><div class="ttdoc">Creates a view starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:478</div></div>
+<div class="ttc" id="agroup__metaprogramming_html_ga4a036d64c1fd49335cc8ca2e2b01c1a7"><div class="ttname"><a href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">eagine::construct_from</a></div><div class="ttdeci">constexpr const construct_from_t construct_from</div><div class="ttdoc">The construct-from tag-dispatch constant.</div><div class="ttdef"><b>Definition:</b> selector.hpp:47</div></div>
+<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
+<div class="ttc" id="agroup__valtree_html_ga7587a1eed7f7916eb2902cf7482b8eac"><div class="ttname"><a href="group__valtree.html#ga7587a1eed7f7916eb2902cf7482b8eac">eagine::valtree::from_yaml_text</a></div><div class="ttdeci">auto from_yaml_text(string_view, main_ctx_parent) -&gt; compound</div><div class="ttdoc">Creates a compound from a YAML text string view.</div><div class="ttdef"><b>Definition:</b> yaml.inl:374</div></div>
+<div class="ttc" id="agroup__valtree_html_gaedde78d19d79cbb7efd8c2be4fdfd516"><div class="ttname"><a href="group__valtree.html#gaedde78d19d79cbb7efd8c2be4fdfd516">eagine::valtree::make_overlay</a></div><div class="ttdeci">EAGINE_LIB_FUNC auto make_overlay(main_ctx_parent parent, std::vector&lt; compound_attribute &gt; overlays) -&gt; compound</div><div class="ttdoc">Creates a overlay compound, combining multiple other compounds.</div><div class="ttdef"><b>Definition:</b> overlay.inl:275</div></div>
+<div class="ttc" id="agroup__valtree_html_gaf1c1a1ef9c627a45bf109b5121beb361"><div class="ttname"><a href="group__valtree.html#gaf1c1a1ef9c627a45bf109b5121beb361">eagine::valtree::from_json_text</a></div><div class="ttdeci">auto from_json_text(string_view, main_ctx_parent) -&gt; compound</div><div class="ttdoc">Creates a compound from a JSON text string view.</div><div class="ttdef"><b>Definition:</b> json.inl:676</div></div>
+<div class="ttc" id="agroup__valtree_html_gga0e53392d6125e3cce82766e30b728449a4771e2c3115bb1af6ce17d9d35a0eb48"><div class="ttname"><a href="group__valtree.html#gga0e53392d6125e3cce82766e30b728449a4771e2c3115bb1af6ce17d9d35a0eb48">eagine::valtree::value_type::string_type</a></div><div class="ttdeci">@ string_type</div><div class="ttdoc">string value type.</div></div>
+<div class="ttc" id="agroup__valtree_html_gga0e53392d6125e3cce82766e30b728449a4905f4dc7799bd11b2949fcdcd60b2c3"><div class="ttname"><a href="group__valtree.html#gga0e53392d6125e3cce82766e30b728449a4905f4dc7799bd11b2949fcdcd60b2c3">eagine::valtree::value_type::byte_type</a></div><div class="ttdeci">@ byte_type</div><div class="ttdoc">Byte/BLOB value type.</div></div>
+<div class="ttc" id="ajson_8hpp_html"><div class="ttname"><a href="json_8hpp.html">json.hpp</a></div></div>
+<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="aoverlay_8hpp_html"><div class="ttname"><a href="overlay_8hpp.html">overlay.hpp</a></div></div>
+<div class="ttc" id="ayaml_8hpp_html"><div class="ttname"><a href="yaml_8hpp.html">yaml.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

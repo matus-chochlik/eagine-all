@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine::valtree::compound_interface Struct Reference</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -80,7 +80,7 @@ $(function() {
 <p>Interface for value tree compound implementations.  
  <a href="structeagine_1_1valtree_1_1compound__interface.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="value__tree_2interface_8hpp_source.html">eagine/value_tree/interface.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="eagine-core_2include_2eagine_2value__tree_2interface_8hpp_source.html">eagine/value_tree/interface.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -240,6 +240,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Add usage reference to the specified attribute. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1attribute.html#a62186e62c84247ab63360c1dd00b97ca">eagine::valtree::attribute::operator=()</a>.</p>
+
 </div>
 </div>
 <a id="a9f97241e47ccd798d8f30dacf8da9d23"></a>
@@ -269,6 +271,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Returns the name of the specified attribute. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#ac50a2ecb17ab477ecfac425b0464cec8">eagine::valtree::compound::attribute_name()</a>, and <a class="el" href="classeagine_1_1valtree_1_1attribute.html#a8443dafe0fe5cb21b07fe24160706dc0">eagine::valtree::attribute::name()</a>.</p>
+
 </div>
 </div>
 <a id="ae73997abb208cd787ec84280680083da"></a>
@@ -297,6 +301,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 <p>Returns the value type of the specified attribute. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#ace2673a7bd6b5962af2311a2192e03f4">eagine::valtree::compound::canonical_type()</a>.</p>
 
 </div>
 </div>
@@ -343,6 +349,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Finds the nested attribute of an attribute at <code>path</code> with <code>tags</code>. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#aa0eaa92c6dcecc5ad999061e4688105c">find()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#abcb7db62f3f050c27a5f4334f0f58032">eagine::valtree::compound::find()</a>.</p>
+
 </div>
 </div>
 <a id="aa0eaa92c6dcecc5ad999061e4688105c"></a>
@@ -382,6 +390,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Finds the nested attribute of an attribute at the given <code>path</code>. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#afce8c9626d334c7bf0e05220dfff485c">eagine::valtree::compound::find()</a>.</p>
+
 </div>
 </div>
 <a id="ae914df72b63218794e89d54c791e36ff"></a>
@@ -411,6 +421,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Indicates if the attribute value and structure is immutable. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#a8a7fb67f3fc3b0e68fef15238eafeabc">eagine::valtree::compound::is_immutable()</a>.</p>
+
 </div>
 </div>
 <a id="a6db50b32afb4a425bd91b7a0a98b1c1e"></a>
@@ -439,6 +451,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 <p>Indicates if the specified attribute is a reference or link in the tree. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#afa347498ef31cf1d3d6abc1a587bf8a1">eagine::valtree::compound::is_link()</a>.</p>
 
 </div>
 </div>
@@ -479,6 +493,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Returns the nested attribute of an attribute with specified <code>name</code>. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#ab6366b51e0f46b9d1d5c3b0edeabf377">eagine::valtree::compound::nested()</a>.</p>
+
 </div>
 </div>
 <a id="ac9eb994a2c2579100775a94f28c31370"></a>
@@ -518,6 +534,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Returns the nested attribute of an attribute at given <code>index</code>. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae883bcf53708b393703f08287eecf346">eagine::valtree::compound::nested()</a>.</p>
+
 </div>
 </div>
 <a id="aa4385285ccc4d143a46d947b97039d4f"></a>
@@ -546,6 +564,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 <p>Returns the count of nested attributes in an attribute. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#a5487cee0f71d3de7e9a143a8a0b198cf">eagine::valtree::compound::nested_count()</a>.</p>
 
 </div>
 </div>
@@ -576,6 +596,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Release usage reference to the specified attribute. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1attribute.html#a28ba110d6d14ba29ec1f20287e1f4b8c">eagine::valtree::attribute::~attribute()</a>.</p>
+
 </div>
 </div>
 <a id="a6b0ec54c2b9e91d8a5a7d22dfec6bfa7"></a>
@@ -605,10 +627,12 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Returns the count of individual values stored in an attribute. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a40ebcc88622ed5cd4a0f8720d4d4afe9" title="Returns the implementation type identifier of this compound.">type_id()</a> == attr.type_id() </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#a760c97342f99267455710c37bf4a7423">eagine::valtree::compound::value_count()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>eagine/value_tree/<a class="el" href="value__tree_2interface_8hpp_source.html">interface.hpp</a></li>
+<li>eagine/value_tree/<a class="el" href="eagine-core_2include_2eagine_2value__tree_2interface_8hpp_source.html">interface.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <br/>

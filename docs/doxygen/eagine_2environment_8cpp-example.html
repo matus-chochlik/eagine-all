@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/environment.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,37 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="environment_8hpp.html">eagine/environment.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">using</span> v = <a name="a0"></a><a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> name : <a name="a1"></a><a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(</div>
+<div class="line">          {v(<span class="stringliteral">&quot;USER&quot;</span>),</div>
+<div class="line">           v(<span class="stringliteral">&quot;HOME&quot;</span>),</div>
+<div class="line">           v(<span class="stringliteral">&quot;PATH&quot;</span>),</div>
+<div class="line">           v(<span class="stringliteral">&quot;LANGUAGE&quot;</span>),</div>
+<div class="line">           v(<span class="stringliteral">&quot;SHELL&quot;</span>),</div>
+<div class="line">           v(<span class="stringliteral">&quot;PAGER&quot;</span>),</div>
+<div class="line">           v(<span class="stringliteral">&quot;EDITOR&quot;</span>),</div>
+<div class="line">           v(<span class="stringliteral">&quot;NONE&quot;</span>)})) {</div>
+<div class="line"> </div>
+<div class="line">        std::cout &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;: &quot;</span></div>
+<div class="line">                  &lt;&lt; extract_or(<a name="a2"></a><a class="code" href="group__main__context.html#gafa1f4a03d7535b4e95d72616e18fcc6e">get_environment_variable</a>(name), <span class="stringliteral">&quot;N/A&quot;</span>)</div>
+<div class="line">                  &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aenvironment_8hpp_html"><div class="ttname"><a href="environment_8hpp.html">environment.hpp</a></div></div>
+<div class="ttc" id="agroup__main__context_html_gafa1f4a03d7535b4e95d72616e18fcc6e"><div class="ttname"><a href="group__main__context.html#gafa1f4a03d7535b4e95d72616e18fcc6e">eagine::get_environment_variable</a></div><div class="ttdeci">static auto get_environment_variable(const string_view variable_name) noexcept -&gt; optionally_valid&lt; string_view &gt;</div><div class="ttdoc">Returns the value in the specified environment variable.</div><div class="ttdef"><b>Definition:</b> environment.hpp:21</div></div>
+<div class="ttc" id="agroup__memory_html_ga9534fdd13884329a5c5e5c10b3337f80"><div class="ttname"><a href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">eagine::memory::view</a></div><div class="ttdeci">static constexpr auto view(T *addr, const S size) noexcept -&gt; const_span&lt; T &gt;</div><div class="ttdoc">Creates a view starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:478</div></div>
+<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

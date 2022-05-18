@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Program utilities and main context</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -77,6 +77,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1compiler__info.html">eagine::compiler_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing compiler and architecture information.  <a href="classeagine_1_1compiler__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1main__ctx__options.html">eagine::main_ctx_options</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure storing customization options for main context.  <a href="structeagine_1_1main__ctx__options.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1main__ctx.html">eagine::main_ctx</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for a singleton object providing useful information and services.  <a href="classeagine_1_1main__ctx.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1user__info.html">eagine::user_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing user-related information.  <a href="classeagine_1_1user__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1application__config__value__loader.html">eagine::application_config_value_loader</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal interface for reloadable configuration values.  <a href="structeagine_1_1application__config__value__loader.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -92,21 +104,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1application__config__value_3_01T_00_01As_00_01true_01_4.html">eagine::application_config_value&lt; T, As, true &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class wrapping values that can be reloaded from <a class="el" href="classeagine_1_1application__config.html" title="Class for reading application configuration.">application_config</a>.  <a href="classeagine_1_1application__config__value_3_01T_00_01As_00_01true_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1build__info.html">eagine::build_info</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing basic system information.  <a href="classeagine_1_1build__info.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1compiler__info.html">eagine::compiler_info</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing compiler and architecture information.  <a href="classeagine_1_1compiler__info.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1data__compressor.html">eagine::data_compressor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class implementing data compression and decompresson.  <a href="classeagine_1_1data__compressor.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1main__ctx__options.html">eagine::main_ctx_options</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure storing customization options for main context.  <a href="structeagine_1_1main__ctx__options.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1main__ctx.html">eagine::main_ctx</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for a singleton object providing useful information and services.  <a href="classeagine_1_1main__ctx.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1main__ctx__setters.html">eagine::main_ctx_setters</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for classes providing access to main context singletons.  <a href="structeagine_1_1main__ctx__setters.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,23 +113,29 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1main__ctx__object__parent__info.html">eagine::main_ctx_object_parent_info</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class used to initialize main context objects.  <a href="classeagine_1_1main__ctx__object__parent__info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1main__ctx__object.html">eagine::main_ctx_object</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for main context objects.  <a href="classeagine_1_1main__ctx__object.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1program__arg.html">eagine::program_arg</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a single main function (command-line) argument.  <a href="classeagine_1_1program__arg.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1program__args.html">eagine::program_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class wrapping the main function arguments, providing a convenient API.  <a href="classeagine_1_1program__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1main__ctx__object.html">eagine::main_ctx_object</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for main context objects.  <a href="classeagine_1_1main__ctx__object.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1build__info.html">eagine::build_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing basic system information.  <a href="classeagine_1_1build__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1data__compressor.html">eagine::data_compressor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class implementing data compression and decompresson.  <a href="classeagine_1_1data__compressor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1system__info.html">eagine::system_info</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing basic system information.  <a href="classeagine_1_1system__info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1user__info.html">eagine::user_info</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing user-related information.  <a href="classeagine_1_1user__info.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1process__watchdog.html">eagine::process_watchdog</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class implementing process watchdog functionality.  <a href="classeagine_1_1process__watchdog.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1message__bus.html">eagine::message_bus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing access to basic message bus functionality.  <a href="classeagine_1_1message__bus.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -239,6 +242,8 @@ Functions</h2></td></tr>
 
 <p>Returns the value in the specified environment variable. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classeagine_1_1application__config.html" title="Class for reading application configuration.">application_config</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="eagine_2environment_8cpp-example.html#a2">eagine/environment.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -278,6 +283,8 @@ Functions</h2></td></tr>
 
 <p>Registers the activity progress observer. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structeagine_1_1main__ctx__setters.html" title="Interface for classes providing access to main context singletons.">main_ctx_setters</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="eagine_2progress_8cpp-example.html#a5">eagine/progress.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -356,6 +363,8 @@ Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structeagine_1_1main__ctx__setters.html" title="Interface for classes providing access to main context singletons.">main_ctx_setters</a> </dd>
 <dd>
 <a class="el" href="group__main__context.html#ga257f2d6f15d412f60fa91974c852658b" title="Resets the progress update callback function.">reset_progress_update_callback</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="eagine_2progress_8cpp-example.html#a6">eagine/progress.cpp</a>, <a class="el" href="oglplus_2009_occlusion_8cpp-example.html#a2">oglplus/009_occlusion.cpp</a>, and <a class="el" href="oglplus_2015_cloud_morphing_8cpp-example.html#a2">oglplus/015_cloud_morphing.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>

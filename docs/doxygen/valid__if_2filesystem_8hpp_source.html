@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/valid_if/filesystem.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,58 +73,65 @@ $(function() {
 <div class="title">filesystem.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="valid__if_2filesystem_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_VALID_IF_FILESYSTEM_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_VALID_IF_FILESYSTEM_HPP</span></div>
+<a href="valid__if_2filesystem_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_VALID_IF_FILESYSTEM_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_VALID_IF_FILESYSTEM_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../string_path.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../string_span.hpp&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="decl_8hpp.html">decl.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../string_path.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../string_span.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="decl_8hpp.html">&quot;decl.hpp&quot;</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">filesystem</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Derived&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct </span>valid_if_filesystem_policy {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">auto</span> <span class="keyword">self</span>() <span class="keyword">const</span> noexcept -&gt; <span class="keyword">const</span> Derived&amp; {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct</span> valid_if_filesystem_policy {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">auto</span> self() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keyword">const</span> Derived&amp; {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">static_cast</span>&lt;<span class="keyword">const</span> Derived*&gt;(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> std::filesystem::path&amp; value) <span class="keyword">const</span> noexcept {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">self</span>().is_valid(value);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> std::filesystem::path&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> self().is_valid(value);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> std::string&amp; value) <span class="keyword">const</span> noexcept {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">self</span>().is_valid(value);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> std::string&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> self().is_valid(value);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">std::string_view</a>&amp; value) <span class="keyword">const</span> noexcept {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">self</span>().is_valid(value);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> std::string_view&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> self().is_valid(value);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> <a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>&amp; value) <span class="keyword">const</span> noexcept {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">self</span>().is_valid(value.std_view());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> string_view&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> self().is_valid(value<a class="code" href="classeagine_1_1basic__string__span.html#a9fb0b967113ba161c4dc1849209c8056">.</a><a class="code" href="classeagine_1_1basic__string__span.html#a9fb0b967113ba161c4dc1849209c8056">std_view</a><a class="code" href="classeagine_1_1basic__string__span.html#a9fb0b967113ba161c4dc1849209c8056">(</a><a class="code" href="classeagine_1_1basic__string__span.html#a9fb0b967113ba161c4dc1849209c8056">)</a>);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> basic_string_path&amp; value) <span class="keyword">const</span> noexcept {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">self</span>().is_valid(value.as_string());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> <a class="code" href="classeagine_1_1basic__string__path.html">basic_string_path</a>&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> self().is_valid(value<a class="code" href="classeagine_1_1basic__string__path.html#aa6610275c6adbd89ee1e492770784dc5">.</a><a class="code" href="classeagine_1_1basic__string__path.html#aa6610275c6adbd89ee1e492770784dc5">as_string</a><a class="code" href="classeagine_1_1basic__string__path.html#aa6610275c6adbd89ee1e492770784dc5">(</a><a class="code" href="classeagine_1_1basic__string__path.html#aa6610275c6adbd89ee1e492770784dc5">)</a>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// existing file</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">struct </span>valid_if_existing_file_policy</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">struct</span> valid_if_existing_file_policy</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  : valid_if_filesystem_policy&lt;valid_if_existing_file_policy&gt; {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">auto</span> is_valid(<span class="keyword">const</span> std::filesystem::path&amp; path) <span class="keyword">const</span> noexcept {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">auto</span> is_valid(<span class="keyword">const</span> std::filesystem::path&amp; path) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> is_regular_file(path) ||</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;               (is_symlink(path) &amp;&amp; is_regular_file(read_symlink(path)));</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">struct </span>do_log {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">struct</span> do_log {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> = disable_if_same_t&lt;X, do_log&gt;&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        constexpr do_log(X&amp;&amp;) noexcept {}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">constexpr</span> do_log(X&amp;&amp;) <span class="keyword">noexcept</span> {}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Log, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> operator()(Log&amp; log, <span class="keyword">const</span> T&amp; v)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> operator()(Log&amp; log, <span class="keyword">const</span> T&amp; v) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            log &lt;&lt; <span class="stringliteral">&quot;Value &quot;</span> &lt;&lt; v &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;is invalid because it is not an existing file path&quot;</span>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
@@ -135,19 +142,19 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">using</span> valid_if_existing_file = valid_if&lt;T, valid_if_existing_file_policy&gt;;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// existing directory</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">struct </span>valid_if_existing_directory_policy</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">struct</span> valid_if_existing_directory_policy</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  : valid_if_filesystem_policy&lt;valid_if_existing_directory_policy&gt; {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">auto</span> is_valid(<span class="keyword">const</span> std::filesystem::path&amp; path) <span class="keyword">const</span> noexcept {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">auto</span> is_valid(<span class="keyword">const</span> std::filesystem::path&amp; path) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> is_directory(path) ||</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;               (is_symlink(path) &amp;&amp; is_directory(read_symlink(path)));</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">struct </span>do_log {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">struct</span> do_log {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> = disable_if_same_t&lt;X, do_log&gt;&gt;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        constexpr do_log(X&amp;&amp;) noexcept {}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">constexpr</span> do_log(X&amp;&amp;) <span class="keyword">noexcept</span> {}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Log, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> operator()(Log&amp; log, <span class="keyword">const</span> T&amp; v)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> operator()(Log&amp; log, <span class="keyword">const</span> T&amp; v) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            log &lt;&lt; <span class="stringliteral">&quot;Value &quot;</span> &lt;&lt; v &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;is invalid because it is not an existing directory path&quot;</span>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
@@ -159,9 +166,9 @@ $(function() {
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  valid_if&lt;T, valid_if_existing_directory_policy&gt;;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// in writable directory</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">struct </span>valid_if_in_writable_directory_policy</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">struct</span> valid_if_in_writable_directory_policy</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  : valid_if_filesystem_policy&lt;valid_if_in_writable_directory_policy&gt; {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">auto</span> is_valid(std::filesystem::path path) <span class="keyword">const</span> noexcept {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">auto</span> is_valid(std::filesystem::path path) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        path.remove_filename();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> test = [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">return</span> is_directory(p) &amp;&amp; (status(p).permissions() &amp;</div>
@@ -172,12 +179,12 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> test(path) || (is_symlink(path) &amp;&amp; test(read_symlink(path)));</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">struct </span>do_log {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">struct</span> do_log {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> = disable_if_same_t&lt;X, do_log&gt;&gt;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        constexpr do_log(X&amp;&amp;) noexcept {}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">constexpr</span> do_log(X&amp;&amp;) <span class="keyword">noexcept</span> {}</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Log, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">void</span> operator()(Log&amp; log, <span class="keyword">const</span> T&amp; v)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">void</span> operator()(Log&amp; log, <span class="keyword">const</span> T&amp; v) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            log &lt;&lt; <span class="stringliteral">&quot;Value &quot;</span> &lt;&lt; v &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;is invalid because it is not a path in writable directory&quot;</span>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
@@ -190,10 +197,7 @@ $(function() {
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="adecl_8hpp_html"><div class="ttname"><a href="decl_8hpp.html">decl.hpp</a></div></div>
-<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

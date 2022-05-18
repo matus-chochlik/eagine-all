@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/assert.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,26 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="assert_8hpp.html">eagine/assert.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> baz(<span class="keywordtype">int</span> n) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    EAGINE_ASSERT(n == 0);</div>
+<div class="line">    <span class="keywordflow">return</span> n;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> bar(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b, <span class="keywordtype">bool</span> c) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keywordflow">return</span> baz(c ? a : b);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> foo(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keywordflow">return</span> bar(a + b, b - a, <span class="keyword">true</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keywordflow">return</span> foo(135, 246);</div>
+<div class="line">}</div>
+<div class="ttc" id="aassert_8hpp_html"><div class="ttname"><a href="assert_8hpp.html">assert.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

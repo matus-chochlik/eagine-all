@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/math/matrix_looking_at.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,104 +73,111 @@ $(function() {
 <div class="title">matrix_looking_at.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="matrix__looking__at_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EAGINE_MATH_MATRIX_LOOKING_AT_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define EAGINE_MATH_MATRIX_LOOKING_AT_HPP</span></div>
+<a href="matrix__looking__at_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_MATH_MATRIX_LOOKING_AT_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_MATH_MATRIX_LOOKING_AT_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../quantities.hpp&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix__ctr_8hpp.html">matrix_ctr.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../quantities.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="matrix__ctr_8hpp.html">&quot;matrix_ctr.hpp&quot;</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine_1_1math.html">eagine::math</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::<a class="code" href="namespaceeagine_1_1math.html">math</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// looking_at_y_up</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> X&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>looking_at_y_up;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class</span> looking_at_y_up;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// is_matrix_constructor&lt;looking_at_y_up&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">struct </span>is_matrix_constructor&lt;looking_at_y_up&lt;matrix&lt;T, N, N, RM, V&gt;&gt;&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1math_1_1is__matrix__constructor.html">is_matrix_constructor</a>&lt;looking_at_y_up&lt;matrix&lt;T, N, N, RM, V&gt;&gt;&gt;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  : std::true_type {};</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/// @brief Implements constructor of look-at matrix used for camera transformations.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/// @ingroup math</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/// @see matrix_looking_at_y_up</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/// This implementation assumes the positive y axis points up.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/// @note Do not use directly, use matrix_looking_at_y_up</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html">   32</a></span>&#160;<span class="keyword">class </span>looking_at_y_up&lt;<a class="code" href="structeagine_1_1math_1_1matrix.html">matrix</a>&lt;T, 4, 4, RM, V&gt;&gt; {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html">   32</a></span>&#160;<span class="keyword">class</span> looking_at_y_up&lt;matrix&lt;T, 4, 4, RM, V&gt;&gt; {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a7a6b9f632f5a44ce0ed2e0485b8e013a">   37</a></span>&#160;    constexpr <a class="code" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a7a6b9f632f5a44ce0ed2e0485b8e013a">looking_at_y_up</a>(</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keyword">const</span> <a class="code" href="structeagine_1_1math_1_1vector.html">vector&lt;T, 3, V&gt;</a>&amp; eye,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">const</span> <a class="code" href="structeagine_1_1math_1_1vector.html">vector&lt;T, 3, V&gt;</a>&amp; target) noexcept</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/// @brief Initializes the matrix constructor.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">/// @param eye is the position of the camera.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/// @param target is the point the camera is looking at.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a7a6b9f632f5a44ce0ed2e0485b8e013a">   37</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a7a6b9f632f5a44ce0ed2e0485b8e013a">looking_at_y_up</a>(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keyword">const</span> <a class="code" href="structeagine_1_1math_1_1vector.html">vector</a>&lt;T, 3, V&gt;&amp; eye,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">const</span> <a class="code" href="structeagine_1_1math_1_1vector.html">vector</a>&lt;T, 3, V&gt;&amp; target) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      : _e(eye)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      , _t(target) {}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a406aa3edf3b28ecc15f407155962c95e">   44</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a406aa3edf3b28ecc15f407155962c95e">operator()</a>() const noexcept {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> _make(<a class="code" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">bool_constant&lt;RM&gt;</a>());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/// @brief Returns the constructed matrix.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a406aa3edf3b28ecc15f407155962c95e">   44</a></span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a406aa3edf3b28ecc15f407155962c95e">operator</a>()() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> _make(bool_constant&lt;RM&gt;());</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">using</span> _dT = <a class="code" href="structeagine_1_1math_1_1vector.html">vector&lt;T, 3, V&gt;</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">using</span> _dT = <a class="code" href="structeagine_1_1math_1_1vector.html">vector</a>&lt;T, 3, V&gt;;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structeagine_1_1math_1_1vector.html">vector&lt;T, 3, V&gt;</a> _e, _t;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structeagine_1_1math_1_1vector.html">vector</a>&lt;T, 3, V&gt; _e, _t;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">auto</span> _make(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> _make(</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keyword">const</span> _dT&amp; x,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keyword">const</span> _dT&amp; y,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keyword">const</span> _dT&amp; z,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> _dT&amp; t) noexcept {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structeagine_1_1math_1_1matrix.html">matrix&lt;T, 4, 4, true, V&gt;</a>{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          {{x[0], x[1], x[2], -<a class="code" href="group__math.html#ga8ecc4c770d0cead07cab85267e7f3ee4">dot</a>(x, t)},</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;           {y[0], y[1], y[2], -<a class="code" href="group__math.html#ga8ecc4c770d0cead07cab85267e7f3ee4">dot</a>(y, t)},</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;           {z[0], z[1], z[2], -<a class="code" href="group__math.html#ga8ecc4c770d0cead07cab85267e7f3ee4">dot</a>(z, t)},</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> _dT&amp; t) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> matrix&lt;T, 4, 4, <span class="keyword">true</span>, V&gt;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          {{x[0], x[1], x[2], -dot(x, t)},</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;           {y[0], y[1], y[2], -dot(y, t)},</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;           {z[0], z[1], z[2], -dot(z, t)},</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;           {T(0), T(0), T(0), T(1)}}};</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">auto</span> _make(</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> _make(</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keyword">const</span> _dT&amp; y,</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keyword">const</span> _dT&amp; z,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">const</span> _dT&amp; t) noexcept {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> _make(<a class="code" href="group__math.html#gaf76a2f173cb3aff24187f80cff894486">cross</a>(y, z), y, z, t);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">const</span> _dT&amp; t) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> _make(cross(y, z), y, z, t);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">auto</span> _make(<span class="keyword">const</span> _dT&amp; z, <span class="keyword">const</span> _dT&amp; t) noexcept {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> _make(<a class="code" href="group__math.html#ga26980e3d9219efa1f7b30fbc75da96a4">normalized</a>(<a class="code" href="group__math.html#gaf76a2f173cb3aff24187f80cff894486">cross</a>(z, t)), z, t);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> _make(<span class="keyword">const</span> _dT&amp; z, <span class="keyword">const</span> _dT&amp; t) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> _make(normalized(cross(z, t)), z, t);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">auto</span> _make(<span class="keyword">const</span> _dT&amp; z) noexcept {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> _make(<span class="keyword">const</span> _dT&amp; z) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> _make(z, _dT::make(z.z(), T(0), -z.x()));</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    constexpr <span class="keyword">auto</span> _make(std::true_type) <span class="keyword">const</span> noexcept {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> _make(<a class="code" href="group__math.html#ga26980e3d9219efa1f7b30fbc75da96a4">normalized</a>(_e - _t));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> _make(std::true_type) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> _make(normalized(_e - _t));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    constexpr <span class="keyword">auto</span> _make(std::false_type) <span class="keyword">const</span> noexcept {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__math.html#gaec5906731da6eddfd2d067e2feb25c7a">reorder</a>(_make(std::true_type()));</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> _make(std::false_type) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> reorder(_make(std::true_type()));</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// reorder_mat_ctr(looking_at_y_up)</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> reorder_mat_ctr(</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">const</span> looking_at_y_up&lt;matrix&lt;T, N, N, RM, V&gt;&gt;&amp; c) noexcept</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> reorder_mat_ctr(</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">const</span> looking_at_y_up&lt;matrix&lt;T, N, N, RM, V&gt;&gt;&amp; c) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  -&gt; looking_at_y_up&lt;matrix&lt;T, N, N, !RM, V&gt;&gt; {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> {c._e, c._t};</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/// @brief Alias for constructor of look-at matrix used for camera transformations.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/// @ingroup math</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="group__math.html#ga198a16ad7e68f6a0d68e9663e9ff320a">  100</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classeagine_1_1math_1_1convertible__matrix__constructor.html">matrix_looking_at_y_up</a> =</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="classeagine_1_1math_1_1convertible__matrix__constructor.html">convertible_matrix_constructor&lt;looking_at_y_up&lt;matrix&lt;T, 4, 4, true, V&gt;</a>&gt;&gt;;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="group__math.html#ga198a16ad7e68f6a0d68e9663e9ff320a">  100</a></span>&#160;<span class="keyword">using</span> matrix_looking_at_y_up =</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="classeagine_1_1math_1_1convertible__matrix__constructor.html">convertible_matrix_constructor</a>&lt;looking_at_y_up&lt;matrix&lt;T, 4, 4, <span class="keyword">true</span>, V&gt;&gt;&gt;;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;} <span class="comment">// namespace eagine::math</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_MATH_MATRIX_LOOKING_AT_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1math_1_1convertible__matrix__constructor_html"><div class="ttname"><a href="classeagine_1_1math_1_1convertible__matrix__constructor.html">eagine::math::convertible_matrix_constructor</a></div><div class="ttdoc">Helper class used in matrix constructor implementation.</div><div class="ttdef"><b>Definition:</b> matrix_ctr.hpp:75</div></div>
-<div class="ttc" id="aclasseagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4_html_a406aa3edf3b28ecc15f407155962c95e"><div class="ttname"><a href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a406aa3edf3b28ecc15f407155962c95e">eagine::math::looking_at_y_up&lt; matrix&lt; T, 4, 4, RM, V &gt; &gt;::operator()</a></div><div class="ttdeci">constexpr auto operator()() const noexcept</div><div class="ttdoc">Returns the constructed matrix.</div><div class="ttdef"><b>Definition:</b> matrix_looking_at.hpp:44</div></div>
-<div class="ttc" id="aclasseagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4_html_a7a6b9f632f5a44ce0ed2e0485b8e013a"><div class="ttname"><a href="classeagine_1_1math_1_1looking__at__y__up_3_01matrix_3_01T_00_014_00_014_00_01RM_00_01V_01_4_01_4.html#a7a6b9f632f5a44ce0ed2e0485b8e013a">eagine::math::looking_at_y_up&lt; matrix&lt; T, 4, 4, RM, V &gt; &gt;::looking_at_y_up</a></div><div class="ttdeci">constexpr looking_at_y_up(const vector&lt; T, 3, V &gt; &amp;eye, const vector&lt; T, 3, V &gt; &amp;target) noexcept</div><div class="ttdoc">Initializes the matrix constructor.</div><div class="ttdef"><b>Definition:</b> matrix_looking_at.hpp:37</div></div>
-<div class="ttc" id="agroup__math_html_ga26980e3d9219efa1f7b30fbc75da96a4"><div class="ttname"><a href="group__math.html#ga26980e3d9219efa1f7b30fbc75da96a4">eagine::math::normalized</a></div><div class="ttdeci">static constexpr auto normalized(const vector&lt; T, N, V &gt; &amp;a) noexcept</div><div class="ttdoc">Returns normalized argument.</div><div class="ttdef"><b>Definition:</b> vector.hpp:382</div></div>
-<div class="ttc" id="agroup__math_html_ga8ecc4c770d0cead07cab85267e7f3ee4"><div class="ttname"><a href="group__math.html#ga8ecc4c770d0cead07cab85267e7f3ee4">eagine::math::dot</a></div><div class="ttdeci">static constexpr auto dot(const vector&lt; T, N, V &gt; &amp;a, const vector&lt; T, N, V &gt; &amp;b) noexcept</div><div class="ttdoc">Vector dot product.</div><div class="ttdef"><b>Definition:</b> vector.hpp:307</div></div>
-<div class="ttc" id="agroup__math_html_gaec5906731da6eddfd2d067e2feb25c7a"><div class="ttname"><a href="group__math.html#gaec5906731da6eddfd2d067e2feb25c7a">eagine::math::reorder</a></div><div class="ttdeci">static constexpr auto reorder(const matrix&lt; T, C, R, RM, V &gt; &amp;m) noexcept -&gt; matrix&lt; T, C, R, !RM, V &gt;</div><div class="ttdoc">Returns a matrix reordered (switches row/column major).</div><div class="ttdef"><b>Definition:</b> matrix.hpp:334</div></div>
-<div class="ttc" id="agroup__math_html_gaf76a2f173cb3aff24187f80cff894486"><div class="ttname"><a href="group__math.html#gaf76a2f173cb3aff24187f80cff894486">eagine::math::cross</a></div><div class="ttdeci">static constexpr auto cross(const vector&lt; T, 3, V &gt; &amp;a, const vector&lt; T, 3, V &gt; &amp;b) noexcept</div><div class="ttdoc">3D vector cross product.</div><div class="ttdef"><b>Definition:</b> vector.hpp:323</div></div>
-<div class="ttc" id="agroup__type__utils_html_gadda8aac5370bd7ae56cb5a16defd16f4"><div class="ttname"><a href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">eagine::bool_constant</a></div><div class="ttdeci">std::integral_constant&lt; bool, B &gt; bool_constant</div><div class="ttdoc">Alias for boolean constant type.</div><div class="ttdef"><b>Definition:</b> int_constant.hpp:20</div></div>
-<div class="ttc" id="amatrix__ctr_8hpp_html"><div class="ttname"><a href="matrix__ctr_8hpp.html">matrix_ctr.hpp</a></div></div>
-<div class="ttc" id="anamespaceeagine_1_1math_html"><div class="ttname"><a href="namespaceeagine_1_1math.html">eagine::math</a></div><div class="ttdoc">Math-related code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:48</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1matrix_html"><div class="ttname"><a href="structeagine_1_1math_1_1matrix.html">eagine::math::matrix</a></div><div class="ttdoc">Basic RxC matrix implementation template.</div><div class="ttdef"><b>Definition:</b> matrix.hpp:23</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1vector_html"><div class="ttname"><a href="structeagine_1_1math_1_1vector.html">eagine::math::vector&lt; T, 3, V &gt;</a></div></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_MATH_MATRIX_LOOKING_AT_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

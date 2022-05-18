@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/memory/buffer_pool.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,47 +73,54 @@ $(function() {
 <div class="title">buffer_pool.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="buffer__pool_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_MEMORY_BUFFER_POOL_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_MEMORY_BUFFER_POOL_HPP</span></div>
+<a href="buffer__pool_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_MEMORY_BUFFER_POOL_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_MEMORY_BUFFER_POOL_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../config/basic.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../optional_ref.hpp&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="buffer_8hpp.html">buffer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../config/basic.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../optional_ref.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="buffer_8hpp.html">&quot;buffer.hpp&quot;</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">algorithm</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>eagine::memory {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::memory {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class </span>buffer_pool;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span>buffer_pool_stats {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html">buffer_pool</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class</span> buffer_pool_stats {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">auto</span> number_of_gets() const noexcept {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">auto</span> number_of_gets() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> _gets;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">auto</span> number_of_hits() const noexcept {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">auto</span> number_of_hits() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> _hits;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">auto</span> number_of_eats() const noexcept {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">auto</span> number_of_eats() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> _eats;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">auto</span> number_of_discards() const noexcept {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">auto</span> number_of_discards() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> _dscs;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> max_buffer_count() const noexcept {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> max_buffer_count() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> _maxc;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">auto</span> max_buffer_size() const noexcept {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">auto</span> max_buffer_size() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> _maxs;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span>buffer_pool;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class</span> <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html">buffer_pool</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::uintmax_t _hits{0};</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::uintmax_t _gets{0};</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::uintmax_t _eats{0};</div>
@@ -122,77 +129,78 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::size_t _maxs{0};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html">   60</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classeagine_1_1memory_1_1buffer__pool.html">buffer_pool</a> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// @brief Class storing multiple reusable memory buffer instances.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/// @ingroup memory</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/// @see buffer</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html">   60</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html">buffer_pool</a> {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html#a2ecc20e658474ae836cb80e6979db134">   63</a></span>&#160;    <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html#a2ecc20e658474ae836cb80e6979db134">buffer_pool</a>() noexcept = default;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">/// @brief Default constructors.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html#a2ecc20e658474ae836cb80e6979db134">   63</a></span>&#160;    <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html#a2ecc20e658474ae836cb80e6979db134">buffer_pool</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html#af3a17a52738da7cd9babcf4a1fb12ab3">   66</a></span>&#160;    explicit <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html">buffer_pool</a>(const std::<span class="keywordtype">size_t</span> max) noexcept</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/// @brief Constructor initializing the maximum number of buffers in the pool.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html#af3a17a52738da7cd9babcf4a1fb12ab3">   66</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html#af3a17a52738da7cd9babcf4a1fb12ab3">buffer_pool</a>(<span class="keyword">const</span> std::size_t max) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      : _max{max} {}</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html#adc2ce2d5032e4138747b593f2f969a7a">   72</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html#adc2ce2d5032e4138747b593f2f969a7a">get</a>(<span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> req_size = 0) -&gt; <a class="code" href="classeagine_1_1memory_1_1buffer.html">memory::buffer</a> {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classeagine_1_1memory_1_1buffer.html">memory::buffer</a> result{};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#if !EAGINE_LOW_PROFILE</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">/// @brief Gets a buffer with the specified required size.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">/// @param req_size The returned buffer will have at least this number of bytes.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">/// @see eat</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html#adc2ce2d5032e4138747b593f2f969a7a">   72</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html#adc2ce2d5032e4138747b593f2f969a7a">get</a>(<span class="keyword">const</span> span_size_t req_size = 0) -&gt; memory::<a class="code" href="classeagine_1_1memory_1_1buffer.html">buffer</a> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        memory::<a class="code" href="classeagine_1_1memory_1_1buffer.html">buffer</a> result<a class="code" href="classeagine_1_1memory_1_1buffer.html#a79e74ded658b35526a942fb741c21c72">{</a><a class="code" href="classeagine_1_1memory_1_1buffer.html#a79e74ded658b35526a942fb741c21c72">}</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="group__build__config.html#gaf3ecb9858181786c6bdc1ac844c6cf14">EAGINE_LOW_PROFILE</a></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        _stats._maxc = std::max(_stats._maxc, _pool.size());</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ++_stats._gets;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span>(!_pool.empty()) [[likely]] {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#if !EAGINE_LOW_PROFILE</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="group__build__config.html#gaf3ecb9858181786c6bdc1ac844c6cf14">EAGINE_LOW_PROFILE</a></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            ++_stats._hits;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            result = std::move(_pool.back());</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            _pool.pop_back();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        result.resize(req_size);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        result<a class="code" href="classeagine_1_1memory_1_1buffer.html#a021da793cecb6e7e3463472895b78545">.</a><a class="code" href="classeagine_1_1memory_1_1buffer.html#a021da793cecb6e7e3463472895b78545">resize</a><a class="code" href="classeagine_1_1memory_1_1buffer.html#a021da793cecb6e7e3463472895b78545">(</a>req_size<a class="code" href="classeagine_1_1memory_1_1buffer.html#a021da793cecb6e7e3463472895b78545">)</a>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html#ad2e049ace93d6ae73309c3a3a5df9ada">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html#ad2e049ace93d6ae73309c3a3a5df9ada">eat</a>(<a class="code" href="classeagine_1_1memory_1_1buffer.html">memory::buffer</a> used) noexcept {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> old_cap{<a class="code" href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">std_size</a>(used.capacity())};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">/// @brief Returns the specified buffer back to the pool for further reuse.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">/// @see get</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classeagine_1_1memory_1_1buffer__pool.html#ad2e049ace93d6ae73309c3a3a5df9ada">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classeagine_1_1memory_1_1buffer__pool.html#ad2e049ace93d6ae73309c3a3a5df9ada">eat</a>(memory::<a class="code" href="classeagine_1_1memory_1_1buffer.html">buffer</a> used) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> old_cap{std_size(used<a class="code" href="classeagine_1_1memory_1_1buffer.html#abe1351e5e2812885aafe2eb304772ed8">.</a><a class="code" href="classeagine_1_1memory_1_1buffer.html#abe1351e5e2812885aafe2eb304772ed8">capacity</a><a class="code" href="classeagine_1_1memory_1_1buffer.html#abe1351e5e2812885aafe2eb304772ed8">(</a><a class="code" href="classeagine_1_1memory_1_1buffer.html#abe1351e5e2812885aafe2eb304772ed8">)</a>)};</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span>(_pool.size() &lt; _max) [[likely]] {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                _pool.emplace_back(std::move(used));</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            } <span class="keywordflow">catch</span>(...) {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#if !EAGINE_LOW_PROFILE</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="group__build__config.html#gaf3ecb9858181786c6bdc1ac844c6cf14">EAGINE_LOW_PROFILE</a></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            ++_stats._dscs;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#if !EAGINE_LOW_PROFILE</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="group__build__config.html#gaf3ecb9858181786c6bdc1ac844c6cf14">EAGINE_LOW_PROFILE</a></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        ++_stats._eats;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        _stats._maxs = std::max(_stats._maxs, old_cap);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">auto</span> stats() const noexcept</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      -&gt; <a class="code" href="classeagine_1_1optional__reference__wrapper.html">optional_reference_wrapper</a>&lt;const buffer_pool_stats&gt; {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#if !EAGINE_LOW_PROFILE</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">auto</span> stats() <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      -&gt; <a class="code" href="classeagine_1_1optional__reference__wrapper.html">optional_reference_wrapper</a>&lt;<span class="keyword">const</span> buffer_pool_stats&gt; {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="group__build__config.html#gaf3ecb9858181786c6bdc1ac844c6cf14">EAGINE_LOW_PROFILE</a></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> {_stats};</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">else</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> std::size_t _max{1024};</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::vector&lt;memory::buffer&gt; _pool;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#if !EAGINE_LOW_PROFILE</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="group__build__config.html#gaf3ecb9858181786c6bdc1ac844c6cf14">EAGINE_LOW_PROFILE</a></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    buffer_pool_stats _stats{};</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;} <span class="comment">// namespace eagine::memory</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_MEMORY_BUFFER_POOL_HPP</span></div>
-<div class="ttc" id="abuffer_8hpp_html"><div class="ttname"><a href="buffer_8hpp.html">buffer.hpp</a></div></div>
-<div class="ttc" id="aclasseagine_1_1memory_1_1buffer__pool_html"><div class="ttname"><a href="classeagine_1_1memory_1_1buffer__pool.html">eagine::memory::buffer_pool</a></div><div class="ttdoc">Class storing multiple reusable memory buffer instances.</div><div class="ttdef"><b>Definition:</b> buffer_pool.hpp:60</div></div>
-<div class="ttc" id="aclasseagine_1_1memory_1_1buffer__pool_html_a2ecc20e658474ae836cb80e6979db134"><div class="ttname"><a href="classeagine_1_1memory_1_1buffer__pool.html#a2ecc20e658474ae836cb80e6979db134">eagine::memory::buffer_pool::buffer_pool</a></div><div class="ttdeci">buffer_pool() noexcept=default</div><div class="ttdoc">Default constructors.</div></div>
-<div class="ttc" id="aclasseagine_1_1memory_1_1buffer__pool_html_ad2e049ace93d6ae73309c3a3a5df9ada"><div class="ttname"><a href="classeagine_1_1memory_1_1buffer__pool.html#ad2e049ace93d6ae73309c3a3a5df9ada">eagine::memory::buffer_pool::eat</a></div><div class="ttdeci">void eat(memory::buffer used) noexcept</div><div class="ttdoc">Returns the specified buffer back to the pool for further reuse.</div><div class="ttdef"><b>Definition:</b> buffer_pool.hpp:91</div></div>
-<div class="ttc" id="aclasseagine_1_1memory_1_1buffer__pool_html_adc2ce2d5032e4138747b593f2f969a7a"><div class="ttname"><a href="classeagine_1_1memory_1_1buffer__pool.html#adc2ce2d5032e4138747b593f2f969a7a">eagine::memory::buffer_pool::get</a></div><div class="ttdeci">auto get(const span_size_t req_size=0) -&gt; memory::buffer</div><div class="ttdoc">Gets a buffer with the specified required size.</div><div class="ttdef"><b>Definition:</b> buffer_pool.hpp:72</div></div>
-<div class="ttc" id="aclasseagine_1_1memory_1_1buffer_html"><div class="ttname"><a href="classeagine_1_1memory_1_1buffer.html">eagine::memory::buffer</a></div><div class="ttdoc">Reallocatable owning byte buffer.</div><div class="ttdef"><b>Definition:</b> buffer.hpp:21</div></div>
-<div class="ttc" id="aclasseagine_1_1optional__reference__wrapper_html"><div class="ttname"><a href="classeagine_1_1optional__reference__wrapper.html">eagine::optional_reference_wrapper</a></div><div class="ttdoc">Optional reference to an instance of type T.</div><div class="ttdef"><b>Definition:</b> optional_ref.hpp:23</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga283b8d65986d9151df656e7802ea0caf"><div class="ttname"><a href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">eagine::std_size</a></div><div class="ttdeci">static constexpr auto std_size(const T v) noexcept</div><div class="ttdoc">Converts argument to std size type.</div><div class="ttdef"><b>Definition:</b> types.hpp:52</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_MEMORY_BUFFER_POOL_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/math/tmat.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,94 +73,96 @@ $(function() {
 <div class="title">tmat.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="tmat_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EAGINE_MATH_TMAT_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define EAGINE_MATH_TMAT_HPP</span></div>
+<a href="tmat_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_MATH_TMAT_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_MATH_TMAT_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../type_traits.hpp&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix_8hpp.html">matrix.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix__identity_8hpp.html">matrix_identity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../type_traits.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="eagine-core_2include_2eagine_2math_2matrix_8hpp.html">&quot;matrix.hpp&quot;</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="matrix__identity_8hpp.html">&quot;matrix_identity.hpp&quot;</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>math {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine_1_1math.html">math</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @brief Generic template for RxC dimensional matrices.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// @ingroup math</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html">   21</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structeagine_1_1math_1_1tmat.html">tmat</a> : <a class="code" href="structeagine_1_1math_1_1matrix.html">matrix</a>&lt;T, C, R, RM, V&gt; {</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a2dc5d40a2931bb1801c561e077a47216">   23</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="structeagine_1_1math_1_1matrix.html">base</a> = <a class="code" href="structeagine_1_1math_1_1matrix.html">matrix&lt;T, C, R, RM, V&gt;</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html">   21</a></span>&#160;<span class="keyword">struct</span> tmat : matrix&lt;T, C, R, RM, V&gt; {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">/// @brief The base matrix type.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a2dc5d40a2931bb1801c561e077a47216">   23</a></span>&#160;    <span class="keyword">using</span> base = matrix&lt;T, C, R, RM, V&gt;;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a15a2d2aa729029f3f2551fafc109631a">   26</a></span>&#160;    constexpr <a class="code" href="structeagine_1_1math_1_1tmat.html#a15a2d2aa729029f3f2551fafc109631a">tmat</a>() noexcept</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      : <a class="code" href="structeagine_1_1math_1_1matrix.html">base</a>{identity&lt;base&gt;{}()} {}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/// @brief Default constructor. Constructs identity matrix.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a15a2d2aa729029f3f2551fafc109631a">   26</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="structeagine_1_1math_1_1tmat.html#a15a2d2aa729029f3f2551fafc109631a">tmat</a>() <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      : base{identity&lt;base&gt;{}()} {}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a97a656de2ab247fbddf5b771956d4c83">   30</a></span>&#160;    constexpr <a class="code" href="structeagine_1_1math_1_1tmat.html#a97a656de2ab247fbddf5b771956d4c83">tmat</a>(<span class="keyword">const</span> <a class="code" href="structeagine_1_1math_1_1matrix.html">base</a>&amp; m) noexcept</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      : <a class="code" href="structeagine_1_1math_1_1matrix.html">base</a>{m} {}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">/// @brief Construction from a base matrix.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a97a656de2ab247fbddf5b771956d4c83">   30</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="structeagine_1_1math_1_1tmat.html#a97a656de2ab247fbddf5b771956d4c83">tmat</a>(<span class="keyword">const</span> base&amp; m) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      : base{m} {}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a5d4d7d9727a3e9c6517607c3d773eb29">   34</a></span>&#160;    <a class="code" href="structeagine_1_1math_1_1tmat.html#a5d4d7d9727a3e9c6517607c3d773eb29">tmat</a>(<span class="keyword">const</span> T* d, <span class="keyword">const</span> <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      : <a class="code" href="structeagine_1_1math_1_1matrix.html">base</a>{<a class="code" href="structeagine_1_1math_1_1matrix.html#acb5fa68676399cbb90b802a1ac7dfc65">base::from</a>(d, n)} {}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">/// @brief Construction from element data pointer and count.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a5d4d7d9727a3e9c6517607c3d773eb29">   34</a></span>&#160;    <a class="code" href="structeagine_1_1math_1_1tmat.html#a5d4d7d9727a3e9c6517607c3d773eb29">tmat</a>(<span class="keyword">const</span> T* d, <span class="keyword">const</span> <span class="keywordtype">int</span> n) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      : base{base::from(d, n)} {}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a363d45914bc9acd3617c7bf662ded929">   38</a></span>&#160;    <a class="code" href="structeagine_1_1math_1_1tmat.html#a363d45914bc9acd3617c7bf662ded929">tmat</a>(<span class="keyword">const</span> T (&amp;d)[C * R]) noexcept</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      : <a class="code" href="structeagine_1_1math_1_1matrix.html">base</a>{<a class="code" href="structeagine_1_1math_1_1matrix.html#acb5fa68676399cbb90b802a1ac7dfc65">base::from</a>(d, C * R)} {}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/// @brief Construction from element data array.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structeagine_1_1math_1_1tmat.html#a363d45914bc9acd3617c7bf662ded929">   38</a></span>&#160;    <a class="code" href="structeagine_1_1math_1_1tmat.html#a363d45914bc9acd3617c7bf662ded929">tmat</a>(<span class="keyword">const</span> T (&amp;d)[C * R]) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      : base{base::from(d, C * R)} {}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... P&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _make(P&amp;&amp;... p) noexcept requires(</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _make(P&amp;&amp;... p) <span class="keyword">noexcept</span> <span class="keyword">requires</span>(</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      ((<span class="keyword">sizeof</span>...(P)) == (C * R)) &amp;&amp; all_are_convertible_to&lt;T, P...&gt;::value) {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        T d[C * R] = {T(p)...};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structeagine_1_1math_1_1matrix.html#acb5fa68676399cbb90b802a1ac7dfc65">base::from</a>(d, C * R);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> base::from(d, C * R);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... P&gt;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structeagine_1_1math_1_1tmat.html#a15a2d2aa729029f3f2551fafc109631a">tmat</a>(P&amp;&amp;... p) noexcept requires(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    tmat(P&amp;&amp;... p) <span class="keyword">noexcept</span> <span class="keyword">requires</span>(</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      ((<span class="keyword">sizeof</span>...(P)) == (R * C)) &amp;&amp; all_are_convertible_to&lt;T, P...&gt;::value)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      : <a class="code" href="structeagine_1_1math_1_1tmat.html#a2dc5d40a2931bb1801c561e077a47216">base</a>(_make(std::forward&lt;P&gt;(p)...)) {}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      : base(_make(std::forward&lt;P&gt;(p)...)) {}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... P&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    constexpr <a class="code" href="structeagine_1_1math_1_1tmat.html#a15a2d2aa729029f3f2551fafc109631a">tmat</a>(<span class="keyword">const</span> vector&lt;P, RM ? C : R, V&gt;&amp;... v) noexcept</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      requires((<span class="keyword">sizeof</span>...(P)) == (RM ? R : C))</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      : <a class="code" href="structeagine_1_1math_1_1tmat.html#a2dc5d40a2931bb1801c561e077a47216">base</a>{{v._v...}} {}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">constexpr</span> tmat(<span class="keyword">const</span> <a class="code" href="structeagine_1_1math_1_1vector.html">vector</a>&lt;P, RM ? C : R, V&gt;&amp;... v) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">requires</span>((<span class="keyword">sizeof</span>...(P)) == (RM ? R : C))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      : base{{v._v...}} {}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P, <span class="keywordtype">int</span> M, <span class="keywordtype">int</span> N&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    constexpr tmat(<span class="keyword">const</span> matrix&lt;P, M, N, RM, V&gt;&amp; m) noexcept</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      requires(std::is_convertible_v&lt;P, T&gt; &amp;&amp; (C &lt;= M) &amp;&amp; (R &lt;= N))</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">constexpr</span> tmat(<span class="keyword">const</span> matrix&lt;P, M, N, RM, V&gt;&amp; m) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keyword">requires</span>(std::is_convertible_v&lt;P, T&gt; &amp;&amp; (C &lt;= M) &amp;&amp; (R &lt;= N))</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      : base{base::from(m)} {}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">struct </span>is_row_major&lt;math::tmat&lt;T, C, R, RM, V&gt;&gt; : <a class="code" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">bool_constant</a>&lt;RM&gt; {};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">struct</span> is_row_major&lt;<a class="code" href="namespaceeagine_1_1math.html">math</a>::tmat&lt;T, C, R, RM, V&gt;&gt; : bool_constant&lt;RM&gt; {};</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} <span class="comment">// namespace math</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">struct </span>is_known_matrix_type&lt;math::tmat&lt;T, C, R, RM, V&gt;&gt; : std::is_scalar&lt;T&gt; {};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">struct</span> is_known_matrix_type&lt;<a class="code" href="namespaceeagine_1_1math.html">math</a>::tmat&lt;T, C, R, RM, V&gt;&gt; : std::is_scalar&lt;T&gt; {};</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">struct </span>canonical_compound_type&lt;math::tmat&lt;T, C, R, RM, V&gt;&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">struct</span> canonical_compound_type&lt;<a class="code" href="namespaceeagine_1_1math.html">math</a>::tmat&lt;T, C, R, RM, V&gt;&gt;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  : type_identity&lt;std::remove_cv_t&lt;T[C][R]&gt;&gt; {};</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">struct </span>compound_view_maker&lt;math::tmat&lt;T, C, R, RM, V&gt;&gt; {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> math::tmat&lt;T, C, R, RM, V&gt;&amp; m) <span class="keyword">const</span> noexcept {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">struct</span> compound_view_maker&lt;<a class="code" href="namespaceeagine_1_1math.html">math</a>::tmat&lt;T, C, R, RM, V&gt;&gt; {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> operator()(<span class="keyword">const</span> <a class="code" href="namespaceeagine_1_1math.html">math</a>::tmat&lt;T, C, R, RM, V&gt;&amp; m) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> vect::view &lt; T, RM ? C : R, V &gt; ::apply(m._v);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">struct </span>is_row_major&lt;math::tmat&lt;T, C, R, RM, V&gt;&gt; : <a class="code" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">bool_constant</a>&lt;RM&gt; {};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">struct</span> is_row_major&lt;<a class="code" href="namespaceeagine_1_1math.html">math</a>::tmat&lt;T, C, R, RM, V&gt;&gt; : bool_constant&lt;RM&gt; {};</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_MATH_TMAT_HPP</span></div>
-<div class="ttc" id="agroup__type__utils_html_gadda8aac5370bd7ae56cb5a16defd16f4"><div class="ttname"><a href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">eagine::bool_constant</a></div><div class="ttdeci">std::integral_constant&lt; bool, B &gt; bool_constant</div><div class="ttdoc">Alias for boolean constant type.</div><div class="ttdef"><b>Definition:</b> int_constant.hpp:20</div></div>
-<div class="ttc" id="amatrix_8hpp_html"><div class="ttname"><a href="matrix_8hpp.html">matrix.hpp</a></div></div>
-<div class="ttc" id="amatrix__identity_8hpp_html"><div class="ttname"><a href="matrix__identity_8hpp.html">matrix_identity.hpp</a></div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1matrix_html"><div class="ttname"><a href="structeagine_1_1math_1_1matrix.html">eagine::math::matrix</a></div><div class="ttdoc">Basic RxC matrix implementation template.</div><div class="ttdef"><b>Definition:</b> matrix.hpp:23</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1matrix_html_acb5fa68676399cbb90b802a1ac7dfc65"><div class="ttname"><a href="structeagine_1_1math_1_1matrix.html#acb5fa68676399cbb90b802a1ac7dfc65">eagine::math::matrix::from</a></div><div class="ttdeci">static auto from(const P *dt, const span_size_t sz) noexcept -&gt; matrix</div><div class="ttdoc">Creates a matrix from data pointer and size.</div><div class="ttdef"><b>Definition:</b> matrix.hpp:48</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1tmat_html"><div class="ttname"><a href="structeagine_1_1math_1_1tmat.html">eagine::math::tmat</a></div><div class="ttdoc">Generic template for RxC dimensional matrices.</div><div class="ttdef"><b>Definition:</b> tmat.hpp:21</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1tmat_html_a15a2d2aa729029f3f2551fafc109631a"><div class="ttname"><a href="structeagine_1_1math_1_1tmat.html#a15a2d2aa729029f3f2551fafc109631a">eagine::math::tmat::tmat</a></div><div class="ttdeci">constexpr tmat() noexcept</div><div class="ttdoc">Default constructor. Constructs identity matrix.</div><div class="ttdef"><b>Definition:</b> tmat.hpp:26</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1tmat_html_a2dc5d40a2931bb1801c561e077a47216"><div class="ttname"><a href="structeagine_1_1math_1_1tmat.html#a2dc5d40a2931bb1801c561e077a47216">eagine::math::tmat::base</a></div><div class="ttdeci">matrix&lt; T, C, R, RM, V &gt; base</div><div class="ttdoc">The base matrix type.</div><div class="ttdef"><b>Definition:</b> tmat.hpp:23</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1tmat_html_a363d45914bc9acd3617c7bf662ded929"><div class="ttname"><a href="structeagine_1_1math_1_1tmat.html#a363d45914bc9acd3617c7bf662ded929">eagine::math::tmat::tmat</a></div><div class="ttdeci">tmat(const T(&amp;d)[C *R]) noexcept</div><div class="ttdoc">Construction from element data array.</div><div class="ttdef"><b>Definition:</b> tmat.hpp:38</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1tmat_html_a5d4d7d9727a3e9c6517607c3d773eb29"><div class="ttname"><a href="structeagine_1_1math_1_1tmat.html#a5d4d7d9727a3e9c6517607c3d773eb29">eagine::math::tmat::tmat</a></div><div class="ttdeci">tmat(const T *d, const int n) noexcept</div><div class="ttdoc">Construction from element data pointer and count.</div><div class="ttdef"><b>Definition:</b> tmat.hpp:34</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1tmat_html_a97a656de2ab247fbddf5b771956d4c83"><div class="ttname"><a href="structeagine_1_1math_1_1tmat.html#a97a656de2ab247fbddf5b771956d4c83">eagine::math::tmat::tmat</a></div><div class="ttdeci">constexpr tmat(const base &amp;m) noexcept</div><div class="ttdoc">Construction from a base matrix.</div><div class="ttdef"><b>Definition:</b> tmat.hpp:30</div></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_MATH_TMAT_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/serialize/fputils.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,37 +73,44 @@ $(function() {
 <div class="title">fputils.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="fputils_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_SERIALIZE_FPUTILS_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_SERIALIZE_FPUTILS_HPP</span></div>
+<a href="fputils_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_SERIALIZE_FPUTILS_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_SERIALIZE_FPUTILS_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../is_within_limits.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../type_identity.hpp&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../is_within_limits.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../type_identity.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cmath</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstdint</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">limits</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">tuple</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>eagine::fputils {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::fputils {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">struct </span>get_decompose_types;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">struct</span> get_decompose_types;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">struct </span>get_decompose_types&lt;float&gt; {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">struct</span> get_decompose_types&lt;<span class="keywordtype">float</span>&gt; {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">using</span> fraction_type = std::uint32_t;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> exponent_type = std::int16_t;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">struct </span>get_decompose_types&lt;double&gt; {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">struct</span> get_decompose_types&lt;<span class="keywordtype">double</span>&gt; {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> fraction_type = std::uint64_t;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">using</span> exponent_type = std::int32_t;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">struct </span>get_decompose_types&lt;long double&gt; {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">struct</span> get_decompose_types&lt;<span class="keywordtype">long</span> <span class="keywordtype">double</span>&gt; {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">using</span> fraction_type = std::uintmax_t;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">using</span> exponent_type = std::int64_t;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
@@ -119,14 +126,14 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  std::tuple&lt;decompose_fraction_t&lt;F&gt;, decompose_exponent_t&lt;F&gt;&gt;;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;constexpr <span class="keyword">auto</span> max_fraction(type_identity&lt;F&gt; = {}) noexcept</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  -&gt; decompose_fraction_t&lt;F&gt; requires(std::is_floating_point_v&lt;F&gt;) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">constexpr</span> <span class="keyword">auto</span> max_fraction(<a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;F&gt; = {}) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  -&gt; decompose_fraction_t&lt;F&gt; <span class="keyword">requires</span>(std::is_floating_point_v&lt;F&gt;) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">using</span> T = decompose_fraction_t&lt;F&gt;;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> 1 + std::numeric_limits&lt;T&gt;::max() / T(2);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;constexpr <span class="keyword">inline</span> <span class="keyword">auto</span> decompose(<span class="keyword">const</span> F f, <span class="keyword">const</span> type_identity&lt;F&gt; = {}) noexcept</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">constexpr</span> <span class="keyword">inline</span> <span class="keyword">auto</span> decompose(<span class="keyword">const</span> F f, <span class="keyword">const</span> <a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;F&gt; = {}) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  -&gt; decomposed_t&lt;F&gt; {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">switch</span>(std::fpclassify(f)) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">case</span> FP_ZERO:</div>
@@ -142,25 +149,25 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> one = F(1);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> two = F(2);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> fr2 = std::fabs(std::frexp(f, &amp;exp) * two);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    EAGINE_ASSERT(fr2 &gt;= one &amp;&amp; fr2 &lt; two);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="assert_8hpp.html#a3921302d367472812669849fd0b5f616">EAGINE_ASSERT</a>(fr2 &gt;= one &amp;&amp; fr2 &lt; two);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      (<span class="keyword">static_cast&lt;</span>decompose_fraction_t&lt;F&gt;<span class="keyword">&gt;</span>((fr2 - one) * max_fraction&lt;F&gt;())</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      (<span class="keyword">static_cast</span>&lt;decompose_fraction_t&lt;F&gt;&gt;((fr2 - one) * max_fraction&lt;F&gt;())</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;       &lt;&lt; 1U) |</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        ((f &lt; 0) ? 0x1U : 0x0U),</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      limit_cast&lt;decompose_exponent_t&lt;F&gt;&gt;(exp)};</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;constexpr <span class="keyword">inline</span> <span class="keyword">auto</span> compose(</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">constexpr</span> <span class="keyword">inline</span> <span class="keyword">auto</span> compose(</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">const</span> decomposed_t&lt;F&gt;&amp; f,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">const</span> type_identity&lt;F&gt; = {}) noexcept -&gt; F {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">const</span> <a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;F&gt; = {}) <span class="keyword">noexcept</span> -&gt; F {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> fre = std::get&lt;0&gt;(f);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span>(!fre) [[unlikely]] {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">switch</span>(std::get&lt;1&gt;(f)) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>F<span class="keyword">&gt;</span>(0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;F&gt;(0);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">return</span> -<span class="keyword">static_cast&lt;</span>F<span class="keyword">&gt;</span>(0);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">return</span> -<span class="keyword">static_cast</span>&lt;F&gt;(0);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">case</span> 2:</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">return</span> std::numeric_limits&lt;F&gt;::infinity();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">case</span> 3:</div>
@@ -178,12 +185,12 @@ $(function() {
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> half = one / two;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> sig = ((fre &amp; 0x1U) == 0x1U) ? -one : one;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> frc = F(fre &gt;&gt; 1U) / max_fraction&lt;F&gt;() / two;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> sig * std::ldexp(frc + half, limit_cast&lt;int&gt;(std::get&lt;1&gt;(f)));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> sig * std::ldexp(frc + half, limit_cast&lt;<span class="keywordtype">int</span>&gt;(std::get&lt;1&gt;(f)));</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;} <span class="comment">// namespace eagine::fputils</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_SERIALIZE_FPUTILS_HPP</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_SERIALIZE_FPUTILS_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

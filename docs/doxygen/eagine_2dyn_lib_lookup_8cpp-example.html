@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/dyn_lib_lookup.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,50 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="dynamic__library_8hpp.html">eagine/dynamic_library.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="logger_8hpp.html">eagine/logging/logger.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(<span class="keyword">const</span> <a name="a0"></a><a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> lib_path{ctx.args().<a name="a1"></a><a class="code" href="group__memory.html#ga06ef9a335a56af00cc7fb890bb096b3d">find</a>(<span class="stringliteral">&quot;--library&quot;</span>).next()}) {</div>
+<div class="line">        <span class="keywordflow">if</span>(shared_executable_module module{lib_path}) {</div>
+<div class="line">            <span class="keywordflow">if</span>(<a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> sym_name{ctx.args().<a class="code" href="group__memory.html#ga06ef9a335a56af00cc7fb890bb096b3d">find</a>(<span class="stringliteral">&quot;--symbol&quot;</span>).next()}) {</div>
+<div class="line">                <span class="keywordflow">if</span>(module.exports(sym_name)) {</div>
+<div class="line">                    std::cout &lt;&lt; <span class="stringliteral">&quot;symbol found&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">                } <span class="keywordflow">else</span> {</div>
+<div class="line">                    std::cout &lt;&lt; <span class="stringliteral">&quot;symbol not found&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">                }</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                ctx.log().error(<span class="stringliteral">&quot;missing symbol name argument&quot;</span>);</div>
+<div class="line">            }</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            ctx.log()</div>
+<div class="line">              .error(<span class="stringliteral">&quot;failed to open ${lib}: ${message}&quot;</span>)</div>
+<div class="line">              .arg(<a name="a2"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(lib), lib_path)</div>
+<div class="line">              .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(<a class="code" href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693ca78e731027d8fd50ed642340b7c9a63b3">message</a>), module.error_message());</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        ctx.log().error(<span class="stringliteral">&quot;missing library path argument&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="adynamic__library_8hpp_html"><div class="ttname"><a href="dynamic__library_8hpp.html">dynamic_library.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="agroup__memory_html_ga06ef9a335a56af00cc7fb890bb096b3d"><div class="ttname"><a href="group__memory.html#ga06ef9a335a56af00cc7fb890bb096b3d">eagine::memory::find</a></div><div class="ttdeci">static auto find(const basic_span&lt; T1, P1, S1 &gt; where, const basic_span&lt; T2, P2, S2 &gt; what) -&gt; basic_span&lt; T1, P1, S1 &gt;</div><div class="ttdoc">Finds the position of the last occurrence of what in a span.</div><div class="ttdef"><b>Definition:</b> span_algo.hpp:398</div></div>
+<div class="ttc" id="agroup__msgbus_html_gga30cc4ab127de66bcd9084abfd868693ca78e731027d8fd50ed642340b7c9a63b3"><div class="ttname"><a href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693ca78e731027d8fd50ed642340b7c9a63b3">eagine::msgbus::connection_protocol::message</a></div><div class="ttdeci">@ message</div><div class="ttdoc">Message protocol.</div></div>
+<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
+<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

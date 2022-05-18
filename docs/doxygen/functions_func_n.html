@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Class Members - Functions</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -71,24 +71,46 @@ $(function() {
 <li>name()
 : <a class="el" href="structeagine_1_1c__api_1_1constant__base.html#a92b13b7e1dae76367b7d25e68fe78fd5">eagine::c_api::constant_base</a>
 , <a class="el" href="classeagine_1_1compiler__info.html#a5913b0cf84a9d317bdc982af5e0165cb">eagine::compiler_info</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1remote__host.html#ab85499de75919bf760bea8207d172db9">eagine::msgbus::remote_host</a>
 , <a class="el" href="classeagine_1_1valtree_1_1attribute.html#a8443dafe0fe5cb21b07fe24160706dc0">eagine::valtree::attribute</a>
 , <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#a9b53723dc00653f4fc5be51f9d2fe334">eagine::valtree::compound_attribute</a>
 </li>
 <li>named_logging_object()
 : <a class="el" href="classeagine_1_1named__logging__object.html#af53df058d43e0560c470cca1f37d7e61">eagine::named_logging_object&lt; BackendGetter &gt;</a>
 </li>
+<li>near()
+: <a class="el" href="classeagine_1_1oglplus_1_1orbiting__camera.html#a6f65efee70f06ba7bbb986e8effb95c9">eagine::oglplus::orbiting_camera</a>
+</li>
+<li>needs_retry()
+: <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue.html#a11d6d5db91128155cb3fe057297dd934">eagine::msgbus::posix_mqueue</a>
+</li>
 <li>nested()
-: <a class="el" href="classeagine_1_1valtree_1_1compound.html#ab6366b51e0f46b9d1d5c3b0edeabf377">eagine::valtree::compound</a>
+: <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae883bcf53708b393703f08287eecf346">eagine::valtree::compound</a>
 , <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#aac085b449d0aea753abf61f7c7344a3f">eagine::valtree::compound_attribute</a>
-, <a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#a039db3b61f13dfff1498773f4e5919da">eagine::valtree::compound_interface</a>
+, <a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#ac9eb994a2c2579100775a94f28c31370">eagine::valtree::compound_interface</a>
 </li>
 <li>nested_count()
 : <a class="el" href="classeagine_1_1valtree_1_1compound.html#a5487cee0f71d3de7e9a143a8a0b198cf">eagine::valtree::compound</a>
 , <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#ace92ae14119ac6337d1f91f335136553">eagine::valtree::compound_attribute</a>
 , <a class="el" href="structeagine_1_1valtree_1_1compound__interface.html#aa4385285ccc4d143a46d947b97039d4f">eagine::valtree::compound_interface</a>
 </li>
+<li>new_instance()
+: <a class="el" href="structeagine_1_1msgbus_1_1remote__node__changes.html#a357e8a5792cf13e75c3c96333a542ce3">eagine::msgbus::remote_node_changes</a>
+</li>
 <li>next()
 : <a class="el" href="classeagine_1_1program__arg.html#a223fefbdbab5ae2ccaddc29d8f905312">eagine::program_arg</a>
+</li>
+<li>next_sequence_no()
+: <a class="el" href="classeagine_1_1msgbus_1_1context.html#a1bd9c6c9b0405f6b7170c898ff3ba0ff">eagine::msgbus::context</a>
+</li>
+<li>no_audio()
+: <a class="el" href="classeagine_1_1app_1_1launch__options.html#a482baeed56fa48d3f26fabb8d7873025">eagine::app::launch_options</a>
+</li>
+<li>no_input()
+: <a class="el" href="classeagine_1_1app_1_1launch__options.html#a0ca3601e181d34cf106d285568718eb3">eagine::app::launch_options</a>
+</li>
+<li>no_video()
+: <a class="el" href="classeagine_1_1app_1_1launch__options.html#aa1d368329a8d187a75dd241480cd37d5">eagine::app::launch_options</a>
 </li>
 <li>nok_info()
 : <a class="el" href="structeagine_1_1ok__traits.html#a0b5edf2bc7c36f9cb1afe681885c02a6">eagine::ok_traits&lt; Outcome &gt;</a>
@@ -99,8 +121,14 @@ $(function() {
 <li>normal()
 : <a class="el" href="classeagine_1_1math_1_1basic__triangle.html#a5c4652d4ec4c8d3ade4895471385ec46">eagine::math::basic_triangle&lt; T, N, V &gt;</a>
 </li>
+<li>normal_loc()
+: <a class="el" href="classeagine_1_1oglplus_1_1vertex__attrib__bindings.html#afbd9e6981b7d9b820c0d986c87f0176e">eagine::oglplus::vertex_attrib_bindings</a>
+</li>
 <li>nothing_t()
 : <a class="el" href="structeagine_1_1nothing__t.html#a20d9d006271dd5602cb8f18e6d071ad4">eagine::nothing_t</a>
+</li>
+<li>notice_user_active()
+: <a class="el" href="classeagine_1_1app_1_1context__state.html#a98bb874c365a1d38c109eaaff6575801">eagine::app::context_state</a>
 </li>
 <li>notify_alive()
 : <a class="el" href="classeagine_1_1process__watchdog.html#a0154826137ea51caf08b1e983e7b24bb">eagine::process_watchdog</a>

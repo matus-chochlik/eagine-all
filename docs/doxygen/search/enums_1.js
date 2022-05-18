@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['data_5fcompression_5flevel_3279',['data_compression_level',['../group__main__context.html#gad59fd8604fb2c5cc5dad36fe0b5f4634',1,'eagine']]],
-  ['deserialization_5ferror_5fcode_3280',['deserialization_error_code',['../group__serialization.html#ga25c258849fb442ed314588203803f7cd',1,'eagine']]]
+  ['connection_5faddr_5fkind_11004',['connection_addr_kind',['../group__msgbus.html#ga44c64580a1401f9156e13b8ab77eecb4',1,'eagine::msgbus']]],
+  ['connection_5fkind_11005',['connection_kind',['../group__msgbus.html#ga3148ada31e187436f833d8d986ccfd53',1,'eagine::msgbus']]],
+  ['connection_5fprotocol_11006',['connection_protocol',['../group__msgbus.html#ga30cc4ab127de66bcd9084abfd868693c',1,'eagine::msgbus']]],
+  ['console_5fentry_5fkind_11007',['console_entry_kind',['../namespaceeagine.html#a35b4984c1aa44f5ef40813943648ba9b',1,'eagine']]]
 ];

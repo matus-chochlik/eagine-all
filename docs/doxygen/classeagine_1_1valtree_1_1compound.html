@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine::valtree::compound Class Reference</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -393,7 +393,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns the name of an attribute. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="classeagine_1_1valtree_1_1compound.html#aaf86f61f42fe9b9d62118a464c0fa0f4" title="Returns the implementation type id of this attribute.">type_id()</a> == attrib.type_id(). </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#a9b53723dc00653f4fc5be51f9d2fe334">eagine::valtree::compound_attribute::name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#a9b53723dc00653f4fc5be51f9d2fe334">eagine::valtree::compound_attribute::name()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae3305640e15104d7bc3cb666f1f01750">traverse()</a>.</p>
 
 </div>
 </div>
@@ -467,7 +467,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="classeagine_1_1valtree_1_1compound.html#aaf86f61f42fe9b9d62118a464c0fa0f4" title="Returns the implementation type id of this attribute.">type_id()</a> == attrib.type_id()</dd></dl>
 <p>Returns empty attribute handle if no such nested attribute exists. </p>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#a238ecf4660d62c0f131429e0f1b05d15">fetch_values()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound.html#a5adf910eb27877e1a73e12cb34dc5135">find()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#af8ce58dab0290c3688b550f71750df15">eagine::valtree::compound_attribute::find()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound.html#a11ac1fcdd792a6b03cf1cb5ff78afef0">select_value()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#a4c1946f8bca5d491d8cb05b3d5e4d2d1">value_count()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#a5adf910eb27877e1a73e12cb34dc5135">find()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#af8ce58dab0290c3688b550f71750df15">eagine::valtree::compound_attribute::find()</a>.</p>
 
 </div>
 </div>
@@ -515,6 +515,8 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="classeagine_1_1valtree_1_1compound.html#aaf86f61f42fe9b9d62118a464c0fa0f4" title="Returns the implementation type id of this attribute.">type_id()</a> == attrib.type_id()</dd></dl>
 <p>Returns empty attribute handle if no such nested attribute exists. </p>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#a4188e617d3d6e37f881f86c99d638856">find()</a>.</p>
+
 </div>
 </div>
 <a id="a5adf910eb27877e1a73e12cb34dc5135"></a>
@@ -543,6 +545,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns nested attribute of root attribute at the specified path. </p>
 <p>Returns empty attribute handle if no such nested attribute exists. </p>
+
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#a238ecf4660d62c0f131429e0f1b05d15">fetch_values()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound.html#a11ac1fcdd792a6b03cf1cb5ff78afef0">select_value()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#a4c1946f8bca5d491d8cb05b3d5e4d2d1">value_count()</a>.</p>
 
 </div>
 </div>
@@ -674,7 +678,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Indicates if the specified attribute is a reference or link in the tree. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="classeagine_1_1valtree_1_1compound.html#aaf86f61f42fe9b9d62118a464c0fa0f4" title="Returns the implementation type id of this attribute.">type_id()</a> == attrib.type_id() </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#ad0a5eb338b5018be1b4d6d92338aef89">eagine::valtree::compound_attribute::is_link()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#ad0a5eb338b5018be1b4d6d92338aef89">eagine::valtree::compound_attribute::is_link()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae3305640e15104d7bc3cb666f1f01750">traverse()</a>.</p>
 
 </div>
 </div>
@@ -748,7 +752,7 @@ template&lt;typename Compound , typename... Args&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="classeagine_1_1valtree_1_1compound.html#aaf86f61f42fe9b9d62118a464c0fa0f4" title="Returns the implementation type id of this attribute.">type_id()</a> == attrib.type_id()</dd></dl>
 <p>Returns empty attribute handle if no such nested attribute exists. </p>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#aef960a878bd130330ffab4b3aedf7732">fetch_values()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#aac085b449d0aea753abf61f7c7344a3f">eagine::valtree::compound_attribute::nested()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound.html#a1444682a52140591956f65d8c7cf17eb">nested()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound.html#abfc3c35fbc4b6b773589369c6d06ca90">select_value()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#a73bd5799e73ef3020e17533a69c4c9b7">value_count()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#aac085b449d0aea753abf61f7c7344a3f">eagine::valtree::compound_attribute::nested()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae3305640e15104d7bc3cb666f1f01750">traverse()</a>.</p>
 
 </div>
 </div>
@@ -790,6 +794,8 @@ template&lt;typename Compound , typename... Args&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="classeagine_1_1valtree_1_1compound.html#aaf86f61f42fe9b9d62118a464c0fa0f4" title="Returns the implementation type id of this attribute.">type_id()</a> == attrib.type_id()</dd></dl>
 <p>Returns empty attribute handle if no such nested attribute exists. </p>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#a1444682a52140591956f65d8c7cf17eb">nested()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#aafb043c67fd7b1c31a6622f675bf24f4">eagine::valtree::compound_attribute::nested()</a>.</p>
+
 </div>
 </div>
 <a id="a1444682a52140591956f65d8c7cf17eb"></a>
@@ -818,6 +824,8 @@ template&lt;typename Compound , typename... Args&gt; </div>
 
 <p>Returns nested attribute of the root attribute with the specified name. </p>
 <p>Returns empty attribute handle if no such nested attribute exists. </p>
+
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#aef960a878bd130330ffab4b3aedf7732">fetch_values()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound.html#abfc3c35fbc4b6b773589369c6d06ca90">select_value()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#a73bd5799e73ef3020e17533a69c4c9b7">value_count()</a>.</p>
 
 </div>
 </div>
@@ -849,7 +857,7 @@ template&lt;typename Compound , typename... Args&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>this-&gt;<a class="el" href="classeagine_1_1valtree_1_1compound.html#aaf86f61f42fe9b9d62118a464c0fa0f4" title="Returns the implementation type id of this attribute.">type_id()</a> == attrib.type_id() </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Some implementations may return zero here even if there are nested attributes. In such implementations the nested nodes can be traversed only by name. </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae80000de2eb6c0c35da4a7c263173b58">has_nested()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#ace92ae14119ac6337d1f91f335136553">eagine::valtree::compound_attribute::nested_count()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae80000de2eb6c0c35da4a7c263173b58">has_nested()</a>, <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html#ace92ae14119ac6337d1f91f335136553">eagine::valtree::compound_attribute::nested_count()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae3305640e15104d7bc3cb666f1f01750">traverse()</a>.</p>
 
 </div>
 </div>

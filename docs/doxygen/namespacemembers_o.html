@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Namespace Members</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -68,8 +68,14 @@ $(function() {
 <div class="textblock">Here is a list of all documented namespace members with links to the namespaces they belong to:</div>
 
 <h3><a id="index_o"></a>- o -</h3><ul>
+<li>occlude()
+: <a class="el" href="group__shapes.html#gaa321fa6e0953df8732f0d842328c32ad">eagine::shapes</a>
+</li>
 <li>operator!=()
 : <a class="el" href="group__valid__if.html#ga30ddf002ae6b961fccfeacc122c772ba">eagine</a>
+</li>
+<li>operator&quot;&quot;_glsl()
+: <a class="el" href="namespaceeagine_1_1oglplus.html#a85d9bbce2d7f6a58a87dc2a7c07aeca7">eagine::oglplus</a>
 </li>
 <li>operator%()
 : <a class="el" href="group__string__utils.html#ga52258cab6149a57962227c1ae20a7ae2">eagine</a>
@@ -82,22 +88,24 @@ $(function() {
 </li>
 <li>operator+()
 : <a class="el" href="group__string__utils.html#ga88ecee40c099e16bfd49dfc61eeb0d37">eagine</a>
+, <a class="el" href="group__shapes.html#ga4d98e985f310d6cabe8ab53d1e5f30e0">eagine::shapes</a>
 </li>
 <li>operator/()
-: <a class="el" href="group__valtree.html#ga4c7b40d8e9176144af8427829b2cbc26">eagine::valtree</a>
+: <a class="el" href="group__shapes.html#gac954d79381cf1faa8d2b4fa185d4d441">eagine::shapes</a>
+, <a class="el" href="group__valtree.html#ga4c7b40d8e9176144af8427829b2cbc26">eagine::valtree</a>
 </li>
 <li>operator&lt;()
 : <a class="el" href="group__valid__if.html#ga62d83e9db96285f528a3a952487b5aed">eagine</a>
 </li>
 <li>operator&lt;&lt;()
-: <a class="el" href="group__math.html#ga31f3fc3d2d3095581422196737887076">eagine::math</a>
+: <a class="el" href="group__math.html#gad810d5d6eb5a82f9634ea1595caa6173">eagine::math</a>
 , <a class="el" href="group__identifiers.html#ga6716e4d01b5fc184afe38f7935d67070">eagine</a>
 </li>
 <li>operator&lt;=()
 : <a class="el" href="group__valid__if.html#ga84dfd2093461a80764fb5a6fa7d8a71e">eagine</a>
 </li>
 <li>operator==()
-: <a class="el" href="group__identifiers.html#gac41a704d66fdc6f5c3fd67c299057bcf">eagine</a>
+: <a class="el" href="group__valid__if.html#ga0d2b2817fb00992ea3b74cb7c65ee422">eagine</a>
 </li>
 <li>operator&gt;()
 : <a class="el" href="group__valid__if.html#gac560774c6ef3b8f4800adfd7f22bed57">eagine</a>
@@ -105,11 +113,74 @@ $(function() {
 <li>operator&gt;=()
 : <a class="el" href="group__valid__if.html#ga90652f4f2a9e52d3187f9337160f0a19">eagine</a>
 </li>
+<li>operator|()
+: <a class="el" href="group__shapes.html#ga4078c04f8b65835f0ed9ac7aa9220f91">eagine::shapes</a>
+</li>
 <li>operator||()
 : <a class="el" href="namespaceeagine.html#ac959c59502fc872ba5e77e55b148fac5">eagine</a>
 </li>
 <li>optionally_valid
 : <a class="el" href="group__valid__if.html#ga22f90263d27c63b9dd286602484b9037">eagine</a>
+</li>
+<li>output_layer_attribute_value
+: <a class="el" href="group__egl__api__wrap.html#ga12657e2ec2925beb9c2e190b50e5fd3a">eagine::eglplus</a>
+</li>
+<li>output_layer_attributes
+: <a class="el" href="group__egl__api__wrap.html#ga9d93a893bae940b2622fa128787e28d6">eagine::eglplus</a>
+</li>
+<li>output_layer_handle
+: <a class="el" href="group__egl__api__wrap.html#gadfebdc07a2e1976a2e28ab35f520a257">eagine::eglplus</a>
+</li>
+<li>output_layer_tag
+: <a class="el" href="group__egl__api__wrap.html#ga7d30df6b345e7fab6e05fbc7e59b6ff5">eagine::eglplus</a>
+</li>
+<li>output_port_attribute_value
+: <a class="el" href="group__egl__api__wrap.html#ga639e452137b241d423d6daa9071140af">eagine::eglplus</a>
+</li>
+<li>output_port_attributes
+: <a class="el" href="group__egl__api__wrap.html#ga18fe4991ca80b5e06cebfb0c9a5015fe">eagine::eglplus</a>
+</li>
+<li>output_port_handle
+: <a class="el" href="group__egl__api__wrap.html#gac69ef13e7e50f881e8ea47acee7ff262">eagine::eglplus</a>
+</li>
+<li>output_port_tag
+: <a class="el" href="group__egl__api__wrap.html#gad220d4425d84a4ab93d0dc1fa43f77b2">eagine::eglplus</a>
+</li>
+<li>owned_buffer_name
+: <a class="el" href="group__gl__api__wrap.html#ga9f31ded66ba27ec56b85a3d61b406812">eagine::oglplus</a>
+</li>
+<li>owned_framebuffer_name
+: <a class="el" href="group__gl__api__wrap.html#ga4649822f6905f6f473f36e98bc1b7dd5">eagine::oglplus</a>
+</li>
+<li>owned_path_nv_name
+: <a class="el" href="group__gl__api__wrap.html#ga35f16accb224b7647ae0b5b1c8c25c20">eagine::oglplus</a>
+</li>
+<li>owned_program_name
+: <a class="el" href="group__gl__api__wrap.html#gaa8e6e04858bdf3b7c51c313496af41ea">eagine::oglplus</a>
+</li>
+<li>owned_program_pipeline_name
+: <a class="el" href="group__gl__api__wrap.html#gac0f2c8e664f0081e259f92a44fa2bf00">eagine::oglplus</a>
+</li>
+<li>owned_query_name
+: <a class="el" href="group__gl__api__wrap.html#gaa128abd974e43d1c97c395c882dc329e">eagine::oglplus</a>
+</li>
+<li>owned_renderbuffer_name
+: <a class="el" href="group__gl__api__wrap.html#ga1148ce2fda894aa2e1939a68a2e0c609">eagine::oglplus</a>
+</li>
+<li>owned_sampler_name
+: <a class="el" href="group__gl__api__wrap.html#ga944ea6248255695110a246ff2bf1627d">eagine::oglplus</a>
+</li>
+<li>owned_shader_name
+: <a class="el" href="group__gl__api__wrap.html#ga814999c7f80bb5260eb13decc383d5b4">eagine::oglplus</a>
+</li>
+<li>owned_texture_name
+: <a class="el" href="group__gl__api__wrap.html#gaacc229a4ada4c87fde3b11f7386c9ae8">eagine::oglplus</a>
+</li>
+<li>owned_transform_feedback_name
+: <a class="el" href="group__gl__api__wrap.html#ga5b1345d727d2f62ae65c4fdbf8a4011d">eagine::oglplus</a>
+</li>
+<li>owned_vertex_array_name
+: <a class="el" href="group__gl__api__wrap.html#ga4a2093261ac1916e272a87ee0006d0fb">eagine::oglplus</a>
 </li>
 </ul>
 </div><!-- contents -->

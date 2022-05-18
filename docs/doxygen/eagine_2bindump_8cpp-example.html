@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/bindump.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,54 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="bindump_8hpp.html">eagine/bindump.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="file__contents_8hpp.html">eagine/file_contents.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="program__args_8hpp.html">eagine/program_args.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; arg : ctx.args()) {</div>
+<div class="line">        <span class="keywordflow">if</span>(!arg.starts_with(<span class="stringliteral">&quot;-&quot;</span>)) {</div>
+<div class="line">            <span class="keywordflow">if</span>(arg.prev().is_tag(<span class="stringliteral">&quot;-f&quot;</span>, <span class="stringliteral">&quot;--file&quot;</span>)) {</div>
+<div class="line">                file_contents fc(arg.get());</div>
+<div class="line">                std::cout &lt;&lt; arg &lt;&lt; <span class="charliteral">&#39;|&#39;</span> &lt;&lt; bindump(fc.block()) &lt;&lt; std::endl;</div>
+<div class="line">            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(arg.prev().is_tag(<span class="stringliteral">&quot;-s&quot;</span>, <span class="stringliteral">&quot;--string&quot;</span>)) {</div>
+<div class="line">                std::cout &lt;&lt; arg &lt;&lt; <span class="charliteral">&#39;|&#39;</span> &lt;&lt; bindump(arg.block()) &lt;&lt; std::endl;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a name="a0"></a><a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> i = 0;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> get = [&amp;]() -&gt; optionally_valid&lt;byte&gt; {</div>
+<div class="line">        <span class="keywordflow">if</span>(i &lt; 256) {</div>
+<div class="line">            <span class="keywordflow">return</span> {<a name="a1"></a><a class="code" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a>(i++), <span class="keyword">true</span>};</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> {};</div>
+<div class="line">    };</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> put = [](<span class="keyword">const</span> <span class="keywordtype">char</span> c) {</div>
+<div class="line">        std::cout &lt;&lt; c;</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    };</div>
+<div class="line">    <a name="a2"></a><a class="code" href="classeagine_1_1bindump.html#a1b6af07210c32025895158f534665e98">bindump::apply</a>({<a name="a3"></a><a class="code" href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">construct_from</a>, get}, {<a class="code" href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">construct_from</a>, put});</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="abindump_8hpp_html"><div class="ttname"><a href="bindump_8hpp.html">bindump.hpp</a></div></div>
+<div class="ttc" id="aclasseagine_1_1bindump_html_a1b6af07210c32025895158f534665e98"><div class="ttname"><a href="classeagine_1_1bindump.html#a1b6af07210c32025895158f534665e98">eagine::bindump::apply</a></div><div class="ttdeci">static void apply(const byte_getter get_byte, const char_putter put_char)</div><div class="ttdoc">Uses get_byte to read input bytes, encodes them and calls put_char.</div><div class="ttdef"><b>Definition:</b> bindump.inl:117</div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="afile__contents_8hpp_html"><div class="ttname"><a href="file__contents_8hpp.html">file_contents.hpp</a></div></div>
+<div class="ttc" id="agroup__metaprogramming_html_ga4a036d64c1fd49335cc8ca2e2b01c1a7"><div class="ttname"><a href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">eagine::construct_from</a></div><div class="ttdeci">constexpr const construct_from_t construct_from</div><div class="ttdoc">The construct-from tag-dispatch constant.</div><div class="ttdef"><b>Definition:</b> selector.hpp:47</div></div>
+<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
+<div class="ttc" id="agroup__type__utils_html_ga973e3bb89ea2c57a0e9204e9ffc0167e"><div class="ttname"><a href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">eagine::byte</a></div><div class="ttdeci">unsigned char byte</div><div class="ttdoc">Byte type alias.</div><div class="ttdef"><b>Definition:</b> types.hpp:24</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="aprogram__args_8hpp_html"><div class="ttname"><a href="program__args_8hpp.html">program_args.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

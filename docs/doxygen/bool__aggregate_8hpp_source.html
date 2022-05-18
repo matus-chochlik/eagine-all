@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/bool_aggregate.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,29 +73,43 @@ $(function() {
 <div class="title">bool_aggregate.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="bool__aggregate_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_BOOL_AGGREGATE_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_BOOL_AGGREGATE_HPP</span></div>
+<a href="bool__aggregate_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_BOOL_AGGREGATE_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_BOOL_AGGREGATE_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeagine_1_1some__true.html">some_true</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/// @brief Class storing initially false value and logically or-ing other values.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html">   16</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1some__true.html">some_true</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a037ed720724c34fe95eb6a37d688ab5f">   19</a></span>&#160;    constexpr <a class="code" href="classeagine_1_1some__true.html#a037ed720724c34fe95eb6a37d688ab5f">some_true</a>() noexcept = default;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a31f39e473d3723b7de6eaee51706b823">   21</a></span>&#160;    constexpr <a class="code" href="classeagine_1_1some__true.html">some_true</a>(const <span class="keywordtype">bool</span> init) noexcept</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">/// @brief Default constructible.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a037ed720724c34fe95eb6a37d688ab5f">   19</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="classeagine_1_1some__true.html#a037ed720724c34fe95eb6a37d688ab5f">some_true</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/// @brief Initializing constructior.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a31f39e473d3723b7de6eaee51706b823">   21</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="classeagine_1_1some__true.html#a31f39e473d3723b7de6eaee51706b823">some_true</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> init) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      : _result{init} {}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a9b0702c486f98649957db3e0ff420e57">   25</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classeagine_1_1some__true.html#a9b0702c486f98649957db3e0ff420e57">operator()</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> b = <span class="keyword">true</span>) noexcept -&gt; auto&amp; {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">/// @brief Logically or-s the stored state with the specified argument.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a9b0702c486f98649957db3e0ff420e57">   25</a></span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="classeagine_1_1some__true.html#a9b0702c486f98649957db3e0ff420e57">operator</a>()(<span class="keyword">const</span> <span class="keywordtype">bool</span> b = <span class="keyword">true</span>) <span class="keyword">noexcept</span> -&gt; <span class="keyword">auto</span>&amp; {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        _result |= b;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a917d635fefcc4b4151147603c24fe9a5">   31</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classeagine_1_1some__true.html#a917d635fefcc4b4151147603c24fe9a5">operator()</a>(<span class="keyword">const</span> <a class="code" href="classeagine_1_1some__true.html">some_true</a> that) noexcept -&gt; <span class="keyword">auto</span>&amp; {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/// @brief Logically or-s the stored state with the specified argument.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a917d635fefcc4b4151147603c24fe9a5">   31</a></span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="classeagine_1_1some__true.html#a917d635fefcc4b4151147603c24fe9a5">operator</a>()(<span class="keyword">const</span> <a class="code" href="classeagine_1_1some__true.html">some_true</a> that) <span class="keyword">noexcept</span> -&gt; <span class="keyword">auto</span>&amp; {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        _result |= that._result;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a15ce3e078cb41567af64a58378b6da11">   37</a></span>&#160;    constexpr <span class="keyword">explicit</span> <span class="keyword">operator</span> bool() const noexcept {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/// @brief Returns the current boolean state.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classeagine_1_1some__true.html#a15ce3e078cb41567af64a58378b6da11">   37</a></span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">explicit</span> <a class="code" href="classeagine_1_1some__true.html#a15ce3e078cb41567af64a58378b6da11">operator</a> <span class="keywordtype">bool</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> _result;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
@@ -103,16 +117,13 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> _result{<span class="keyword">false</span>};</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga5b6b865401692708c34a55a96d4c12a2">   47</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classeagine_1_1some__true.html">work_done</a> = <a class="code" href="classeagine_1_1some__true.html">some_true</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/// @brief Type alias used as return value indicating that some work was done.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga5b6b865401692708c34a55a96d4c12a2">   47</a></span>&#160;<span class="keyword">using</span> work_done = <a class="code" href="classeagine_1_1some__true.html">some_true</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_BOOL_AGGREGATE_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1some__true_html"><div class="ttname"><a href="classeagine_1_1some__true.html">eagine::some_true</a></div><div class="ttdoc">Class storing initially false value and logically or-ing other values.</div><div class="ttdef"><b>Definition:</b> bool_aggregate.hpp:16</div></div>
-<div class="ttc" id="aclasseagine_1_1some__true_html_a037ed720724c34fe95eb6a37d688ab5f"><div class="ttname"><a href="classeagine_1_1some__true.html#a037ed720724c34fe95eb6a37d688ab5f">eagine::some_true::some_true</a></div><div class="ttdeci">constexpr some_true() noexcept=default</div><div class="ttdoc">Default constructible.</div></div>
-<div class="ttc" id="aclasseagine_1_1some__true_html_a917d635fefcc4b4151147603c24fe9a5"><div class="ttname"><a href="classeagine_1_1some__true.html#a917d635fefcc4b4151147603c24fe9a5">eagine::some_true::operator()</a></div><div class="ttdeci">constexpr auto operator()(const some_true that) noexcept -&gt; auto &amp;</div><div class="ttdoc">Logically or-s the stored state with the specified argument.</div><div class="ttdef"><b>Definition:</b> bool_aggregate.hpp:31</div></div>
-<div class="ttc" id="aclasseagine_1_1some__true_html_a9b0702c486f98649957db3e0ff420e57"><div class="ttname"><a href="classeagine_1_1some__true.html#a9b0702c486f98649957db3e0ff420e57">eagine::some_true::operator()</a></div><div class="ttdeci">constexpr auto operator()(const bool b=true) noexcept -&gt; auto &amp;</div><div class="ttdoc">Logically or-s the stored state with the specified argument.</div><div class="ttdef"><b>Definition:</b> bool_aggregate.hpp:25</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_BOOL_AGGREGATE_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

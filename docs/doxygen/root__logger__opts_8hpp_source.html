@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/logging/root_logger_opts.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,29 +73,35 @@ $(function() {
 <div class="title">root_logger_opts.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="root__logger__opts_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_LOGGING_ROOT_LOGGER_OPTS_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_LOGGING_ROOT_LOGGER_OPTS_HPP</span></div>
+<a href="root__logger__opts_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_LOGGING_ROOT_LOGGER_OPTS_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_LOGGING_ROOT_LOGGER_OPTS_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="progress_2backend_8hpp.html">backend.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="logging_2backend_8hpp.html">&quot;backend.hpp&quot;</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structeagine_1_1root__logger__options.html">   19</a></span>&#160;<span class="comment"></span><span class="keyword">struct </span><a class="code" href="structeagine_1_1root__logger__options.html">root_logger_options</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structeagine_1_1root__logger__options.html#acdeaa5946dcd88a33a31e11a9b0292c0">   21</a></span>&#160;    std::unique_ptr&lt;logger_backend&gt; <a class="code" href="structeagine_1_1root__logger__options.html#acdeaa5946dcd88a33a31e11a9b0292c0">forced_backend</a>{};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @brief Structure holding root logger customization options.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @ingroup logging</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structeagine_1_1root__logger__options.html">   19</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1root__logger__options.html">root_logger_options</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/// @brief The explicitly-specified backend to be used by the root logger.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structeagine_1_1root__logger__options.html#acdeaa5946dcd88a33a31e11a9b0292c0">   21</a></span>&#160;    std::unique_ptr&lt;<a class="code" href="structeagine_1_1logger__backend.html">logger_backend</a>&gt; <a class="code" href="structeagine_1_1root__logger__options.html#acdeaa5946dcd88a33a31e11a9b0292c0">forced_backend</a>{};</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/// @brief Option saying that by default no logging should be done.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structeagine_1_1root__logger__options.html#a0aa900c1da029ba2e7e62b50dcf53e24">   24</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structeagine_1_1root__logger__options.html#a0aa900c1da029ba2e7e62b50dcf53e24">default_no_log</a>{<span class="keyword">false</span>};</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_LOGGING_ROOT_LOGGER_OPTS_HPP</span></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="aprogress_2backend_8hpp_html"><div class="ttname"><a href="progress_2backend_8hpp.html">backend.hpp</a></div></div>
-<div class="ttc" id="astructeagine_1_1root__logger__options_html"><div class="ttname"><a href="structeagine_1_1root__logger__options.html">eagine::root_logger_options</a></div><div class="ttdoc">Structure holding root logger customization options.</div><div class="ttdef"><b>Definition:</b> root_logger_opts.hpp:19</div></div>
-<div class="ttc" id="astructeagine_1_1root__logger__options_html_a0aa900c1da029ba2e7e62b50dcf53e24"><div class="ttname"><a href="structeagine_1_1root__logger__options.html#a0aa900c1da029ba2e7e62b50dcf53e24">eagine::root_logger_options::default_no_log</a></div><div class="ttdeci">bool default_no_log</div><div class="ttdoc">Option saying that by default no logging should be done.</div><div class="ttdef"><b>Definition:</b> root_logger_opts.hpp:24</div></div>
-<div class="ttc" id="astructeagine_1_1root__logger__options_html_acdeaa5946dcd88a33a31e11a9b0292c0"><div class="ttname"><a href="structeagine_1_1root__logger__options.html#acdeaa5946dcd88a33a31e11a9b0292c0">eagine::root_logger_options::forced_backend</a></div><div class="ttdeci">std::unique_ptr&lt; logger_backend &gt; forced_backend</div><div class="ttdoc">The explicitly-specified backend to be used by the root logger.</div><div class="ttdef"><b>Definition:</b> root_logger_opts.hpp:21</div></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_LOGGING_ROOT_LOGGER_OPTS_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

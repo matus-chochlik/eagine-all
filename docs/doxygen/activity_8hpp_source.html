@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/progress/activity.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,69 +73,99 @@ $(function() {
 <div class="title">activity.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="activity_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_PROGRESS_ACTIVITY_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_PROGRESS_ACTIVITY_HPP</span></div>
+<a href="activity_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_PROGRESS_ACTIVITY_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_PROGRESS_ACTIVITY_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="progress_2backend_8hpp.html">backend.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="progress_2backend_8hpp.html">&quot;backend.hpp&quot;</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html">   19</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @brief Class tracking the progress of a long-running activity.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @ingroup progress</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html">   19</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>(</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    activity_progress(</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keyword">const</span> <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>&amp; parent,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keyword">const</span> <a class="code" href="classeagine_1_1basic__string__span.html">string_view</a> title,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> total_steps = 0) noexcept</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keyword">const</span> string_view title,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keyword">const</span> span_size_t total_steps = 0) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      : _backend{parent._backend}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      , _activity_id{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;          _backend</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            ? _backend-&gt;begin_activity(parent._activity_id, title, total_steps)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            : 0U} {}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>(<a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>&amp;&amp; temp) noexcept</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    activity_progress(<a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>&amp;&amp; temp) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      : _backend{std::move(temp._backend)}</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      , _activity_id{temp._activity_id} {}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>(<span class="keyword">const</span> <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    activity_progress(<span class="keyword">const</span> <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">auto</span> operator=(<a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">auto</span> operator=(<span class="keyword">const</span> <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#a3c0056052932a42f2894527916a3f69f">   40</a></span>&#160;    <a class="code" href="classeagine_1_1activity__progress.html#a3c0056052932a42f2894527916a3f69f">~activity_progress</a>() noexcept {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">finish</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/// @brief Marks the activity as finished.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">/// @see finish</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#a3c0056052932a42f2894527916a3f69f">   40</a></span>&#160;    ~<a class="code" href="classeagine_1_1activity__progress.html#a3c0056052932a42f2894527916a3f69f">activity_progress</a>() <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">finish</a><a class="code" href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">(</a><a class="code" href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">)</a>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#af6342cf162349f5bd1c9a866e287b516">   45</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1activity__progress.html#af6342cf162349f5bd1c9a866e287b516">activity</a>(<span class="keyword">const</span> <a class="code" href="classeagine_1_1basic__string__span.html">string_view</a> title, <span class="keyword">const</span> <a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> total_steps = 0)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      const noexcept -&gt; <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/// @brief Creates a sub-activity progress tracker with a title.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#af6342cf162349f5bd1c9a866e287b516">   45</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1activity__progress.html#af6342cf162349f5bd1c9a866e287b516">activity</a>(<span class="keyword">const</span> string_view title, <span class="keyword">const</span> span_size_t total_steps = 0)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a> {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> {*<span class="keyword">this</span>, title, total_steps};</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#a456096d8bb5f880d6e3d4681528b7e6b">   51</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1activity__progress.html#a456096d8bb5f880d6e3d4681528b7e6b">activity_id</a>() const noexcept -&gt; <a class="code" href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">activity_progress_id_t</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/// @brief Returns the unique id of this logger instance.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#a456096d8bb5f880d6e3d4681528b7e6b">   51</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1activity__progress.html#a456096d8bb5f880d6e3d4681528b7e6b">activity_id</a>() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; activity_progress_id_t {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> _activity_id;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> configure(<a class="code" href="classeagine_1_1application__config.html">application_config</a>&amp; config) <span class="keyword">const</span> -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span>(<span class="keyword">auto</span> pbe{backend()}) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="namespaceeagine.html#a29019c44b24986e9a4126f75144fe9b0">extract</a>(pbe).configure(config);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            extract(pbe).configure(config);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#adb55dbb5fbaeb615e6db23aa09fca561">   69</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1activity__progress.html#adb55dbb5fbaeb615e6db23aa09fca561">update_progress</a>(<a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> current) <span class="keyword">const</span> noexcept -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">/// @brief Updates the activity progress to the specified current value.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/// @see finish</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/// @see advance_progress</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">///</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">/// The return value indicates if the activity was canceled, true values</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">/// means that the activity should continue, false means that the activity</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">/// was canceled and should discontinue.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#adb55dbb5fbaeb615e6db23aa09fca561">   69</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1activity__progress.html#adb55dbb5fbaeb615e6db23aa09fca561">update_progress</a>(span_size_t current) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span>(<span class="keyword">auto</span> pbe{backend()}) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceeagine.html#a29019c44b24986e9a4126f75144fe9b0">extract</a>(pbe).update_progress(_activity_id, current);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> extract(pbe).update_progress(_activity_id, current);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#a70fa9c66e90e5d7bc2698c65975ab1e1">   83</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1activity__progress.html#a70fa9c66e90e5d7bc2698c65975ab1e1">advance_progress</a>(<a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> increment = 1) const noexcept -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">/// @brief Advances the activity progress by the specified increment.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">/// @see finish</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">/// @see update_progress</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">///</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">/// The return value indicates if the activity was canceled, true values</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">/// means that the activity should continue, false means that the activity</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">/// was canceled and should discontinue.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#a70fa9c66e90e5d7bc2698c65975ab1e1">   83</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1activity__progress.html#a70fa9c66e90e5d7bc2698c65975ab1e1">advance_progress</a>(span_size_t increment = 1) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span>(<span class="keyword">auto</span> pbe{backend()}) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceeagine.html#a29019c44b24986e9a4126f75144fe9b0">extract</a>(pbe).advance_progress(_activity_id, increment);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">return</span> extract(pbe).advance_progress(_activity_id, increment);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">   93</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">finish</a>() noexcept {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">/// @brief Explicitly marks the activity as finished.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">/// @see advance_progress</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">/// @see update_progress</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">   93</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">finish</a>() <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span>(_backend) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            _backend-&gt;finish_activity(_activity_id);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            _backend.reset();</div>
@@ -143,36 +173,22 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="classeagine_1_1activity__progress.html">activity_progress</a>(std::shared_ptr&lt;progress_tracker_backend&gt; backend) noexcept</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    activity_progress(std::shared_ptr&lt;<a class="code" href="structeagine_1_1progress__tracker__backend.html">progress_tracker_backend</a>&gt; backend) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      : _backend{std::move(backend)} {}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">auto</span> backend() const noexcept</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      -&gt; const std::shared_ptr&lt;progress_tracker_backend&gt;&amp; {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">auto</span> backend() <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      -&gt; <span class="keyword">const</span> std::shared_ptr&lt;<a class="code" href="structeagine_1_1progress__tracker__backend.html">progress_tracker_backend</a>&gt;&amp; {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> _backend;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::shared_ptr&lt;progress_tracker_backend&gt; _backend;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">activity_progress_id_t</a> _activity_id{0U};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::shared_ptr&lt;<a class="code" href="structeagine_1_1progress__tracker__backend.html">progress_tracker_backend</a>&gt; _backend;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">const</span> activity_progress_id_t _activity_id{0U};</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_PROGRESS_ACTIVITY_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1activity__progress_html"><div class="ttname"><a href="classeagine_1_1activity__progress.html">eagine::activity_progress</a></div><div class="ttdoc">Class tracking the progress of a long-running activity.</div><div class="ttdef"><b>Definition:</b> activity.hpp:19</div></div>
-<div class="ttc" id="aclasseagine_1_1activity__progress_html_a3c0056052932a42f2894527916a3f69f"><div class="ttname"><a href="classeagine_1_1activity__progress.html#a3c0056052932a42f2894527916a3f69f">eagine::activity_progress::~activity_progress</a></div><div class="ttdeci">~activity_progress() noexcept</div><div class="ttdoc">Marks the activity as finished.</div><div class="ttdef"><b>Definition:</b> activity.hpp:40</div></div>
-<div class="ttc" id="aclasseagine_1_1activity__progress_html_a456096d8bb5f880d6e3d4681528b7e6b"><div class="ttname"><a href="classeagine_1_1activity__progress.html#a456096d8bb5f880d6e3d4681528b7e6b">eagine::activity_progress::activity_id</a></div><div class="ttdeci">auto activity_id() const noexcept -&gt; activity_progress_id_t</div><div class="ttdoc">Returns the unique id of this logger instance.</div><div class="ttdef"><b>Definition:</b> activity.hpp:51</div></div>
-<div class="ttc" id="aclasseagine_1_1activity__progress_html_a70fa9c66e90e5d7bc2698c65975ab1e1"><div class="ttname"><a href="classeagine_1_1activity__progress.html#a70fa9c66e90e5d7bc2698c65975ab1e1">eagine::activity_progress::advance_progress</a></div><div class="ttdeci">auto advance_progress(span_size_t increment=1) const noexcept -&gt; bool</div><div class="ttdoc">Advances the activity progress by the specified increment.</div><div class="ttdef"><b>Definition:</b> activity.hpp:83</div></div>
-<div class="ttc" id="aclasseagine_1_1activity__progress_html_abd107d4342d3bc5731881ee21efe58bd"><div class="ttname"><a href="classeagine_1_1activity__progress.html#abd107d4342d3bc5731881ee21efe58bd">eagine::activity_progress::finish</a></div><div class="ttdeci">void finish() noexcept</div><div class="ttdoc">Explicitly marks the activity as finished.</div><div class="ttdef"><b>Definition:</b> activity.hpp:93</div></div>
-<div class="ttc" id="aclasseagine_1_1activity__progress_html_adb55dbb5fbaeb615e6db23aa09fca561"><div class="ttname"><a href="classeagine_1_1activity__progress.html#adb55dbb5fbaeb615e6db23aa09fca561">eagine::activity_progress::update_progress</a></div><div class="ttdeci">auto update_progress(span_size_t current) const noexcept -&gt; bool</div><div class="ttdoc">Updates the activity progress to the specified current value.</div><div class="ttdef"><b>Definition:</b> activity.hpp:69</div></div>
-<div class="ttc" id="aclasseagine_1_1activity__progress_html_af6342cf162349f5bd1c9a866e287b516"><div class="ttname"><a href="classeagine_1_1activity__progress.html#af6342cf162349f5bd1c9a866e287b516">eagine::activity_progress::activity</a></div><div class="ttdeci">auto activity(const string_view title, const span_size_t total_steps=0) const noexcept -&gt; activity_progress</div><div class="ttdoc">Creates a sub-activity progress tracker with a title.</div><div class="ttdef"><b>Definition:</b> activity.hpp:45</div></div>
-<div class="ttc" id="aclasseagine_1_1application__config_html"><div class="ttname"><a href="classeagine_1_1application__config.html">eagine::application_config</a></div><div class="ttdoc">Class for reading application configuration.</div><div class="ttdef"><b>Definition:</b> app_config.hpp:42</div></div>
-<div class="ttc" id="aclasseagine_1_1basic__string__span_html"><div class="ttname"><a href="classeagine_1_1basic__string__span.html">eagine::basic_string_span&lt; const char &gt;</a></div></div>
-<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="anamespaceeagine_html_a29019c44b24986e9a4126f75144fe9b0"><div class="ttname"><a href="namespaceeagine.html#a29019c44b24986e9a4126f75144fe9b0">eagine::extract</a></div><div class="ttdeci">static constexpr auto extract(T *ptr) noexcept -&gt; T &amp;</div><div class="ttdoc">Checks ptr and dereferences it.</div><div class="ttdef"><b>Definition:</b> extract.hpp:30</div></div>
-<div class="ttc" id="anamespaceeagine_html_a6a7c42a4eeea0ef9deef0ac4bca30c7b"><div class="ttname"><a href="namespaceeagine.html#a6a7c42a4eeea0ef9deef0ac4bca30c7b">eagine::activity_progress_id_t</a></div><div class="ttdeci">std::uintptr_t activity_progress_id_t</div><div class="ttdoc">Activity progress tracker instance id type.</div><div class="ttdef"><b>Definition:</b> fwd.hpp:18</div></div>
-<div class="ttc" id="aprogress_2backend_8hpp_html"><div class="ttname"><a href="progress_2backend_8hpp.html">backend.hpp</a></div></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_PROGRESS_ACTIVITY_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

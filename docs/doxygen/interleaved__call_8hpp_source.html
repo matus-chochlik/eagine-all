@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/interleaved_call.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,23 +73,34 @@ $(function() {
 <div class="title">interleaved_call.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="interleaved__call_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_INTERLEAVED_CALL_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_INTERLEAVED_CALL_HPP</span></div>
+<a href="interleaved__call_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_INTERLEAVED_CALL_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_INTERLEAVED_CALL_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">utility</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// @brief Callable class that interleaves calls to a function with a separator function.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @ingroup functional</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Func, <span class="keyword">typename</span> SepFunc&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classeagine_1_1interleaved__call.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeagine_1_1interleaved__call.html">interleaved_call</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classeagine_1_1interleaved__call.html">   19</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1interleaved__call.html">interleaved_call</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/// @brief Construction from the base function and the separator function.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classeagine_1_1interleaved__call.html#a807e8befc166fe40c8ac627c3fdfebd8">   22</a></span>&#160;    <a class="code" href="classeagine_1_1interleaved__call.html#a807e8befc166fe40c8ac627c3fdfebd8">interleaved_call</a>(Func func, SepFunc sep_func)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      : _func{std::move(func)}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      , _sep_func{std::move(sep_func)} {}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">/// @brief The function call operator.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... P&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classeagine_1_1interleaved__call.html#af6b4219facd75ecd9e4bc7edbb125023">   28</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1interleaved__call.html#af6b4219facd75ecd9e4bc7edbb125023">operator()</a>(P&amp;&amp;... p) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classeagine_1_1interleaved__call.html#af6b4219facd75ecd9e4bc7edbb125023">   28</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1interleaved__call.html#af6b4219facd75ecd9e4bc7edbb125023">operator</a>()(P&amp;&amp;... p) {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span>(!_first) [[likely]] {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            _sep_func();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        } <span class="keywordflow">else</span> {</div>
@@ -106,15 +117,11 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Func, <span class="keyword">typename</span> SepFunc&gt;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;interleaved_call(Func func, SepFunc sep_func)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  -&gt; interleaved_call&lt;Func, SepFunc&gt;;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  -&gt; <a class="code" href="classeagine_1_1interleaved__call.html">interleaved_call</a>&lt;Func, SepFunc&gt;;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_INTERLEAVED_CALL_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1interleaved__call_html"><div class="ttname"><a href="classeagine_1_1interleaved__call.html">eagine::interleaved_call</a></div><div class="ttdoc">Callable class that interleaves calls to a function with a separator function.</div><div class="ttdef"><b>Definition:</b> interleaved_call.hpp:19</div></div>
-<div class="ttc" id="aclasseagine_1_1interleaved__call_html_a807e8befc166fe40c8ac627c3fdfebd8"><div class="ttname"><a href="classeagine_1_1interleaved__call.html#a807e8befc166fe40c8ac627c3fdfebd8">eagine::interleaved_call::interleaved_call</a></div><div class="ttdeci">interleaved_call(Func func, SepFunc sep_func)</div><div class="ttdoc">Construction from the base function and the separator function.</div><div class="ttdef"><b>Definition:</b> interleaved_call.hpp:22</div></div>
-<div class="ttc" id="aclasseagine_1_1interleaved__call_html_af6b4219facd75ecd9e4bc7edbb125023"><div class="ttname"><a href="classeagine_1_1interleaved__call.html#af6b4219facd75ecd9e4bc7edbb125023">eagine::interleaved_call::operator()</a></div><div class="ttdeci">auto operator()(P &amp;&amp;... p)</div><div class="ttdoc">The function call operator.</div><div class="ttdef"><b>Definition:</b> interleaved_call.hpp:28</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_INTERLEAVED_CALL_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

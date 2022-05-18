@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/random_bytes.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,35 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="hexdump_8hpp.html">eagine/hexdump.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="random__bytes_8hpp.html">eagine/random_bytes.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="span_8hpp.html">eagine/span.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp;) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    std::vector&lt;byte&gt; bytes(256);</div>
+<div class="line">    fill_with_random_bytes(<a name="a0"></a><a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(bytes));</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; hexdump(<a name="a1"></a><a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(bytes)) &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__memory_html_ga323cd8c49fef908990c9d5b5553576b4"><div class="ttname"><a href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">eagine::memory::cover</a></div><div class="ttdeci">static constexpr auto cover(T *addr, const S size) noexcept -&gt; span_if_mutable&lt; T &gt;</div><div class="ttdoc">Creates a span starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:485</div></div>
+<div class="ttc" id="agroup__memory_html_ga9534fdd13884329a5c5e5c10b3337f80"><div class="ttname"><a href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">eagine::memory::view</a></div><div class="ttdeci">static constexpr auto view(T *addr, const S size) noexcept -&gt; const_span&lt; T &gt;</div><div class="ttdoc">Creates a view starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:478</div></div>
+<div class="ttc" id="ahexdump_8hpp_html"><div class="ttname"><a href="hexdump_8hpp.html">hexdump.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="arandom__bytes_8hpp_html"><div class="ttname"><a href="random__bytes_8hpp.html">random_bytes.hpp</a></div></div>
+<div class="ttc" id="aspan_8hpp_html"><div class="ttname"><a href="span_8hpp.html">span.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

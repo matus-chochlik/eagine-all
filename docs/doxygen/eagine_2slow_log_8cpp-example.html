@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/slow_log.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,48 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="integer__range_8hpp.html">eagine/integer_range.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="logger_8hpp.html">eagine/logging/logger.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="activity_8hpp.html">eagine/progress/activity.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="enumerators_8hpp.html">eagine/reflect/enumerators.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"> </div>
+<div class="line">    <a name="a0"></a><a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> repeats = 10;</div>
+<div class="line">    <span class="keyword">auto</span> severity = <a name="a1"></a><a class="code" href="group__logging.html#gga724b65c5c81a873b5baabe72407177eaacaf9b6b99962bf5c2264824231d7a40c">log_event_severity::info</a>;</div>
+<div class="line">    ctx.args().find(<span class="stringliteral">&quot;--count&quot;</span>).parse_next(repeats, ctx.log().error_stream());</div>
+<div class="line">    ctx.args().find(<span class="stringliteral">&quot;--severity&quot;</span>).parse_next(severity, ctx.log().error_stream());</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> main_act =</div>
+<div class="line">      ctx.progress().activity(<span class="stringliteral">&quot;Counting ${current} / ${total}&quot;</span>, repeats);</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> i : integer_range(repeats)) {</div>
+<div class="line">        ctx.log()</div>
+<div class="line">          .log(severity, <span class="stringliteral">&quot;cycle ${i} of ${count}&quot;</span>)</div>
+<div class="line">          .arg(<a name="a2"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(i), i)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(count), repeats);</div>
+<div class="line">        main_act.update_progress(i);</div>
+<div class="line">        std::this_thread::sleep_for(std::chrono::seconds(1));</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aactivity_8hpp_html"><div class="ttname"><a href="activity_8hpp.html">activity.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="aenumerators_8hpp_html"><div class="ttname"><a href="enumerators_8hpp.html">enumerators.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="agroup__logging_html_gga724b65c5c81a873b5baabe72407177eaacaf9b6b99962bf5c2264824231d7a40c"><div class="ttname"><a href="group__logging.html#gga724b65c5c81a873b5baabe72407177eaacaf9b6b99962bf5c2264824231d7a40c">eagine::log_event_severity::info</a></div><div class="ttdeci">@ info</div><div class="ttdoc">Informational log entries.</div></div>
+<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
+<div class="ttc" id="ainteger__range_8hpp_html"><div class="ttname"><a href="integer__range_8hpp.html">integer_range.hpp</a></div></div>
+<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

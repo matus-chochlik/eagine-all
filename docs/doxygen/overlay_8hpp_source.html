@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/value_tree/overlay.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,36 +73,40 @@ $(function() {
 <div class="title">overlay.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="overlay_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_VALUE_TREE_OVERLAY_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_VALUE_TREE_OVERLAY_HPP</span></div>
+<a href="overlay_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_VALUE_TREE_OVERLAY_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_VALUE_TREE_OVERLAY_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../main_ctx_fwd.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="wrappers_8hpp.html">wrappers.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../main_ctx_fwd.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="wrappers_8hpp.html">&quot;wrappers.hpp&quot;</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine_1_1valtree.html">eagine::valtree</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::<a class="code" href="namespaceeagine_1_1valtree.html">valtree</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span><span class="keyword">auto</span> <a class="code" href="group__valtree.html#gae894aa99da51b2b8461e386a47a0ecca">make_overlay</a>(<a class="code" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>, std::vector&lt;compound_attribute&gt; = {})</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  -&gt; compound;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @brief Creates a overlay compound, combining multiple other compounds.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @ingroup valtree</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">auto</span> <a class="code" href="group__valtree.html#gaedde78d19d79cbb7efd8c2be4fdfd516">make_overlay</a>(main_ctx_parent, std::vector&lt;compound_attribute&gt; = {})</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  -&gt; <a class="code" href="classeagine_1_1valtree_1_1compound.html">compound</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">auto</span> add_overlay(compound&amp;, compound_attribute) -&gt; bool;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">auto</span> add_overlay(<a class="code" href="classeagine_1_1valtree_1_1compound.html">compound</a>&amp;, <a class="code" href="classeagine_1_1valtree_1_1compound__attribute.html">compound_attribute</a>) -&gt; <span class="keywordtype">bool</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> add_overlay(compound&amp; c, <span class="keyword">const</span> compound&amp; a) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> add_overlay(c, a.root());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> add_overlay(<a class="code" href="classeagine_1_1valtree_1_1compound.html">compound</a>&amp; c, <span class="keyword">const</span> <a class="code" href="classeagine_1_1valtree_1_1compound.html">compound</a>&amp; a) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> add_overlay(c, a<a class="code" href="classeagine_1_1valtree_1_1compound.html#a418362f64fa29dd6624ac23f3e1d27cf">.</a><a class="code" href="classeagine_1_1valtree_1_1compound.html#a418362f64fa29dd6624ac23f3e1d27cf">root</a><a class="code" href="classeagine_1_1valtree_1_1compound.html#a418362f64fa29dd6624ac23f3e1d27cf">(</a><a class="code" href="classeagine_1_1valtree_1_1compound.html#a418362f64fa29dd6624ac23f3e1d27cf">)</a>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <span class="comment">// namespace eagine::valtree</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#if !EAGINE_CORE_LIBRARY || defined(EAGINE_IMPLEMENTING_CORE_LIBRARY)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="overlay_8inl.html">eagine/value_tree/overlay.inl</a>&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2basic_8hpp.html#a42b87b5f1b680c3bc7dac19c6741f7ad">EAGINE_CORE_LIBRARY</a> <span class="preprocessor">||</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">EAGINE_IMPLEMENTING_CORE_LIBRARY</span><span class="preprocessor">)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">eagine</span><span class="preprocessor">/</span><span class="preprocessor">value_tree</span><span class="preprocessor">/</span><span class="preprocessor">overlay</span><span class="preprocessor">.</span><span class="preprocessor">inl</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_VALUE_TREE_OVERLAY_HPP</span></div>
-<div class="ttc" id="agroup__main__context_html_ga59362b2dde46bd0149d3c83950d879e9"><div class="ttname"><a href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">eagine::main_ctx_parent</a></div><div class="ttdeci">const main_ctx_object_parent_info &amp; main_ctx_parent</div><div class="ttdoc">Alias for main_ctx_object_parent_info parameter type.</div><div class="ttdef"><b>Definition:</b> main_ctx_fwd.hpp:47</div></div>
-<div class="ttc" id="agroup__valtree_html_gae894aa99da51b2b8461e386a47a0ecca"><div class="ttname"><a href="group__valtree.html#gae894aa99da51b2b8461e386a47a0ecca">eagine::valtree::make_overlay</a></div><div class="ttdeci">auto make_overlay(main_ctx_parent, std::vector&lt; compound_attribute &gt;={}) -&gt; compound</div><div class="ttdoc">Creates a overlay compound, combining multiple other compounds.</div><div class="ttdef"><b>Definition:</b> overlay.inl:275</div></div>
-<div class="ttc" id="anamespaceeagine_1_1valtree_html"><div class="ttname"><a href="namespaceeagine_1_1valtree.html">eagine::valtree</a></div><div class="ttdoc">Value-tree code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:53</div></div>
-<div class="ttc" id="aoverlay_8inl_html"><div class="ttname"><a href="overlay_8inl.html">overlay.inl</a></div></div>
-<div class="ttc" id="awrappers_8hpp_html"><div class="ttname"><a href="wrappers_8hpp.html">wrappers.hpp</a></div></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_VALUE_TREE_OVERLAY_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

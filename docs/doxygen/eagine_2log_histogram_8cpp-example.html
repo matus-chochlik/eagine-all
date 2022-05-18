@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/log_histogram.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,67 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="file__contents_8hpp.html">eagine/file_contents.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="identifier__ctr_8hpp.html">eagine/identifier_ctr.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="integer__range_8hpp.html">eagine/integer_range.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="logger_8hpp.html">eagine/logging/logger.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="functions_8hpp.html">eagine/math/functions.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="span__algo_8hpp.html">eagine/memory/span_algo.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2types_8hpp.html">eagine/types.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"> </div>
+<div class="line">    file_contents content_of_self{ctx.exe_path()};</div>
+<div class="line">    <a name="a0"></a><a class="code" href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">memory::const_block</a> data{content_of_self};</div>
+<div class="line"> </div>
+<div class="line">    std::array&lt;span_size_t, 256&gt; byte_counts{};</div>
+<div class="line">    <a name="a1"></a><a class="code" href="group__memory.html#ga8f187611bb7997b40a64b5800a18c3bf">zero</a>(<a name="a2"></a><a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(byte_counts));</div>
+<div class="line"> </div>
+<div class="line">    <a name="a3"></a><a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> max_count{0};</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> b : data) {</div>
+<div class="line">        max_count = <a name="a4"></a><a class="code" href="group__math.html#ga8c1c62d6860fdcdc5c2dd14afb641a7a">math::maximum</a>(max_count, ++byte_counts[<a name="a5"></a><a class="code" href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">std_size</a>(b)]);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    ctx.log()</div>
+<div class="line">      .info(<span class="stringliteral">&quot;byte histogram&quot;</span>)</div>
+<div class="line">      .arg_func([max_count, &amp;byte_counts](logger_backend&amp; backend) {</div>
+<div class="line">          <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> i : integer_range(<a class="code" href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">std_size</a>(256))) {</div>
+<div class="line">              backend.add_float(</div>
+<div class="line">                <a name="a6"></a><a class="code" href="group__identifiers.html#gae4d41da4ac5ccf8189f111e9e527368a">byte_to_identifier</a>(<span class="keywordtype">byte</span>(i)),</div>
+<div class="line">                <a name="a7"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(Histogram),</div>
+<div class="line">                <span class="keywordtype">float</span>(0),</div>
+<div class="line">                <span class="keywordtype">float</span>(byte_counts[i]),</div>
+<div class="line">                <span class="keywordtype">float</span>(max_count));</div>
+<div class="line">          }</div>
+<div class="line">      });</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2types_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2types_8hpp.html">types.hpp</a></div></div>
+<div class="ttc" id="afile__contents_8hpp_html"><div class="ttname"><a href="file__contents_8hpp.html">file_contents.hpp</a></div></div>
+<div class="ttc" id="afunctions_8hpp_html"><div class="ttname"><a href="functions_8hpp.html">functions.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="agroup__identifiers_html_gae4d41da4ac5ccf8189f111e9e527368a"><div class="ttname"><a href="group__identifiers.html#gae4d41da4ac5ccf8189f111e9e527368a">eagine::byte_to_identifier</a></div><div class="ttdeci">EAGINE_LIB_FUNC auto byte_to_identifier(const byte b) noexcept -&gt; identifier</div><div class="ttdoc">Creates an identifier representing a byte value as a hex string.</div><div class="ttdef"><b>Definition:</b> identifier_ctr.inl:13</div></div>
+<div class="ttc" id="agroup__math_html_ga8c1c62d6860fdcdc5c2dd14afb641a7a"><div class="ttname"><a href="group__math.html#ga8c1c62d6860fdcdc5c2dd14afb641a7a">eagine::math::maximum</a></div><div class="ttdeci">static constexpr auto maximum(const T a, const T b) noexcept</div><div class="ttdoc">Returns the maximum value of a and b.</div><div class="ttdef"><b>Definition:</b> functions.hpp:64</div></div>
+<div class="ttc" id="agroup__memory_html_ga323cd8c49fef908990c9d5b5553576b4"><div class="ttname"><a href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">eagine::memory::cover</a></div><div class="ttdeci">static constexpr auto cover(T *addr, const S size) noexcept -&gt; span_if_mutable&lt; T &gt;</div><div class="ttdoc">Creates a span starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:485</div></div>
+<div class="ttc" id="agroup__memory_html_ga8f187611bb7997b40a64b5800a18c3bf"><div class="ttname"><a href="group__memory.html#ga8f187611bb7997b40a64b5800a18c3bf">eagine::memory::zero</a></div><div class="ttdeci">static auto zero(basic_span&lt; T, P, S &gt; spn) -&gt; basic_span&lt; T, P, S &gt; requires(std::is_integral_v&lt; T &gt;||std::is_floating_point_v&lt; T &gt;)</div><div class="ttdoc">Fills a span with zero value of type T.</div><div class="ttdef"><b>Definition:</b> span_algo.hpp:577</div></div>
+<div class="ttc" id="agroup__memory_html_ga9abe6f67096b87cac1c3116a66379971"><div class="ttname"><a href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">eagine::memory::const_block</a></div><div class="ttdeci">basic_block&lt; true &gt; const_block</div><div class="ttdoc">Alias for const byte memory span.</div><div class="ttdef"><b>Definition:</b> block.hpp:32</div></div>
+<div class="ttc" id="agroup__type__utils_html_ga283b8d65986d9151df656e7802ea0caf"><div class="ttname"><a href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">eagine::std_size</a></div><div class="ttdeci">static constexpr auto std_size(const T v) noexcept</div><div class="ttdoc">Converts argument to std size type.</div><div class="ttdef"><b>Definition:</b> types.hpp:52</div></div>
+<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
+<div class="ttc" id="aidentifier__ctr_8hpp_html"><div class="ttname"><a href="identifier__ctr_8hpp.html">identifier_ctr.hpp</a></div></div>
+<div class="ttc" id="ainteger__range_8hpp_html"><div class="ttname"><a href="integer__range_8hpp.html">integer_range.hpp</a></div></div>
+<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="aspan__algo_8hpp_html"><div class="ttname"><a href="span__algo_8hpp.html">span_algo.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

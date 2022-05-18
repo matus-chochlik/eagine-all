@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/scope_exit.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,38 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="scope__exit_8hpp.html">eagine/scope_exit.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line">    <span class="keyword">using</span> std::cout;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> x = <span class="keywordflow">finally</span>([]() { cout &lt;&lt; <span class="stringliteral">&quot;done\n&quot;</span>; });</div>
+<div class="line">    <span class="keyword">auto</span> c = <span class="keywordflow">finally</span>([]() { cout &lt;&lt; <span class="stringliteral">&quot;should not see this\n&quot;</span>; });</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;starting\n&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">try</span> {</div>
+<div class="line">        [[maybe_unused]] <span class="keyword">auto</span> y{<span class="keywordflow">finally</span>([] { cout &lt;&lt; <span class="stringliteral">&quot;leaving try block\n&quot;</span>; })};</div>
+<div class="line">        cout &lt;&lt; <span class="stringliteral">&quot;entering try block\n&quot;</span>;</div>
+<div class="line">        {</div>
+<div class="line">            [[maybe_unused]] <span class="keyword">auto</span> z{</div>
+<div class="line">              <span class="keywordflow">finally</span>([] { cout &lt;&lt; <span class="stringliteral">&quot;leaving inner block\n&quot;</span>; })};</div>
+<div class="line">            cout &lt;&lt; <span class="stringliteral">&quot;entering inner block\n&quot;</span>;</div>
+<div class="line">            <span class="keywordflow">throw</span> std::exception();</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">catch</span>(...) {</div>
+<div class="line">        [[maybe_unused]] <span class="keyword">auto</span> e{</div>
+<div class="line">          <span class="keywordflow">finally</span>([] { cout &lt;&lt; <span class="stringliteral">&quot;leaving catch block\n&quot;</span>; })};</div>
+<div class="line">        cout &lt;&lt; <span class="stringliteral">&quot;entering catch block\n&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">    c.cancel();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="ascope__exit_8hpp_html"><div class="ttname"><a href="scope__exit_8hpp.html">scope_exit.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

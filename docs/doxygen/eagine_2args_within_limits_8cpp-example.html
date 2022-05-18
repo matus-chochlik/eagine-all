@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/args_within_limits.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,43 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="args__within__limits_8hpp.html">eagine/args_within_limits.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> add(<span class="keywordtype">short</span> l, <span class="keywordtype">short</span> r) {</div>
+<div class="line">    <span class="keywordflow">return</span> l + r;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>mul {</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">auto</span> apply(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) <span class="keyword">const</span> noexcept {</div>
+<div class="line">        <span class="keywordflow">return</span> l * r;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(args_within_limits(&amp;add, 123, 456)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;can call function&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(!args_within_limits(&amp;add, 123456, 789)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;arguments out of range&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(args_within_limits(&amp;mul::apply, 123456, 789012)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;can call function&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(!args_within_limits(&amp;mul::apply, 12345678901234L, 789012)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;arguments out of range&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aargs__within__limits_8hpp_html"><div class="ttname"><a href="args__within__limits_8hpp.html">args_within_limits.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

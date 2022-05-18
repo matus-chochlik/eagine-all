@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Value trees</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -76,12 +76,6 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1valtree_1_1attribute__interface.html">eagine::valtree::attribute_interface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for value tree attribute implementations.  <a href="structeagine_1_1valtree_1_1attribute__interface.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1valtree_1_1compound__interface.html">eagine::valtree::compound_interface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for value tree compound implementations.  <a href="structeagine_1_1valtree_1_1compound__interface.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1valtree_1_1attribute.html">eagine::valtree::attribute</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle class for value tree attributes.  <a href="classeagine_1_1valtree_1_1attribute.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,6 +84,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html">eagine::valtree::compound_attribute</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combination of a reference to a tree compound and a single attribute.  <a href="classeagine_1_1valtree_1_1compound__attribute.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1valtree_1_1attribute__interface.html">eagine::valtree::attribute_interface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for value tree attribute implementations.  <a href="structeagine_1_1valtree_1_1attribute__interface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1valtree_1_1compound__interface.html">eagine::valtree::compound_interface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for value tree compound implementations.  <a href="structeagine_1_1valtree_1_1compound__interface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -114,29 +114,29 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga563e08e23d7b171acd73bc62bb24ee5b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#ga563e08e23d7b171acd73bc62bb24ee5b">eagine::valtree::empty</a> (<a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>) -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td></tr>
-<tr class="memdesc:ga563e08e23d7b171acd73bc62bb24ee5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a compound representing an empty subtree.  <a href="group__valtree.html#ga563e08e23d7b171acd73bc62bb24ee5b">More...</a><br /></td></tr>
-<tr class="separator:ga563e08e23d7b171acd73bc62bb24ee5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga633c9814cae91e948a9146024f7566aa"><td class="memItemLeft" align="right" valign="top"><a id="ga633c9814cae91e948a9146024f7566aa"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#ga633c9814cae91e948a9146024f7566aa">eagine::valtree::from_filesystem_path</a> (<a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> root_path, <a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>, std::shared_ptr&lt; file_compound_factory &gt;={}) -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td></tr>
-<tr class="memdesc:ga633c9814cae91e948a9146024f7566aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a compound representing a filesystem subtree. <br /></td></tr>
-<tr class="separator:ga633c9814cae91e948a9146024f7566aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf1c1a1ef9c627a45bf109b5121beb361"><td class="memItemLeft" align="right" valign="top"><a id="gaf1c1a1ef9c627a45bf109b5121beb361"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#gaf1c1a1ef9c627a45bf109b5121beb361">eagine::valtree::from_json_text</a> (<a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>, <a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>) -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td></tr>
 <tr class="memdesc:gaf1c1a1ef9c627a45bf109b5121beb361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a compound from a JSON text string view. <br /></td></tr>
 <tr class="separator:gaf1c1a1ef9c627a45bf109b5121beb361"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae894aa99da51b2b8461e386a47a0ecca"><td class="memItemLeft" align="right" valign="top"><a id="gae894aa99da51b2b8461e386a47a0ecca"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#gae894aa99da51b2b8461e386a47a0ecca">eagine::valtree::make_overlay</a> (<a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>, std::vector&lt; <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html">compound_attribute</a> &gt;={}) -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td></tr>
-<tr class="memdesc:gae894aa99da51b2b8461e386a47a0ecca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a overlay compound, combining multiple other compounds. <br /></td></tr>
-<tr class="separator:gae894aa99da51b2b8461e386a47a0ecca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4c7b40d8e9176144af8427829b2cbc26"><td class="memItemLeft" align="right" valign="top"><a id="ga4c7b40d8e9176144af8427829b2cbc26"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#ga4c7b40d8e9176144af8427829b2cbc26">eagine::valtree::operator/</a> (<a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a> c, <a class="el" href="classeagine_1_1valtree_1_1attribute.html">attribute</a> a) noexcept -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html">compound_attribute</a></td></tr>
-<tr class="memdesc:ga4c7b40d8e9176144af8427829b2cbc26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator for creating a <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html" title="Combination of a reference to a tree compound and a single attribute.">compound_attribute</a> from compound and attribute. <br /></td></tr>
-<tr class="separator:ga4c7b40d8e9176144af8427829b2cbc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7587a1eed7f7916eb2902cf7482b8eac"><td class="memItemLeft" align="right" valign="top"><a id="ga7587a1eed7f7916eb2902cf7482b8eac"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#ga7587a1eed7f7916eb2902cf7482b8eac">eagine::valtree::from_yaml_text</a> (<a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a>, <a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>) -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td></tr>
 <tr class="memdesc:ga7587a1eed7f7916eb2902cf7482b8eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a compound from a YAML text string view. <br /></td></tr>
 <tr class="separator:ga7587a1eed7f7916eb2902cf7482b8eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c7b40d8e9176144af8427829b2cbc26"><td class="memItemLeft" align="right" valign="top"><a id="ga4c7b40d8e9176144af8427829b2cbc26"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#ga4c7b40d8e9176144af8427829b2cbc26">eagine::valtree::operator/</a> (<a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a> c, <a class="el" href="classeagine_1_1valtree_1_1attribute.html">attribute</a> a) noexcept -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html">compound_attribute</a></td></tr>
+<tr class="memdesc:ga4c7b40d8e9176144af8427829b2cbc26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator for creating a <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html" title="Combination of a reference to a tree compound and a single attribute.">compound_attribute</a> from compound and attribute. <br /></td></tr>
+<tr class="separator:ga4c7b40d8e9176144af8427829b2cbc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec0e8815a27db8be577f00d886ee8abe"><td class="memItemLeft" align="right" valign="top">EAGINE_LIB_FUNC auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#gaec0e8815a27db8be577f00d886ee8abe">eagine::valtree::empty</a> (<a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>) -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td></tr>
+<tr class="memdesc:gaec0e8815a27db8be577f00d886ee8abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a compound representing an empty subtree.  <a href="group__valtree.html#gaec0e8815a27db8be577f00d886ee8abe">More...</a><br /></td></tr>
+<tr class="separator:gaec0e8815a27db8be577f00d886ee8abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad507cebd75ddd6d0962322a127e6b9b7"><td class="memItemLeft" align="right" valign="top"><a id="gad507cebd75ddd6d0962322a127e6b9b7"></a>
+EAGINE_LIB_FUNC auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#gad507cebd75ddd6d0962322a127e6b9b7">eagine::valtree::from_filesystem_path</a> (<a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> root_path, <a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>, std::shared_ptr&lt; file_compound_factory &gt;={}) -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td></tr>
+<tr class="memdesc:gad507cebd75ddd6d0962322a127e6b9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a compound representing a filesystem subtree. <br /></td></tr>
+<tr class="separator:gad507cebd75ddd6d0962322a127e6b9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaedde78d19d79cbb7efd8c2be4fdfd516"><td class="memItemLeft" align="right" valign="top"><a id="gaedde78d19d79cbb7efd8c2be4fdfd516"></a>
+EAGINE_LIB_FUNC auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__valtree.html#gaedde78d19d79cbb7efd8c2be4fdfd516">eagine::valtree::make_overlay</a> (<a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>, std::vector&lt; <a class="el" href="classeagine_1_1valtree_1_1compound__attribute.html">compound_attribute</a> &gt;={}) -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td></tr>
+<tr class="memdesc:gaedde78d19d79cbb7efd8c2be4fdfd516"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a overlay compound, combining multiple other compounds. <br /></td></tr>
+<tr class="separator:gaedde78d19d79cbb7efd8c2be4fdfd516"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -187,28 +187,30 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga563e08e23d7b171acd73bc62bb24ee5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga563e08e23d7b171acd73bc62bb24ee5b">&#9670;&nbsp;</a></span>empty()</h2>
+<a id="gaec0e8815a27db8be577f00d886ee8abe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec0e8815a27db8be577f00d886ee8abe">&#9670;&nbsp;</a></span>empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">EAGINE_LIB_FUNC auto eagine::valtree::empty </td>
+          <td class="memname">auto eagine::valtree::empty </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__main__context.html#ga59362b2dde46bd0149d3c83950d879e9">main_ctx_parent</a>&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classeagine_1_1valtree_1_1compound.html">compound</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Creates a compound representing an empty subtree. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__valtree.html#ga633c9814cae91e948a9146024f7566aa" title="Creates a compound representing a filesystem subtree.">from_filesystem_path</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__valtree.html#gad507cebd75ddd6d0962322a127e6b9b7" title="Creates a compound representing a filesystem subtree.">from_filesystem_path</a> </dd>
 <dd>
 <a class="el" href="group__valtree.html#gaf1c1a1ef9c627a45bf109b5121beb361" title="Creates a compound from a JSON text string view.">from_json_text</a> </dd>
 <dd>
 <a class="el" href="group__valtree.html#ga7587a1eed7f7916eb2902cf7482b8eac" title="Creates a compound from a YAML text string view.">from_yaml_text</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="eagine_2value_tree_8cpp-example.html#a12">eagine/value_tree.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>

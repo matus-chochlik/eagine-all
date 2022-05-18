@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Logging</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -81,29 +81,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1base64dump.html">eagine::base64dump</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for encoding byte blocks into base64 format.  <a href="classeagine_1_1base64dump.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1bindump.html">eagine::bindump</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for encoding byte blocks into binary format.  <a href="classeagine_1_1bindump.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1hexdump.html">eagine::hexdump</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for encoding byte blocks into hexdump-like format.  <a href="classeagine_1_1hexdump.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1log__stream__info.html">eagine::log_stream_info</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure used to supply initial log stream information to a logger.  <a href="structeagine_1_1log__stream__info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1logger__backend.html">eagine::logger_backend</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for logging backend implementations.  <a href="structeagine_1_1logger__backend.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1log__entry.html">eagine::log_entry</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a single log entry / message.  <a href="classeagine_1_1log__entry.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1no__log__entry.html">eagine::no_log_entry</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do-nothing variant of <a class="el" href="classeagine_1_1log__entry.html" title="Class representing a single log entry / message.">log_entry</a> with compatible API.  <a href="structeagine_1_1no__log__entry.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1stream__log__entry.html">eagine::stream_log_entry</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log entry helper containing an istream for creating the log message.  <a href="classeagine_1_1stream__log__entry.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1does__have__entry__adapter.html">eagine::does_have_entry_adapter&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class used in implementation of has_entry_adapter_t.  <a href="structeagine_1_1does__have__entry__adapter.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1root__logger__options.html">eagine::root_logger_options</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding root logger customization options.  <a href="structeagine_1_1root__logger__options.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1basic__logger.html">eagine::basic_logger&lt; BackendGetter &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic template for logger objects.  <a href="classeagine_1_1basic__logger.html#details">More...</a><br /></td></tr>
@@ -114,15 +99,38 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1logger.html">eagine::logger</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standalone logger object type.  <a href="classeagine_1_1logger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1does__have__entry__adapter.html">eagine::does_have_entry_adapter&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class used in implementation of has_entry_adapter_t.  <a href="structeagine_1_1does__have__entry__adapter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1root__logger.html">eagine::root_logger</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class typically used as the per-application single root of logger hierarchy.  <a href="classeagine_1_1root__logger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1root__logger__options.html">eagine::root_logger_options</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding root logger customization options.  <a href="structeagine_1_1root__logger__options.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1log__entry.html">eagine::log_entry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a single log entry / message.  <a href="classeagine_1_1log__entry.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1no__log__entry.html">eagine::no_log_entry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do-nothing variant of <a class="el" href="classeagine_1_1log__entry.html" title="Class representing a single log entry / message.">log_entry</a> with compatible API.  <a href="structeagine_1_1no__log__entry.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1stream__log__entry.html">eagine::stream_log_entry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log entry helper containing an istream for creating the log message.  <a href="classeagine_1_1stream__log__entry.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1hexdump.html">eagine::hexdump</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for encoding byte blocks into hexdump-like format.  <a href="classeagine_1_1hexdump.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1bindump.html">eagine::bindump</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for encoding byte blocks into binary format.  <a href="classeagine_1_1bindump.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ga0638b0f6e67228e669da9cd4c8037d72"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga0638b0f6e67228e669da9cd4c8037d72"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__logging.html#ga0638b0f6e67228e669da9cd4c8037d72">eagine::has_entry_adapter_t</a> = typename <a class="el" href="structeagine_1_1does__have__entry__adapter.html">does_have_entry_adapter</a>&lt; T &gt;::type</td></tr>
+<tr class="memdesc:ga0638b0f6e67228e669da9cd4c8037d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trait indicating if there is a log/console entry adapter for type T.  <a href="group__logging.html#ga0638b0f6e67228e669da9cd4c8037d72">More...</a><br /></td></tr>
+<tr class="separator:ga0638b0f6e67228e669da9cd4c8037d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a9557fbeb47dc7407c0e23763fb80a2"><td class="memItemLeft" align="right" valign="top"><a id="ga2a9557fbeb47dc7407c0e23763fb80a2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#ga2a9557fbeb47dc7407c0e23763fb80a2">eagine::logger_instance_id</a> = std::uintptr_t</td></tr>
+<tr class="memdesc:ga2a9557fbeb47dc7407c0e23763fb80a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logger object instance id type. <br /></td></tr>
+<tr class="separator:ga2a9557fbeb47dc7407c0e23763fb80a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0551577a6ee8d13af4d070a278c44a0d"><td class="memTemplParams" colspan="2"><a id="ga0551577a6ee8d13af4d070a278c44a0d"></a>
 template&lt;log_event_severity severity&gt; </td></tr>
 <tr class="memitem:ga0551577a6ee8d13af4d070a278c44a0d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__logging.html#ga0551577a6ee8d13af4d070a278c44a0d">eagine::log_event_severity_constant</a> = std::integral_constant&lt; <a class="el" href="group__logging.html#ga724b65c5c81a873b5baabe72407177ea">log_event_severity</a>, severity &gt;</td></tr>
@@ -136,14 +144,6 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gro
 <tr class="memitem:ga5c99dc863be38b8bb1cc4fe2cb0d87ac"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__logging.html#ga5c99dc863be38b8bb1cc4fe2cb0d87ac">eagine::is_log_level_enabled_t</a> = <a class="el" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">bool_constant</a>&lt;(severity &gt;=min_log_severity_t::value)&gt;</td></tr>
 <tr class="memdesc:ga5c99dc863be38b8bb1cc4fe2cb0d87ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time trait indicating if the specified log severity is enabled.  <a href="group__logging.html#ga5c99dc863be38b8bb1cc4fe2cb0d87ac">More...</a><br /></td></tr>
 <tr class="separator:ga5c99dc863be38b8bb1cc4fe2cb0d87ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0638b0f6e67228e669da9cd4c8037d72"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga0638b0f6e67228e669da9cd4c8037d72"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__logging.html#ga0638b0f6e67228e669da9cd4c8037d72">eagine::has_entry_adapter_t</a> = typename <a class="el" href="structeagine_1_1does__have__entry__adapter.html">does_have_entry_adapter</a>&lt; T &gt;::type</td></tr>
-<tr class="memdesc:ga0638b0f6e67228e669da9cd4c8037d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trait indicating if there is a log/console entry adapter for type T.  <a href="group__logging.html#ga0638b0f6e67228e669da9cd4c8037d72">More...</a><br /></td></tr>
-<tr class="separator:ga0638b0f6e67228e669da9cd4c8037d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a9557fbeb47dc7407c0e23763fb80a2"><td class="memItemLeft" align="right" valign="top"><a id="ga2a9557fbeb47dc7407c0e23763fb80a2"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__logging.html#ga2a9557fbeb47dc7407c0e23763fb80a2">eagine::logger_instance_id</a> = std::uintptr_t</td></tr>
-<tr class="memdesc:ga2a9557fbeb47dc7407c0e23763fb80a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logger object instance id type. <br /></td></tr>
-<tr class="separator:ga2a9557fbeb47dc7407c0e23763fb80a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -170,14 +170,14 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga834b96195db2aad7e4bf172312f5ad4d"><td class="memTemplParams" colspan="2">template&lt;log_event_severity severity&gt; </td></tr>
-<tr class="memitem:ga834b96195db2aad7e4bf172312f5ad4d"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__logging.html#ga834b96195db2aad7e4bf172312f5ad4d">eagine::is_log_level_enabled_v</a></td></tr>
-<tr class="memdesc:ga834b96195db2aad7e4bf172312f5ad4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time trait indicating if the specified log severity is enabled.  <a href="group__logging.html#ga834b96195db2aad7e4bf172312f5ad4d">More...</a><br /></td></tr>
-<tr class="separator:ga834b96195db2aad7e4bf172312f5ad4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga52b2de74f7f91cb7e55e1545871dd877"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga52b2de74f7f91cb7e55e1545871dd877"><td class="memTemplItemLeft" align="right" valign="top">constexpr const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__logging.html#ga52b2de74f7f91cb7e55e1545871dd877">eagine::has_entry_adapter_v</a></td></tr>
 <tr class="memdesc:ga52b2de74f7f91cb7e55e1545871dd877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trait indicating if there is a log/console entry adapter for type T.  <a href="group__logging.html#ga52b2de74f7f91cb7e55e1545871dd877">More...</a><br /></td></tr>
 <tr class="separator:ga52b2de74f7f91cb7e55e1545871dd877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga834b96195db2aad7e4bf172312f5ad4d"><td class="memTemplParams" colspan="2">template&lt;log_event_severity severity&gt; </td></tr>
+<tr class="memitem:ga834b96195db2aad7e4bf172312f5ad4d"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__logging.html#ga834b96195db2aad7e4bf172312f5ad4d">eagine::is_log_level_enabled_v</a></td></tr>
+<tr class="memdesc:ga834b96195db2aad7e4bf172312f5ad4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time trait indicating if the specified log severity is enabled.  <a href="group__logging.html#ga834b96195db2aad7e4bf172312f5ad4d">More...</a><br /></td></tr>
+<tr class="separator:ga834b96195db2aad7e4bf172312f5ad4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>

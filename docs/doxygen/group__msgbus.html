@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Message bus</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -66,12 +66,384 @@ $(function() {
 
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Message bus</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1context.html">eagine::msgbus::context</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class holding common message bus utility objects.  <a href="classeagine_1_1msgbus_1_1context.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1message__info.html">eagine::msgbus::message_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure storing information about a sigle message bus message.  <a href="structeagine_1_1msgbus_1_1message__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1message__view.html">eagine::msgbus::message_view</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines message information and a non-owning view to message content.  <a href="classeagine_1_1msgbus_1_1message__view.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1stored__message.html">eagine::msgbus::stored_message</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines message information and an owned message content buffer.  <a href="classeagine_1_1msgbus_1_1stored__message.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1message__storage.html">eagine::msgbus::message_storage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class storing message bus messages.  <a href="classeagine_1_1msgbus_1_1message__storage.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1direct__connection__state.html">eagine::msgbus::direct_connection_state</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common shared state for a direct connection.  <a href="classeagine_1_1msgbus_1_1direct__connection__state.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1direct__connection__address.html">eagine::msgbus::direct_connection_address</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class acting as the "address" of a direct connection.  <a href="classeagine_1_1msgbus_1_1direct__connection__address.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1direct__connection__info.html">eagine::msgbus::direct_connection_info&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the <a class="el" href="structeagine_1_1msgbus_1_1connection__info.html" title="Basic interface for retrieving message bus connection information.">connection_info</a> interface for direct connections.  <a href="classeagine_1_1msgbus_1_1direct__connection__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1direct__client__connection.html">eagine::msgbus::direct_client_connection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of client-side direct connection.  <a href="classeagine_1_1msgbus_1_1direct__client__connection.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1direct__server__connection.html">eagine::msgbus::direct_server_connection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of server-side direct connection.  <a href="classeagine_1_1msgbus_1_1direct__server__connection.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1direct__acceptor.html">eagine::msgbus::direct_acceptor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of acceptor for direct connections.  <a href="classeagine_1_1msgbus_1_1direct__acceptor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1direct__connection__factory.html">eagine::msgbus::direct_connection_factory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of <a class="el" href="structeagine_1_1msgbus_1_1connection__factory.html" title="Interface for message bus connection and acceptor factories.">connection_factory</a> for direct connections.  <a href="classeagine_1_1msgbus_1_1direct__connection__factory.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1router__topology__info.html">eagine::msgbus::router_topology_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding part of router connection topology information.  <a href="structeagine_1_1msgbus_1_1router__topology__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1router__statistics.html">eagine::msgbus::router_statistics</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding router statistics information.  <a href="structeagine_1_1msgbus_1_1router__statistics.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1bridge__topology__info.html">eagine::msgbus::bridge_topology_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding part of bridge connection topology information.  <a href="structeagine_1_1msgbus_1_1bridge__topology__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1bridge__statistics.html">eagine::msgbus::bridge_statistics</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding bridge statistics information.  <a href="structeagine_1_1msgbus_1_1bridge__statistics.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1endpoint__topology__info.html">eagine::msgbus::endpoint_topology_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding part of endpoint connection topology information.  <a href="structeagine_1_1msgbus_1_1endpoint__topology__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1endpoint__statistics.html">eagine::msgbus::endpoint_statistics</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding endpoint statistics information.  <a href="structeagine_1_1msgbus_1_1endpoint__statistics.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1endpoint__info.html">eagine::msgbus::endpoint_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message bus endpoint information.  <a href="structeagine_1_1msgbus_1_1endpoint__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1connection__statistics.html">eagine::msgbus::connection_statistics</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding message bus connection statistics.  <a href="structeagine_1_1msgbus_1_1connection__statistics.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1message__flow__info.html">eagine::msgbus::message_flow_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding message bus data flow information.  <a href="structeagine_1_1msgbus_1_1message__flow__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1endpoint.html">eagine::msgbus::endpoint</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message bus client endpoint that can send and receive messages.  <a href="classeagine_1_1msgbus_1_1endpoint.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1friend__of__endpoint.html">eagine::msgbus::friend_of_endpoint</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base for classes that need access to enpoint internal functionality.  <a href="classeagine_1_1msgbus_1_1friend__of__endpoint.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1loopback__connection.html">eagine::msgbus::loopback_connection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loopback implementation of connection. Used mainly for testing and development.  <a href="classeagine_1_1msgbus_1_1loopback__connection.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1subscriber__base.html">eagine::msgbus::subscriber_base</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for message bus subscribers.  <a href="classeagine_1_1msgbus_1_1subscriber__base.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1static__subscriber.html">eagine::msgbus::static_subscriber&lt; N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template for subscribers with predefined count of handled message types.  <a href="classeagine_1_1msgbus_1_1static__subscriber.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1subscriber.html">eagine::msgbus::subscriber</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template for subscribers with variable count of handled message types.  <a href="classeagine_1_1msgbus_1_1subscriber.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1signal_3_01void_07Params_8_8_8_08_01noexcept_01_4.html">eagine::msgbus::signal&lt; void(Params...) noexcept &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that allows connecting and invoking callables with the specified signature.  <a href="classeagine_1_1msgbus_1_1signal_3_01void_07Params_8_8_8_08_01noexcept_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1signal__binding.html">eagine::msgbus::signal_binding</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that keeps a signam binding key and disconnects it when destroyed.  <a href="classeagine_1_1msgbus_1_1signal__binding.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1acceptor.html">eagine::msgbus::acceptor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for message bus connection acceptors.  <a href="structeagine_1_1msgbus_1_1acceptor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1acceptor__user.html">eagine::msgbus::acceptor_user</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for classes that can use message bus connection acceptors.  <a href="structeagine_1_1msgbus_1_1acceptor__user.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1connection__factory.html">eagine::msgbus::connection_factory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for message bus connection and acceptor factories.  <a href="structeagine_1_1msgbus_1_1connection__factory.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1connection__info.html">eagine::msgbus::connection_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic interface for retrieving message bus connection information.  <a href="structeagine_1_1msgbus_1_1connection__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1connection.html">eagine::msgbus::connection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for message bus connections.  <a href="structeagine_1_1msgbus_1_1connection.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1connection__user.html">eagine::msgbus::connection_user</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for classes that can use message bus connections.  <a href="structeagine_1_1msgbus_1_1connection__user.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1message__handler__map.html">eagine::msgbus::message_handler_map&lt; MemFuncConst &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a mapping from a message type id to member function constant.  <a href="structeagine_1_1msgbus_1_1message__handler__map.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1static__message__handler__map.html">eagine::msgbus::static_message_handler_map&lt; MessageId, MemFuncConst &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a mapping from a message type id to member function constant.  <a href="structeagine_1_1msgbus_1_1static__message__handler__map.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1connection__setup.html">eagine::msgbus::connection_setup</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class setting up connections based from configuration.  <a href="classeagine_1_1msgbus_1_1connection__setup.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1router__address.html">eagine::msgbus::router_address</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class loading and managing message bus router address(es).  <a href="classeagine_1_1msgbus_1_1router__address.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1service__composition.html">eagine::msgbus::service_composition&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper mixin class for message bus services composed of several parts.  <a href="classeagine_1_1msgbus_1_1service__composition.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1subscriber__discovery.html">eagine::msgbus::subscriber_discovery&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service discovering information about endpoint status and subscriptions.  <a href="classeagine_1_1msgbus_1_1subscriber__discovery.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1shutdown__target.html">eagine::msgbus::shutdown_target&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service allowing an endpoint to be shut down over the message bus.  <a href="classeagine_1_1msgbus_1_1shutdown__target.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1shutdown__invoker.html">eagine::msgbus::shutdown_invoker&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service allowing to shut down other endpoints over the message bus.  <a href="classeagine_1_1msgbus_1_1shutdown__invoker.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1service__interface.html">eagine::msgbus::service_interface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for message bus services.  <a href="structeagine_1_1msgbus_1_1service__interface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1promise.html">eagine::msgbus::promise&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message bus promise class.  <a href="classeagine_1_1msgbus_1_1promise.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1future.html">eagine::msgbus::future&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message bus future class.  <a href="classeagine_1_1msgbus_1_1future.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1pending__promises.html">eagine::msgbus::pending_promises&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that makes new and tracks existing pending message bus promises.  <a href="classeagine_1_1msgbus_1_1pending__promises.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1network__topology.html">eagine::msgbus::network_topology&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service observing message bus node network topology.  <a href="classeagine_1_1msgbus_1_1network__topology.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1resource__server.html">eagine::msgbus::resource_server&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing access to files and/or blobs over the message bus.  <a href="classeagine_1_1msgbus_1_1resource__server.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1resource__manipulator.html">eagine::msgbus::resource_manipulator&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service manipulating files over the message bus.  <a href="classeagine_1_1msgbus_1_1resource__manipulator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1actor.html">eagine::msgbus::actor&lt; N, Subscriber &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for message bus actors with fixed number of message handlers.  <a href="classeagine_1_1msgbus_1_1actor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1host__info__provider.html">eagine::msgbus::host_info_provider&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing basic information about message bus endpoint's host.  <a href="classeagine_1_1msgbus_1_1host__info__provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1host__info__consumer.html">eagine::msgbus::host_info_consumer&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service consuming basic information about message bus endpoint's host.  <a href="classeagine_1_1msgbus_1_1host__info__consumer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1pingable.html">eagine::msgbus::pingable&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service responding to pings from the pinger counterpart.  <a href="classeagine_1_1msgbus_1_1pingable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1pinger.html">eagine::msgbus::pinger&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service sending to pings from the pingable counterparts.  <a href="classeagine_1_1msgbus_1_1pinger.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1build__info__provider.html">eagine::msgbus::build_info_provider&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing information about endpoint build version.  <a href="classeagine_1_1msgbus_1_1build__info__provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1build__info__consumer.html">eagine::msgbus::build_info_consumer&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service consuming information about endpoint build version.  <a href="classeagine_1_1msgbus_1_1build__info__consumer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1system__info__provider.html">eagine::msgbus::system_info_provider&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing basic information about endpoint's host system.  <a href="classeagine_1_1msgbus_1_1system__info__provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1system__info__consumer.html">eagine::msgbus::system_info_consumer&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service consuming basic information about endpoint's host system.  <a href="classeagine_1_1msgbus_1_1system__info__consumer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1registry.html">eagine::msgbus::registry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class combining a local bus router and a set of endpoints.  <a href="classeagine_1_1msgbus_1_1registry.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1sudoku__helper.html">eagine::msgbus::sudoku_helper&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service helping to partially solve sudoku boards sent by <a class="el" href="classeagine_1_1msgbus_1_1sudoku__solver.html" title="Service solving sudoku boards with the help of helper service on message bus.">sudoku_solver</a>.  <a href="classeagine_1_1msgbus_1_1sudoku__helper.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1sudoku__solver.html">eagine::msgbus::sudoku_solver&lt; Base, Key &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service solving sudoku boards with the help of helper service on message bus.  <a href="classeagine_1_1msgbus_1_1sudoku__solver.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1sudoku__fragment__view.html">eagine::msgbus::sudoku_fragment_view&lt; S &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing view to a solved fragment in <a class="el" href="classeagine_1_1msgbus_1_1sudoku__tiles.html">sudoku_tiles</a>.  <a href="classeagine_1_1msgbus_1_1sudoku__fragment__view.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1sudoku__tiles.html">eagine::msgbus::sudoku_tiles&lt; S &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1sudoku__tiling.html">eagine::msgbus::sudoku_tiling&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service generating a sudoku tiling using helper message bus nodes.  <a href="classeagine_1_1msgbus_1_1sudoku__tiling.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1node__tracker.html">eagine::msgbus::node_tracker&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service that consumes bus topology information and provides it via an API.  <a href="classeagine_1_1msgbus_1_1node__tracker.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1stream__info.html">eagine::msgbus::stream_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure holding information about a data stream.  <a href="structeagine_1_1msgbus_1_1stream__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1stream__endpoint.html">eagine::msgbus::stream_endpoint&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for stream provider and consumer services.  <a href="classeagine_1_1msgbus_1_1stream__endpoint.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1stream__provider.html">eagine::msgbus::stream_provider&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing encoded stream data.  <a href="classeagine_1_1msgbus_1_1stream__provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1stream__consumer.html">eagine::msgbus::stream_consumer&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service consuming encoded stream data.  <a href="classeagine_1_1msgbus_1_1stream__consumer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1stream__relay.html">eagine::msgbus::stream_relay&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service relaying stream data between providers and consumers.  <a href="classeagine_1_1msgbus_1_1stream__relay.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue.html">eagine::msgbus::posix_mqueue</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class wrapping a POSIX message queue.  <a href="classeagine_1_1msgbus_1_1posix__mqueue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection__info.html">eagine::msgbus::posix_mqueue_connection_info&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the <a class="el" href="structeagine_1_1msgbus_1_1connection__info.html" title="Basic interface for retrieving message bus connection information.">connection_info</a> interface for POSIX queue connection.  <a href="classeagine_1_1msgbus_1_1posix__mqueue__connection__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection.html">eagine::msgbus::posix_mqueue_connection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of connection on top of POSIX message queues.  <a href="classeagine_1_1msgbus_1_1posix__mqueue__connection.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connector.html">eagine::msgbus::posix_mqueue_connector</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of connection on top of POSIX message queues.  <a href="classeagine_1_1msgbus_1_1posix__mqueue__connector.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__acceptor.html">eagine::msgbus::posix_mqueue_acceptor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of acceptor on top of POSIX message queues.  <a href="classeagine_1_1msgbus_1_1posix__mqueue__acceptor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection__factory.html">eagine::msgbus::posix_mqueue_connection_factory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of <a class="el" href="structeagine_1_1msgbus_1_1connection__factory.html" title="Interface for message bus connection and acceptor factories.">connection_factory</a> for POSIX message queue connections.  <a href="classeagine_1_1msgbus_1_1posix__mqueue__connection__factory.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1remote__node__changes.html">eagine::msgbus::remote_node_changes</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing and manipulating information about remote node changes.  <a href="structeagine_1_1msgbus_1_1remote__node__changes.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1remote__instance__changes.html">eagine::msgbus::remote_instance_changes</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing and manipulating information about remote instance changes.  <a href="structeagine_1_1msgbus_1_1remote__instance__changes.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1msgbus_1_1remote__host__changes.html">eagine::msgbus::remote_host_changes</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing and manipulating information about remote host changes.  <a href="structeagine_1_1msgbus_1_1remote__host__changes.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1remote__node__tracker.html">eagine::msgbus::remote_node_tracker</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class tracking the state of remote message bus nodes.  <a href="classeagine_1_1msgbus_1_1remote__node__tracker.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1remote__host.html">eagine::msgbus::remote_host</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing information about a remote host of bus nodes.  <a href="classeagine_1_1msgbus_1_1remote__host.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1remote__host__state.html">eagine::msgbus::remote_host_state</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class manipulating information about a remote host of bus nodes.  <a href="classeagine_1_1msgbus_1_1remote__host__state.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1remote__instance.html">eagine::msgbus::remote_instance</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing information about a remote instance running bus nodes.  <a href="classeagine_1_1msgbus_1_1remote__instance.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1remote__instance__state.html">eagine::msgbus::remote_instance_state</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class manipulating information about a remote instance running bus nodes.  <a href="classeagine_1_1msgbus_1_1remote__instance__state.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1remote__node.html">eagine::msgbus::remote_node</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing information about a remote bus node.  <a href="classeagine_1_1msgbus_1_1remote__node.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1remote__node__state.html">eagine::msgbus::remote_node_state</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class manipulating information about a remote bus node.  <a href="classeagine_1_1msgbus_1_1remote__node__state.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1node__connection.html">eagine::msgbus::node_connection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing information about connection between bus nodes.  <a href="classeagine_1_1msgbus_1_1node__connection.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1node__connection__state.html">eagine::msgbus::node_connection_state</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class manipulating information about connection between bus nodes.  <a href="classeagine_1_1msgbus_1_1node__connection__state.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1node__connections.html">eagine::msgbus::node_connections</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class providing information about connections from the perspective of a node.  <a href="classeagine_1_1msgbus_1_1node__connections.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1ability__provider.html">eagine::msgbus::ability_provider&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing information about message types handled by endpoint.  <a href="classeagine_1_1msgbus_1_1ability__provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1ability__tester.html">eagine::msgbus::ability_tester&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service consuming information about message types handled by endpoint.  <a href="classeagine_1_1msgbus_1_1ability__tester.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1application__info__provider.html">eagine::msgbus::application_info_provider&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing basic information about endpoint's application.  <a href="classeagine_1_1msgbus_1_1application__info__provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1application__info__consumer.html">eagine::msgbus::application_info_consumer&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service consuming basic information about endpoint's application.  <a href="classeagine_1_1msgbus_1_1application__info__consumer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1compiler__info__provider.html">eagine::msgbus::compiler_info_provider&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing information about endpoint compiler info.  <a href="classeagine_1_1msgbus_1_1compiler__info__provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1compiler__info__consumer.html">eagine::msgbus::compiler_info_consumer&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service consuming information about endpoint compiler info.  <a href="classeagine_1_1msgbus_1_1compiler__info__consumer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1endpoint__info__provider.html">eagine::msgbus::endpoint_info_provider&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service providing basic information about message bus endpoint.  <a href="classeagine_1_1msgbus_1_1endpoint__info__provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1endpoint__info__consumer.html">eagine::msgbus::endpoint_info_consumer&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service consuming basic information about message bus endpoint.  <a href="classeagine_1_1msgbus_1_1endpoint__info__consumer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1msgbus_1_1statistics__consumer.html">eagine::msgbus::statistics_consumer&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service observing message bus node network statistics.  <a href="classeagine_1_1msgbus_1_1statistics__consumer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga66a73fe549f3f7a726603167898fc2b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga66a73fe549f3f7a726603167898fc2b7">EAGINE_MSG_MAP</a>(CLASS_ID,  METHOD_ID,  CLASS,  METHOD)</td></tr>
+<tr class="memdesc:ga66a73fe549f3f7a726603167898fc2b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an instance of static message handler map.  <a href="group__msgbus.html#ga66a73fe549f3f7a726603167898fc2b7">More...</a><br /></td></tr>
+<tr class="separator:ga66a73fe549f3f7a726603167898fc2b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga2fe9b055f544773bd34fc8f6888cf50e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga2fe9b055f544773bd34fc8f6888cf50e">eagine::msgbus::default_serializer_backend</a> = <a class="el" href="classeagine_1_1portable__serializer__backend.html">portable_serializer_backend</a></td></tr>
+<tr class="memdesc:ga2fe9b055f544773bd34fc8f6888cf50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for default serialization backend for bus messages.  <a href="group__msgbus.html#ga2fe9b055f544773bd34fc8f6888cf50e">More...</a><br /></td></tr>
+<tr class="separator:ga2fe9b055f544773bd34fc8f6888cf50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02de0e7b77ed5f2ada757dfcfa4ce42d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga02de0e7b77ed5f2ada757dfcfa4ce42d">eagine::msgbus::default_deserializer_backend</a> = <a class="el" href="classeagine_1_1portable__deserializer__backend.html">portable_deserializer_backend</a></td></tr>
+<tr class="memdesc:ga02de0e7b77ed5f2ada757dfcfa4ce42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for default deserialization backend for bus messages.  <a href="group__msgbus.html#ga02de0e7b77ed5f2ada757dfcfa4ce42d">More...</a><br /></td></tr>
+<tr class="separator:ga02de0e7b77ed5f2ada757dfcfa4ce42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41d699dddbffe6e4841f80b807f75f8a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga41d699dddbffe6e4841f80b807f75f8a">eagine::msgbus::message_timestamp</a> = std::chrono::steady_clock::time_point</td></tr>
+<tr class="memdesc:ga41d699dddbffe6e4841f80b807f75f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for message timestamp type.  <a href="group__msgbus.html#ga41d699dddbffe6e4841f80b807f75f8a">More...</a><br /></td></tr>
+<tr class="separator:ga41d699dddbffe6e4841f80b807f75f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab27fdcc8a6ff14bbad60ccfe7a69a8e2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gab27fdcc8a6ff14bbad60ccfe7a69a8e2">eagine::msgbus::message_age</a> = std::chrono::duration&lt; float &gt;</td></tr>
+<tr class="memdesc:gab27fdcc8a6ff14bbad60ccfe7a69a8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for message age type.  <a href="group__msgbus.html#gab27fdcc8a6ff14bbad60ccfe7a69a8e2">More...</a><br /></td></tr>
+<tr class="separator:gab27fdcc8a6ff14bbad60ccfe7a69a8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade79cad7134937b254a101bd0aa2d30c"><td class="memItemLeft" align="right" valign="top"><a id="gade79cad7134937b254a101bd0aa2d30c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gade79cad7134937b254a101bd0aa2d30c">eagine::msgbus::message_crypto_flags</a> = <a class="el" href="classeagine_1_1bitfield.html">bitfield</a>&lt; <a class="el" href="group__msgbus.html#ga1867dd40c2037cdc44fd2c8eaeafa0bc">message_crypto_flag</a> &gt;</td></tr>
+<tr class="memdesc:gade79cad7134937b254a101bd0aa2d30c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for message crypto flags bitfield. <br /></td></tr>
+<tr class="separator:gade79cad7134937b254a101bd0aa2d30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fcf36974db207e4a7ca5fcbd99956c0"><td class="memItemLeft" align="right" valign="top"><a id="ga2fcf36974db207e4a7ca5fcbd99956c0"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga2fcf36974db207e4a7ca5fcbd99956c0">eagine::msgbus::message_sequence_t</a> = std::uint32_t</td></tr>
+<tr class="memdesc:ga2fcf36974db207e4a7ca5fcbd99956c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for message sequence number type. <br /></td></tr>
+<tr class="separator:ga2fcf36974db207e4a7ca5fcbd99956c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ec916139ce70cab89bbd04bc68fe305"><td class="memItemLeft" align="right" valign="top"><a id="ga6ec916139ce70cab89bbd04bc68fe305"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga6ec916139ce70cab89bbd04bc68fe305">eagine::msgbus::verification_bits</a> = <a class="el" href="classeagine_1_1bitfield.html">bitfield</a>&lt; <a class="el" href="group__msgbus.html#gafe8a31a599d6cded18f1ba76f54686be">verification_bit</a> &gt;</td></tr>
+<tr class="memdesc:ga6ec916139ce70cab89bbd04bc68fe305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for a bus message verification bitfield. <br /></td></tr>
+<tr class="separator:ga6ec916139ce70cab89bbd04bc68fe305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88d154948e1d235925bd1788ca2c4cad"><td class="memItemLeft" align="right" valign="top"><a id="ga88d154948e1d235925bd1788ca2c4cad"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga88d154948e1d235925bd1788ca2c4cad">eagine::msgbus::connection_kinds</a> = <a class="el" href="classeagine_1_1bitfield.html">bitfield</a>&lt; <a class="el" href="group__msgbus.html#ga3148ada31e187436f833d8d986ccfd53">connection_kind</a> &gt;</td></tr>
+<tr class="memdesc:ga88d154948e1d235925bd1788ca2c4cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for connection kind bitfield. <br /></td></tr>
+<tr class="separator:ga88d154948e1d235925bd1788ca2c4cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga234c3ef3de082290e0533f65cc7849be"><td class="memTemplParams" colspan="2"><a id="ga234c3ef3de082290e0533f65cc7849be"></a>
+template&lt;connection_addr_kind Kind&gt; </td></tr>
+<tr class="memitem:ga234c3ef3de082290e0533f65cc7849be"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga234c3ef3de082290e0533f65cc7849be">eagine::msgbus::connection_addr_kind_tag</a> = std::integral_constant&lt; <a class="el" href="group__msgbus.html#ga44c64580a1401f9156e13b8ab77eecb4">connection_addr_kind</a>, Kind &gt;</td></tr>
+<tr class="memdesc:ga234c3ef3de082290e0533f65cc7849be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag template alias for specifying connection address kind. <br /></td></tr>
+<tr class="separator:ga234c3ef3de082290e0533f65cc7849be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9f2feb6eb06992ad180710c6ef67c0d"><td class="memTemplParams" colspan="2">template&lt;connection_protocol Proto&gt; </td></tr>
+<tr class="memitem:gaf9f2feb6eb06992ad180710c6ef67c0d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gaf9f2feb6eb06992ad180710c6ef67c0d">eagine::msgbus::connection_protocol_tag</a> = std::integral_constant&lt; <a class="el" href="group__msgbus.html#ga30cc4ab127de66bcd9084abfd868693c">connection_protocol</a>, Proto &gt;</td></tr>
+<tr class="memdesc:gaf9f2feb6eb06992ad180710c6ef67c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag template alias for specifying connection protocol kind.  <a href="group__msgbus.html#gaf9f2feb6eb06992ad180710c6ef67c0d">More...</a><br /></td></tr>
+<tr class="separator:gaf9f2feb6eb06992ad180710c6ef67c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1215c2a1847c2e0887e4eeb549ccccf5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga1215c2a1847c2e0887e4eeb549ccccf5">eagine::msgbus::stream_protocol_tag</a> = <a class="el" href="group__msgbus.html#gaf9f2feb6eb06992ad180710c6ef67c0d">connection_protocol_tag</a>&lt; <a class="el" href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693caf7b44cfafd5c52223d5498196c8a2e7b">connection_protocol::stream</a> &gt;</td></tr>
+<tr class="memdesc:ga1215c2a1847c2e0887e4eeb549ccccf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag type for specifying stream connection protocols.  <a href="group__msgbus.html#ga1215c2a1847c2e0887e4eeb549ccccf5">More...</a><br /></td></tr>
+<tr class="separator:ga1215c2a1847c2e0887e4eeb549ccccf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26e9c94d2df38a500d09c9ea66bdf636"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga26e9c94d2df38a500d09c9ea66bdf636">eagine::msgbus::datagram_protocol_tag</a> = <a class="el" href="group__msgbus.html#gaf9f2feb6eb06992ad180710c6ef67c0d">connection_protocol_tag</a>&lt; <a class="el" href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693cae3f1cfcbd2a7460ed4b71f1cadbe52aa">connection_protocol::datagram</a> &gt;</td></tr>
+<tr class="memdesc:ga26e9c94d2df38a500d09c9ea66bdf636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag type for specifying datagram connection protocols.  <a href="group__msgbus.html#ga26e9c94d2df38a500d09c9ea66bdf636">More...</a><br /></td></tr>
+<tr class="separator:ga26e9c94d2df38a500d09c9ea66bdf636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2414a46347ec9423cdf2a4c7f7a7fa6d"><td class="memItemLeft" align="right" valign="top"><a id="ga2414a46347ec9423cdf2a4c7f7a7fa6d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga2414a46347ec9423cdf2a4c7f7a7fa6d">eagine::msgbus::ipv4_port</a> = unsigned short int</td></tr>
+<tr class="memdesc:ga2414a46347ec9423cdf2a4c7f7a7fa6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for IPv4 port number value type. <br /></td></tr>
+<tr class="separator:ga2414a46347ec9423cdf2a4c7f7a7fa6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga690050f096b89d551309a812429d15e6"><td class="memTemplParams" colspan="2">template&lt;typename Base &gt; </td></tr>
+<tr class="memitem:ga690050f096b89d551309a812429d15e6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga690050f096b89d551309a812429d15e6">eagine::msgbus::node_tracker_base</a> = require_services&lt; Base, <a class="el" href="classeagine_1_1msgbus_1_1pinger.html">pinger</a>, <a class="el" href="classeagine_1_1msgbus_1_1system__info__consumer.html">system_info_consumer</a>, <a class="el" href="group__msgbus.html#ga389f429271d61a8db6238c489b84b53c">common_info_consumers</a>, <a class="el" href="classeagine_1_1msgbus_1_1statistics__consumer.html">statistics_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1network__topology.html">network_topology</a>, <a class="el" href="classeagine_1_1msgbus_1_1subscriber__discovery.html">subscriber_discovery</a> &gt;</td></tr>
+<tr class="memdesc:ga690050f096b89d551309a812429d15e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for base service composition for the message bus node tracker.  <a href="group__msgbus.html#ga690050f096b89d551309a812429d15e6">More...</a><br /></td></tr>
+<tr class="separator:ga690050f096b89d551309a812429d15e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafeb818198e228675b304a2f721f536bc"><td class="memTemplParams" colspan="2">template&lt;typename Base  = subscriber&gt; </td></tr>
+<tr class="memitem:gafeb818198e228675b304a2f721f536bc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gafeb818198e228675b304a2f721f536bc">eagine::msgbus::common_info_providers</a> = require_services&lt; Base, <a class="el" href="classeagine_1_1msgbus_1_1compiler__info__provider.html">compiler_info_provider</a>, <a class="el" href="classeagine_1_1msgbus_1_1build__info__provider.html">build_info_provider</a>, <a class="el" href="classeagine_1_1msgbus_1_1host__info__provider.html">host_info_provider</a>, <a class="el" href="classeagine_1_1msgbus_1_1application__info__provider.html">application_info_provider</a>, <a class="el" href="classeagine_1_1msgbus_1_1endpoint__info__provider.html">endpoint_info_provider</a> &gt;</td></tr>
+<tr class="memdesc:gafeb818198e228675b304a2f721f536bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for a common composition of information provider services.  <a href="group__msgbus.html#gafeb818198e228675b304a2f721f536bc">More...</a><br /></td></tr>
+<tr class="separator:gafeb818198e228675b304a2f721f536bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga389f429271d61a8db6238c489b84b53c"><td class="memTemplParams" colspan="2">template&lt;typename Base  = subscriber&gt; </td></tr>
+<tr class="memitem:ga389f429271d61a8db6238c489b84b53c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga389f429271d61a8db6238c489b84b53c">eagine::msgbus::common_info_consumers</a> = require_services&lt; Base, <a class="el" href="classeagine_1_1msgbus_1_1compiler__info__consumer.html">compiler_info_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1build__info__consumer.html">build_info_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1host__info__consumer.html">host_info_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1application__info__consumer.html">application_info_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1endpoint__info__consumer.html">endpoint_info_consumer</a> &gt;</td></tr>
+<tr class="memdesc:ga389f429271d61a8db6238c489b84b53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for a common composition of information consumer services.  <a href="group__msgbus.html#ga389f429271d61a8db6238c489b84b53c">More...</a><br /></td></tr>
+<tr class="separator:ga389f429271d61a8db6238c489b84b53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga998425c412dcbd4db5627c566229fa55"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">eagine::power_supply_kind</a> : std::uint8_t { <a class="el" href="group__msgbus.html#gga998425c412dcbd4db5627c566229fa55aad921d60486366258809553a3db49a4a">eagine::unknown</a>
@@ -80,9 +452,626 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga998425c412dcbd4db5627c566229fa55"><td class="mdescLeft">&#160;</td><td class="mdescRight">System power supply kind.  <a href="group__msgbus.html#ga998425c412dcbd4db5627c566229fa55">More...</a><br /></td></tr>
 <tr class="separator:ga998425c412dcbd4db5627c566229fa55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga239ffcd5732a40c5ce276606d4a2353c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga239ffcd5732a40c5ce276606d4a2353c">eagine::msgbus::message_priority</a> : std::uint8_t { <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga239ffcd5732a40c5ce276606d4a2353caec2f993aec2c27fc750119ab17b16cdb">eagine::msgbus::idle</a>
+, <a class="el" href="group__msgbus.html#gga239ffcd5732a40c5ce276606d4a2353ca53cced8d281a1a0ace3cb6594daaa4f7">eagine::msgbus::low</a>
+, <a class="el" href="group__msgbus.html#gga239ffcd5732a40c5ce276606d4a2353cafea087517c26fadd409bd4b9dc642555">eagine::msgbus::normal</a>
+, <a class="el" href="group__msgbus.html#gga239ffcd5732a40c5ce276606d4a2353ca8d966b2253a917086c8604959e152243">eagine::msgbus::high</a>
+, <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga239ffcd5732a40c5ce276606d4a2353ca7e85bcb66fb9a809d5ab4f62a8b8bea8">eagine::msgbus::critical</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga239ffcd5732a40c5ce276606d4a2353c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message priority enumeration.  <a href="group__msgbus.html#ga239ffcd5732a40c5ce276606d4a2353c">More...</a><br /></td></tr>
+<tr class="separator:ga239ffcd5732a40c5ce276606d4a2353c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1867dd40c2037cdc44fd2c8eaeafa0bc"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga1867dd40c2037cdc44fd2c8eaeafa0bc">eagine::msgbus::message_crypto_flag</a> : std::uint8_t { <a class="el" href="group__msgbus.html#gga1867dd40c2037cdc44fd2c8eaeafa0bca188fda84cd10112124b8477615ee021d">eagine::msgbus::asymmetric</a>
+, <a class="el" href="group__msgbus.html#gga1867dd40c2037cdc44fd2c8eaeafa0bca6ad35b1033b8b52641209fb76f175a34">eagine::msgbus::signed_header</a>
+, <a class="el" href="group__msgbus.html#gga1867dd40c2037cdc44fd2c8eaeafa0bca77a52807c3bfe679b0cd610590969600">eagine::msgbus::signed_content</a>
+ }</td></tr>
+<tr class="memdesc:ga1867dd40c2037cdc44fd2c8eaeafa0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message cryptography-related flag bits enumeration.  <a href="group__msgbus.html#ga1867dd40c2037cdc44fd2c8eaeafa0bc">More...</a><br /></td></tr>
+<tr class="separator:ga1867dd40c2037cdc44fd2c8eaeafa0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga586ec6c5ba769352ba864a740f70e055"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga586ec6c5ba769352ba864a740f70e055">eagine::msgbus::node_kind</a> : std::uint8_t { <a class="el" href="group__msgbus.html#gga586ec6c5ba769352ba864a740f70e055aad921d60486366258809553a3db49a4a">eagine::msgbus::unknown</a>
+, <a class="el" href="group__msgbus.html#gga586ec6c5ba769352ba864a740f70e055aad65d91ba5fc5f4494e00822c04e583b">eagine::msgbus::endpoint</a>
+, <a class="el" href="group__msgbus.html#gga586ec6c5ba769352ba864a740f70e055a98ac6b4b086b5a2f47677b15e786d9ba">eagine::msgbus::bridge</a>
+, <a class="el" href="group__msgbus.html#gga586ec6c5ba769352ba864a740f70e055af3395cd54cf857ddf8f2056768ff49ae">eagine::msgbus::router</a>
+ }</td></tr>
+<tr class="memdesc:ga586ec6c5ba769352ba864a740f70e055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message bus node kind enumeration.  <a href="group__msgbus.html#ga586ec6c5ba769352ba864a740f70e055">More...</a><br /></td></tr>
+<tr class="separator:ga586ec6c5ba769352ba864a740f70e055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe8a31a599d6cded18f1ba76f54686be"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gafe8a31a599d6cded18f1ba76f54686be">eagine::msgbus::verification_bit</a> : std::uint8_t { <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#ggafe8a31a599d6cded18f1ba76f54686bea0afd9202ba86aa11ce63ad7007e7990b">eagine::msgbus::source_id</a>
+, <a class="el" href="group__msgbus.html#ggafe8a31a599d6cded18f1ba76f54686bea9c363d07cf28a035cafbf8d43a65f9b0">eagine::msgbus::source_certificate</a>
+, <a class="el" href="group__msgbus.html#ggafe8a31a599d6cded18f1ba76f54686bea17167d4a63ec76eea698ae12cd07bc43">eagine::msgbus::source_private_key</a>
+, <a class="el" href="group__msgbus.html#ggafe8a31a599d6cded18f1ba76f54686bea4ccaa172acbdcbf38fa0ea0ef0229c49">eagine::msgbus::message_id</a>
+, <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#ggafe8a31a599d6cded18f1ba76f54686bea7c301a2a9e1fc12983d19277fa480a76">eagine::msgbus::message_content</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gafe8a31a599d6cded18f1ba76f54686be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bus message verification bits enumeration,.  <a href="group__msgbus.html#gafe8a31a599d6cded18f1ba76f54686be">More...</a><br /></td></tr>
+<tr class="separator:gafe8a31a599d6cded18f1ba76f54686be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3148ada31e187436f833d8d986ccfd53"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga3148ada31e187436f833d8d986ccfd53">eagine::msgbus::connection_kind</a> : std::uint8_t { <a class="el" href="group__msgbus.html#gga3148ada31e187436f833d8d986ccfd53aad921d60486366258809553a3db49a4a">eagine::msgbus::unknown</a>
+, <a class="el" href="group__msgbus.html#gga3148ada31e187436f833d8d986ccfd53aaac4af7e473956327fed672252b4903b">eagine::msgbus::in_process</a>
+, <a class="el" href="group__msgbus.html#gga3148ada31e187436f833d8d986ccfd53aaddc8b9ad12d25d13daeaee0a2bafc28">eagine::msgbus::local_interprocess</a>
+, <a class="el" href="group__msgbus.html#gga3148ada31e187436f833d8d986ccfd53ab08d0957370e34275e9913a772e6d62b">eagine::msgbus::remote_interprocess</a>
+ }</td></tr>
+<tr class="memdesc:ga3148ada31e187436f833d8d986ccfd53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message bus connection kind bits enumeration.  <a href="group__msgbus.html#ga3148ada31e187436f833d8d986ccfd53">More...</a><br /></td></tr>
+<tr class="separator:ga3148ada31e187436f833d8d986ccfd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44c64580a1401f9156e13b8ab77eecb4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga44c64580a1401f9156e13b8ab77eecb4">eagine::msgbus::connection_addr_kind</a> { <a class="el" href="group__msgbus.html#gga44c64580a1401f9156e13b8ab77eecb4a334c4a4c42fdb79d7ebc3e73b517e6f8">eagine::msgbus::none</a>
+, <a class="el" href="group__msgbus.html#gga44c64580a1401f9156e13b8ab77eecb4a6a2a431fe8b621037ea949531c28551d">eagine::msgbus::filepath</a>
+, <a class="el" href="group__msgbus.html#gga44c64580a1401f9156e13b8ab77eecb4a0485728ba5ed6951c7e858af6c1af7c3">eagine::msgbus::ipv4</a>
+ }</td></tr>
+<tr class="memdesc:ga44c64580a1401f9156e13b8ab77eecb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message bus connection address kind enumeration.  <a href="group__msgbus.html#ga44c64580a1401f9156e13b8ab77eecb4">More...</a><br /></td></tr>
+<tr class="separator:ga44c64580a1401f9156e13b8ab77eecb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30cc4ab127de66bcd9084abfd868693c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga30cc4ab127de66bcd9084abfd868693c">eagine::msgbus::connection_protocol</a> { <a class="el" href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693caf7b44cfafd5c52223d5498196c8a2e7b">eagine::msgbus::stream</a>
+, <a class="el" href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693cae3f1cfcbd2a7460ed4b71f1cadbe52aa">eagine::msgbus::datagram</a>
+, <a class="el" href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693ca78e731027d8fd50ed642340b7c9a63b3">eagine::msgbus::message</a>
+ }</td></tr>
+<tr class="memdesc:ga30cc4ab127de66bcd9084abfd868693c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message bus connection protocol.  <a href="group__msgbus.html#ga30cc4ab127de66bcd9084abfd868693c">More...</a><br /></td></tr>
+<tr class="separator:ga30cc4ab127de66bcd9084abfd868693c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d34c5194a194451e3d4a57a22f85786"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga9d34c5194a194451e3d4a57a22f85786">eagine::msgbus::remote_node_change</a> : std::uint16_t { <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786ad939aaf7d2291c6f69ceecee94880d7c">eagine::msgbus::kind</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a51afcc4ffa9f7e0187e0e53ba9ef0e4c">eagine::msgbus::instance_id</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a8396f175b8a7f69db14f4d12e415869d">eagine::msgbus::host_id</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786ac6861d02adb7399e2b45d8a243a13504">eagine::msgbus::host_info</a>
+, <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a2bf9a5e460c3ca7bbaec449199b1bd52">eagine::msgbus::build_info</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786ad5bcdd1d2e52f8d9f7f108e9f4cc1672">eagine::msgbus::application_info</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786ad6d6a02350dc3c253bf1e4935b277281">eagine::msgbus::endpoint_info</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a4db116a504ac989d40ac0b2169c65235">eagine::msgbus::methods_added</a>
+, <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a340eb38e4057007c2f9df0860f8de900">eagine::msgbus::methods_removed</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a3072ca4283fcff525b7d993d5bbc2458">eagine::msgbus::started_responding</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786af567dbaf7cc0ccdb8b7f22f090c54212">eagine::msgbus::stopped_responding</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a62963ad8dfc20d258a654022f6f9b98c">eagine::msgbus::response_rate</a>
+, <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786ac8c7e2fc0fd44bc0f433ab9c6921b271">eagine::msgbus::hardware_config</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a121af5d9f4994d234f60969d3fea4dea">eagine::msgbus::sensor_values</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786aa912a94d79b5124d876951f96ebb256f">eagine::msgbus::statistics</a>
+, <a class="el" href="group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786a5acdf5e92e80394a78e736ff9e610a17">eagine::msgbus::connection_info</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga9d34c5194a194451e3d4a57a22f85786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of changes tracked about remote message bus nodes.  <a href="group__msgbus.html#ga9d34c5194a194451e3d4a57a22f85786">More...</a><br /></td></tr>
+<tr class="separator:ga9d34c5194a194451e3d4a57a22f85786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a1c3da3b735ca03bd09e430ccae8070"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga1a1c3da3b735ca03bd09e430ccae8070">eagine::msgbus::remote_instance_change</a> : std::uint16_t { <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga1a1c3da3b735ca03bd09e430ccae8070a8396f175b8a7f69db14f4d12e415869d">eagine::msgbus::host_id</a>
+, <a class="el" href="group__msgbus.html#gga1a1c3da3b735ca03bd09e430ccae8070a3072ca4283fcff525b7d993d5bbc2458">eagine::msgbus::started_responding</a>
+, <a class="el" href="group__msgbus.html#gga1a1c3da3b735ca03bd09e430ccae8070af567dbaf7cc0ccdb8b7f22f090c54212">eagine::msgbus::stopped_responding</a>
+, <a class="el" href="group__msgbus.html#gga1a1c3da3b735ca03bd09e430ccae8070a2bf9a5e460c3ca7bbaec449199b1bd52">eagine::msgbus::build_info</a>
+, <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga1a1c3da3b735ca03bd09e430ccae8070ad5bcdd1d2e52f8d9f7f108e9f4cc1672">eagine::msgbus::application_info</a>
+, <a class="el" href="group__msgbus.html#gga1a1c3da3b735ca03bd09e430ccae8070aa912a94d79b5124d876951f96ebb256f">eagine::msgbus::statistics</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga1a1c3da3b735ca03bd09e430ccae8070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of changes tracked about remote message bus instances.  <a href="group__msgbus.html#ga1a1c3da3b735ca03bd09e430ccae8070">More...</a><br /></td></tr>
+<tr class="separator:ga1a1c3da3b735ca03bd09e430ccae8070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3afccd4ca754fbe093a7da512f199899"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga3afccd4ca754fbe093a7da512f199899">eagine::msgbus::remote_host_change</a> : std::uint16_t { <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga3afccd4ca754fbe093a7da512f199899a0897acf49c7c1ea9f76efe59187aa046">eagine::msgbus::hostname</a>
+, <a class="el" href="group__msgbus.html#gga3afccd4ca754fbe093a7da512f199899a3072ca4283fcff525b7d993d5bbc2458">eagine::msgbus::started_responding</a>
+, <a class="el" href="group__msgbus.html#gga3afccd4ca754fbe093a7da512f199899af567dbaf7cc0ccdb8b7f22f090c54212">eagine::msgbus::stopped_responding</a>
+, <a class="el" href="group__msgbus.html#gga3afccd4ca754fbe093a7da512f199899ac8c7e2fc0fd44bc0f433ab9c6921b271">eagine::msgbus::hardware_config</a>
+, <br />
+&#160;&#160;<a class="el" href="group__msgbus.html#gga3afccd4ca754fbe093a7da512f199899a121af5d9f4994d234f60969d3fea4dea">eagine::msgbus::sensor_values</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga3afccd4ca754fbe093a7da512f199899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of changes tracked about remote message bus hosts.  <a href="group__msgbus.html#ga3afccd4ca754fbe093a7da512f199899">More...</a><br /></td></tr>
+<tr class="separator:ga3afccd4ca754fbe093a7da512f199899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga4a8622efaeb5614eba430384aeff621b"><td class="memTemplParams" colspan="2"><a id="ga4a8622efaeb5614eba430384aeff621b"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga4a8622efaeb5614eba430384aeff621b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga4a8622efaeb5614eba430384aeff621b">eagine::msgbus::default_serialize_buffer_size_for</a> (const T &amp;inst) noexcept</td></tr>
+<tr class="memdesc:ga4a8622efaeb5614eba430384aeff621b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns count of bytes required for serialization of the specified object. <br /></td></tr>
+<tr class="separator:ga4a8622efaeb5614eba430384aeff621b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e4cdf0f4d45e462b97a001f0a85661d"><td class="memTemplParams" colspan="2"><a id="ga2e4cdf0f4d45e462b97a001f0a85661d"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga2e4cdf0f4d45e462b97a001f0a85661d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga2e4cdf0f4d45e462b97a001f0a85661d">eagine::msgbus::default_serialize_vector_for</a> (const T &amp;inst) noexcept</td></tr>
+<tr class="memdesc:ga2e4cdf0f4d45e462b97a001f0a85661d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector for the serialization of the specified object. <br /></td></tr>
+<tr class="separator:ga2e4cdf0f4d45e462b97a001f0a85661d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca4869dd97a8b7181e5a8551367b65c2"><td class="memTemplParams" colspan="2"><a id="gaca4869dd97a8b7181e5a8551367b65c2"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaca4869dd97a8b7181e5a8551367b65c2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gaca4869dd97a8b7181e5a8551367b65c2">eagine::msgbus::default_serialize_buffer_for</a> (const T &amp;inst) noexcept</td></tr>
+<tr class="memdesc:gaca4869dd97a8b7181e5a8551367b65c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a suitable buffer for the serialization of the specified object. <br /></td></tr>
+<tr class="separator:gaca4869dd97a8b7181e5a8551367b65c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5fa6f56663674379dfc134ec245a87b"><td class="memTemplParams" colspan="2">template&lt;typename Backend &gt; </td></tr>
+<tr class="memitem:gac5fa6f56663674379dfc134ec245a87b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gac5fa6f56663674379dfc134ec245a87b">eagine::msgbus::serialize_message_header</a> (const <a class="el" href="structeagine_1_1message__id.html">message_id</a> msg_id, const <a class="el" href="classeagine_1_1msgbus_1_1message__view.html">message_view</a> &amp;msg, Backend &amp;backend) noexcept -&gt; <a class="el" href="group__serialization.html#ga255997aa4dfc20ea579f75e0a77c2bb0">serialization_errors</a> requires(std::is_base_of_v&lt; <a class="el" href="structeagine_1_1serializer__backend.html">serializer_backend</a>, Backend &gt;)</td></tr>
+<tr class="memdesc:gac5fa6f56663674379dfc134ec245a87b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes a bus message header with the specified serializer backend.  <a href="group__msgbus.html#gac5fa6f56663674379dfc134ec245a87b">More...</a><br /></td></tr>
+<tr class="separator:gac5fa6f56663674379dfc134ec245a87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade578617503303a55569772c100bbddf"><td class="memTemplParams" colspan="2">template&lt;typename Backend &gt; </td></tr>
+<tr class="memitem:gade578617503303a55569772c100bbddf"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gade578617503303a55569772c100bbddf">eagine::msgbus::serialize_message</a> (const <a class="el" href="structeagine_1_1message__id.html">message_id</a> msg_id, const <a class="el" href="classeagine_1_1msgbus_1_1message__view.html">message_view</a> &amp;msg, Backend &amp;backend) noexcept -&gt; <a class="el" href="group__serialization.html#ga255997aa4dfc20ea579f75e0a77c2bb0">serialization_errors</a> requires(std::is_base_of_v&lt; <a class="el" href="structeagine_1_1serializer__backend.html">serializer_backend</a>, Backend &gt;)</td></tr>
+<tr class="memdesc:gade578617503303a55569772c100bbddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes a bus message with the specified serializer backend.  <a href="group__msgbus.html#gade578617503303a55569772c100bbddf">More...</a><br /></td></tr>
+<tr class="separator:gade578617503303a55569772c100bbddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga583929dd577f53ac792bbe76a217b929"><td class="memTemplParams" colspan="2">template&lt;typename Backend &gt; </td></tr>
+<tr class="memitem:ga583929dd577f53ac792bbe76a217b929"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga583929dd577f53ac792bbe76a217b929">eagine::msgbus::deserialize_message_header</a> (<a class="el" href="group__identifiers.html#ga388736604674eb7b755e39ca981d9861">identifier</a> &amp;class_id, <a class="el" href="group__identifiers.html#ga388736604674eb7b755e39ca981d9861">identifier</a> &amp;method_id, <a class="el" href="classeagine_1_1msgbus_1_1stored__message.html">stored_message</a> &amp;msg, Backend &amp;backend) noexcept -&gt; <a class="el" href="group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3">deserialization_errors</a> requires(std::is_base_of_v&lt; <a class="el" href="structeagine_1_1deserializer__backend.html">deserializer_backend</a>, Backend &gt;)</td></tr>
+<tr class="memdesc:ga583929dd577f53ac792bbe76a217b929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserializes a bus message header with the specified deserializer backend.  <a href="group__msgbus.html#ga583929dd577f53ac792bbe76a217b929">More...</a><br /></td></tr>
+<tr class="separator:ga583929dd577f53ac792bbe76a217b929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9243f88d6e0462763dfc27b4e5cd6a9b"><td class="memTemplParams" colspan="2">template&lt;typename Backend &gt; </td></tr>
+<tr class="memitem:ga9243f88d6e0462763dfc27b4e5cd6a9b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga9243f88d6e0462763dfc27b4e5cd6a9b">eagine::msgbus::deserialize_message</a> (<a class="el" href="group__identifiers.html#ga388736604674eb7b755e39ca981d9861">identifier</a> &amp;class_id, <a class="el" href="group__identifiers.html#ga388736604674eb7b755e39ca981d9861">identifier</a> &amp;method_id, <a class="el" href="classeagine_1_1msgbus_1_1stored__message.html">stored_message</a> &amp;msg, Backend &amp;backend) noexcept -&gt; <a class="el" href="group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3">deserialization_errors</a> requires(std::is_base_of_v&lt; <a class="el" href="structeagine_1_1deserializer__backend.html">deserializer_backend</a>, Backend &gt;)</td></tr>
+<tr class="memdesc:ga9243f88d6e0462763dfc27b4e5cd6a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserializes a bus message with the specified deserializer backend.  <a href="group__msgbus.html#ga9243f88d6e0462763dfc27b4e5cd6a9b">More...</a><br /></td></tr>
+<tr class="separator:ga9243f88d6e0462763dfc27b4e5cd6a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa009baad597601e28a8d0edd421b01c1"><td class="memTemplParams" colspan="2">template&lt;typename Backend &gt; </td></tr>
+<tr class="memitem:gaa009baad597601e28a8d0edd421b01c1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gaa009baad597601e28a8d0edd421b01c1">eagine::msgbus::deserialize_message</a> (<a class="el" href="structeagine_1_1message__id.html">message_id</a> &amp;msg_id, <a class="el" href="classeagine_1_1msgbus_1_1stored__message.html">stored_message</a> &amp;msg, Backend &amp;backend) noexcept -&gt; <a class="el" href="group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3">deserialization_errors</a> requires(std::is_base_of_v&lt; <a class="el" href="structeagine_1_1deserializer__backend.html">deserializer_backend</a>, Backend &gt;)</td></tr>
+<tr class="memdesc:gaa009baad597601e28a8d0edd421b01c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserializes a bus message with the specified deserializer backend.  <a href="group__msgbus.html#gaa009baad597601e28a8d0edd421b01c1">More...</a><br /></td></tr>
+<tr class="separator:gaa009baad597601e28a8d0edd421b01c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24120b5860d9c1107c502fb9c72781f7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga24120b5860d9c1107c502fb9c72781f7">eagine::msgbus::default_serialize_message_type</a> (const <a class="el" href="structeagine_1_1message__id.html">message_id</a> msg_id, <a class="el" href="group__memory.html#ga5dd5ce1a14209336eb031bc930d736f4">memory::block</a> blk) noexcept</td></tr>
+<tr class="memdesc:ga24120b5860d9c1107c502fb9c72781f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-serializes the specified message id into a memory block.  <a href="group__msgbus.html#ga24120b5860d9c1107c502fb9c72781f7">More...</a><br /></td></tr>
+<tr class="separator:ga24120b5860d9c1107c502fb9c72781f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabaf3dedc6ed9219a59e1f26cc5b4662a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gabaf3dedc6ed9219a59e1f26cc5b4662a">eagine::msgbus::default_deserialize_message_type</a> (<a class="el" href="structeagine_1_1message__id.html">message_id</a> &amp;msg_id, const <a class="el" href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">memory::const_block</a> blk) noexcept</td></tr>
+<tr class="memdesc:gabaf3dedc6ed9219a59e1f26cc5b4662a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-deserializes the specified message id from a memory block.  <a href="group__msgbus.html#gabaf3dedc6ed9219a59e1f26cc5b4662a">More...</a><br /></td></tr>
+<tr class="separator:gabaf3dedc6ed9219a59e1f26cc5b4662a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd02080b0cf2e1428f62bb6427840b6d"><td class="memItemLeft" align="right" valign="top"><a id="gabd02080b0cf2e1428f62bb6427840b6d"></a>
+static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#gabd02080b0cf2e1428f62bb6427840b6d">eagine::msgbus::is_special_message</a> (const <a class="el" href="structeagine_1_1message__id.html">message_id</a> msg_id) noexcept</td></tr>
+<tr class="memdesc:gabd02080b0cf2e1428f62bb6427840b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the specified message id denotes a special message bus message. <br /></td></tr>
+<tr class="separator:gabd02080b0cf2e1428f62bb6427840b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81d24b7e9eb35533a1b1dad000ae5b01"><td class="memItemLeft" align="right" valign="top"><a id="ga81d24b7e9eb35533a1b1dad000ae5b01"></a>
+static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga81d24b7e9eb35533a1b1dad000ae5b01">eagine::msgbus::broadcast_endpoint_id</a> () noexcept -&gt; <a class="el" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">identifier_t</a></td></tr>
+<tr class="memdesc:ga81d24b7e9eb35533a1b1dad000ae5b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the special broadcast message bus endpoint id. <br /></td></tr>
+<tr class="separator:ga81d24b7e9eb35533a1b1dad000ae5b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02dd6435d3314dfe4091344332187c08"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga02dd6435d3314dfe4091344332187c08">eagine::msgbus::invalid_endpoint_id</a> () noexcept -&gt; <a class="el" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">identifier_t</a></td></tr>
+<tr class="memdesc:ga02dd6435d3314dfe4091344332187c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the special invalid message bus endpoint id.  <a href="group__msgbus.html#ga02dd6435d3314dfe4091344332187c08">More...</a><br /></td></tr>
+<tr class="separator:ga02dd6435d3314dfe4091344332187c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07242c62a624a864c5534cb96ed35205"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga07242c62a624a864c5534cb96ed35205">eagine::msgbus::is_valid_endpoint_id</a> (const <a class="el" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">identifier_t</a> id) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ga07242c62a624a864c5534cb96ed35205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the specified endpoint id is valid.  <a href="group__msgbus.html#ga07242c62a624a864c5534cb96ed35205">More...</a><br /></td></tr>
+<tr class="separator:ga07242c62a624a864c5534cb96ed35205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga128370de801f7cc999b7e14c350f63a1"><td class="memItemLeft" align="right" valign="top"><a id="ga128370de801f7cc999b7e14c350f63a1"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga128370de801f7cc999b7e14c350f63a1">eagine::msgbus::parse_ipv4_addr</a> (const <a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> addr_str) noexcept -&gt; std::tuple&lt; std::string, <a class="el" href="group__msgbus.html#ga2414a46347ec9423cdf2a4c7f7a7fa6d">ipv4_port</a> &gt;</td></tr>
+<tr class="memdesc:ga128370de801f7cc999b7e14c350f63a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a IPv4 hostname:port pair,. <br /></td></tr>
+<tr class="separator:ga128370de801f7cc999b7e14c350f63a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga2313a55120822c918e13d17967386844"><td class="memItemLeft" align="right" valign="top"><a id="ga2313a55120822c918e13d17967386844"></a>
+constexpr const <a class="el" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__msgbus.html#ga2313a55120822c918e13d17967386844">eagine::msgbus::min_connection_data_size</a></td></tr>
+<tr class="memdesc:ga2313a55120822c918e13d17967386844"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum guaranteed block size that can be sent through bus connections. <br /></td></tr>
+<tr class="separator:ga2313a55120822c918e13d17967386844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga66a73fe549f3f7a726603167898fc2b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga66a73fe549f3f7a726603167898fc2b7">&#9670;&nbsp;</a></span>EAGINE_MSG_MAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EAGINE_MSG_MAP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASS_ID, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">METHOD_ID, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASS, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">METHOD&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an instance of static message handler map. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structeagine_1_1msgbus_1_1static__message__handler__map.html" title="Represents a mapping from a message type id to member function constant.">eagine::msgbus::static_message_handler_map</a> </dd>
+<dd>
+<a class="el" href="classeagine_1_1msgbus_1_1static__subscriber.html" title="Template for subscribers with predefined count of handled message types.">eagine::msgbus::static_subscriber</a> </dd>
+<dd>
+<a class="el" href="classeagine_1_1msgbus_1_1subscriber.html" title="Template for subscribers with variable count of handled message types.">eagine::msgbus::subscriber</a> </dd>
+<dd>
+<a class="el" href="group__identifiers.html#ga4d980939e053bd752ae2503724699dea" title="Macro for declaring instantiations of static_message_id.">EAGINE_MSG_TYPE</a> </dd>
+<dd>
+<a class="el" href="group__functional.html#gad9a9c69a519a87461e7b06dbfb7c204b" title="Macro for instantiating the member_function_constant template.">EAGINE_MEM_FUNC_T</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="eagine_2msgbus_2001_loopback_8cpp-example.html#a2">eagine/msgbus/001_loopback.cpp</a>, <a class="el" href="eagine_2msgbus_2002_direct_8cpp-example.html#a2">eagine/msgbus/002_direct.cpp</a>, <a class="el" href="eagine_2msgbus_2006_ping_8cpp-example.html#a5">eagine/msgbus/006_ping.cpp</a>, <a class="el" href="eagine_2msgbus_2006_pong_8cpp-example.html#a5">eagine/msgbus/006_pong.cpp</a>, <a class="el" href="eagine_2msgbus_2009_fib_service_8cpp-example.html#a0">eagine/msgbus/009_fib_service.cpp</a>, <a class="el" href="eagine_2msgbus_2010_fib_async_8cpp-example.html#a0">eagine/msgbus/010_fib_async.cpp</a>, <a class="el" href="eagine_2msgbus_2010_fib_futures_8cpp-example.html#a0">eagine/msgbus/010_fib_futures.cpp</a>, <a class="el" href="eagine_2msgbus_2011_fibonacci_8cpp-example.html#a0">eagine/msgbus/011_fibonacci.cpp</a>, <a class="el" href="eagine_2msgbus_2012_fib_threads_8cpp-example.html#a0">eagine/msgbus/012_fib_threads.cpp</a>, and <a class="el" href="eagine_2msgbus_2013_conn_setup_8cpp-example.html#a2">eagine/msgbus/013_conn_setup.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga389f429271d61a8db6238c489b84b53c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga389f429271d61a8db6238c489b84b53c">&#9670;&nbsp;</a></span>common_info_consumers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base  = subscriber&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#ga389f429271d61a8db6238c489b84b53c">eagine::msgbus::common_info_consumers</a> = typedef require_services&lt; Base, <a class="el" href="classeagine_1_1msgbus_1_1compiler__info__consumer.html">compiler_info_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1build__info__consumer.html">build_info_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1host__info__consumer.html">host_info_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1application__info__consumer.html">application_info_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1endpoint__info__consumer.html">endpoint_info_consumer</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for a common composition of information consumer services. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classeagine_1_1msgbus_1_1service__composition.html" title="Helper mixin class for message bus services composed of several parts.">service_composition</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#gafeb818198e228675b304a2f721f536bc" title="Alias for a common composition of information provider services.">common_info_providers</a> </dd></dl>
+
+</div>
+</div>
+<a id="gafeb818198e228675b304a2f721f536bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafeb818198e228675b304a2f721f536bc">&#9670;&nbsp;</a></span>common_info_providers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base  = subscriber&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#gafeb818198e228675b304a2f721f536bc">eagine::msgbus::common_info_providers</a> = typedef require_services&lt; Base, <a class="el" href="classeagine_1_1msgbus_1_1compiler__info__provider.html">compiler_info_provider</a>, <a class="el" href="classeagine_1_1msgbus_1_1build__info__provider.html">build_info_provider</a>, <a class="el" href="classeagine_1_1msgbus_1_1host__info__provider.html">host_info_provider</a>, <a class="el" href="classeagine_1_1msgbus_1_1application__info__provider.html">application_info_provider</a>, <a class="el" href="classeagine_1_1msgbus_1_1endpoint__info__provider.html">endpoint_info_provider</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for a common composition of information provider services. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classeagine_1_1msgbus_1_1service__composition.html" title="Helper mixin class for message bus services composed of several parts.">service_composition</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#ga389f429271d61a8db6238c489b84b53c" title="Alias for a common composition of information consumer services.">common_info_consumers</a> </dd></dl>
+
+</div>
+</div>
+<a id="gaf9f2feb6eb06992ad180710c6ef67c0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9f2feb6eb06992ad180710c6ef67c0d">&#9670;&nbsp;</a></span>connection_protocol_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;connection_protocol Proto&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#gaf9f2feb6eb06992ad180710c6ef67c0d">eagine::msgbus::connection_protocol_tag</a> = typedef std::integral_constant&lt;<a class="el" href="group__msgbus.html#ga30cc4ab127de66bcd9084abfd868693c">connection_protocol</a>, Proto&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tag template alias for specifying connection protocol kind. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga1215c2a1847c2e0887e4eeb549ccccf5" title="Tag type for specifying stream connection protocols.">stream_protocol_tag</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#ga26e9c94d2df38a500d09c9ea66bdf636" title="Tag type for specifying datagram connection protocols.">datagram_protocol_tag</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga26e9c94d2df38a500d09c9ea66bdf636"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26e9c94d2df38a500d09c9ea66bdf636">&#9670;&nbsp;</a></span>datagram_protocol_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#ga26e9c94d2df38a500d09c9ea66bdf636">eagine::msgbus::datagram_protocol_tag</a> = typedef <a class="el" href="group__msgbus.html#gaf9f2feb6eb06992ad180710c6ef67c0d">connection_protocol_tag</a>&lt;<a class="el" href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693cae3f1cfcbd2a7460ed4b71f1cadbe52aa">connection_protocol::datagram</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tag type for specifying datagram connection protocols. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga1215c2a1847c2e0887e4eeb549ccccf5" title="Tag type for specifying stream connection protocols.">stream_protocol_tag</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga02de0e7b77ed5f2ada757dfcfa4ce42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02de0e7b77ed5f2ada757dfcfa4ce42d">&#9670;&nbsp;</a></span>default_deserializer_backend</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#ga02de0e7b77ed5f2ada757dfcfa4ce42d">eagine::msgbus::default_deserializer_backend</a> = typedef <a class="el" href="classeagine_1_1portable__deserializer__backend.html">portable_deserializer_backend</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for default deserialization backend for bus messages. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga2fe9b055f544773bd34fc8f6888cf50e" title="Alias for default serialization backend for bus messages.">default_serializer_backend</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga2fe9b055f544773bd34fc8f6888cf50e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2fe9b055f544773bd34fc8f6888cf50e">&#9670;&nbsp;</a></span>default_serializer_backend</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#ga2fe9b055f544773bd34fc8f6888cf50e">eagine::msgbus::default_serializer_backend</a> = typedef <a class="el" href="classeagine_1_1portable__serializer__backend.html">portable_serializer_backend</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for default serialization backend for bus messages. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga02de0e7b77ed5f2ada757dfcfa4ce42d" title="Alias for default deserialization backend for bus messages.">default_deserializer_backend</a> </dd></dl>
+
+</div>
+</div>
+<a id="gab27fdcc8a6ff14bbad60ccfe7a69a8e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab27fdcc8a6ff14bbad60ccfe7a69a8e2">&#9670;&nbsp;</a></span>message_age</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#gab27fdcc8a6ff14bbad60ccfe7a69a8e2">eagine::msgbus::message_age</a> = typedef std::chrono::duration&lt;float&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for message age type. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga41d699dddbffe6e4841f80b807f75f8a" title="Alias for message timestamp type.">message_timestamp</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="eagine_2msgbus_2006_file_histogram_8cpp-example.html#a6">eagine/msgbus/006_file_histogram.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="ga41d699dddbffe6e4841f80b807f75f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41d699dddbffe6e4841f80b807f75f8a">&#9670;&nbsp;</a></span>message_timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#ga41d699dddbffe6e4841f80b807f75f8a">eagine::msgbus::message_timestamp</a> = typedef std::chrono::steady_clock::time_point</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for message timestamp type. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#gab27fdcc8a6ff14bbad60ccfe7a69a8e2" title="Alias for message age type.">message_age</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga690050f096b89d551309a812429d15e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga690050f096b89d551309a812429d15e6">&#9670;&nbsp;</a></span>node_tracker_base</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#ga690050f096b89d551309a812429d15e6">eagine::msgbus::node_tracker_base</a> = typedef require_services&lt; Base, <a class="el" href="classeagine_1_1msgbus_1_1pinger.html">pinger</a>, <a class="el" href="classeagine_1_1msgbus_1_1system__info__consumer.html">system_info_consumer</a>, <a class="el" href="group__msgbus.html#ga389f429271d61a8db6238c489b84b53c">common_info_consumers</a>, <a class="el" href="classeagine_1_1msgbus_1_1statistics__consumer.html">statistics_consumer</a>, <a class="el" href="classeagine_1_1msgbus_1_1network__topology.html">network_topology</a>, <a class="el" href="classeagine_1_1msgbus_1_1subscriber__discovery.html">subscriber_discovery</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for base service composition for the message bus node tracker. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classeagine_1_1msgbus_1_1node__tracker.html" title="Service that consumes bus topology information and provides it via an API.">node_tracker</a> </dd>
+<dd>
+<a class="el" href="classeagine_1_1msgbus_1_1service__composition.html" title="Helper mixin class for message bus services composed of several parts.">service_composition</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga1215c2a1847c2e0887e4eeb549ccccf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1215c2a1847c2e0887e4eeb549ccccf5">&#9670;&nbsp;</a></span>stream_protocol_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__msgbus.html#ga1215c2a1847c2e0887e4eeb549ccccf5">eagine::msgbus::stream_protocol_tag</a> = typedef <a class="el" href="group__msgbus.html#gaf9f2feb6eb06992ad180710c6ef67c0d">connection_protocol_tag</a>&lt;<a class="el" href="group__msgbus.html#gga30cc4ab127de66bcd9084abfd868693caf7b44cfafd5c52223d5498196c8a2e7b">connection_protocol::stream</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tag type for specifying stream connection protocols. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga26e9c94d2df38a500d09c9ea66bdf636" title="Tag type for specifying datagram connection protocols.">datagram_protocol_tag</a> </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga44c64580a1401f9156e13b8ab77eecb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44c64580a1401f9156e13b8ab77eecb4">&#9670;&nbsp;</a></span>connection_addr_kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga44c64580a1401f9156e13b8ab77eecb4">eagine::msgbus::connection_addr_kind</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Message bus connection address kind enumeration. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga234c3ef3de082290e0533f65cc7849be" title="Tag template alias for specifying connection address kind.">connection_addr_kind_tag</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga44c64580a1401f9156e13b8ab77eecb4a334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"><p>No public address. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga44c64580a1401f9156e13b8ab77eecb4a6a2a431fe8b621037ea949531c28551d"></a>filepath&#160;</td><td class="fielddoc"><p>Filesystem path. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga44c64580a1401f9156e13b8ab77eecb4a0485728ba5ed6951c7e858af6c1af7c3"></a>ipv4&#160;</td><td class="fielddoc"><p>PIv4 address. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga3148ada31e187436f833d8d986ccfd53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3148ada31e187436f833d8d986ccfd53">&#9670;&nbsp;</a></span>connection_kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga3148ada31e187436f833d8d986ccfd53">eagine::msgbus::connection_kind</a> : std::uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Message bus connection kind bits enumeration. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga88d154948e1d235925bd1788ca2c4cad" title="Alias for connection kind bitfield.">connection_kinds</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga3148ada31e187436f833d8d986ccfd53aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"><p>Unknown connection kind. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3148ada31e187436f833d8d986ccfd53aaac4af7e473956327fed672252b4903b"></a>in_process&#160;</td><td class="fielddoc"><p>In-process connection (cannot be used for inter-process communication). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3148ada31e187436f833d8d986ccfd53aaddc8b9ad12d25d13daeaee0a2bafc28"></a>local_interprocess&#160;</td><td class="fielddoc"><p>Inter-process connection for local communication. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3148ada31e187436f833d8d986ccfd53ab08d0957370e34275e9913a772e6d62b"></a>remote_interprocess&#160;</td><td class="fielddoc"><p>Inter-process connection for remote communucation. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga30cc4ab127de66bcd9084abfd868693c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30cc4ab127de66bcd9084abfd868693c">&#9670;&nbsp;</a></span>connection_protocol</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga30cc4ab127de66bcd9084abfd868693c">eagine::msgbus::connection_protocol</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Message bus connection protocol. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#gaf9f2feb6eb06992ad180710c6ef67c0d" title="Tag template alias for specifying connection protocol kind.">connection_protocol_tag</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga30cc4ab127de66bcd9084abfd868693caf7b44cfafd5c52223d5498196c8a2e7b"></a>stream&#160;</td><td class="fielddoc"><p>Reliable stream protocol. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga30cc4ab127de66bcd9084abfd868693cae3f1cfcbd2a7460ed4b71f1cadbe52aa"></a>datagram&#160;</td><td class="fielddoc"><p>Datagram protocol. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga30cc4ab127de66bcd9084abfd868693ca78e731027d8fd50ed642340b7c9a63b3"></a>message&#160;</td><td class="fielddoc"><p>Message protocol. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga1867dd40c2037cdc44fd2c8eaeafa0bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1867dd40c2037cdc44fd2c8eaeafa0bc">&#9670;&nbsp;</a></span>message_crypto_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga1867dd40c2037cdc44fd2c8eaeafa0bc">eagine::msgbus::message_crypto_flag</a> : std::uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Message cryptography-related flag bits enumeration. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#gade79cad7134937b254a101bd0aa2d30c" title="Alias for message crypto flags bitfield.">message_crypto_flags</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga1867dd40c2037cdc44fd2c8eaeafa0bca188fda84cd10112124b8477615ee021d"></a>asymmetric&#160;</td><td class="fielddoc"><p>Assymetric cipher is used (symmetric otherwise). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1867dd40c2037cdc44fd2c8eaeafa0bca6ad35b1033b8b52641209fb76f175a34"></a>signed_header&#160;</td><td class="fielddoc"><p>The message header is signed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1867dd40c2037cdc44fd2c8eaeafa0bca77a52807c3bfe679b0cd610590969600"></a>signed_content&#160;</td><td class="fielddoc"><p>The message content is signed. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga239ffcd5732a40c5ce276606d4a2353c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga239ffcd5732a40c5ce276606d4a2353c">&#9670;&nbsp;</a></span>message_priority</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga239ffcd5732a40c5ce276606d4a2353c">eagine::msgbus::message_priority</a> : std::uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Message priority enumeration. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga239ffcd5732a40c5ce276606d4a2353caec2f993aec2c27fc750119ab17b16cdb"></a>idle&#160;</td><td class="fielddoc"><p>Idle, sent only when no messages with higher priority are enqueued. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga239ffcd5732a40c5ce276606d4a2353ca53cced8d281a1a0ace3cb6594daaa4f7"></a>low&#160;</td><td class="fielddoc"><p>Low message priority. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga239ffcd5732a40c5ce276606d4a2353cafea087517c26fadd409bd4b9dc642555"></a>normal&#160;</td><td class="fielddoc"><p>Normal, default message priority. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga239ffcd5732a40c5ce276606d4a2353ca8d966b2253a917086c8604959e152243"></a>high&#160;</td><td class="fielddoc"><p>High, sent before messages with lower priority. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga239ffcd5732a40c5ce276606d4a2353ca7e85bcb66fb9a809d5ab4f62a8b8bea8"></a>critical&#160;</td><td class="fielddoc"><p>Critical, sent as soon as possible. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga586ec6c5ba769352ba864a740f70e055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga586ec6c5ba769352ba864a740f70e055">&#9670;&nbsp;</a></span>node_kind</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga586ec6c5ba769352ba864a740f70e055">eagine::msgbus::node_kind</a> : std::uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Message bus node kind enumeration. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga586ec6c5ba769352ba864a740f70e055aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"><p>Unknown node kind. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga586ec6c5ba769352ba864a740f70e055aad65d91ba5fc5f4494e00822c04e583b"></a>endpoint&#160;</td><td class="fielddoc"><p>Message bus client endpoint. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga586ec6c5ba769352ba864a740f70e055a98ac6b4b086b5a2f47677b15e786d9ba"></a>bridge&#160;</td><td class="fielddoc"><p>Message bus bridge. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga586ec6c5ba769352ba864a740f70e055af3395cd54cf857ddf8f2056768ff49ae"></a>router&#160;</td><td class="fielddoc"><p>Message bus router. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="ga998425c412dcbd4db5627c566229fa55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga998425c412dcbd4db5627c566229fa55">&#9670;&nbsp;</a></span>power_supply_kind</h2>
 
@@ -113,6 +1102,599 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="gga998425c412dcbd4db5627c566229fa55a49a0b21df7104ef3c144251257a37fbb"></a>ac_supply&#160;</td><td class="fielddoc"><p>AC power supply. </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<a id="ga3afccd4ca754fbe093a7da512f199899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3afccd4ca754fbe093a7da512f199899">&#9670;&nbsp;</a></span>remote_host_change</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga3afccd4ca754fbe093a7da512f199899">eagine::msgbus::remote_host_change</a> : std::uint16_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumeration of changes tracked about remote message bus hosts. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structeagine_1_1msgbus_1_1remote__host__changes.html" title="Class providing and manipulating information about remote host changes.">remote_host_changes</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#ga9d34c5194a194451e3d4a57a22f85786" title="Enumeration of changes tracked about remote message bus nodes.">remote_node_change</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga3afccd4ca754fbe093a7da512f199899a0897acf49c7c1ea9f76efe59187aa046"></a>hostname&#160;</td><td class="fielddoc"><p>The host name has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3afccd4ca754fbe093a7da512f199899a3072ca4283fcff525b7d993d5bbc2458"></a>started_responding&#160;</td><td class="fielddoc"><p>Host started responding. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3afccd4ca754fbe093a7da512f199899af567dbaf7cc0ccdb8b7f22f090c54212"></a>stopped_responding&#160;</td><td class="fielddoc"><p>Host stopped responding. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3afccd4ca754fbe093a7da512f199899ac8c7e2fc0fd44bc0f433ab9c6921b271"></a>hardware_config&#160;</td><td class="fielddoc"><p>The hardware configuration information has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga3afccd4ca754fbe093a7da512f199899a121af5d9f4994d234f60969d3fea4dea"></a>sensor_values&#160;</td><td class="fielddoc"><p>New sensor values have appeared or changed. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga1a1c3da3b735ca03bd09e430ccae8070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a1c3da3b735ca03bd09e430ccae8070">&#9670;&nbsp;</a></span>remote_instance_change</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga1a1c3da3b735ca03bd09e430ccae8070">eagine::msgbus::remote_instance_change</a> : std::uint16_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumeration of changes tracked about remote message bus instances. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structeagine_1_1msgbus_1_1remote__instance__changes.html" title="Class providing and manipulating information about remote instance changes.">remote_instance_changes</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#ga9d34c5194a194451e3d4a57a22f85786" title="Enumeration of changes tracked about remote message bus nodes.">remote_node_change</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga1a1c3da3b735ca03bd09e430ccae8070a8396f175b8a7f69db14f4d12e415869d"></a>host_id&#160;</td><td class="fielddoc"><p>The host identifier has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1a1c3da3b735ca03bd09e430ccae8070a3072ca4283fcff525b7d993d5bbc2458"></a>started_responding&#160;</td><td class="fielddoc"><p>Instance started responding. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1a1c3da3b735ca03bd09e430ccae8070af567dbaf7cc0ccdb8b7f22f090c54212"></a>stopped_responding&#160;</td><td class="fielddoc"><p>Instance stopped responding. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1a1c3da3b735ca03bd09e430ccae8070a2bf9a5e460c3ca7bbaec449199b1bd52"></a>build_info&#160;</td><td class="fielddoc"><p>The build information has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1a1c3da3b735ca03bd09e430ccae8070ad5bcdd1d2e52f8d9f7f108e9f4cc1672"></a>application_info&#160;</td><td class="fielddoc"><p>The application information has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga1a1c3da3b735ca03bd09e430ccae8070aa912a94d79b5124d876951f96ebb256f"></a>statistics&#160;</td><td class="fielddoc"><p>New statistics have appeared or changed. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga9d34c5194a194451e3d4a57a22f85786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d34c5194a194451e3d4a57a22f85786">&#9670;&nbsp;</a></span>remote_node_change</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#ga9d34c5194a194451e3d4a57a22f85786">eagine::msgbus::remote_node_change</a> : std::uint16_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumeration of changes tracked about remote message bus nodes. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structeagine_1_1msgbus_1_1remote__node__changes.html" title="Class providing and manipulating information about remote node changes.">remote_node_changes</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#ga3afccd4ca754fbe093a7da512f199899" title="Enumeration of changes tracked about remote message bus hosts.">remote_host_change</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786ad939aaf7d2291c6f69ceecee94880d7c"></a>kind&#160;</td><td class="fielddoc"><p>The node kind has appeared or changed. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga586ec6c5ba769352ba864a740f70e055" title="Message bus node kind enumeration.">node_kind</a> </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a51afcc4ffa9f7e0187e0e53ba9ef0e4c"></a>instance_id&#160;</td><td class="fielddoc"><p>The endpoint instance id has changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a8396f175b8a7f69db14f4d12e415869d"></a>host_id&#160;</td><td class="fielddoc"><p>The host identifier has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786ac6861d02adb7399e2b45d8a243a13504"></a>host_info&#160;</td><td class="fielddoc"><p>The host information has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a2bf9a5e460c3ca7bbaec449199b1bd52"></a>build_info&#160;</td><td class="fielddoc"><p>The build information has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786ad5bcdd1d2e52f8d9f7f108e9f4cc1672"></a>application_info&#160;</td><td class="fielddoc"><p>The application information has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786ad6d6a02350dc3c253bf1e4935b277281"></a>endpoint_info&#160;</td><td class="fielddoc"><p>The endpoint information has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a4db116a504ac989d40ac0b2169c65235"></a>methods_added&#160;</td><td class="fielddoc"><p>New remotly callable methods have been added. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a340eb38e4057007c2f9df0860f8de900"></a>methods_removed&#160;</td><td class="fielddoc"><p>New remotly callable methods have been removed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a3072ca4283fcff525b7d993d5bbc2458"></a>started_responding&#160;</td><td class="fielddoc"><p>Node started responding to pings. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786af567dbaf7cc0ccdb8b7f22f090c54212"></a>stopped_responding&#160;</td><td class="fielddoc"><p>Node stopped responding to pings. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a62963ad8dfc20d258a654022f6f9b98c"></a>response_rate&#160;</td><td class="fielddoc"><p>Node ping response rate. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786ac8c7e2fc0fd44bc0f433ab9c6921b271"></a>hardware_config&#160;</td><td class="fielddoc"><p>The hardware configuration information has appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a121af5d9f4994d234f60969d3fea4dea"></a>sensor_values&#160;</td><td class="fielddoc"><p>New sensor values have appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786aa912a94d79b5124d876951f96ebb256f"></a>statistics&#160;</td><td class="fielddoc"><p>New statistic values have appeared or changed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga9d34c5194a194451e3d4a57a22f85786a5acdf5e92e80394a78e736ff9e610a17"></a>connection_info&#160;</td><td class="fielddoc"><p>The bus connection information has appeared or changed. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="gafe8a31a599d6cded18f1ba76f54686be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe8a31a599d6cded18f1ba76f54686be">&#9670;&nbsp;</a></span>verification_bit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__msgbus.html#gafe8a31a599d6cded18f1ba76f54686be">eagine::msgbus::verification_bit</a> : std::uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bus message verification bits enumeration,. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga6ec916139ce70cab89bbd04bc68fe305" title="Alias for a bus message verification bitfield.">verification_bits</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggafe8a31a599d6cded18f1ba76f54686bea0afd9202ba86aa11ce63ad7007e7990b"></a>source_id&#160;</td><td class="fielddoc"><p>The source has been verified. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggafe8a31a599d6cded18f1ba76f54686bea9c363d07cf28a035cafbf8d43a65f9b0"></a>source_certificate&#160;</td><td class="fielddoc"><p>The source certificate has been verified. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggafe8a31a599d6cded18f1ba76f54686bea17167d4a63ec76eea698ae12cd07bc43"></a>source_private_key&#160;</td><td class="fielddoc"><p>The source private key has been verified. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggafe8a31a599d6cded18f1ba76f54686bea4ccaa172acbdcbf38fa0ea0ef0229c49"></a>message_id&#160;</td><td class="fielddoc"><p>The message type id has been verified. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggafe8a31a599d6cded18f1ba76f54686bea7c301a2a9e1fc12983d19277fa480a76"></a>message_content&#160;</td><td class="fielddoc"><p>The message content has been verified. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gabaf3dedc6ed9219a59e1f26cc5b4662a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabaf3dedc6ed9219a59e1f26cc5b4662a">&#9670;&nbsp;</a></span>default_deserialize_message_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto eagine::msgbus::default_deserialize_message_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structeagine_1_1message__id.html">message_id</a> &amp;&#160;</td>
+          <td class="paramname"><em>msg_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">memory::const_block</a>&#160;</td>
+          <td class="paramname"><em>blk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default-deserializes the specified message id from a memory block. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga02de0e7b77ed5f2ada757dfcfa4ce42d" title="Alias for default deserialization backend for bus messages.">default_deserializer_backend</a> </dd>
+<dd>
+<a class="el" href="namespaceeagine_1_1msgbus.html#a710382294519faebbf2b83bb92760402" title="Uses the default backend to deserialize a value from a memory block.">default_deserialize</a> </dd>
+<dd>
+<a class="el" href="structeagine_1_1message__id.html" title="Class storing two identifier values representing class/method pair.">message_id</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga24120b5860d9c1107c502fb9c72781f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24120b5860d9c1107c502fb9c72781f7">&#9670;&nbsp;</a></span>default_serialize_message_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto eagine::msgbus::default_serialize_message_type </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structeagine_1_1message__id.html">message_id</a>&#160;</td>
+          <td class="paramname"><em>msg_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__memory.html#ga5dd5ce1a14209336eb031bc930d736f4">memory::block</a>&#160;</td>
+          <td class="paramname"><em>blk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default-serializes the specified message id into a memory block. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga2fe9b055f544773bd34fc8f6888cf50e" title="Alias for default serialization backend for bus messages.">default_serializer_backend</a> </dd>
+<dd>
+<a class="el" href="namespaceeagine_1_1msgbus.html#ad159beb045c85b5a6dc62a1000fa033c" title="Uses the default backend to serialize a value into a memory block.">default_serialize</a> </dd>
+<dd>
+<a class="el" href="structeagine_1_1message__id.html" title="Class storing two identifier values representing class/method pair.">message_id</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga9243f88d6e0462763dfc27b4e5cd6a9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9243f88d6e0462763dfc27b4e5cd6a9b">&#9670;&nbsp;</a></span>deserialize_message() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Backend &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto eagine::msgbus::deserialize_message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__identifiers.html#ga388736604674eb7b755e39ca981d9861">identifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>class_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__identifiers.html#ga388736604674eb7b755e39ca981d9861">identifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>method_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeagine_1_1msgbus_1_1stored__message.html">stored_message</a> &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Backend &amp;&#160;</td>
+          <td class="paramname"><em>backend</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3">deserialization_errors</a>
+  requires(std::is_base_of_v&lt;<a class="el" href="structeagine_1_1deserializer__backend.html">deserializer_backend</a>, Backend&gt;) </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deserializes a bus message with the specified deserializer backend. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga583929dd577f53ac792bbe76a217b929" title="Deserializes a bus message header with the specified deserializer backend.">deserialize_message_header</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#gade578617503303a55569772c100bbddf" title="Serializes a bus message with the specified serializer backend.">serialize_message</a> </dd>
+<dd>
+<a class="el" href="namespaceeagine_1_1msgbus.html#a710382294519faebbf2b83bb92760402" title="Uses the default backend to deserialize a value from a memory block.">default_deserialize</a> </dd></dl>
+
+</div>
+</div>
+<a id="gaa009baad597601e28a8d0edd421b01c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa009baad597601e28a8d0edd421b01c1">&#9670;&nbsp;</a></span>deserialize_message() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Backend &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto eagine::msgbus::deserialize_message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structeagine_1_1message__id.html">message_id</a> &amp;&#160;</td>
+          <td class="paramname"><em>msg_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeagine_1_1msgbus_1_1stored__message.html">stored_message</a> &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Backend &amp;&#160;</td>
+          <td class="paramname"><em>backend</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3">deserialization_errors</a>
+  requires(std::is_base_of_v&lt;<a class="el" href="structeagine_1_1deserializer__backend.html">deserializer_backend</a>, Backend&gt;) </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deserializes a bus message with the specified deserializer backend. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga583929dd577f53ac792bbe76a217b929" title="Deserializes a bus message header with the specified deserializer backend.">deserialize_message_header</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#gade578617503303a55569772c100bbddf" title="Serializes a bus message with the specified serializer backend.">serialize_message</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga583929dd577f53ac792bbe76a217b929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga583929dd577f53ac792bbe76a217b929">&#9670;&nbsp;</a></span>deserialize_message_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Backend &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto eagine::msgbus::deserialize_message_header </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__identifiers.html#ga388736604674eb7b755e39ca981d9861">identifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>class_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__identifiers.html#ga388736604674eb7b755e39ca981d9861">identifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>method_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeagine_1_1msgbus_1_1stored__message.html">stored_message</a> &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Backend &amp;&#160;</td>
+          <td class="paramname"><em>backend</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3">deserialization_errors</a>
+  requires(std::is_base_of_v&lt;<a class="el" href="structeagine_1_1deserializer__backend.html">deserializer_backend</a>, Backend&gt;) </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deserializes a bus message header with the specified deserializer backend. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga9243f88d6e0462763dfc27b4e5cd6a9b" title="Deserializes a bus message with the specified deserializer backend.">deserialize_message</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#gac5fa6f56663674379dfc134ec245a87b" title="Serializes a bus message header with the specified serializer backend.">serialize_message_header</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga02dd6435d3314dfe4091344332187c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02dd6435d3314dfe4091344332187c08">&#9670;&nbsp;</a></span>invalid_endpoint_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr auto eagine::msgbus::invalid_endpoint_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">identifier_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the special invalid message bus endpoint id. </p>
+<dl class="section see"><dt>See also</dt><dd>is_valid_id </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1msgbus_1_1stream__endpoint.html#a639d81f85e4d9c74369d11dc13d3df74">eagine::msgbus::stream_endpoint&lt; Base &gt;::reset_stream_relay()</a>.</p>
+
+</div>
+</div>
+<a id="ga07242c62a624a864c5534cb96ed35205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07242c62a624a864c5534cb96ed35205">&#9670;&nbsp;</a></span>is_valid_endpoint_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr auto eagine::msgbus::is_valid_endpoint_id </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">identifier_t</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates if the specified endpoint id is valid. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#ga02dd6435d3314dfe4091344332187c08" title="Returns the special invalid message bus endpoint id.">invalid_endpoint_id</a> </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1msgbus_1_1stream__endpoint.html#a76cbd1dda39ddcff1600744859e880bf">eagine::msgbus::stream_endpoint&lt; Base &gt;::has_stream_relay()</a>, <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#a9f285e7f324d14a385e7b4b066c2244e">eagine::msgbus::endpoint::is_valid_id()</a>, and <a class="el" href="classeagine_1_1msgbus_1_1stream__endpoint.html#a8d2b6ce5b0469c2fa4d3a0de3892b815">eagine::msgbus::stream_endpoint&lt; Base &gt;::set_stream_relay()</a>.</p>
+
+</div>
+</div>
+<a id="gade578617503303a55569772c100bbddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade578617503303a55569772c100bbddf">&#9670;&nbsp;</a></span>serialize_message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Backend &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto eagine::msgbus::serialize_message </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structeagine_1_1message__id.html">message_id</a>&#160;</td>
+          <td class="paramname"><em>msg_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classeagine_1_1msgbus_1_1message__view.html">message_view</a> &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Backend &amp;&#160;</td>
+          <td class="paramname"><em>backend</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="group__serialization.html#ga255997aa4dfc20ea579f75e0a77c2bb0">serialization_errors</a>
+  requires(std::is_base_of_v&lt;<a class="el" href="structeagine_1_1serializer__backend.html">serializer_backend</a>, Backend&gt;) </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Serializes a bus message with the specified serializer backend. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#gac5fa6f56663674379dfc134ec245a87b" title="Serializes a bus message header with the specified serializer backend.">serialize_message_header</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#ga9243f88d6e0462763dfc27b4e5cd6a9b" title="Deserializes a bus message with the specified deserializer backend.">deserialize_message</a> </dd>
+<dd>
+<a class="el" href="namespaceeagine_1_1msgbus.html#ad159beb045c85b5a6dc62a1000fa033c" title="Uses the default backend to serialize a value into a memory block.">default_serialize</a> </dd></dl>
+
+</div>
+</div>
+<a id="gac5fa6f56663674379dfc134ec245a87b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5fa6f56663674379dfc134ec245a87b">&#9670;&nbsp;</a></span>serialize_message_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Backend &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto eagine::msgbus::serialize_message_header </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structeagine_1_1message__id.html">message_id</a>&#160;</td>
+          <td class="paramname"><em>msg_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classeagine_1_1msgbus_1_1message__view.html">message_view</a> &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Backend &amp;&#160;</td>
+          <td class="paramname"><em>backend</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="group__serialization.html#ga255997aa4dfc20ea579f75e0a77c2bb0">serialization_errors</a>
+  requires(std::is_base_of_v&lt;<a class="el" href="structeagine_1_1serializer__backend.html">serializer_backend</a>, Backend&gt;) </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Serializes a bus message header with the specified serializer backend. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__msgbus.html#gade578617503303a55569772c100bbddf" title="Serializes a bus message with the specified serializer backend.">serialize_message</a> </dd>
+<dd>
+<a class="el" href="group__msgbus.html#ga583929dd577f53ac792bbe76a217b929" title="Deserializes a bus message header with the specified deserializer backend.">deserialize_message_header</a> </dd></dl>
 
 </div>
 </div>

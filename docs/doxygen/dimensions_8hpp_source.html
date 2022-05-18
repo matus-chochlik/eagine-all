@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/units/dimensions.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,53 +73,39 @@ $(function() {
 <div class="title">dimensions.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="dimensions_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EAGINE_UNITS_DIMENSIONS_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define EAGINE_UNITS_DIMENSIONS_HPP</span></div>
+<a href="dimensions_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_UNITS_DIMENSIONS_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_UNITS_DIMENSIONS_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="acceleration_8hpp.html">dim/acceleration.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="angular__velocity_8hpp.html">dim/angular_velocity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="area_8hpp.html">dim/area.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2electric__charge_8hpp.html">dim/electric_charge.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2electric__tension_8hpp.html">dim/electric_tension.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2electrical__capacitance_8hpp.html">dim/electrical_capacitance.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2electrical__conductance_8hpp.html">dim/electrical_conductance.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2electrical__resistance_8hpp.html">dim/electrical_resistance.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2energy_8hpp.html">dim/energy.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2force_8hpp.html">dim/force.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2frequency_8hpp.html">dim/frequency.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2inductance_8hpp.html">dim/inductance.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2magnetic__field__strength_8hpp.html">dim/magnetic_field_strength.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2magnetic__flux_8hpp.html">dim/magnetic_flux.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mass__density_8hpp.html">dim/mass_density.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="momentum_8hpp.html">dim/momentum.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2power_8hpp.html">dim/power.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2pressure_8hpp.html">dim/pressure.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dim_2radioactivity_8hpp.html">dim/radioactivity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="velocity_8hpp.html">dim/velocity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="volume_8hpp.html">dim/volume.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/acceleration.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/angular_velocity.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/area.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/electric_charge.hpp&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/electric_tension.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/electrical_capacitance.hpp&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/electrical_conductance.hpp&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/electrical_resistance.hpp&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/energy.hpp&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/force.hpp&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/frequency.hpp&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/inductance.hpp&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/magnetic_field_strength.hpp&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/magnetic_flux.hpp&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/mass_density.hpp&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/momentum.hpp&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/power.hpp&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/pressure.hpp&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/radioactivity.hpp&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/velocity.hpp&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;dim/volume.hpp&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_UNITS_DIMENSIONS_HPP</span></div>
-<div class="ttc" id="aacceleration_8hpp_html"><div class="ttname"><a href="acceleration_8hpp.html">acceleration.hpp</a></div></div>
-<div class="ttc" id="aangular__velocity_8hpp_html"><div class="ttname"><a href="angular__velocity_8hpp.html">angular_velocity.hpp</a></div></div>
-<div class="ttc" id="aarea_8hpp_html"><div class="ttname"><a href="area_8hpp.html">area.hpp</a></div></div>
-<div class="ttc" id="adim_2electric__charge_8hpp_html"><div class="ttname"><a href="dim_2electric__charge_8hpp.html">electric_charge.hpp</a></div></div>
-<div class="ttc" id="adim_2electric__tension_8hpp_html"><div class="ttname"><a href="dim_2electric__tension_8hpp.html">electric_tension.hpp</a></div></div>
-<div class="ttc" id="adim_2electrical__capacitance_8hpp_html"><div class="ttname"><a href="dim_2electrical__capacitance_8hpp.html">electrical_capacitance.hpp</a></div></div>
-<div class="ttc" id="adim_2electrical__conductance_8hpp_html"><div class="ttname"><a href="dim_2electrical__conductance_8hpp.html">electrical_conductance.hpp</a></div></div>
-<div class="ttc" id="adim_2electrical__resistance_8hpp_html"><div class="ttname"><a href="dim_2electrical__resistance_8hpp.html">electrical_resistance.hpp</a></div></div>
-<div class="ttc" id="adim_2energy_8hpp_html"><div class="ttname"><a href="dim_2energy_8hpp.html">energy.hpp</a></div></div>
-<div class="ttc" id="adim_2force_8hpp_html"><div class="ttname"><a href="dim_2force_8hpp.html">force.hpp</a></div></div>
-<div class="ttc" id="adim_2frequency_8hpp_html"><div class="ttname"><a href="dim_2frequency_8hpp.html">frequency.hpp</a></div></div>
-<div class="ttc" id="adim_2inductance_8hpp_html"><div class="ttname"><a href="dim_2inductance_8hpp.html">inductance.hpp</a></div></div>
-<div class="ttc" id="adim_2magnetic__field__strength_8hpp_html"><div class="ttname"><a href="dim_2magnetic__field__strength_8hpp.html">magnetic_field_strength.hpp</a></div></div>
-<div class="ttc" id="adim_2magnetic__flux_8hpp_html"><div class="ttname"><a href="dim_2magnetic__flux_8hpp.html">magnetic_flux.hpp</a></div></div>
-<div class="ttc" id="adim_2power_8hpp_html"><div class="ttname"><a href="dim_2power_8hpp.html">power.hpp</a></div></div>
-<div class="ttc" id="adim_2pressure_8hpp_html"><div class="ttname"><a href="dim_2pressure_8hpp.html">pressure.hpp</a></div></div>
-<div class="ttc" id="adim_2radioactivity_8hpp_html"><div class="ttname"><a href="dim_2radioactivity_8hpp.html">radioactivity.hpp</a></div></div>
-<div class="ttc" id="amass__density_8hpp_html"><div class="ttname"><a href="mass__density_8hpp.html">mass_density.hpp</a></div></div>
-<div class="ttc" id="amomentum_8hpp_html"><div class="ttname"><a href="momentum_8hpp.html">momentum.hpp</a></div></div>
-<div class="ttc" id="avelocity_8hpp_html"><div class="ttname"><a href="velocity_8hpp.html">velocity.hpp</a></div></div>
-<div class="ttc" id="avolume_8hpp_html"><div class="ttname"><a href="volume_8hpp.html">volume.hpp</a></div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_UNITS_DIMENSIONS_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

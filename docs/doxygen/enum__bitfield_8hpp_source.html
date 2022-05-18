@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/c_api/enum_bitfield.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,118 +73,120 @@ $(function() {
 <div class="title">enum_bitfield.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="enum__bitfield_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_C_API_ENUM_BITFIELD_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_C_API_ENUM_BITFIELD_HPP</span></div>
+<a href="enum__bitfield_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_C_API_ENUM_BITFIELD_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_C_API_ENUM_BITFIELD_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="enum__class_8hpp.html">enum_class.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="eagine-core_2include_2eagine_2c__api_2enum__class_8hpp.html">&quot;enum_class.hpp&quot;</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>eagine::c_api {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::c_api {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> ClassList&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">struct </span>enum_bits;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">struct</span> enum_bits;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Classes&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct </span>enum_bits&lt;T, mp_list&lt;Classes...&gt;&gt; {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct</span> enum_bits&lt;T, <a class="code" href="structeagine_1_1mp__list.html">mp_list</a>&lt;Classes...&gt;&gt; {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    T _bits{0};</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">explicit</span> constexpr enum_bits(<span class="keyword">const</span> T bits) noexcept</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">explicit</span> <span class="keyword">constexpr</span> enum_bits(<span class="keyword">const</span> T bits) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      : _bits{bits} {}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> TL1, <span class="keyword">typename</span> TL2&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> operator|(</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> operator|(</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">const</span> enum_value&lt;T, TL1&gt; a,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> enum_value&lt;T, TL2&gt; b) noexcept</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  requires(!<a class="code" href="group__metaprogramming.html#gaba6ff03d2b1d26a09b69ef91106ad893">mp_is_empty_v</a>&lt;mp_union_t&lt;TL1, TL2&gt;&gt;) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> enum_value&lt;T, TL2&gt; b) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">requires</span>(!mp_is_empty_v&lt;mp_union_t&lt;TL1, TL2&gt;&gt;) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// NOLINTNEXTLINE(hicpp-signed-bitwise)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> enum_bits&lt;T, mp_union_t&lt;TL1, TL2&gt;&gt;{a.value | b.value};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> TL1, <span class="keyword">typename</span> TL2&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> operator|(</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> operator|(</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> enum_bits&lt;T, TL1&gt; eb,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> enum_value&lt;T, TL2&gt; ev) noexcept</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  requires(!<a class="code" href="group__metaprogramming.html#gaba6ff03d2b1d26a09b69ef91106ad893">mp_is_empty_v</a>&lt;mp_union_t&lt;TL1, TL2&gt;&gt;) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> enum_value&lt;T, TL2&gt; ev) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">requires</span>(!mp_is_empty_v&lt;mp_union_t&lt;TL1, TL2&gt;&gt;) {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> enum_bits&lt;T, mp_union_t&lt;TL1, TL2&gt;&gt;{eb._bits | ev.value};</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> EnumClass&gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">struct </span>enum_bitfield {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">using</span> <a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a> = <span class="keyword">typename</span> <a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">EnumClass::value_type</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">struct</span> enum_bitfield {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">using</span> value_type = <span class="keyword">typename</span> EnumClass::value_type;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a> _value{0};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    value_type _value{0};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    constexpr enum_bitfield() noexcept = default;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">constexpr</span> enum_bitfield() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    explicit constexpr enum_bitfield(const <a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a> value) noexcept</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">explicit</span> <span class="keyword">constexpr</span> enum_bitfield(<span class="keyword">const</span> value_type value) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      : _value{value} {}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    constexpr enum_bitfield(<span class="keyword">const</span> EnumClass e) noexcept</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">constexpr</span> enum_bitfield(<span class="keyword">const</span> EnumClass e) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      : _value{e._value} {}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Classes&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    constexpr enum_bitfield(<span class="keyword">const</span> enum_value&lt;value_type, Classes&gt; ev) noexcept</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      requires(mp_contains_v&lt;Classes, EnumClass&gt;)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">constexpr</span> enum_bitfield(<span class="keyword">const</span> enum_value&lt;value_type, Classes&gt; ev) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keyword">requires</span>(mp_contains_v&lt;Classes, EnumClass&gt;)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      : _value{ev.value} {}</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Classes&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    constexpr enum_bitfield(<span class="keyword">const</span> enum_bits&lt;value_type, Classes&gt; eb) noexcept</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      requires(mp_contains_v&lt;Classes, EnumClass&gt;)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">constexpr</span> enum_bitfield(<span class="keyword">const</span> enum_bits&lt;value_type, Classes&gt; eb) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">requires</span>(mp_contains_v&lt;Classes, EnumClass&gt;)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      : _value{eb._bits} {}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">explicit</span> constexpr <span class="keyword">operator</span> <a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a>() const noexcept {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">explicit</span> <span class="keyword">constexpr</span> operator value_type() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> _value;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">auto</span> add(<span class="keyword">const</span> EnumClass ev) noexcept -&gt; <span class="keyword">auto</span>&amp; {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">auto</span> add(<span class="keyword">const</span> EnumClass ev) <span class="keyword">noexcept</span> -&gt; <span class="keyword">auto</span>&amp; {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        _value |= ev._value; <span class="comment">// NOLINT(hicpp-signed-bitwise)</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">auto</span> clear(<span class="keyword">const</span> EnumClass ev) noexcept -&gt; <span class="keyword">auto</span>&amp; {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">auto</span> clear(<span class="keyword">const</span> EnumClass ev) <span class="keyword">noexcept</span> -&gt; <span class="keyword">auto</span>&amp; {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        _value &amp;= ~ev._value; <span class="comment">// NOLINT(hicpp-signed-bitwise)</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    constexpr <span class="keyword">auto</span> has(<span class="keyword">const</span> EnumClass ev) <span class="keyword">const</span> noexcept -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> has(<span class="keyword">const</span> EnumClass ev) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// NOLINTNEXTLINE(hicpp-signed-bitwise)</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> (_value &amp; ev._value) == ev._value;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">friend</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__identifiers.html#gac41a704d66fdc6f5c3fd67c299057bcf">operator==</a>(</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">friend</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> operator==(</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keyword">const</span> enum_bitfield a,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keyword">const</span> enum_bitfield b) noexcept {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keyword">const</span> enum_bitfield b) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> a._value == b._value;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">friend</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__valid__if.html#ga30ddf002ae6b961fccfeacc122c772ba">operator!=</a>(</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">friend</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> operator!=(</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keyword">const</span> enum_bitfield a,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keyword">const</span> enum_bitfield b) noexcept {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keyword">const</span> enum_bitfield b) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> a._value != b._value;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">friend</span> constexpr <span class="keyword">auto</span> operator|(</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">friend</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> operator|(</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keyword">const</span> enum_bitfield a,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keyword">const</span> enum_bitfield b) noexcept {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> enum_bitfield{<a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a>(a._value) | <a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a>(b._value)};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keyword">const</span> enum_bitfield b) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> enum_bitfield{value_type(a._value) | value_type(b._value)};</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">friend</span> constexpr <span class="keyword">auto</span> operator&amp;(</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">friend</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> operator&amp;(</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keyword">const</span> enum_bitfield a,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keyword">const</span> enum_bitfield b) noexcept {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> enum_bitfield{<a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a>(a._value) &amp; <a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a>(b._value)};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keyword">const</span> enum_bitfield b) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> enum_bitfield{value_type(a._value) &amp; value_type(b._value)};</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;} <span class="comment">// namespace eagine::c_api</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aenum__class_8hpp_html"><div class="ttname"><a href="enum__class_8hpp.html">enum_class.hpp</a></div></div>
-<div class="ttc" id="agroup__identifiers_html_gac41a704d66fdc6f5c3fd67c299057bcf"><div class="ttname"><a href="group__identifiers.html#gac41a704d66fdc6f5c3fd67c299057bcf">eagine::operator==</a></div><div class="ttdeci">auto operator==(const message_id l, const static_message_id&lt; ClassId, MethodId &gt; r) noexcept</div><div class="ttdoc">Equality comparison between message_id and static_message_id.</div><div class="ttdef"><b>Definition:</b> message_id.hpp:129</div></div>
-<div class="ttc" id="agroup__metaprogramming_html_gaba6ff03d2b1d26a09b69ef91106ad893"><div class="ttname"><a href="group__metaprogramming.html#gaba6ff03d2b1d26a09b69ef91106ad893">eagine::mp_is_empty_v</a></div><div class="ttdeci">static constexpr const auto mp_is_empty_v</div><div class="ttdoc">Trait indicating whether a type list is empty.</div><div class="ttdef"><b>Definition:</b> mp_list.hpp:35</div></div>
-<div class="ttc" id="agroup__valid__if_html_ga30ddf002ae6b961fccfeacc122c772ba"><div class="ttname"><a href="group__valid__if.html#ga30ddf002ae6b961fccfeacc122c772ba">eagine::operator!=</a></div><div class="ttdeci">static constexpr auto operator!=(const basic_valid_if&lt; T, Po1, L1 &gt; &amp;v1, const basic_valid_if&lt; T, Po2, L2 &gt; &amp;v2) noexcept -&gt; tribool</div><div class="ttdoc">Non-equality comparison of two conditionally valid values.</div><div class="ttdef"><b>Definition:</b> base.hpp:383</div></div>
-<div class="ttc" id="agroup__valtree_html_ga0e53392d6125e3cce82766e30b728449"><div class="ttname"><a href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">eagine::valtree::value_type</a></div><div class="ttdeci">value_type</div><div class="ttdoc">Value tree value element data type enumeration.</div><div class="ttdef"><b>Definition:</b> interface.hpp:28</div></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Type utilities</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -77,8 +77,35 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1memory_1_1has__span__size__member.html">eagine::memory::has_span_size_member&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class detecting if type T has x.size() member function.  <a href="structeagine_1_1memory_1_1has__span__size__member.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1memory_1_1has__span__data__member.html">eagine::memory::has_span_data_member&lt; T, E &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class detecting if type T has x.data() member function.  <a href="structeagine_1_1memory_1_1has__span__data__member.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1memory_1_1basic__span.html">eagine::memory::basic_span&lt; ValueType, Pointer, SizeType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-owning view of a contiguous range of memory with ValueType elements.  <a href="classeagine_1_1memory_1_1basic__span.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1memory_1_1basic__chunk__span.html">eagine::memory::basic_chunk_span&lt; ValueType, Pointer, SizeType, chunkSize &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-owning view of a contiguous range of memory with ValueType elements.  <a href="classeagine_1_1memory_1_1basic__chunk__span.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1anything.html">eagine::anything</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type that can by constructed from single argument of any other type.  <a href="structeagine_1_1anything.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1nothing__t.html">eagine::nothing_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing "none" / "nothing" values.  <a href="structeagine_1_1nothing__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1interface.html">eagine::interface&lt; Derived &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base template for abstract interfaces, implements common functionality.  <a href="classeagine_1_1interface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1abstract.html">eagine::abstract&lt; Derived &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base template for polymorphic classes, implements common functionality.  <a href="classeagine_1_1abstract.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1main__ctx__log__backend__getter.html">eagine::main_ctx_log_backend_getter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class used in the implementation of logging in main context object.  <a href="classeagine_1_1main__ctx__log__backend__getter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1protected__member.html">eagine::protected_member&lt; T, Selector &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class holding a single tagged data member.  <a href="classeagine_1_1protected__member.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1biteset__value__proxy.html">eagine::biteset_value_proxy&lt; BiS &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy class that can be used to access elements in a biteset.  <a href="classeagine_1_1biteset__value__proxy.html#details">More...</a><br /></td></tr>
@@ -101,29 +128,17 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1bitfield.html">eagine::bitfield&lt; Bit &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for manipulating and testing a group of enumeration-based bits.  <a href="classeagine_1_1bitfield.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1some__true.html">eagine::some_true</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class storing initially false value and logically or-ing other values.  <a href="classeagine_1_1some__true.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1byteset.html">eagine::byteset&lt; N &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class storing a sequence of bytes converting them to and from unsigned integer.  <a href="classeagine_1_1byteset.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1double__buffer.html">eagine::double_buffer&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class holding two instances of type <code>T</code> and allows to switch them.  <a href="classeagine_1_1double__buffer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1c__api_1_1key__value__list__element.html">eagine::c_api::key_value_list_element&lt; Traits &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single key/value pair for a key/value list.  <a href="structeagine_1_1c__api_1_1key__value__list__element.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1c__api_1_1key__value__list.html">eagine::c_api::key_value_list&lt; Traits &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template for classes wrapping static key/value typically attribute lists.  <a href="classeagine_1_1c__api_1_1key__value__list.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1double__buffer.html">eagine::double_buffer&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class holding two instances of type <code>T</code> and allows to switch them.  <a href="classeagine_1_1double__buffer.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1static__enum__map.html">eagine::static_enum_map&lt; Enum, Unit, Keys &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class mapping from an enumerator of an instantiation of a template.  <a href="classeagine_1_1static__enum__map.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1interface.html">eagine::interface&lt; Derived &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base template for abstract interfaces, implements common functionality.  <a href="classeagine_1_1interface.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1abstract.html">eagine::abstract&lt; Derived &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base template for polymorphic classes, implements common functionality.  <a href="classeagine_1_1abstract.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1basic__iterable__type.html">eagine::basic_iterable_type&lt; T, Derived &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template used in implementation of some iterators.  <a href="classeagine_1_1basic__iterable__type.html#details">More...</a><br /></td></tr>
@@ -149,41 +164,18 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1reverse.html">eagine::reverse&lt; Range &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adapter reversing the iteration of elements in a Range.  <a href="classeagine_1_1reverse.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1main__ctx__log__backend__getter.html">eagine::main_ctx_log_backend_getter</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class used in the implementation of logging in main context object.  <a href="classeagine_1_1main__ctx__log__backend__getter.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1some__true.html">eagine::some_true</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class storing initially false value and logically or-ing other values.  <a href="classeagine_1_1some__true.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1static__enum__map.html">eagine::static_enum_map&lt; Enum, Unit, Keys &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class mapping from an enumerator of an instantiation of a template.  <a href="classeagine_1_1static__enum__map.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1memory_1_1typed__nullptr__t.html">eagine::memory::typed_nullptr_t&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for doing pointer arithmetic on null pointers.  <a href="structeagine_1_1memory_1_1typed__nullptr__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1memory_1_1has__span__size__member.html">eagine::memory::has_span_size_member&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class detecting if type T has x.size() member function.  <a href="structeagine_1_1memory_1_1has__span__size__member.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1memory_1_1has__span__data__member.html">eagine::memory::has_span_data_member&lt; T, E &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class detecting if type T has x.data() member function.  <a href="structeagine_1_1memory_1_1has__span__data__member.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1memory_1_1basic__span.html">eagine::memory::basic_span&lt; ValueType, Pointer, SizeType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-owning view of a contiguous range of memory with ValueType elements.  <a href="classeagine_1_1memory_1_1basic__span.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1memory_1_1basic__chunk__span.html">eagine::memory::basic_chunk_span&lt; ValueType, Pointer, SizeType, chunkSize &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-owning view of a contiguous range of memory with ValueType elements.  <a href="classeagine_1_1memory_1_1basic__chunk__span.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1nothing__t.html">eagine::nothing_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing "none" / "nothing" values.  <a href="structeagine_1_1nothing__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1protected__member.html">eagine::protected_member&lt; T, Selector &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class holding a single tagged data member.  <a href="classeagine_1_1protected__member.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gad5c7c5d04307871d98a76686b17ebba4"><td class="memTemplParams" colspan="2">template&lt;typename std::size_t B&gt; </td></tr>
-<tr class="memitem:gad5c7c5d04307871d98a76686b17ebba4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gad5c7c5d04307871d98a76686b17ebba4">eagine::biteset_cell_type</a> = std::conditional_t&lt;(B&lt;=8), std::uint_least8_t, std::conditional_t&lt;(B&lt;=16), std::uint_least16_t, std::conditional_t&lt;(B&lt;=32), std::uint_least32_t, std::conditional_t&lt;(B&lt;=64), std::uint_least64_t, void &gt; &gt;&gt; &gt;</td></tr>
-<tr class="memdesc:gad5c7c5d04307871d98a76686b17ebba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the appropriate type for biteset element representation.  <a href="group__type__utils.html#gad5c7c5d04307871d98a76686b17ebba4">More...</a><br /></td></tr>
-<tr class="separator:gad5c7c5d04307871d98a76686b17ebba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5b6b865401692708c34a55a96d4c12a2"><td class="memItemLeft" align="right" valign="top"><a id="ga5b6b865401692708c34a55a96d4c12a2"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga5b6b865401692708c34a55a96d4c12a2">eagine::work_done</a> = <a class="el" href="classeagine_1_1some__true.html">some_true</a></td></tr>
-<tr class="memdesc:ga5b6b865401692708c34a55a96d4c12a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias used as return value indicating that some work was done. <br /></td></tr>
-<tr class="separator:ga5b6b865401692708c34a55a96d4c12a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadda8aac5370bd7ae56cb5a16defd16f4"><td class="memTemplParams" colspan="2"><a id="gadda8aac5370bd7ae56cb5a16defd16f4"></a>
 template&lt;bool B&gt; </td></tr>
 <tr class="memitem:gadda8aac5370bd7ae56cb5a16defd16f4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">eagine::bool_constant</a> = std::integral_constant&lt; bool, B &gt;</td></tr>
@@ -208,16 +200,6 @@ template&lt;std::size_t S&gt; </td></tr>
 <tr class="memitem:gafbe944538990f9399b4ba44485e823fe"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gafbe944538990f9399b4ba44485e823fe">eagine::id_constant</a> = std::integral_constant&lt; <a class="el" href="group__identifiers.html#ga95fc7f47f20633e9563dcaa76d1bce4b">identifier_t</a>, Id &gt;</td></tr>
 <tr class="memdesc:gafbe944538990f9399b4ba44485e823fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for identifier_t constant type.  <a href="group__type__utils.html#gafbe944538990f9399b4ba44485e823fe">More...</a><br /></td></tr>
 <tr class="separator:gafbe944538990f9399b4ba44485e823fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8da7f49dadf801add5106aeaaf050f7b"><td class="memTemplParams" colspan="2"><a id="ga8da7f49dadf801add5106aeaaf050f7b"></a>
-template&lt;bool IsConst&gt; </td></tr>
-<tr class="memitem:ga8da7f49dadf801add5106aeaaf050f7b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga8da7f49dadf801add5106aeaaf050f7b">eagine::memory::basic_block</a> = <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; std::conditional_t&lt; IsConst, const <a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a>, <a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a> &gt; &gt;</td></tr>
-<tr class="memdesc:ga8da7f49dadf801add5106aeaaf050f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for byte spans. <br /></td></tr>
-<tr class="separator:ga8da7f49dadf801add5106aeaaf050f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadbd294528813ac25d56decb0e5194089"><td class="memTemplParams" colspan="2"><a id="gadbd294528813ac25d56decb0e5194089"></a>
-template&lt;bool IsConst&gt; </td></tr>
-<tr class="memitem:gadbd294528813ac25d56decb0e5194089"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gadbd294528813ac25d56decb0e5194089">eagine::memory::basic_split_block</a> = <a class="el" href="classeagine_1_1memory_1_1basic__split__span.html">basic_split_span</a>&lt; std::conditional_t&lt; IsConst, const <a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a>, <a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a> &gt; &gt;</td></tr>
-<tr class="memdesc:gadbd294528813ac25d56decb0e5194089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for split span of bytes. <br /></td></tr>
-<tr class="separator:gadbd294528813ac25d56decb0e5194089"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga973e3bb89ea2c57a0e9204e9ffc0167e"><td class="memItemLeft" align="right" valign="top"><a id="ga973e3bb89ea2c57a0e9204e9ffc0167e"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">eagine::byte</a> = unsigned char</td></tr>
 <tr class="memdesc:ga973e3bb89ea2c57a0e9204e9ffc0167e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte type alias. <br /></td></tr>
@@ -238,58 +220,27 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gro
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gafbaa82e72e4244fec591e7e012cf949a">eagine::valid_span_size</a> = <a class="el" href="group__valid__if.html#ga00a51ba271fbb9ff4d3e1432e2bb0513">valid_if_nonnegative</a>&lt; <a class="el" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> &gt;</td></tr>
 <tr class="memdesc:gafbaa82e72e4244fec591e7e012cf949a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valid size type. <br /></td></tr>
 <tr class="separator:gafbaa82e72e4244fec591e7e012cf949a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8da7f49dadf801add5106aeaaf050f7b"><td class="memTemplParams" colspan="2"><a id="ga8da7f49dadf801add5106aeaaf050f7b"></a>
+template&lt;bool IsConst&gt; </td></tr>
+<tr class="memitem:ga8da7f49dadf801add5106aeaaf050f7b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga8da7f49dadf801add5106aeaaf050f7b">eagine::memory::basic_block</a> = <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; std::conditional_t&lt; IsConst, const <a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a>, <a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a> &gt; &gt;</td></tr>
+<tr class="memdesc:ga8da7f49dadf801add5106aeaaf050f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for byte spans. <br /></td></tr>
+<tr class="separator:ga8da7f49dadf801add5106aeaaf050f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5c7c5d04307871d98a76686b17ebba4"><td class="memTemplParams" colspan="2">template&lt;typename std::size_t B&gt; </td></tr>
+<tr class="memitem:gad5c7c5d04307871d98a76686b17ebba4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gad5c7c5d04307871d98a76686b17ebba4">eagine::biteset_cell_type</a> = std::conditional_t&lt;(B&lt;=8), std::uint_least8_t, std::conditional_t&lt;(B&lt;=16), std::uint_least16_t, std::conditional_t&lt;(B&lt;=32), std::uint_least32_t, std::conditional_t&lt;(B&lt;=64), std::uint_least64_t, void &gt; &gt;&gt; &gt;</td></tr>
+<tr class="memdesc:gad5c7c5d04307871d98a76686b17ebba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the appropriate type for biteset element representation.  <a href="group__type__utils.html#gad5c7c5d04307871d98a76686b17ebba4">More...</a><br /></td></tr>
+<tr class="separator:gad5c7c5d04307871d98a76686b17ebba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbd294528813ac25d56decb0e5194089"><td class="memTemplParams" colspan="2"><a id="gadbd294528813ac25d56decb0e5194089"></a>
+template&lt;bool IsConst&gt; </td></tr>
+<tr class="memitem:gadbd294528813ac25d56decb0e5194089"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gadbd294528813ac25d56decb0e5194089">eagine::memory::basic_split_block</a> = <a class="el" href="classeagine_1_1memory_1_1basic__split__span.html">basic_split_span</a>&lt; std::conditional_t&lt; IsConst, const <a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a>, <a class="el" href="group__type__utils.html#ga973e3bb89ea2c57a0e9204e9ffc0167e">byte</a> &gt; &gt;</td></tr>
+<tr class="memdesc:gadbd294528813ac25d56decb0e5194089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for split span of bytes. <br /></td></tr>
+<tr class="separator:gadbd294528813ac25d56decb0e5194089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b6b865401692708c34a55a96d4c12a2"><td class="memItemLeft" align="right" valign="top"><a id="ga5b6b865401692708c34a55a96d4c12a2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga5b6b865401692708c34a55a96d4c12a2">eagine::work_done</a> = <a class="el" href="classeagine_1_1some__true.html">some_true</a></td></tr>
+<tr class="memdesc:ga5b6b865401692708c34a55a96d4c12a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias used as return value indicating that some work was done. <br /></td></tr>
+<tr class="separator:ga5b6b865401692708c34a55a96d4c12a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><td class="memTemplParams" colspan="2"><a id="ga8a72fe43272bd6f8f7e0cdbb41b3bce5"></a>
-template&lt;typename T , std::size_t N&gt; </td></tr>
-<tr class="memitem:ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga8a72fe43272bd6f8f7e0cdbb41b3bce5">eagine::array_size</a> (const T(&amp;)[N]) noexcept</td></tr>
-<tr class="memdesc:ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the array passed as argument. <br /></td></tr>
-<tr class="separator:ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a996f91405f500ffe768c7bb5d73d7d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga2a996f91405f500ffe768c7bb5d73d7d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga2a996f91405f500ffe768c7bb5d73d7d">eagine::from_string</a> (const <a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> src) noexcept</td></tr>
-<tr class="memdesc:ga2a996f91405f500ffe768c7bb5d73d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation in <code>src</code> to a value of type <code>T</code>.  <a href="group__type__utils.html#ga2a996f91405f500ffe768c7bb5d73d7d">More...</a><br /></td></tr>
-<tr class="separator:ga2a996f91405f500ffe768c7bb5d73d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga958b912e64539f65c7fe18fda68bf9c2"><td class="memTemplParams" colspan="2">template&lt;typename T , identifier_t V&gt; </td></tr>
-<tr class="memitem:ga958b912e64539f65c7fe18fda68bf9c2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga958b912e64539f65c7fe18fda68bf9c2">eagine::from_string</a> (const <a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> src, const <a class="el" href="structeagine_1_1selector.html">selector</a>&lt; V &gt; sel) noexcept</td></tr>
-<tr class="memdesc:ga958b912e64539f65c7fe18fda68bf9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation in <code>src</code> to a value of type <code>T</code>.  <a href="group__type__utils.html#ga958b912e64539f65c7fe18fda68bf9c2">More...</a><br /></td></tr>
-<tr class="separator:ga958b912e64539f65c7fe18fda68bf9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0b43ace0fa8a67d88532f25650607800"><td class="memTemplParams" colspan="2"><a id="ga0b43ace0fa8a67d88532f25650607800"></a>
-template&lt;typename H , typename I &gt; </td></tr>
-<tr class="memitem:ga0b43ace0fa8a67d88532f25650607800"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga0b43ace0fa8a67d88532f25650607800">eagine::integer_hash</a> (const I x, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; H &gt; hid={}, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; I &gt; iid={}) -&gt; H</td></tr>
-<tr class="memdesc:ga0b43ace0fa8a67d88532f25650607800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hash value with type <code>H</code> from an integer value of type <code>I</code>. <br /></td></tr>
-<tr class="separator:ga0b43ace0fa8a67d88532f25650607800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad69b9dea4fef2484ee81ac7887a794a0"><td class="memTemplParams" colspan="2">template&lt;typename Dst , typename Src &gt; </td></tr>
-<tr class="memitem:gad69b9dea4fef2484ee81ac7887a794a0"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gad69b9dea4fef2484ee81ac7887a794a0">eagine::is_within_limits</a> (const Src value) noexcept</td></tr>
-<tr class="memdesc:gad69b9dea4fef2484ee81ac7887a794a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if <code>value</code> fits into the specified Dst type.  <a href="group__type__utils.html#gad69b9dea4fef2484ee81ac7887a794a0">More...</a><br /></td></tr>
-<tr class="separator:gad69b9dea4fef2484ee81ac7887a794a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9f37fdb64aba28d20aaffce61a856fcc"><td class="memTemplParams" colspan="2">template&lt;typename Dst , typename Src &gt; </td></tr>
-<tr class="memitem:ga9f37fdb64aba28d20aaffce61a856fcc"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga9f37fdb64aba28d20aaffce61a856fcc">eagine::limit_cast</a> (Src value) noexcept -&gt; Dst requires(std::is_convertible_v&lt; Src, Dst &gt;)</td></tr>
-<tr class="memdesc:ga9f37fdb64aba28d20aaffce61a856fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts <code>value</code> to Dst type if the value fits in that type.  <a href="group__type__utils.html#ga9f37fdb64aba28d20aaffce61a856fcc">More...</a><br /></td></tr>
-<tr class="separator:ga9f37fdb64aba28d20aaffce61a856fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaf8b694f300be481e0193d6d79cae6ec"><td class="memTemplParams" colspan="2">template&lt;typename Src &gt; </td></tr>
-<tr class="memitem:gaaf8b694f300be481e0193d6d79cae6ec"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gaaf8b694f300be481e0193d6d79cae6ec">eagine::signedness_cast</a> (Src value) noexcept</td></tr>
-<tr class="memdesc:gaaf8b694f300be481e0193d6d79cae6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts <code>value</code> to a type with the opposite signedness.  <a href="group__type__utils.html#gaaf8b694f300be481e0193d6d79cae6ec">More...</a><br /></td></tr>
-<tr class="separator:gaaf8b694f300be481e0193d6d79cae6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad916e4f63189d2cf1c8e49ceafd34a4c"><td class="memTemplParams" colspan="2">template&lt;typename Dst , typename Src &gt; </td></tr>
-<tr class="memitem:gad916e4f63189d2cf1c8e49ceafd34a4c"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gad916e4f63189d2cf1c8e49ceafd34a4c">eagine::convert_if_fits</a> (Src value) noexcept -&gt; <a class="el" href="group__valid__if.html#ga22f90263d27c63b9dd286602484b9037">optionally_valid</a>&lt; Dst &gt; requires(std::is_convertible_v&lt; Src, Dst &gt;)</td></tr>
-<tr class="memdesc:gad916e4f63189d2cf1c8e49ceafd34a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optionally converts <code>value</code> to Dst type if the value fits in that type.  <a href="group__type__utils.html#gad916e4f63189d2cf1c8e49ceafd34a4c">More...</a><br /></td></tr>
-<tr class="separator:gad916e4f63189d2cf1c8e49ceafd34a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4e0dc28debce7b8adb1669dcc8c83afd"><td class="memTemplParams" colspan="2"><a id="ga4e0dc28debce7b8adb1669dcc8c83afd"></a>
-template&lt;typename T , std::integral N&gt; </td></tr>
-<tr class="memitem:ga4e0dc28debce7b8adb1669dcc8c83afd"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga4e0dc28debce7b8adb1669dcc8c83afd">eagine::memory::operator+</a> (const <a class="el" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t</a>&lt; T &gt;, const N n) noexcept -&gt; T *</td></tr>
-<tr class="memdesc:ga4e0dc28debce7b8adb1669dcc8c83afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer arithmetic addition operator for null pointers. <br /></td></tr>
-<tr class="separator:ga4e0dc28debce7b8adb1669dcc8c83afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga26b899da7126aa5f44d4b69991e74a01"><td class="memTemplParams" colspan="2"><a id="ga26b899da7126aa5f44d4b69991e74a01"></a>
-template&lt;typename T , typename B , typename P , typename S &gt; </td></tr>
-<tr class="memitem:ga26b899da7126aa5f44d4b69991e74a01"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga26b899da7126aa5f44d4b69991e74a01">eagine::memory::can_accommodate</a> (const <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; B, P, S &gt; blk, const <a class="el" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> count, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; T &gt; tid={}) noexcept</td></tr>
-<tr class="memdesc:ga26b899da7126aa5f44d4b69991e74a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the specified memory block can accommodate count elements of T. <br /></td></tr>
-<tr class="separator:ga26b899da7126aa5f44d4b69991e74a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9178bfa80d482c7afb2cba917b4eba09"><td class="memTemplParams" colspan="2"><a id="ga9178bfa80d482c7afb2cba917b4eba09"></a>
-template&lt;typename T , typename B , typename P , typename S &gt; </td></tr>
-<tr class="memitem:ga9178bfa80d482c7afb2cba917b4eba09"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga9178bfa80d482c7afb2cba917b4eba09">eagine::memory::can_accommodate</a> (const <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; B, P, S &gt; blk, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; T &gt; tid={}) noexcept</td></tr>
-<tr class="memdesc:ga9178bfa80d482c7afb2cba917b4eba09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the specified memory block can accommodate one element of T. <br /></td></tr>
-<tr class="separator:ga9178bfa80d482c7afb2cba917b4eba09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga758b4c07ecbad155292049a1ac84c1a9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename P , typename S , typename Predicate &gt; </td></tr>
 <tr class="memitem:ga758b4c07ecbad155292049a1ac84c1a9"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga758b4c07ecbad155292049a1ac84c1a9">eagine::memory::all_of</a> (const <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; T, P, S &gt; spn, Predicate predicate) -&gt; bool</td></tr>
 <tr class="memdesc:ga758b4c07ecbad155292049a1ac84c1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if all elements in a span satisfy <code>predicate</code>.  <a href="group__type__utils.html#ga758b4c07ecbad155292049a1ac84c1a9">More...</a><br /></td></tr>
@@ -315,14 +266,16 @@ template&lt;typename Result , typename T , typename P1 , typename S1 , typename 
 <tr class="memitem:ga0f63e33945c8333851fc873a094f8b87"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga0f63e33945c8333851fc873a094f8b87">eagine::memory::basic_edit_distance</a> (const <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; const T, P1, S1 &gt; s1, const <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; const T, P2, S2 &gt; s2, BinaryFunction get_distance) -&gt; Result</td></tr>
 <tr class="memdesc:ga0f63e33945c8333851fc873a094f8b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the edit distance of <code>s1</code> and <code>s2</code> according to get_distance. <br /></td></tr>
 <tr class="separator:ga0f63e33945c8333851fc873a094f8b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d5bfddc9b8e49e175b1a40f9e6f72f6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga4d5bfddc9b8e49e175b1a40f9e6f72f6"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga4d5bfddc9b8e49e175b1a40f9e6f72f6">eagine::type_name</a> (const T &amp;) noexcept -&gt; std::string</td></tr>
-<tr class="memdesc:ga4d5bfddc9b8e49e175b1a40f9e6f72f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the demangled name for type T.  <a href="group__type__utils.html#ga4d5bfddc9b8e49e175b1a40f9e6f72f6">More...</a><br /></td></tr>
-<tr class="separator:ga4d5bfddc9b8e49e175b1a40f9e6f72f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4465c961f40f266eef9e3c9453beccac"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga4465c961f40f266eef9e3c9453beccac"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga4465c961f40f266eef9e3c9453beccac">eagine::type_name</a> () noexcept -&gt; std::string</td></tr>
-<tr class="memdesc:ga4465c961f40f266eef9e3c9453beccac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the demangled name for type T.  <a href="group__type__utils.html#ga4465c961f40f266eef9e3c9453beccac">More...</a><br /></td></tr>
-<tr class="separator:ga4465c961f40f266eef9e3c9453beccac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26b899da7126aa5f44d4b69991e74a01"><td class="memTemplParams" colspan="2"><a id="ga26b899da7126aa5f44d4b69991e74a01"></a>
+template&lt;typename T , typename B , typename P , typename S &gt; </td></tr>
+<tr class="memitem:ga26b899da7126aa5f44d4b69991e74a01"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga26b899da7126aa5f44d4b69991e74a01">eagine::memory::can_accommodate</a> (const <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; B, P, S &gt; blk, const <a class="el" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> count, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; T &gt; tid={}) noexcept</td></tr>
+<tr class="memdesc:ga26b899da7126aa5f44d4b69991e74a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the specified memory block can accommodate count elements of T. <br /></td></tr>
+<tr class="separator:ga26b899da7126aa5f44d4b69991e74a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9178bfa80d482c7afb2cba917b4eba09"><td class="memTemplParams" colspan="2"><a id="ga9178bfa80d482c7afb2cba917b4eba09"></a>
+template&lt;typename T , typename B , typename P , typename S &gt; </td></tr>
+<tr class="memitem:ga9178bfa80d482c7afb2cba917b4eba09"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga9178bfa80d482c7afb2cba917b4eba09">eagine::memory::can_accommodate</a> (const <a class="el" href="classeagine_1_1memory_1_1basic__span.html">basic_span</a>&lt; B, P, S &gt; blk, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; T &gt; tid={}) noexcept</td></tr>
+<tr class="memdesc:ga9178bfa80d482c7afb2cba917b4eba09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the specified memory block can accommodate one element of T. <br /></td></tr>
+<tr class="separator:ga9178bfa80d482c7afb2cba917b4eba09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafec2c03ccfb83e3c84d829e631ec61bc"><td class="memTemplParams" colspan="2"><a id="gafec2c03ccfb83e3c84d829e631ec61bc"></a>
 template&lt;typename T , typename  = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;&gt; </td></tr>
 <tr class="memitem:gafec2c03ccfb83e3c84d829e631ec61bc"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gafec2c03ccfb83e3c84d829e631ec61bc">eagine::std_align</a> (const T v) noexcept</td></tr>
@@ -353,14 +306,53 @@ template&lt;typename T , typename S &gt; </td></tr>
 <tr class="memitem:ga6f36044dad42140a44afa77ceb841b66"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga6f36044dad42140a44afa77ceb841b66">eagine::span_size_of</a> (const S n, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; T &gt;={}) noexcept</td></tr>
 <tr class="memdesc:ga6f36044dad42140a44afa77ceb841b66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total byte size of n elements of type T as span_size_t. <br /></td></tr>
 <tr class="separator:ga6f36044dad42140a44afa77ceb841b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc4fceddaea892fd61b87e44d6f55f6c"><td class="memTemplParams" colspan="2">template&lt;typename Traits &gt; </td></tr>
-<tr class="memitem:gacc4fceddaea892fd61b87e44d6f55f6c"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gacc4fceddaea892fd61b87e44d6f55f6c">operator+</a> (const <a class="el" href="structeagine_1_1c__api_1_1key__value__list__element.html">key_value_list_element</a>&lt; Traits &gt; &amp;l, const <a class="el" href="structeagine_1_1c__api_1_1key__value__list__element.html">key_value_list_element</a>&lt; Traits &gt; &amp;r) noexcept -&gt; <a class="el" href="classeagine_1_1c__api_1_1key__value__list.html">key_value_list</a>&lt; Traits &gt;</td></tr>
-<tr class="memdesc:gacc4fceddaea892fd61b87e44d6f55f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two individual key/value elements into a key/value list.  <a href="group__type__utils.html#gacc4fceddaea892fd61b87e44d6f55f6c">More...</a><br /></td></tr>
-<tr class="separator:gacc4fceddaea892fd61b87e44d6f55f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8fa1c9bb976bdb842bbf538020377e33"><td class="memTemplParams" colspan="2">template&lt;typename Traits &gt; </td></tr>
-<tr class="memitem:ga8fa1c9bb976bdb842bbf538020377e33"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga8fa1c9bb976bdb842bbf538020377e33">operator+</a> (const <a class="el" href="classeagine_1_1c__api_1_1key__value__list.html">key_value_list</a>&lt; Traits &gt; &amp;l, const <a class="el" href="structeagine_1_1c__api_1_1key__value__list__element.html">key_value_list_element</a>&lt; Traits &gt; &amp;r) noexcept -&gt; <a class="el" href="classeagine_1_1c__api_1_1key__value__list.html">key_value_list</a>&lt; Traits &gt;</td></tr>
-<tr class="memdesc:ga8fa1c9bb976bdb842bbf538020377e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a key/value pair into a key/value list, returns a new list.  <a href="group__type__utils.html#ga8fa1c9bb976bdb842bbf538020377e33">More...</a><br /></td></tr>
-<tr class="separator:ga8fa1c9bb976bdb842bbf538020377e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad69b9dea4fef2484ee81ac7887a794a0"><td class="memTemplParams" colspan="2">template&lt;typename Dst , typename Src &gt; </td></tr>
+<tr class="memitem:gad69b9dea4fef2484ee81ac7887a794a0"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gad69b9dea4fef2484ee81ac7887a794a0">eagine::is_within_limits</a> (const Src value) noexcept</td></tr>
+<tr class="memdesc:gad69b9dea4fef2484ee81ac7887a794a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if <code>value</code> fits into the specified Dst type.  <a href="group__type__utils.html#gad69b9dea4fef2484ee81ac7887a794a0">More...</a><br /></td></tr>
+<tr class="separator:gad69b9dea4fef2484ee81ac7887a794a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f37fdb64aba28d20aaffce61a856fcc"><td class="memTemplParams" colspan="2">template&lt;typename Dst , typename Src &gt; </td></tr>
+<tr class="memitem:ga9f37fdb64aba28d20aaffce61a856fcc"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga9f37fdb64aba28d20aaffce61a856fcc">eagine::limit_cast</a> (Src value) noexcept -&gt; Dst requires(std::is_convertible_v&lt; Src, Dst &gt;)</td></tr>
+<tr class="memdesc:ga9f37fdb64aba28d20aaffce61a856fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts <code>value</code> to Dst type if the value fits in that type.  <a href="group__type__utils.html#ga9f37fdb64aba28d20aaffce61a856fcc">More...</a><br /></td></tr>
+<tr class="separator:ga9f37fdb64aba28d20aaffce61a856fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf8b694f300be481e0193d6d79cae6ec"><td class="memTemplParams" colspan="2">template&lt;typename Src &gt; </td></tr>
+<tr class="memitem:gaaf8b694f300be481e0193d6d79cae6ec"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gaaf8b694f300be481e0193d6d79cae6ec">eagine::signedness_cast</a> (Src value) noexcept</td></tr>
+<tr class="memdesc:gaaf8b694f300be481e0193d6d79cae6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts <code>value</code> to a type with the opposite signedness.  <a href="group__type__utils.html#gaaf8b694f300be481e0193d6d79cae6ec">More...</a><br /></td></tr>
+<tr class="separator:gaaf8b694f300be481e0193d6d79cae6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad916e4f63189d2cf1c8e49ceafd34a4c"><td class="memTemplParams" colspan="2">template&lt;typename Dst , typename Src &gt; </td></tr>
+<tr class="memitem:gad916e4f63189d2cf1c8e49ceafd34a4c"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gad916e4f63189d2cf1c8e49ceafd34a4c">eagine::convert_if_fits</a> (Src value) noexcept -&gt; <a class="el" href="group__valid__if.html#ga22f90263d27c63b9dd286602484b9037">optionally_valid</a>&lt; Dst &gt; requires(std::is_convertible_v&lt; Src, Dst &gt;)</td></tr>
+<tr class="memdesc:gad916e4f63189d2cf1c8e49ceafd34a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optionally converts <code>value</code> to Dst type if the value fits in that type.  <a href="group__type__utils.html#gad916e4f63189d2cf1c8e49ceafd34a4c">More...</a><br /></td></tr>
+<tr class="separator:gad916e4f63189d2cf1c8e49ceafd34a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a996f91405f500ffe768c7bb5d73d7d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga2a996f91405f500ffe768c7bb5d73d7d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga2a996f91405f500ffe768c7bb5d73d7d">eagine::from_string</a> (const <a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> src) noexcept</td></tr>
+<tr class="memdesc:ga2a996f91405f500ffe768c7bb5d73d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation in <code>src</code> to a value of type <code>T</code>.  <a href="group__type__utils.html#ga2a996f91405f500ffe768c7bb5d73d7d">More...</a><br /></td></tr>
+<tr class="separator:ga2a996f91405f500ffe768c7bb5d73d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga958b912e64539f65c7fe18fda68bf9c2"><td class="memTemplParams" colspan="2">template&lt;typename T , identifier_t V&gt; </td></tr>
+<tr class="memitem:ga958b912e64539f65c7fe18fda68bf9c2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga958b912e64539f65c7fe18fda68bf9c2">eagine::from_string</a> (const <a class="el" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> src, const <a class="el" href="structeagine_1_1selector.html">selector</a>&lt; V &gt; sel) noexcept</td></tr>
+<tr class="memdesc:ga958b912e64539f65c7fe18fda68bf9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation in <code>src</code> to a value of type <code>T</code>.  <a href="group__type__utils.html#ga958b912e64539f65c7fe18fda68bf9c2">More...</a><br /></td></tr>
+<tr class="separator:ga958b912e64539f65c7fe18fda68bf9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d5bfddc9b8e49e175b1a40f9e6f72f6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga4d5bfddc9b8e49e175b1a40f9e6f72f6"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga4d5bfddc9b8e49e175b1a40f9e6f72f6">eagine::type_name</a> (const T &amp;) noexcept -&gt; std::string</td></tr>
+<tr class="memdesc:ga4d5bfddc9b8e49e175b1a40f9e6f72f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the demangled name for type T.  <a href="group__type__utils.html#ga4d5bfddc9b8e49e175b1a40f9e6f72f6">More...</a><br /></td></tr>
+<tr class="separator:ga4d5bfddc9b8e49e175b1a40f9e6f72f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4465c961f40f266eef9e3c9453beccac"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga4465c961f40f266eef9e3c9453beccac"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga4465c961f40f266eef9e3c9453beccac">eagine::type_name</a> () noexcept -&gt; std::string</td></tr>
+<tr class="memdesc:ga4465c961f40f266eef9e3c9453beccac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the demangled name for type T.  <a href="group__type__utils.html#ga4465c961f40f266eef9e3c9453beccac">More...</a><br /></td></tr>
+<tr class="separator:ga4465c961f40f266eef9e3c9453beccac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b43ace0fa8a67d88532f25650607800"><td class="memTemplParams" colspan="2"><a id="ga0b43ace0fa8a67d88532f25650607800"></a>
+template&lt;typename H , typename I &gt; </td></tr>
+<tr class="memitem:ga0b43ace0fa8a67d88532f25650607800"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga0b43ace0fa8a67d88532f25650607800">eagine::integer_hash</a> (const I x, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; H &gt; hid={}, const <a class="el" href="structeagine_1_1type__identity.html">type_identity</a>&lt; I &gt; iid={}) -&gt; H</td></tr>
+<tr class="memdesc:ga0b43ace0fa8a67d88532f25650607800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hash value with type <code>H</code> from an integer value of type <code>I</code>. <br /></td></tr>
+<tr class="separator:ga0b43ace0fa8a67d88532f25650607800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><td class="memTemplParams" colspan="2"><a id="ga8a72fe43272bd6f8f7e0cdbb41b3bce5"></a>
+template&lt;typename T , std::size_t N&gt; </td></tr>
+<tr class="memitem:ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga8a72fe43272bd6f8f7e0cdbb41b3bce5">eagine::array_size</a> (const T(&amp;)[N]) noexcept</td></tr>
+<tr class="memdesc:ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the array passed as argument. <br /></td></tr>
+<tr class="separator:ga8a72fe43272bd6f8f7e0cdbb41b3bce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e0dc28debce7b8adb1669dcc8c83afd"><td class="memTemplParams" colspan="2"><a id="ga4e0dc28debce7b8adb1669dcc8c83afd"></a>
+template&lt;typename T , std::integral N&gt; </td></tr>
+<tr class="memitem:ga4e0dc28debce7b8adb1669dcc8c83afd"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga4e0dc28debce7b8adb1669dcc8c83afd">eagine::memory::operator+</a> (const <a class="el" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t</a>&lt; T &gt;, const N n) noexcept -&gt; T *</td></tr>
+<tr class="memdesc:ga4e0dc28debce7b8adb1669dcc8c83afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer arithmetic addition operator for null pointers. <br /></td></tr>
+<tr class="separator:ga4e0dc28debce7b8adb1669dcc8c83afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0c98535512962555b502e009479f3ba7"><td class="memTemplParams" colspan="2"><a id="ga0c98535512962555b502e009479f3ba7"></a>
 template&lt;typename Selector , typename T &gt; </td></tr>
 <tr class="memitem:ga0c98535512962555b502e009479f3ba7"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga0c98535512962555b502e009479f3ba7">get_member</a> (<a class="el" href="classeagine_1_1protected__member.html">protected_member</a>&lt; T, Selector &gt; &amp;pm, Selector <a class="el" href="structeagine_1_1selector.html">selector</a>=Selector()) noexcept -&gt; T &amp;</td></tr>
@@ -371,14 +363,17 @@ template&lt;typename Selector , typename T &gt; </td></tr>
 <tr class="memitem:ga9da0d63183fa6309a51fae8694037651"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga9da0d63183fa6309a51fae8694037651">get_member</a> (const <a class="el" href="classeagine_1_1protected__member.html">protected_member</a>&lt; T, Selector &gt; &amp;pm, Selector <a class="el" href="structeagine_1_1selector.html">selector</a>=Selector()) noexcept -&gt; const T &amp;</td></tr>
 <tr class="memdesc:ga9da0d63183fa6309a51fae8694037651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to the member stored in <a class="el" href="classeagine_1_1protected__member.html" title="Class holding a single tagged data member.">protected_member</a>. <br /></td></tr>
 <tr class="separator:ga9da0d63183fa6309a51fae8694037651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc4fceddaea892fd61b87e44d6f55f6c"><td class="memTemplParams" colspan="2">template&lt;typename Traits &gt; </td></tr>
+<tr class="memitem:gacc4fceddaea892fd61b87e44d6f55f6c"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gacc4fceddaea892fd61b87e44d6f55f6c">operator+</a> (const <a class="el" href="structeagine_1_1c__api_1_1key__value__list__element.html">key_value_list_element</a>&lt; Traits &gt; &amp;l, const <a class="el" href="structeagine_1_1c__api_1_1key__value__list__element.html">key_value_list_element</a>&lt; Traits &gt; &amp;r) noexcept -&gt; <a class="el" href="classeagine_1_1c__api_1_1key__value__list.html">key_value_list</a>&lt; Traits &gt;</td></tr>
+<tr class="memdesc:gacc4fceddaea892fd61b87e44d6f55f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two individual key/value elements into a key/value list.  <a href="group__type__utils.html#gacc4fceddaea892fd61b87e44d6f55f6c">More...</a><br /></td></tr>
+<tr class="separator:gacc4fceddaea892fd61b87e44d6f55f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8fa1c9bb976bdb842bbf538020377e33"><td class="memTemplParams" colspan="2">template&lt;typename Traits &gt; </td></tr>
+<tr class="memitem:ga8fa1c9bb976bdb842bbf538020377e33"><td class="memTemplItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga8fa1c9bb976bdb842bbf538020377e33">operator+</a> (const <a class="el" href="classeagine_1_1c__api_1_1key__value__list.html">key_value_list</a>&lt; Traits &gt; &amp;l, const <a class="el" href="structeagine_1_1c__api_1_1key__value__list__element.html">key_value_list_element</a>&lt; Traits &gt; &amp;r) noexcept -&gt; <a class="el" href="classeagine_1_1c__api_1_1key__value__list.html">key_value_list</a>&lt; Traits &gt;</td></tr>
+<tr class="memdesc:ga8fa1c9bb976bdb842bbf538020377e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a key/value pair into a key/value list, returns a new list.  <a href="group__type__utils.html#ga8fa1c9bb976bdb842bbf538020377e33">More...</a><br /></td></tr>
+<tr class="separator:ga8fa1c9bb976bdb842bbf538020377e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga941076769a0bc079cb82bff2d9be7397"><td class="memTemplParams" colspan="2"><a id="ga941076769a0bc079cb82bff2d9be7397"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga941076769a0bc079cb82bff2d9be7397"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">eagine::memory::typed_nullptr</a></td></tr>
-<tr class="memdesc:ga941076769a0bc079cb82bff2d9be7397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template constant for doing pointer arithmetic on null pointers. <br /></td></tr>
-<tr class="separator:ga941076769a0bc079cb82bff2d9be7397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4845b1f7afe8748b7761f3229740862e"><td class="memTemplParams" colspan="2"><a id="ga4845b1f7afe8748b7761f3229740862e"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga4845b1f7afe8748b7761f3229740862e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga4845b1f7afe8748b7761f3229740862e">eagine::memory::has_span_size_member_v</a></td></tr>
@@ -392,6 +387,11 @@ template&lt;typename T , typename E  = anything&gt; </td></tr>
 <tr class="memitem:gaa8d81cd9c527e46b245b6e7d5ef0af12"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structeagine_1_1nothing__t.html">nothing_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__type__utils.html#gaa8d81cd9c527e46b245b6e7d5ef0af12">eagine::nothing</a></td></tr>
 <tr class="memdesc:gaa8d81cd9c527e46b245b6e7d5ef0af12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant of <a class="el" href="structeagine_1_1nothing__t.html" title="Class representing &quot;none&quot; / &quot;nothing&quot; values.">nothing_t</a> type.  <a href="group__type__utils.html#gaa8d81cd9c527e46b245b6e7d5ef0af12">More...</a><br /></td></tr>
 <tr class="separator:gaa8d81cd9c527e46b245b6e7d5ef0af12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga941076769a0bc079cb82bff2d9be7397"><td class="memTemplParams" colspan="2"><a id="ga941076769a0bc079cb82bff2d9be7397"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga941076769a0bc079cb82bff2d9be7397"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">eagine::memory::typed_nullptr</a></td></tr>
+<tr class="memdesc:ga941076769a0bc079cb82bff2d9be7397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template constant for doing pointer arithmetic on null pointers. <br /></td></tr>
+<tr class="separator:ga941076769a0bc079cb82bff2d9be7397"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -791,7 +791,7 @@ template&lt;typename Dst , typename Src &gt; </div>
 <a class="el" href="group__type__utils.html#gaaf8b694f300be481e0193d6d79cae6ec" title="Casts value to a type with the opposite signedness.">signedness_cast</a> </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>is_within_limits&lt;Dst&gt;(value) </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="group__type__utils.html#gaaf8b694f300be481e0193d6d79cae6ec">eagine::signedness_cast()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1msgbus_1_1remote__node.html#a09b077eda6edc11b7ca4b00bbe57c005">eagine::msgbus::remote_node::messages_per_second()</a>.</p>
 
 </div>
 </div>
@@ -952,6 +952,8 @@ template&lt;typename Src &gt; </div>
 <a class="el" href="group__type__utils.html#gad916e4f63189d2cf1c8e49ceafd34a4c" title="Optionally converts value to Dst type if the value fits in that type.">convert_if_fits</a> </dd>
 <dd>
 <a class="el" href="group__type__utils.html#ga9f37fdb64aba28d20aaffce61a856fcc" title="Casts value to Dst type if the value fits in that type.">limit_cast</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_2028_compute_particles_2resources_8cpp-example.html#a4">app/028_compute_particles/resources.cpp</a>, and <a class="el" href="oglplus_2022_octree_8cpp-example.html#a9">oglplus/022_octree.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1039,8 +1041,10 @@ template&lt;typename T &gt; </div>
 
 <p>Constant of <a class="el" href="structeagine_1_1nothing__t.html" title="Class representing &quot;none&quot; / &quot;nothing&quot; values.">nothing_t</a> type. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structeagine_1_1nothing__t.html" title="Class representing &quot;none&quot; / &quot;nothing&quot; values.">nothing_t</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="eagine_2msgbus_2005_topology_8cpp-example.html#a4">eagine/msgbus/005_topology.cpp</a>, and <a class="el" href="eagine_2msgbus_2007_ping_8cpp-example.html#a2">eagine/msgbus/007_ping.cpp</a>.</dd>
+</dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1shared__executable__module.html#afbcfb172584febba5fbe7c4c661b64ea">eagine::shared_executable_module::shared_executable_module()</a>, and <a class="el" href="classeagine_1_1shared__executable__module.html#a0b04607f1d12e3ad65c4b44f1518b690">eagine::shared_executable_module::open_self()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1msgbus_1_1connection__setup.html#ab17fa2b793f72980e6d1f9c9727331c6">eagine::msgbus::connection_setup::connection_setup()</a>, <a class="el" href="classeagine_1_1msgbus_1_1router__address.html#ae7ddec182bc2ebd9bfd09aedcf7b96db">eagine::msgbus::router_address::router_address()</a>, <a class="el" href="classeagine_1_1shared__executable__module.html#afbcfb172584febba5fbe7c4c661b64ea">eagine::shared_executable_module::shared_executable_module()</a>, <a class="el" href="classeagine_1_1msgbus_1_1remote__instance.html#a56c084a074957c1514a7764aa894c715">eagine::msgbus::remote_instance::build()</a>, <a class="el" href="classeagine_1_1msgbus_1_1remote__instance.html#a53f17bee42e3e3fde1e626c0fbaeb2cc">eagine::msgbus::remote_instance::compiler()</a>, <a class="el" href="classeagine_1_1shared__executable__module.html#a0b04607f1d12e3ad65c4b44f1518b690">eagine::shared_executable_module::open_self()</a>, and <a class="el" href="classeagine_1_1msgbus_1_1remote__node.html#a82f982603cade8da0383e8e671a3abd5">eagine::msgbus::remote_node::set_ping_interval()</a>.</p>
 
 </div>
 </div>

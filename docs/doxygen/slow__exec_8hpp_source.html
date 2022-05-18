@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/slow_exec.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,63 +73,66 @@ $(function() {
 <div class="title">slow_exec.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="slow__exec_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_SLOW_EXEC_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_SLOW_EXEC_HPP</span></div>
+<a href="slow__exec_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_SLOW_EXEC_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_SLOW_EXEC_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="basic_8hpp.html">config/basic.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="valgrind_8hpp.html">interop/valgrind.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;config/basic.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;interop/valgrind.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">   18</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @brief Enumeration indicating (estimated) memory access rate.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">   18</a></span>&#160;<span class="keyword">enum</span> <span class="keyword">class</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/// @brief Minimal to none memory access.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1adc43e863c176e9b9f2a0b6054b24bd1a">minimal</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/// @brief Low memory access rate.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a53cced8d281a1a0ace3cb6594daaa4f7">low</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/// @brief Average access rate.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">medium</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/// @brief Above average to high access rate.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a8d966b2253a917086c8604959e152243">high</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">/// @brief  Very high access rate.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1aaa4cea18ae7516f9a3c28d597055082f">very_high</a></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if EAGINE_DEBUG &amp;&amp; defined(RUNNING_ON_VALGRIND)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="eagine-core_2include_2eagine_2config_2site_8hpp.html#a1889db8a8b547f9f307ef3e630301311">EAGINE_DEBUG</a> <span class="preprocessor">&amp;&amp;</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span>RUNNING_ON_VALGRIND<span class="preprocessor">)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> temporal_slowdown_factor(</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a> mem_access = <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">memory_access_rate::medium</a>) noexcept</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a> mem_access = <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">::</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">medium</a>) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="group__interop.html#gad7612655555a3ae896ab99409e8dc6f8">running_on_valgrind</a>()) [[unlikely]] {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(running_on_valgrind()) [[unlikely]] {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">switch</span>(mem_access) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1adc43e863c176e9b9f2a0b6054b24bd1a">memory_access_rate::minimal</a>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1adc43e863c176e9b9f2a0b6054b24bd1a">::</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1adc43e863c176e9b9f2a0b6054b24bd1a">minimal</a>:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> 5;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a53cced8d281a1a0ace3cb6594daaa4f7">memory_access_rate::low</a>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a53cced8d281a1a0ace3cb6594daaa4f7">::</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a53cced8d281a1a0ace3cb6594daaa4f7">low</a>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">return</span> 7;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">memory_access_rate::medium</a>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">::</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">medium</a>:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">return</span> 12;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a8d966b2253a917086c8604959e152243">memory_access_rate::high</a>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a8d966b2253a917086c8604959e152243">::</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a8d966b2253a917086c8604959e152243">high</a>:</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span> 25;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1aaa4cea18ae7516f9a3c28d597055082f">memory_access_rate::very_high</a>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1aaa4cea18ae7516f9a3c28d597055082f">::</a><a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1aaa4cea18ae7516f9a3c28d597055082f">very_high</a>:</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">return</span> 45;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> temporal_slowdown_factor(</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">const</span> <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">memory_access_rate</a> = <a class="code" href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">memory_access_rate::medium</a>) noexcept -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="namespaceeagine.html">temporal_slowdown_factor</a>(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">const</span> <a class="code" href="namespaceeagine.html">memory_access_rate</a> = <a class="code" href="namespaceeagine.html">memory_access_rate</a>::<a class="code" href="namespaceeagine.html">medium</a>) <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_SLOW_EXEC_HPP</span></div>
-<div class="ttc" id="abasic_8hpp_html"><div class="ttname"><a href="basic_8hpp.html">basic.hpp</a></div></div>
-<div class="ttc" id="agroup__interop_html_gad7612655555a3ae896ab99409e8dc6f8"><div class="ttname"><a href="group__interop.html#gad7612655555a3ae896ab99409e8dc6f8">eagine::running_on_valgrind</a></div><div class="ttdeci">static constexpr auto running_on_valgrind() noexcept -&gt; tribool</div><div class="ttdoc">Indicates if the current process runs on top of valgrind.</div><div class="ttdef"><b>Definition:</b> valgrind.hpp:30</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="anamespaceeagine_html_a0cc6098c4cadc628404b921787fe6df1"><div class="ttname"><a href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1">eagine::memory_access_rate</a></div><div class="ttdeci">memory_access_rate</div><div class="ttdoc">Enumeration indicating (estimated) memory access rate.</div><div class="ttdef"><b>Definition:</b> slow_exec.hpp:18</div></div>
-<div class="ttc" id="anamespaceeagine_html_a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713"><div class="ttname"><a href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a075a3e36a0a52dcbc568c05788e8a713">eagine::memory_access_rate::medium</a></div><div class="ttdeci">@ medium</div><div class="ttdoc">Average access rate.</div></div>
-<div class="ttc" id="anamespaceeagine_html_a0cc6098c4cadc628404b921787fe6df1a53cced8d281a1a0ace3cb6594daaa4f7"><div class="ttname"><a href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a53cced8d281a1a0ace3cb6594daaa4f7">eagine::memory_access_rate::low</a></div><div class="ttdeci">@ low</div><div class="ttdoc">Low memory access rate.</div></div>
-<div class="ttc" id="anamespaceeagine_html_a0cc6098c4cadc628404b921787fe6df1a8d966b2253a917086c8604959e152243"><div class="ttname"><a href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a8d966b2253a917086c8604959e152243">eagine::memory_access_rate::high</a></div><div class="ttdeci">@ high</div><div class="ttdoc">Above average to high access rate.</div></div>
-<div class="ttc" id="anamespaceeagine_html_a0cc6098c4cadc628404b921787fe6df1aaa4cea18ae7516f9a3c28d597055082f"><div class="ttname"><a href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1aaa4cea18ae7516f9a3c28d597055082f">eagine::memory_access_rate::very_high</a></div><div class="ttdeci">@ very_high</div><div class="ttdoc">Very high access rate.</div></div>
-<div class="ttc" id="anamespaceeagine_html_a0cc6098c4cadc628404b921787fe6df1adc43e863c176e9b9f2a0b6054b24bd1a"><div class="ttname"><a href="namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1adc43e863c176e9b9f2a0b6054b24bd1a">eagine::memory_access_rate::minimal</a></div><div class="ttdeci">@ minimal</div><div class="ttdoc">Minimal to none memory access.</div></div>
-<div class="ttc" id="avalgrind_8hpp_html"><div class="ttname"><a href="valgrind_8hpp.html">valgrind.hpp</a></div></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_SLOW_EXEC_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

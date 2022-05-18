@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/type_identity.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,54 +73,65 @@ $(function() {
 <div class="title">type_identity.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="type__identity_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_TYPE_IDENTITY_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_TYPE_IDENTITY_HPP</span></div>
+<a href="type__identity_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_TYPE_IDENTITY_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_TYPE_IDENTITY_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// @brief Template type used mostly for function type-tag dispatching.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @ingroup metaprogramming</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structeagine_1_1type__identity.html">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structeagine_1_1type__identity.html">type_identity</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structeagine_1_1type__identity.html#af21b4f80dd81720336035c74eb0d98c9">   21</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="structeagine_1_1type__identity.html#af21b4f80dd81720336035c74eb0d98c9">type</a> = T;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structeagine_1_1type__identity.html">   19</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1type__identity.html">type_identity</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/// @brief Alias for the argument of this template.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structeagine_1_1type__identity.html#af21b4f80dd81720336035c74eb0d98c9">   21</a></span>&#160;    <span class="keyword">using</span> type = T;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/// @brief Call operator returning a copy of its argument unchanged.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> X&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">   25</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">operator()</a>(<span class="keyword">const</span> X v) <span class="keyword">const</span> -&gt; X</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      requires(std::is_same_v&lt;T, X&gt; &amp;&amp; !std::is_array_v&lt;X&gt;) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">   25</a></span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">operator</a>()(<span class="keyword">const</span> X v) <span class="keyword">const</span> -&gt; X</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keyword">requires</span>(<a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">std</a>::<a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">is_same_v</a>&lt;<a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">T</a>, <a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">X</a>&gt; &amp;&amp; !<a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">std</a>::<a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">is_array_v</a>&lt;<a class="code" href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">X</a>&gt;) {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> v;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/// @brief Implementation detail of the @c type_t template.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/// @ingroup metaprogramming</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/// @note Do not use directly, use @c type_t instead.</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structeagine_1_1get__type.html">   35</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structeagine_1_1get__type.html">get_type</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structeagine_1_1get__type.html">   35</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1get__type.html">get_type</a> {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> X&gt;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _get(X*) -&gt; <span class="keyword">typename</span> X::type;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> X&gt;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> _get(...) -&gt; F;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">using</span> type = decltype(_get&lt;T&gt;(<span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>)));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">using</span> type = <span class="keyword">decltype</span>(_get&lt;T&gt;(<span class="keyword">static_cast</span>&lt;T*&gt;(<span class="keywordtype">nullptr</span>)));</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/// @brief Template returning nested alias @c type of type @c T or @c void.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/// @ingroup metaprogramming</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F = <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__metaprogramming.html#gaa6ca906d4776d7049ba0e0a6d11b06ff">   48</a></span>&#160;<span class="keyword">using</span> <a class="code" href="group__metaprogramming.html#gaa6ca906d4776d7049ba0e0a6d11b06ff">type_t</a> = <span class="keyword">typename</span> get_type&lt;T, F&gt;::type;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__metaprogramming.html#gaa6ca906d4776d7049ba0e0a6d11b06ff">   48</a></span>&#160;<span class="keyword">using</span> type_t = <span class="keyword">typename</span> <a class="code" href="structeagine_1_1get__type.html">get_type</a>&lt;T, F&gt;::type;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/// @brief Makes @c type_identity for type @c T of the argument.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// @ingroup metaprogramming</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group__metaprogramming.html#gaba7866162cfaefd32eace33ce72a91e4">   53</a></span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__metaprogramming.html#gaba7866162cfaefd32eace33ce72a91e4">make_identity</a>(<span class="keyword">const</span> T&amp;) noexcept -&gt; <a class="code" href="structeagine_1_1type__identity.html">type_identity&lt;T&gt;</a> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group__metaprogramming.html#gaba7866162cfaefd32eace33ce72a91e4">   53</a></span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="group__metaprogramming.html#gaba7866162cfaefd32eace33ce72a91e4">make_identity</a>(<span class="keyword">const</span> T&amp;) <span class="keyword">noexcept</span> -&gt; <a class="code" href="structeagine_1_1type__identity.html">type_identity</a>&lt;T&gt; {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> {};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_TYPE_IDENTITY_HPP</span></div>
-<div class="ttc" id="agroup__metaprogramming_html_gaa6ca906d4776d7049ba0e0a6d11b06ff"><div class="ttname"><a href="group__metaprogramming.html#gaa6ca906d4776d7049ba0e0a6d11b06ff">eagine::type_t</a></div><div class="ttdeci">typename get_type&lt; T, F &gt;::type type_t</div><div class="ttdoc">Template returning nested alias type of type T or void.</div><div class="ttdef"><b>Definition:</b> type_identity.hpp:48</div></div>
-<div class="ttc" id="agroup__metaprogramming_html_gaba7866162cfaefd32eace33ce72a91e4"><div class="ttname"><a href="group__metaprogramming.html#gaba7866162cfaefd32eace33ce72a91e4">eagine::make_identity</a></div><div class="ttdeci">static constexpr auto make_identity(const T &amp;) noexcept -&gt; type_identity&lt; T &gt;</div><div class="ttdoc">Makes type_identity for type T of the argument.</div><div class="ttdef"><b>Definition:</b> type_identity.hpp:53</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="astructeagine_1_1get__type_html"><div class="ttname"><a href="structeagine_1_1get__type.html">eagine::get_type</a></div><div class="ttdoc">Implementation detail of the type_t template.</div><div class="ttdef"><b>Definition:</b> type_identity.hpp:35</div></div>
-<div class="ttc" id="astructeagine_1_1type__identity_html"><div class="ttname"><a href="structeagine_1_1type__identity.html">eagine::type_identity</a></div><div class="ttdoc">Template type used mostly for function type-tag dispatching.</div><div class="ttdef"><b>Definition:</b> type_identity.hpp:19</div></div>
-<div class="ttc" id="astructeagine_1_1type__identity_html_af21b4f80dd81720336035c74eb0d98c9"><div class="ttname"><a href="structeagine_1_1type__identity.html#af21b4f80dd81720336035c74eb0d98c9">eagine::type_identity::type</a></div><div class="ttdeci">T type</div><div class="ttdoc">Alias for the argument of this template.</div><div class="ttdef"><b>Definition:</b> type_identity.hpp:21</div></div>
-<div class="ttc" id="astructeagine_1_1type__identity_html_afe0f94a7cb5cccf5f57a3fd830bf904a"><div class="ttname"><a href="structeagine_1_1type__identity.html#afe0f94a7cb5cccf5f57a3fd830bf904a">eagine::type_identity::operator()</a></div><div class="ttdeci">constexpr auto operator()(const X v) const -&gt; X requires(std::is_same_v&lt; T, X &gt; &amp;&amp;!std::is_array_v&lt; X &gt;)</div><div class="ttdoc">Call operator returning a copy of its argument unchanged.</div><div class="ttdef"><b>Definition:</b> type_identity.hpp:25</div></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_TYPE_IDENTITY_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

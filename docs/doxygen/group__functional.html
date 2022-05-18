@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Functional and function-related utilities</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -77,17 +77,17 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1on__scope__exit.html">eagine::on_scope_exit&lt; OnException &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class executing a specified action on scope exit.  <a href="classeagine_1_1on__scope__exit.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1func__on__scope__exit.html">eagine::func_on_scope_exit&lt; Func, OnException &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class storing a callable object and an instance of <a class="el" href="classeagine_1_1on__scope__exit.html" title="Class executing a specified action on scope exit.">on_scope_exit</a>.  <a href="classeagine_1_1func__on__scope__exit.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1basic__callable__ref.html">eagine::basic_callable_ref&lt; FuncSig, NoExcept &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of class template storing a reference to a callable object.  <a href="classeagine_1_1basic__callable__ref.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1basic__callable__ref_3_01RV_07P_8_8_8_08_01noexcept_07NE_08_00_01NE_01_4.html">eagine::basic_callable_ref&lt; RV(P...) noexcept(NE), NE &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of class template storing a reference to a callable object.  <a href="classeagine_1_1basic__callable__ref_3_01RV_07P_8_8_8_08_01noexcept_07NE_08_00_01NE_01_4.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1count__t.html">eagine::count_t&lt; Int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class counting invocation of its call operator.  <a href="classeagine_1_1count__t.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1interleaved__call.html">eagine::interleaved_call&lt; Func, SepFunc &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callable class that interleaves calls to a function with a separator function.  <a href="classeagine_1_1interleaved__call.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1member__function__constant.html">eagine::member_function_constant&lt; T, Ptr &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration of compile-time member function pointer wrappers.  <a href="structeagine_1_1member__function__constant.html#details">More...</a><br /></td></tr>
@@ -95,11 +95,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1member__function__constant_3_01RV_07C_1_1_5_08_07P_8_8_8_08_00_01Ptr_01_4.html">eagine::member_function_constant&lt; RV(C::*)(P...), Ptr &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of compile-time member function pointer wrappers.  <a href="structeagine_1_1member__function__constant_3_01RV_07C_1_1_5_08_07P_8_8_8_08_00_01Ptr_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1on__scope__exit.html">eagine::on_scope_exit&lt; OnException &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class executing a specified action on scope exit.  <a href="classeagine_1_1on__scope__exit.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1interleaved__call.html">eagine::interleaved_call&lt; Func, SepFunc &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callable class that interleaves calls to a function with a separator function.  <a href="classeagine_1_1interleaved__call.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1func__on__scope__exit.html">eagine::func_on_scope_exit&lt; Func, OnException &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class storing a callable object and an instance of <a class="el" href="classeagine_1_1on__scope__exit.html" title="Class executing a specified action on scope exit.">on_scope_exit</a>.  <a href="classeagine_1_1func__on__scope__exit.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeagine_1_1count__t.html">eagine::count_t&lt; Int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class counting invocation of its call operator.  <a href="classeagine_1_1count__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -256,6 +256,8 @@ Functions</h2></td></tr>
 <a class="el" href="group__functional.html#ga55a6daaa234288d5d4426bc7fc1a6dd2" title="Macro for creating object of member_function_constant in member functions.">EAGINE_THIS_MEM_FUNC_C</a> </dd>
 <dd>
 <a class="el" href="group__functional.html#ga62c536175d9e45c90dc0b8f3e364a1a5" title="Macro that in member function returns the type of the containing class.">EAGINE_THIS_T</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="app_2004_triangle_2main_8cpp-example.html#a11">app/004_triangle/main.cpp</a>, <a class="el" href="app_2010_newton_2main_8cpp-example.html#a12">app/010_newton/main.cpp</a>, <a class="el" href="app_2011_mandelbrot_2main_8cpp-example.html#a12">app/011_mandelbrot/main.cpp</a>, <a class="el" href="app_2013_tiling_2main_8cpp-example.html#a13">app/013_tiling/main.cpp</a>, <a class="el" href="app_2014_voronoi_2main_8cpp-example.html#a2">app/014_voronoi/main.cpp</a>, <a class="el" href="app_2015_worley_2main_8cpp-example.html#a2">app/015_worley/main.cpp</a>, <a class="el" href="eagine_2msgbus_2003_shutdown_8cpp-example.html#a1">eagine/msgbus/003_shutdown.cpp</a>, <a class="el" href="eagine_2msgbus_2004_discovery_8cpp-example.html#a1">eagine/msgbus/004_discovery.cpp</a>, <a class="el" href="eagine_2msgbus_2005_topology_8cpp-example.html#a1">eagine/msgbus/005_topology.cpp</a>, <a class="el" href="eagine_2msgbus_2007_ping_8cpp-example.html#a5">eagine/msgbus/007_ping.cpp</a>, <a class="el" href="eagine_2msgbus_2007_pong_8cpp-example.html#a1">eagine/msgbus/007_pong.cpp</a>, <a class="el" href="eagine_2msgbus_2008_pong_registry_8cpp-example.html#a1">eagine/msgbus/008_pong_registry.cpp</a>, <a class="el" href="eagine_2msgbus_2012_sudoku_threads_8cpp-example.html#a0">eagine/msgbus/012_sudoku_threads.cpp</a>, <a class="el" href="eagine_2msgbus_2014_tracker_8cpp-example.html#a1">eagine/msgbus/014_tracker.cpp</a>, and <a class="el" href="eagine_2msgbus_2015_stream_8cpp-example.html#a1">eagine/msgbus/015_stream.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -311,6 +313,8 @@ template&lt;typename Func &gt; </div>
 
 <p>Function constructing on-scope-exit actions. </p>
 <p>This function takes the specified callable argument and creates an object which when destroyed, typically when leaving scope block, invokes the callable. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="oglplus_2001_info_8cpp-example.html#a4">oglplus/001_info.cpp</a>, <a class="el" href="oglplus_2002_clear_8cpp-example.html#a1">oglplus/002_clear.cpp</a>, <a class="el" href="oglplus_2003_spectrum_8cpp-example.html#a3">oglplus/003_spectrum.cpp</a>, <a class="el" href="oglplus_2004_mandelbrot_8cpp-example.html#a14">oglplus/004_mandelbrot.cpp</a>, <a class="el" href="oglplus_2005_cartoon_sun_8cpp-example.html#a9">oglplus/005_cartoon_sun.cpp</a>, <a class="el" href="oglplus_2006_writing_8cpp-example.html#a9">oglplus/006_writing.cpp</a>, <a class="el" href="oglplus_2007_metaballs_8cpp-example.html#a12">oglplus/007_metaballs.cpp</a>, <a class="el" href="oglplus_2008_round_cube_8cpp-example.html#a19">oglplus/008_round_cube.cpp</a>, <a class="el" href="oglplus_2008_worley_waves_8cpp-example.html#a17">oglplus/008_worley_waves.cpp</a>, <a class="el" href="oglplus_2009_occlusion_8cpp-example.html#a17">oglplus/009_occlusion.cpp</a>, <a class="el" href="oglplus_2010_metallic_torus_8cpp-example.html#a17">oglplus/010_metallic_torus.cpp</a>, <a class="el" href="oglplus_2011_text_rendering_8cpp-example.html#a9">oglplus/011_text_rendering.cpp</a>, <a class="el" href="oglplus_2012_single_pass_edges_8cpp-example.html#a14">oglplus/012_single_pass_edges.cpp</a>, <a class="el" href="oglplus_2013_texture_projection_8cpp-example.html#a22">oglplus/013_texture_projection.cpp</a>, <a class="el" href="oglplus_2014_worleycraft_8cpp-example.html#a17">oglplus/014_worleycraft.cpp</a>, <a class="el" href="oglplus_2015_cloud_morphing_8cpp-example.html#a25">oglplus/015_cloud_morphing.cpp</a>, <a class="el" href="oglplus_2016_subroutines_8cpp-example.html#a15">oglplus/016_subroutines.cpp</a>, <a class="el" href="oglplus_2017_tessellation_8cpp-example.html#a15">oglplus/017_tessellation.cpp</a>, <a class="el" href="oglplus_2019_wooden_crate_8cpp-example.html#a18">oglplus/019_wooden_crate.cpp</a>, <a class="el" href="oglplus_2022_octree_8cpp-example.html#a42">oglplus/022_octree.cpp</a>, <a class="el" href="oglplus_2023_metaballs_8cpp-example.html#a13">oglplus/023_metaballs.cpp</a>, <a class="el" href="oglplus_2024_parallax_cube_8cpp-example.html#a26">oglplus/024_parallax_cube.cpp</a>, and <a class="el" href="oglplus_2026_parallax_sphere_8cpp-example.html#a20">oglplus/026_parallax_sphere.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>

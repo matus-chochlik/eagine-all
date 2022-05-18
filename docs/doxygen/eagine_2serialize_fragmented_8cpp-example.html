@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/serialize_fragmented.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,171 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="compare_8hpp.html">eagine/compare.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="block__sink_8hpp.html">eagine/serialize/block_sink.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="block__source_8hpp.html">eagine/serialize/block_source.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="fast__backend_8hpp.html">eagine/serialize/fast_backend.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="read_8hpp.html">eagine/serialize/read.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="write_8hpp.html">eagine/serialize/write.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keywordtype">void</span> use_data(std::vector&lt;T&gt;&amp; data) {</div>
+<div class="line">    std::size_t n = data.size();</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;element count: &quot;</span> &lt;&lt; n;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> data_ok = <span class="keyword">true</span>;</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; v : data) {</div>
+<div class="line">        data_ok &amp;= are_equal(v, T(--n));</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(data_ok) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;, data ok&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">struct </span>deserial_data_state {</div>
+<div class="line">    <a name="a0"></a><a class="code" href="group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3">deserialization_errors</a> errors{};</div>
+<div class="line">    fast_deserializer_backend backend{};</div>
+<div class="line">    fragment_deserialize_wrapper&lt;span&lt;T&gt;&gt; defragmenter{};</div>
+<div class="line">    std::vector&lt;T&gt; data{};</div>
+<div class="line">    <a name="a1"></a><a class="code" href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">span_size_t</a> count{0};</div>
+<div class="line">    <span class="keywordtype">bool</span> first{<span class="keyword">true</span>};</div>
+<div class="line">    <span class="keywordtype">bool</span> failed{<span class="keyword">false</span>};</div>
+<div class="line">};</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keywordtype">void</span> deserialize_data(</div>
+<div class="line">  <span class="keyword">const</span> <a name="a2"></a><a class="code" href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">memory::const_block</a> fragment,</div>
+<div class="line">  deserial_data_state&lt;T&gt;&amp; state) {</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(!state.failed) {</div>
+<div class="line">        block_data_source source(fragment);</div>
+<div class="line">        state.backend.set_source(source);</div>
+<div class="line">        <span class="keywordflow">if</span>(state.first) {</div>
+<div class="line">            state.errors |= state.backend.begin();</div>
+<div class="line">            <span class="keywordflow">if</span>(state.errors) {</div>
+<div class="line">                state.failed = <span class="keyword">true</span>;</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                std::size_t count{0};</div>
+<div class="line">                state.errors |= deserializer&lt;std::size_t&gt;().read(</div>
+<div class="line">                  <a name="a3"></a><a class="code" href="group__memory.html#ga4c24b3a8932dad93aa92ec7c7da67436">cover_one</a>(count), state.backend);</div>
+<div class="line">                <span class="keywordflow">if</span>(state.errors) {</div>
+<div class="line">                    state.failed = <span class="keyword">true</span>;</div>
+<div class="line">                } <span class="keywordflow">else</span> {</div>
+<div class="line">                    state.data.resize(count);</div>
+<div class="line">                    state.defragmenter.set_target(<a name="a4"></a><a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(state.data));</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">using</span> error_code = <a name="a5"></a><a class="code" href="group__serialization.html#ga25c258849fb442ed314588203803f7cd">deserialization_error_code</a>;</div>
+<div class="line">        <span class="keyword">using</span> defragmenter_type = fragment_deserialize_wrapper&lt;span&lt;T&gt;&gt;;</div>
+<div class="line"> </div>
+<div class="line">        state.errors = {};</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span>(!state.defragmenter.is_done()) {</div>
+<div class="line">            state.errors |= deserializer&lt;defragmenter_type&gt;().read(</div>
+<div class="line">              state.defragmenter, state.backend);</div>
+<div class="line"> </div>
+<div class="line">            <span class="keywordflow">if</span>(!state.errors.has(error_code::not_enough_data)) {</div>
+<div class="line">                <span class="keywordflow">if</span>(state.errors.has_at_most(error_code::incomplete_read)) {</div>
+<div class="line">                    <span class="keywordflow">if</span>(state.defragmenter.is_done()) {</div>
+<div class="line">                        std::cout &lt;&lt; <span class="stringliteral">&quot;deserialized &quot;</span> &lt;&lt; state.count</div>
+<div class="line">                                  &lt;&lt; <span class="stringliteral">&quot; fragments &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">                        use_data(state.data);</div>
+<div class="line">                    }</div>
+<div class="line">                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!state.first) {</div>
+<div class="line">                    state.failed = <span class="keyword">true</span>;</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        state.first = <span class="keyword">false</span>;</div>
+<div class="line">        state.count++;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keywordtype">void</span> serialize_data(<span class="keyword">const</span> std::vector&lt;T&gt;&amp; instance) {</div>
+<div class="line"> </div>
+<div class="line">    deserial_data_state&lt;T&gt; state{};</div>
+<div class="line">    std::array&lt;byte, 256&gt; chunk{};</div>
+<div class="line"> </div>
+<div class="line">    block_data_sink sink(<a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(chunk));</div>
+<div class="line">    fast_serializer_backend backend{sink};</div>
+<div class="line">    <a name="a6"></a><a class="code" href="group__serialization.html#ga255997aa4dfc20ea579f75e0a77c2bb0">serialization_errors</a> errors = backend.begin();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(!errors) {</div>
+<div class="line">        errors |= serializer&lt;std::size_t&gt;().write(instance.size(), backend);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">using</span> error_code = <a name="a7"></a><a class="code" href="group__serialization.html#gafee717c442dcb978e0d9e9c163be4024">serialization_error_code</a>;</div>
+<div class="line">        <span class="keyword">using</span> fragmenter_type = fragment_serialize_wrapper&lt;span&lt;const T&gt;&gt;;</div>
+<div class="line">        fragmenter_type fragmenter(<a name="a8"></a><a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(instance));</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">while</span>(!fragmenter.is_done()) {</div>
+<div class="line">            errors = {};</div>
+<div class="line">            <span class="keywordflow">if</span>(!sink.free()) {</div>
+<div class="line">                sink = block_data_sink{<a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(chunk)};</div>
+<div class="line">                backend.set_sink(sink);</div>
+<div class="line">            }</div>
+<div class="line">            errors |= serializer&lt;fragmenter_type&gt;().write(fragmenter, backend);</div>
+<div class="line">            <span class="keywordflow">if</span>(errors.has(error_code::too_much_data)) {</div>
+<div class="line">                sink = block_data_sink{<a class="code" href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">cover</a>(chunk)};</div>
+<div class="line">                backend.set_sink(sink);</div>
+<div class="line">                <span class="keywordflow">continue</span>;</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">if</span>(!errors.has_at_most(error_code::incomplete_write)) {</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            }</div>
+<div class="line">            deserialize_data(sink.done(), state);</div>
+<div class="line">        }</div>
+<div class="line">        errors |= backend.finish();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">auto</span> generate_data(std::size_t n) -&gt; std::vector&lt;T&gt; {</div>
+<div class="line"> </div>
+<div class="line">    std::vector&lt;T&gt; data(n);</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; v : data) {</div>
+<div class="line">        v = T(--n);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> data;</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    serialize_data(generate_data&lt;int&gt;(<a name="a9"></a><a class="code" href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">std_size</a>(8 * 1024)));</div>
+<div class="line">    serialize_data(generate_data&lt;short&gt;(<a class="code" href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">std_size</a>(4 * 1024)));</div>
+<div class="line">    serialize_data(generate_data&lt;char&gt;(<a class="code" href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">std_size</a>(2 * 1024)));</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="ablock__sink_8hpp_html"><div class="ttname"><a href="block__sink_8hpp.html">block_sink.hpp</a></div></div>
+<div class="ttc" id="ablock__source_8hpp_html"><div class="ttname"><a href="block__source_8hpp.html">block_source.hpp</a></div></div>
+<div class="ttc" id="acompare_8hpp_html"><div class="ttname"><a href="compare_8hpp.html">compare.hpp</a></div></div>
+<div class="ttc" id="afast__backend_8hpp_html"><div class="ttname"><a href="fast__backend_8hpp.html">fast_backend.hpp</a></div></div>
+<div class="ttc" id="agroup__memory_html_ga323cd8c49fef908990c9d5b5553576b4"><div class="ttname"><a href="group__memory.html#ga323cd8c49fef908990c9d5b5553576b4">eagine::memory::cover</a></div><div class="ttdeci">static constexpr auto cover(T *addr, const S size) noexcept -&gt; span_if_mutable&lt; T &gt;</div><div class="ttdoc">Creates a span starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:485</div></div>
+<div class="ttc" id="agroup__memory_html_ga4c24b3a8932dad93aa92ec7c7da67436"><div class="ttname"><a href="group__memory.html#ga4c24b3a8932dad93aa92ec7c7da67436">eagine::memory::cover_one</a></div><div class="ttdeci">static constexpr auto cover_one(T &amp;value) noexcept -&gt; span_if_mutable&lt; T &gt;</div><div class="ttdoc">Creates a single-element mutable span over the specified value.</div><div class="ttdef"><b>Definition:</b> span.hpp:457</div></div>
+<div class="ttc" id="agroup__memory_html_ga9534fdd13884329a5c5e5c10b3337f80"><div class="ttname"><a href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">eagine::memory::view</a></div><div class="ttdeci">static constexpr auto view(T *addr, const S size) noexcept -&gt; const_span&lt; T &gt;</div><div class="ttdoc">Creates a view starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:478</div></div>
+<div class="ttc" id="agroup__memory_html_ga9abe6f67096b87cac1c3116a66379971"><div class="ttname"><a href="group__memory.html#ga9abe6f67096b87cac1c3116a66379971">eagine::memory::const_block</a></div><div class="ttdeci">basic_block&lt; true &gt; const_block</div><div class="ttdoc">Alias for const byte memory span.</div><div class="ttdef"><b>Definition:</b> block.hpp:32</div></div>
+<div class="ttc" id="agroup__serialization_html_ga1620f00a093e943448e81a896f8fd4d3"><div class="ttname"><a href="group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3">eagine::deserialization_errors</a></div><div class="ttdeci">bitfield&lt; deserialization_error_code &gt; deserialization_errors</div><div class="ttdoc">Alias for deserialization error bitfield.</div><div class="ttdef"><b>Definition:</b> result.hpp:111</div></div>
+<div class="ttc" id="agroup__serialization_html_ga255997aa4dfc20ea579f75e0a77c2bb0"><div class="ttname"><a href="group__serialization.html#ga255997aa4dfc20ea579f75e0a77c2bb0">eagine::serialization_errors</a></div><div class="ttdeci">bitfield&lt; serialization_error_code &gt; serialization_errors</div><div class="ttdoc">Alias for serialization error bitfield.</div><div class="ttdef"><b>Definition:</b> result.hpp:105</div></div>
+<div class="ttc" id="agroup__serialization_html_ga25c258849fb442ed314588203803f7cd"><div class="ttname"><a href="group__serialization.html#ga25c258849fb442ed314588203803f7cd">eagine::deserialization_error_code</a></div><div class="ttdeci">deserialization_error_code</div><div class="ttdoc">Deserialization error code bits enumeration.</div><div class="ttdef"><b>Definition:</b> result.hpp:56</div></div>
+<div class="ttc" id="agroup__serialization_html_gafee717c442dcb978e0d9e9c163be4024"><div class="ttname"><a href="group__serialization.html#gafee717c442dcb978e0d9e9c163be4024">eagine::serialization_error_code</a></div><div class="ttdeci">serialization_error_code</div><div class="ttdoc">Serialization error code bits enumeration.</div><div class="ttdef"><b>Definition:</b> result.hpp:24</div></div>
+<div class="ttc" id="agroup__type__utils_html_ga283b8d65986d9151df656e7802ea0caf"><div class="ttname"><a href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">eagine::std_size</a></div><div class="ttdeci">static constexpr auto std_size(const T v) noexcept</div><div class="ttdoc">Converts argument to std size type.</div><div class="ttdef"><b>Definition:</b> types.hpp:52</div></div>
+<div class="ttc" id="agroup__type__utils_html_ga45c24c96dddc1fd15429ed38f016d1ef"><div class="ttname"><a href="group__type__utils.html#ga45c24c96dddc1fd15429ed38f016d1ef">eagine::span_size_t</a></div><div class="ttdeci">std::ptrdiff_t span_size_t</div><div class="ttdoc">Signed span size type used by eagine.</div><div class="ttdef"><b>Definition:</b> types.hpp:36</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="aread_8hpp_html"><div class="ttname"><a href="read_8hpp.html">read.hpp</a></div></div>
+<div class="ttc" id="awrite_8hpp_html"><div class="ttname"><a href="write_8hpp.html">write.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

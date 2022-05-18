@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine::memory::buffer Class Reference</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -204,7 +204,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dd>
 <a class="el" href="classeagine_1_1memory_1_1buffer.html#a021da793cecb6e7e3463472895b78545" title="Resizes the buffer to the specified number of bytes.">resize</a> </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1memory_1_1buffer.html#a1bd1286cf45b76ac2804d18ddd8cad0b">reserve()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1memory_1_1buffer__pool.html#ad2e049ace93d6ae73309c3a3a5df9ada">eagine::memory::buffer_pool::eat()</a>, and <a class="el" href="classeagine_1_1memory_1_1buffer.html#a1bd1286cf45b76ac2804d18ddd8cad0b">reserve()</a>.</p>
 
 </div>
 </div>
@@ -240,6 +240,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dd>
 <a class="el" href="classeagine_1_1memory_1_1buffer.html#a7b17e78cd5245fa807a4d219577e05e1" title="Deallocates the buffer.">free</a> </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="classeagine_1_1memory_1_1buffer.html#a1dae8f2577ec11e1a6fae47e1e451a79" title="Indicates that the buffer is empty.">empty()</a> </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1msgbus_1_1stored__message.html#aa269f9fcc6a8972bfae55a6c5f54ac76">eagine::msgbus::stored_message::clear_data()</a>, and <a class="el" href="classeagine_1_1msgbus_1_1stored__message.html#ae7e8a6ce00662ebf7020e25cbdc6a73e">eagine::msgbus::stored_message::fetch_all_from()</a>.</p>
 
 </div>
 </div>
@@ -305,6 +307,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a class="el" href="classeagine_1_1memory_1_1buffer.html#a1bd1286cf45b76ac2804d18ddd8cad0b" title="Pre-allocate the specified number of bytes.">reserve</a> </dd>
 <dd>
 <a class="el" href="classeagine_1_1memory_1_1buffer.html#a410e57eafcf27ec24cc6fa08b595449d" title="Ensure that the buuffer has at least the specified size in bytes.">ensure</a> </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="structeagine_1_1deserializer__data__source.html#a36b1ee29713da124bd47671b904706c2">eagine::deserializer_data_source::fetch_all()</a>.</p>
 
 </div>
 </div>
@@ -376,8 +380,6 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a class="el" href="classeagine_1_1memory_1_1buffer.html#af647f02de40a3cb155d283a243b34c46" title="Clears the buffer.">clear</a> </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="classeagine_1_1memory_1_1buffer.html#a1dae8f2577ec11e1a6fae47e1e451a79" title="Indicates that the buffer is empty.">empty()</a> &amp;&amp; <a class="el" href="classeagine_1_1memory_1_1buffer.html#abe1351e5e2812885aafe2eb304772ed8" title="Returns the capacity of this buffer.">capacity()</a> == 0 </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1memory_1_1buffer.html#a38eec2c6324decdf7c52f8df5c321201">operator=()</a>.</p>
-
 </div>
 </div>
 <a id="a1bd1286cf45b76ac2804d18ddd8cad0b"></a>
@@ -444,7 +446,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dd>
 <a class="el" href="classeagine_1_1memory_1_1buffer.html#a1bd1286cf45b76ac2804d18ddd8cad0b" title="Pre-allocate the specified number of bytes.">reserve</a> </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1memory_1_1buffer.html#af647f02de40a3cb155d283a243b34c46">clear()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer.html#ac3160689e6476a2fe50b522c9c5aa9fb">enlarge_by()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer.html#a410e57eafcf27ec24cc6fa08b595449d">ensure()</a>, <a class="el" href="classeagine_1_1istream__data__source.html#a22edf38bd47751a9b0d687505264f68c">eagine::istream_data_source::pop()</a>, and <a class="el" href="classeagine_1_1istream__data__source.html#a6590177a69f8e68e73514f0dbbedb21c">eagine::istream_data_source::top()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1memory_1_1buffer.html#af647f02de40a3cb155d283a243b34c46">clear()</a>, <a class="el" href="classeagine_1_1data__compressor.html#a1d4b89d029c8ce278f30c978decbe51b">eagine::data_compressor::compress()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer.html#ac3160689e6476a2fe50b522c9c5aa9fb">enlarge_by()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer.html#a410e57eafcf27ec24cc6fa08b595449d">ensure()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer__pool.html#adc2ce2d5032e4138747b593f2f969a7a">eagine::memory::buffer_pool::get()</a>, <a class="el" href="classeagine_1_1istream__data__source.html#a22edf38bd47751a9b0d687505264f68c">eagine::istream_data_source::pop()</a>, <a class="el" href="classeagine_1_1msgbus_1_1stored__message.html#a979ddc41e41c2f506707af5dc646ad8c">eagine::msgbus::stored_message::store_and_sign()</a>, and <a class="el" href="classeagine_1_1istream__data__source.html#a6590177a69f8e68e73514f0dbbedb21c">eagine::istream_data_source::top()</a>.</p>
 
 </div>
 </div>
@@ -476,7 +478,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dd>
 <a class="el" href="classeagine_1_1memory_1_1buffer.html#abe1351e5e2812885aafe2eb304772ed8" title="Returns the capacity of this buffer.">capacity</a> </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1memory_1_1buffer.html#a1dae8f2577ec11e1a6fae47e1e451a79">empty()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer.html#ac3160689e6476a2fe50b522c9c5aa9fb">enlarge_by()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer.html#a410e57eafcf27ec24cc6fa08b595449d">ensure()</a>, <a class="el" href="classeagine_1_1istream__data__source.html#a22edf38bd47751a9b0d687505264f68c">eagine::istream_data_source::pop()</a>, and <a class="el" href="classeagine_1_1istream__data__source.html#a6590177a69f8e68e73514f0dbbedb21c">eagine::istream_data_source::top()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1memory_1_1buffer.html#a1dae8f2577ec11e1a6fae47e1e451a79">empty()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer.html#ac3160689e6476a2fe50b522c9c5aa9fb">enlarge_by()</a>, <a class="el" href="classeagine_1_1memory_1_1buffer.html#a410e57eafcf27ec24cc6fa08b595449d">ensure()</a>, <a class="el" href="structeagine_1_1deserializer__data__source.html#a36b1ee29713da124bd47671b904706c2">eagine::deserializer_data_source::fetch_all()</a>, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection.html#a61d403a1c359dad40e293276150f2d50">eagine::msgbus::posix_mqueue_connection::max_data_size()</a>, <a class="el" href="classeagine_1_1istream__data__source.html#a22edf38bd47751a9b0d687505264f68c">eagine::istream_data_source::pop()</a>, and <a class="el" href="classeagine_1_1istream__data__source.html#a6590177a69f8e68e73514f0dbbedb21c">eagine::istream_data_source::top()</a>.</p>
 
 </div>
 </div>

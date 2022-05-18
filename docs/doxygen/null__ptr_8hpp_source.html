@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/memory/null_ptr.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,36 +73,46 @@ $(function() {
 <div class="title">null_ptr.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="null__ptr_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_MEMORY_NULL_PTR_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_MEMORY_NULL_PTR_HPP</span></div>
+<a href="null__ptr_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_MEMORY_NULL_PTR_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_MEMORY_NULL_PTR_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../types.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;concepts&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../types.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">concepts</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstdint</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>eagine::memory {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::memory {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structeagine_1_1memory_1_1typed__nullptr__t.html">   22</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t</a> {};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @brief Class for doing pointer arithmetic on null pointers.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// @see typed_nullptr</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structeagine_1_1memory_1_1typed__nullptr__t.html">   22</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t</a> {};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">   27</a></span>&#160;constexpr <a class="code" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t&lt;T&gt;</a> <a class="code" href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">typed_nullptr</a> = {};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/// @brief Template constant for doing pointer arithmetic on null pointers.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> <a class="code" href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">T</a>&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">constexpr</span> <a class="code" href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">typed_nullptr_t</a>&lt;<a class="code" href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">T</a>&gt; <a class="code" href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">typed_nullptr</a> = {};</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">int</span>egral N&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="group__type__utils.html#ga4e0dc28debce7b8adb1669dcc8c83afd">   32</a></span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__string__utils.html#ga88ecee40c099e16bfd49dfc61eeb0d37">operator+</a>(<span class="keyword">const</span> <a class="code" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t&lt;T&gt;</a>, <span class="keyword">const</span> N n) noexcept</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/// @brief Pointer arithmetic addition operator for null pointers.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <a class="code" href="group__type__utils.html#ga4e0dc28debce7b8adb1669dcc8c83afd">std</a>::integral N&gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="group__type__utils.html#ga4e0dc28debce7b8adb1669dcc8c83afd">operator</a>+(<span class="keyword">const</span> <a class="code" href="structeagine_1_1memory_1_1typed__nullptr__t.html">typed_nullptr_t</a>&lt;T&gt;, <span class="keyword">const</span> N n) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  -&gt; T* {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// NOLINTNEXTLINE(performance-no-int-to-ptr)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T*<span class="keyword">&gt;</span>(std::uintptr_t(<a class="code" href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">std_size</a>(n) * <span class="keyword">sizeof</span>(T)));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast</span>&lt;T*&gt;(std::uintptr_t(std_size(n) * <span class="keyword">sizeof</span>(T)));</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <span class="comment">// namespace eagine::memory</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_MEMORY_NULL_PTR_HPP</span></div>
-<div class="ttc" id="agroup__string__utils_html_ga88ecee40c099e16bfd49dfc61eeb0d37"><div class="ttname"><a href="group__string__utils.html#ga88ecee40c099e16bfd49dfc61eeb0d37">eagine::operator+</a></div><div class="ttdeci">static constexpr auto operator+(const fixed_size_string&lt; N1 &gt; &amp;s1, const fixed_size_string&lt; N2 &gt; &amp;s2) noexcept</div><div class="ttdoc">Concatenation operator for fixed_size_string.</div><div class="ttdef"><b>Definition:</b> fixed_size_str.hpp:129</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga283b8d65986d9151df656e7802ea0caf"><div class="ttname"><a href="group__type__utils.html#ga283b8d65986d9151df656e7802ea0caf">eagine::std_size</a></div><div class="ttdeci">static constexpr auto std_size(const T v) noexcept</div><div class="ttdoc">Converts argument to std size type.</div><div class="ttdef"><b>Definition:</b> types.hpp:52</div></div>
-<div class="ttc" id="agroup__type__utils_html_ga941076769a0bc079cb82bff2d9be7397"><div class="ttname"><a href="group__type__utils.html#ga941076769a0bc079cb82bff2d9be7397">eagine::memory::typed_nullptr</a></div><div class="ttdeci">constexpr typed_nullptr_t&lt; T &gt; typed_nullptr</div><div class="ttdoc">Template constant for doing pointer arithmetic on null pointers.</div><div class="ttdef"><b>Definition:</b> null_ptr.hpp:27</div></div>
-<div class="ttc" id="astructeagine_1_1memory_1_1typed__nullptr__t_html"><div class="ttname"><a href="structeagine_1_1memory_1_1typed__nullptr__t.html">eagine::memory::typed_nullptr_t</a></div><div class="ttdoc">Class for doing pointer arithmetic on null pointers.</div><div class="ttdef"><b>Definition:</b> null_ptr.hpp:22</div></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_MEMORY_NULL_PTR_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

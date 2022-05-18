@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/limit_cast.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,35 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="is__within__limits_8hpp.html">eagine/is_within_limits.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> foo(<span class="keywordtype">short</span> s) {</div>
+<div class="line">    std::cout &lt;&lt; s &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// would assert if 123 didn&#39;t fit into short</span></div>
+<div class="line">    foo(limit_cast&lt;short&gt;(123));</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(<span class="keyword">const</span> <span class="keyword">auto</span> converted{convert_if_fits&lt;short&gt;(12345)}) {</div>
+<div class="line">        std::cout &lt;&lt; <a name="a0"></a><a class="code" href="namespaceeagine.html#a29019c44b24986e9a4126f75144fe9b0">extract</a>(converted) &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(<span class="keyword">const</span> <span class="keyword">auto</span> converted{convert_if_fits&lt;short&gt;(123456)}) {</div>
+<div class="line">        std::cout &lt;&lt; <a class="code" href="namespaceeagine.html#a29019c44b24986e9a4126f75144fe9b0">extract</a>(converted) &lt;&lt; std::endl;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;value too big&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="ais__within__limits_8hpp_html"><div class="ttname"><a href="is__within__limits_8hpp.html">is_within_limits.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="anamespaceeagine_html_a29019c44b24986e9a4126f75144fe9b0"><div class="ttname"><a href="namespaceeagine.html#a29019c44b24986e9a4126f75144fe9b0">eagine::extract</a></div><div class="ttdeci">static constexpr auto extract(T *ptr) noexcept -&gt; T &amp;</div><div class="ttdoc">Checks ptr and dereferences it.</div><div class="ttdef"><b>Definition:</b> extract.hpp:30</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

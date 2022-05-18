@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/anything.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,35 +73,47 @@ $(function() {
 <div class="title">anything.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="anything_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_ANYTHING_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_ANYTHING_HPP</span></div>
+<a href="anything_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_ANYTHING_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_ANYTHING_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structeagine_1_1anything.html">anything</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a0d1159dc9122528d82d2e82539d3c091">   18</a></span>&#160;    constexpr <a class="code" href="structeagine_1_1anything.html#a0d1159dc9122528d82d2e82539d3c091">anything</a>() noexcept = default;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/// @brief Type that can by constructed from single argument of any other type.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/// @ingroup type_utils</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html">   16</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1anything.html">anything</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">/// @brief Default constructor.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a0d1159dc9122528d82d2e82539d3c091">   18</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="structeagine_1_1anything.html#a0d1159dc9122528d82d2e82539d3c091">anything</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a074897e1d35128fa7fcf293957515448">   21</a></span>&#160;    constexpr <a class="code" href="structeagine_1_1anything.html">anything</a>(<a class="code" href="structeagine_1_1anything.html">anything</a>&amp;&amp;) noexcept = default;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/// @brief Move constructor.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a074897e1d35128fa7fcf293957515448">   21</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="structeagine_1_1anything.html#a074897e1d35128fa7fcf293957515448">anything</a>(<a class="code" href="structeagine_1_1anything.html">anything</a>&amp;&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a97c9b641c827ad0135bb138aea49ee10">   24</a></span>&#160;    constexpr <a class="code" href="structeagine_1_1anything.html">anything</a>(const <a class="code" href="structeagine_1_1anything.html">anything</a>&amp;) noexcept = default;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/// @brief Copy constructor.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a97c9b641c827ad0135bb138aea49ee10">   24</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="structeagine_1_1anything.html#a97c9b641c827ad0135bb138aea49ee10">anything</a>(<span class="keyword">const</span> <a class="code" href="structeagine_1_1anything.html">anything</a>&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a66a73c2b5cbd4eda1ab46db5a64a79c4">   27</a></span>&#160;    auto operator=(<a class="code" href="structeagine_1_1anything.html">anything</a>&amp;&amp;) noexcept -&gt; <a class="code" href="structeagine_1_1anything.html">anything</a>&amp; = default;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">/// @brief Move assignment operator.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a66a73c2b5cbd4eda1ab46db5a64a79c4">   27</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="structeagine_1_1anything.html#a66a73c2b5cbd4eda1ab46db5a64a79c4">operator</a>=(<a class="code" href="structeagine_1_1anything.html">anything</a>&amp;&amp;) <span class="keyword">noexcept</span> -&gt; <a class="code" href="structeagine_1_1anything.html">anything</a>&amp; = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a212d8fe5703953d8fc41c5ee8bca35d0">   30</a></span>&#160;    auto operator=(const <a class="code" href="structeagine_1_1anything.html">anything</a>&amp;) noexcept -&gt; <a class="code" href="structeagine_1_1anything.html">anything</a>&amp; = default;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">/// @brief Copy assignment operator.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#a212d8fe5703953d8fc41c5ee8bca35d0">   30</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="structeagine_1_1anything.html#a212d8fe5703953d8fc41c5ee8bca35d0">operator</a>=(<span class="keyword">const</span> <a class="code" href="structeagine_1_1anything.html">anything</a>&amp;) <span class="keyword">noexcept</span> -&gt; <a class="code" href="structeagine_1_1anything.html">anything</a>&amp; = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ~<a class="code" href="structeagine_1_1anything.html">anything</a>() noexcept = default;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ~anything() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    template &lt;typename Unused&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#aa53a91adc060a626665b188c523a1e43">   36</a></span>&#160;    constexpr <a class="code" href="structeagine_1_1anything.html">anything</a>(const Unused&amp;) noexcept {}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/// @brief Construction from any other type.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Unused&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structeagine_1_1anything.html#aa53a91adc060a626665b188c523a1e43">   36</a></span>&#160;    <span class="keyword">constexpr</span> <a class="code" href="structeagine_1_1anything.html#aa53a91adc060a626665b188c523a1e43">anything</a>(<span class="keyword">const</span> Unused&amp;) <span class="keyword">noexcept</span> {}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_ANYTHING_HPP</span></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="astructeagine_1_1anything_html"><div class="ttname"><a href="structeagine_1_1anything.html">eagine::anything</a></div><div class="ttdoc">Type that can by constructed from single argument of any other type.</div><div class="ttdef"><b>Definition:</b> anything.hpp:16</div></div>
-<div class="ttc" id="astructeagine_1_1anything_html_a0d1159dc9122528d82d2e82539d3c091"><div class="ttname"><a href="structeagine_1_1anything.html#a0d1159dc9122528d82d2e82539d3c091">eagine::anything::anything</a></div><div class="ttdeci">constexpr anything() noexcept=default</div><div class="ttdoc">Default constructor.</div></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_ANYTHING_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

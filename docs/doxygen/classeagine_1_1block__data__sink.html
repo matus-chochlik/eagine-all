@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine::block_data_sink Class Reference</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -215,7 +215,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Default constructor. </p>
-<dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="classeagine_1_1block__data__sink.html#ae2e2441d94fc755efd26163c99212498" title="Returns the free part of the backing block.">free()</a>.<a class="el" href="group__valtree.html#ga563e08e23d7b171acd73bc62bb24ee5b" title="Creates a compound representing an empty subtree.">empty()</a> </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="classeagine_1_1block__data__sink.html#ae2e2441d94fc755efd26163c99212498" title="Returns the free part of the backing block.">free()</a>.<a class="el" href="group__valtree.html#gaec0e8815a27db8be577f00d886ee8abe" title="Creates a compound representing an empty subtree.">empty()</a> </dd></dl>
 
 </div>
 </div>
@@ -278,7 +278,7 @@ rollback </dd></dl>
 <p>Returns the part of the backing block already written to. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classeagine_1_1block__data__sink.html#ae2e2441d94fc755efd26163c99212498" title="Returns the free part of the backing block.">free</a> </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1packed__block__data__sink.html#aa69a79f745ccb0508b2f5b11e92b2833">eagine::packed_block_data_sink::finalize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceeagine_1_1msgbus.html#ad159beb045c85b5a6dc62a1000fa033c">eagine::msgbus::default_serialize()</a>, <a class="el" href="namespaceeagine_1_1msgbus.html#a23d418d3e2513ad1212643b6be3b5751">eagine::msgbus::default_serialize_packed()</a>, and <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__connection.html#afec27babc1ee5f1bc8ea7f0e09c700be">eagine::msgbus::posix_mqueue_connection::send()</a>.</p>
 
 </div>
 </div>
@@ -377,6 +377,8 @@ rollback </dd></dl>
 
 <p>Implements <a class="el" href="structeagine_1_1serializer__data__sink.html#aa004225eb2b7ffc43ba26403211703fc">eagine::serializer_data_sink</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1block__data__sink.html#ac56092173cef33dc23485a2dc7dc3c24">mark_used()</a>.</p>
+
 </div>
 </div>
 <a id="a2bb8e4b9374e70a3a62ace1e07b0c40b"></a>
@@ -405,8 +407,6 @@ rollback </dd></dl>
 
 <p>Replaces the content of the backing block with the content of the argument. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classeagine_1_1block__data__sink.html#a0a50d4b8d9799055448f79ffb84e6932" title="Resets the backing block.">reset</a> </dd></dl>
-
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1packed__block__data__sink.html#aa69a79f745ccb0508b2f5b11e92b2833">eagine::packed_block_data_sink::finalize()</a>.</p>
 
 </div>
 </div>

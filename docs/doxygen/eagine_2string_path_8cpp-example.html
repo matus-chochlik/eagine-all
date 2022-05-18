@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/string_path.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,29 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="string__path_8hpp.html">eagine/string_path.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> basic_string_path cxx(</div>
+<div class="line">      <span class="stringliteral">&quot;/usr/local/bin/c++&quot;</span>, <a name="a0"></a><a class="code" href="group__identifiers.html#ga4b9e9849e1cc6bd6981383c01638e1c6">EAGINE_TAG</a>(split_by), <span class="stringliteral">&quot;/&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; cxx.size() &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; entry : cxx) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span> &lt;&lt; entry &lt;&lt; <span class="charliteral">&#39;&quot;&#39;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; cxx.as_string(<span class="stringliteral">&quot;|&quot;</span>, <span class="keyword">true</span>) &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; cxx.as_string(<span class="stringliteral">&quot;/&quot;</span>, <span class="keyword">false</span>) &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__identifiers_html_ga4b9e9849e1cc6bd6981383c01638e1c6"><div class="ttname"><a href="group__identifiers.html#ga4b9e9849e1cc6bd6981383c01638e1c6">EAGINE_TAG</a></div><div class="ttdeci">#define EAGINE_TAG(NAME)</div><div class="ttdoc">Macro for defining selector values corresponding to identifier NAME.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:390</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="astring__path_8hpp_html"><div class="ttname"><a href="string__path_8hpp.html">string_path.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

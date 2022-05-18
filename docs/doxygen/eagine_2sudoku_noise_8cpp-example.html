@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/sudoku_noise.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,82 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="app__config_8hpp.html">eagine/app_config.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="main__ctx_8hpp.html">eagine/main_ctx.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2sudoku_8hpp.html">eagine/sudoku.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">unsigned</span> S&gt;</div>
+<div class="line"><span class="keywordtype">void</span> sudoku_noise(</div>
+<div class="line">  <span class="keyword">const</span> eagine::basic_sudoku_board_traits&lt;S&gt; traits,</div>
+<div class="line">  application_config&amp; cfg) {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> initial = [&amp;]() {</div>
+<div class="line">        <span class="keywordflow">if</span>(cfg.is_set(<span class="stringliteral">&quot;gen_one&quot;</span>)) {</div>
+<div class="line">            <span class="keywordflow">return</span> traits.make_generator().generate_one();</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cfg.is_set(<span class="stringliteral">&quot;gen_few&quot;</span>)) {</div>
+<div class="line">            <span class="keywordflow">return</span> traits.make_generator().generate_few();</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cfg.is_set(<span class="stringliteral">&quot;gen_medium&quot;</span>)) {</div>
+<div class="line">            <span class="keywordflow">return</span> traits.make_generator().generate_medium();</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(cfg.is_set(<span class="stringliteral">&quot;gen_many&quot;</span>)) {</div>
+<div class="line">            <span class="keywordflow">return</span> traits.make_generator().generate_many();</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="keywordflow">return</span> traits.make_diagonal();</div>
+<div class="line">        }</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> width = extract_or(cfg.get&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;width&quot;</span>), 16);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> height = extract_or(cfg.get&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;height&quot;</span>), 8);</div>
+<div class="line"> </div>
+<div class="line">    basic_sudoku_tiling&lt;S&gt; bst{traits, initial()};</div>
+<div class="line">    bst.print(std::cout, 0, 0, width, height);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">auto</span>&amp; cfg = ctx.config();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> rank = extract_or(cfg.get&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;rank&quot;</span>), 4);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">switch</span>(rank) {</div>
+<div class="line">        <span class="keywordflow">case</span> 3: {</div>
+<div class="line">            <span class="comment">// clang-format off</span></div>
+<div class="line">            sudoku_noise&lt;3&gt;({</div>
+<div class="line">                {<span class="stringliteral">&quot; &quot;</span>,<span class="stringliteral">&quot;▀&quot;</span>,<span class="stringliteral">&quot;▄&quot;</span>,<span class="stringliteral">&quot;▖&quot;</span>,<span class="stringliteral">&quot;▗&quot;</span>,<span class="stringliteral">&quot;▘&quot;</span>,<span class="stringliteral">&quot;▝&quot;</span>,<span class="stringliteral">&quot;▚&quot;</span>,<span class="stringliteral">&quot;▞&quot;</span>},</div>
+<div class="line">                {<span class="stringliteral">&quot;?&quot;</span>,<span class="stringliteral">&quot;?&quot;</span>,<span class="stringliteral">&quot;?&quot;</span>}, <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line">            }, cfg);</div>
+<div class="line">            <span class="comment">// clang-format on</span></div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">case</span> 4: {</div>
+<div class="line">            <span class="comment">// clang-format off</span></div>
+<div class="line">            sudoku_noise&lt;4&gt;({</div>
+<div class="line">                {<span class="stringliteral">&quot; &quot;</span>,<span class="stringliteral">&quot;▀&quot;</span>,<span class="stringliteral">&quot;▄&quot;</span>,<span class="stringliteral">&quot;█&quot;</span>,<span class="stringliteral">&quot;▌&quot;</span>,<span class="stringliteral">&quot;▐&quot;</span>,<span class="stringliteral">&quot;▖&quot;</span>,<span class="stringliteral">&quot;▗&quot;</span>,<span class="stringliteral">&quot;▘&quot;</span>,<span class="stringliteral">&quot;▙&quot;</span>,<span class="stringliteral">&quot;▚&quot;</span>,<span class="stringliteral">&quot;▛&quot;</span>,<span class="stringliteral">&quot;▜&quot;</span>,<span class="stringliteral">&quot;▝&quot;</span>,<span class="stringliteral">&quot;▞&quot;</span>,<span class="stringliteral">&quot;▟&quot;</span>},</div>
+<div class="line">                {<span class="stringliteral">&quot;?&quot;</span>,<span class="stringliteral">&quot;?&quot;</span>,<span class="stringliteral">&quot;?&quot;</span>,<span class="stringliteral">&quot;?&quot;</span>}, <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line">            }, cfg);</div>
+<div class="line">            <span class="comment">// clang-format on</span></div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            ctx.log()</div>
+<div class="line">              .error(<span class="stringliteral">&quot;invalid rank value: ${rank}&quot;</span>)</div>
+<div class="line">              .arg(<a name="a0"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(rank), rank);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aapp__config_8hpp_html"><div class="ttname"><a href="app__config_8hpp.html">app_config.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2sudoku_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2sudoku_8hpp.html">sudoku.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="amain__ctx_8hpp_html"><div class="ttname"><a href="main__ctx_8hpp.html">main_ctx.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

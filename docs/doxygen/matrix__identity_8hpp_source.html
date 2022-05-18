@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/math/matrix_identity.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,68 +73,80 @@ $(function() {
 <div class="title">matrix_identity.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="matrix__identity_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EAGINE_MATH_MATRIX_IDENTITY_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define EAGINE_MATH_MATRIX_IDENTITY_HPP</span></div>
+<a href="matrix__identity_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_MATH_MATRIX_IDENTITY_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_MATH_MATRIX_IDENTITY_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix__ctr_8hpp.html">matrix_ctr.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="matrix__ctr_8hpp.html">&quot;matrix_ctr.hpp&quot;</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine_1_1math.html">eagine::math</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::<a class="code" href="namespaceeagine_1_1math.html">math</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> X&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span>identity;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class</span> identity;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// is_matrix_constructor&lt;identity&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> R, <span class="keywordtype">int</span> C, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct </span>is_matrix_constructor&lt;identity&lt;matrix&lt;T, R, C, RM, V&gt;&gt;&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1math_1_1is__matrix__constructor.html">is_matrix_constructor</a>&lt;identity&lt;matrix&lt;T, R, C, RM, V&gt;&gt;&gt;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  : std::true_type {};</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/// @brief Identity matrix constructor.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/// @ingroup math</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/// @see is_matrix_constructor_v</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/// @see constructed_matrix_t</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> R, <span class="keywordtype">int</span> C, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1identity_3_01matrix_3_01T_00_01R_00_01C_00_01RM_00_01V_01_4_01_4.html">   28</a></span>&#160;<span class="keyword">class </span>identity&lt;<a class="code" href="structeagine_1_1math_1_1matrix.html">matrix</a>&lt;T, R, C, RM, V&gt;&gt; {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1identity_3_01matrix_3_01T_00_01R_00_01C_00_01RM_00_01V_01_4_01_4.html">   28</a></span>&#160;<span class="keyword">class</span> identity&lt;matrix&lt;T, R, C, RM, V&gt;&gt; {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1identity_3_01matrix_3_01T_00_01R_00_01C_00_01RM_00_01V_01_4_01_4.html#a77cb674ebd9945c751d0b06b6ce4127b">   31</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="classeagine_1_1math_1_1identity_3_01matrix_3_01T_00_01R_00_01C_00_01RM_00_01V_01_4_01_4.html#a77cb674ebd9945c751d0b06b6ce4127b">operator()</a>() const noexcept -&gt; <a class="code" href="structeagine_1_1math_1_1matrix.html">matrix</a>&lt;T, R, C, RM, V&gt; {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/// @brief Returns an identity matrix.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classeagine_1_1math_1_1identity_3_01matrix_3_01T_00_01R_00_01C_00_01RM_00_01V_01_4_01_4.html#a77cb674ebd9945c751d0b06b6ce4127b">   31</a></span>&#160;    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code" href="classeagine_1_1math_1_1identity_3_01matrix_3_01T_00_01R_00_01C_00_01RM_00_01V_01_4_01_4.html#a77cb674ebd9945c751d0b06b6ce4127b">operator</a>()() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; matrix&lt;T, R, C, RM, V&gt; {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">using</span> _riS = _make_useq&lt;RM ? R : C&gt;;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> _identity(_riS());</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>... U&gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">using</span> _useq = std::integer_sequence&lt;int, U...&gt;;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">using</span> _useq = std::integer_sequence&lt;<span class="keywordtype">int</span>, U...&gt;;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">using</span> _make_useq = std::make_integer_sequence&lt;int, N&gt;;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">using</span> _make_useq = std::make_integer_sequence&lt;<span class="keywordtype">int</span>, N&gt;;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span>... I&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">auto</span> _identity(<span class="keyword">const</span> _useq&lt;I...&gt;) noexcept</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      -&gt; <a class="code" href="structeagine_1_1math_1_1matrix.html">matrix&lt;T, R, C, RM, V&gt;</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> _identity(<span class="keyword">const</span> _useq&lt;I...&gt;) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      -&gt; matrix&lt;T, R, C, RM, V&gt; {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> {{vect::axis &lt; T, RM ? C : R, I, V &gt; ::apply(1)...}};</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// multiply</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM1, <span class="keywordtype">bool</span> RM2, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__math.html#ga98cc7951cbc7d7b3d8559917abcb1f6a">multiply</a>(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> multiply(</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">const</span> identity&lt;matrix&lt;T, C, R, RM1, V&gt;&gt;&amp;,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> identity&lt;matrix&lt;T, C, R, RM2, V&gt;&gt;&amp;) noexcept</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> identity&lt;matrix&lt;T, C, R, RM2, V&gt;&gt;&amp;) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  -&gt; identity&lt;matrix&lt;T, C, R, RM1, V&gt;&gt; {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> {};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// multiply</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MC, <span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__math.html#ga98cc7951cbc7d7b3d8559917abcb1f6a">multiply</a>(</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> multiply(</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">const</span> MC&amp; mc,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">const</span> identity&lt;matrix&lt;T, C, R, RM, V&gt;&gt;&amp;) noexcept -&gt; MC</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  requires(<a class="code" href="group__math.html#ga17ac6286a27e79689ac093d4c947c5b2">is_matrix_constructor_v</a>&lt;MC&gt;&amp;&amp; are_multiplicable&lt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;           <a class="code" href="group__math.html#gad4aec28a4b715030202e5799ff75eef5">constructed_matrix_t</a>&lt;MC&gt;,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">const</span> identity&lt;matrix&lt;T, C, R, RM, V&gt;&gt;&amp;) <span class="keyword">noexcept</span> -&gt; MC</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">requires</span>(is_matrix_constructor_v&lt;MC&gt;&amp;&amp; are_multiplicable&lt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;           constructed_matrix_t&lt;MC&gt;,</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;           matrix&lt;T, C, R, RM, V&gt;&gt;::value) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> mc;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> C, <span class="keywordtype">int</span> R, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V, <span class="keyword">typename</span> MC&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> <a class="code" href="group__math.html#ga98cc7951cbc7d7b3d8559917abcb1f6a">multiply</a>(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> multiply(</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">const</span> identity&lt;matrix&lt;T, C, R, RM, V&gt;&gt;&amp;,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">const</span> MC&amp; mc) noexcept -&gt; MC</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  requires(is_matrix_constructor_v&lt;MC&gt;&amp;&amp; are_multiplicable&lt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">const</span> MC&amp; mc) <span class="keyword">noexcept</span> -&gt; MC</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">requires</span>(is_matrix_constructor_v&lt;MC&gt;&amp;&amp; are_multiplicable&lt;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;           matrix&lt;T, C, R, RM, V&gt;,</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;           constructed_matrix_t&lt;MC&gt;&gt;::value) {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> mc;</div>
@@ -142,22 +154,15 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// reorder_mat_ctr(identity)</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> R, <span class="keywordtype">int</span> C, <span class="keywordtype">bool</span> RM, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">static</span> constexpr <span class="keyword">auto</span> reorder_mat_ctr(</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">const</span> identity&lt;matrix&lt;T, R, C, RM, V&gt;&gt;&amp;) noexcept</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> reorder_mat_ctr(</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">const</span> identity&lt;matrix&lt;T, R, C, RM, V&gt;&gt;&amp;) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  -&gt; identity&lt;matrix&lt;T, R, C, !RM, V&gt;&gt; {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> {};</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace eagine::math</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_MATH_MATRIX_IDENTITY_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1math_1_1identity_3_01matrix_3_01T_00_01R_00_01C_00_01RM_00_01V_01_4_01_4_html_a77cb674ebd9945c751d0b06b6ce4127b"><div class="ttname"><a href="classeagine_1_1math_1_1identity_3_01matrix_3_01T_00_01R_00_01C_00_01RM_00_01V_01_4_01_4.html#a77cb674ebd9945c751d0b06b6ce4127b">eagine::math::identity&lt; matrix&lt; T, R, C, RM, V &gt; &gt;::operator()</a></div><div class="ttdeci">constexpr auto operator()() const noexcept -&gt; matrix&lt; T, R, C, RM, V &gt;</div><div class="ttdoc">Returns an identity matrix.</div><div class="ttdef"><b>Definition:</b> matrix_identity.hpp:31</div></div>
-<div class="ttc" id="agroup__math_html_ga17ac6286a27e79689ac093d4c947c5b2"><div class="ttname"><a href="group__math.html#ga17ac6286a27e79689ac093d4c947c5b2">eagine::math::is_matrix_constructor_v</a></div><div class="ttdeci">static constexpr const auto is_matrix_constructor_v</div><div class="ttdoc">Trait indicating if a type X is a matrix constructor.</div><div class="ttdef"><b>Definition:</b> matrix.hpp:505</div></div>
-<div class="ttc" id="agroup__math_html_ga98cc7951cbc7d7b3d8559917abcb1f6a"><div class="ttname"><a href="group__math.html#ga98cc7951cbc7d7b3d8559917abcb1f6a">eagine::math::multiply</a></div><div class="ttdeci">static constexpr auto multiply(const matrix&lt; T, K, M, RM1, V &gt; &amp;m1, const matrix&lt; T, N, K, RM2, V &gt; &amp;m2) noexcept -&gt; matrix&lt; T, N, M, RM1, V &gt;</div><div class="ttdoc">Matrix multiplication function.</div><div class="ttdef"><b>Definition:</b> matrix.hpp:553</div></div>
-<div class="ttc" id="agroup__math_html_gad4aec28a4b715030202e5799ff75eef5"><div class="ttname"><a href="group__math.html#gad4aec28a4b715030202e5799ff75eef5">eagine::math::constructed_matrix_t</a></div><div class="ttdeci">typename constructed_matrix&lt; X &gt;::type constructed_matrix_t</div><div class="ttdoc">Trait returning the matrix type constructed by constructor type X.</div><div class="ttdef"><b>Definition:</b> matrix.hpp:520</div></div>
-<div class="ttc" id="amatrix__ctr_8hpp_html"><div class="ttname"><a href="matrix__ctr_8hpp.html">matrix_ctr.hpp</a></div></div>
-<div class="ttc" id="anamespaceeagine_1_1math_html"><div class="ttname"><a href="namespaceeagine_1_1math.html">eagine::math</a></div><div class="ttdoc">Math-related code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:48</div></div>
-<div class="ttc" id="astructeagine_1_1math_1_1matrix_html"><div class="ttname"><a href="structeagine_1_1math_1_1matrix.html">eagine::math::matrix</a></div><div class="ttdoc">Basic RxC matrix implementation template.</div><div class="ttdef"><b>Definition:</b> matrix.hpp:23</div></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_MATH_MATRIX_IDENTITY_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

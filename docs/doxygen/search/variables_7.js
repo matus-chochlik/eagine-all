@@ -1,6 +1,25 @@
 var searchData=
 [
-  ['leading_5fsign_3088',['leading_sign',['../structeagine_1_1variable__substitution__options.html#aeb8c23471f8f41a328ddc6555186ffac',1,'eagine::variable_substitution_options']]],
-  ['log_5fidentity_3089',['log_identity',['../structeagine_1_1log__stream__info.html#a3df2ae82d8d47d34701b9f06baf2f6db',1,'eagine::log_stream_info']]],
-  ['logger_5fopts_3090',['logger_opts',['../structeagine_1_1main__ctx__options.html#aa3d8e3b7724a48cf0a537baa312f805d',1,'eagine::main_ctx_options']]]
+  ['half_5ffloat_5f_9155',['half_float_',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#a0556d9345dea4197d02b46e9b9048b42',1,'eagine::oglplus::basic_gl_constants']]],
+  ['handler_5ffound_9156',['handler_found',['../classeagine_1_1msgbus_1_1ability__tester.html#abc564c9c2886a4a9e5c69b498dd2b8c2',1,'eagine::msgbus::ability_tester']]],
+  ['hardlight_5fkhr_9157',['hardlight_khr',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#a6630b9b44e76780547552593779d79d0',1,'eagine::oglplus::basic_gl_constants']]],
+  ['has_5fentry_5fadapter_5fv_9158',['has_entry_adapter_v',['../group__logging.html#ga52b2de74f7f91cb7e55e1545871dd877',1,'eagine']]],
+  ['has_5fspan_5fdata_5fmember_5fv_9159',['has_span_data_member_v',['../group__type__utils.html#ga9f881de38cee58d6b2527ce33e441f30',1,'eagine::memory']]],
+  ['has_5fspan_5fsize_5fmember_5fv_9160',['has_span_size_member_v',['../group__type__utils.html#ga4845b1f7afe8748b7761f3229740862e',1,'eagine::memory']]],
+  ['helper_5fappeared_9161',['helper_appeared',['../classeagine_1_1msgbus_1_1sudoku__solver.html#a1b02f75cf901f93b8bf97b9b78483ba0',1,'eagine::msgbus::sudoku_solver']]],
+  ['high_5ffloat_9162',['high_float',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#a56b818c3496c1744718f037f37f877c8',1,'eagine::oglplus::basic_gl_constants']]],
+  ['high_5fint_9163',['high_int',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#aabca4c7a33dace681f1e43c2e2256e58',1,'eagine::oglplus::basic_gl_constants']]],
+  ['hint_9164',['Hint',['../classeagine_1_1oglplus_1_1basic__gl__c__api.html#a0871d14f1ef0f83486414628b06a9c47',1,'eagine::oglplus::basic_gl_c_api']]],
+  ['hop_5fcount_9165',['hop_count',['../structeagine_1_1msgbus_1_1message__info.html#a1165fbb24aeb29efc014c9edfbfc3e55',1,'eagine::msgbus::message_info::hop_count()'],['../structeagine_1_1msgbus_1_1subscriber__info.html#a9cc12284a2d3dbed0e0ce451e3f13714',1,'eagine::msgbus::subscriber_info::hop_count()']]],
+  ['horizontal_5fline_5fto_5fnv_9166',['horizontal_line_to_nv',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#a85b82d25a8ecb5240e6ba6f358ded605',1,'eagine::oglplus::basic_gl_constants']]],
+  ['host_5fchanged_9167',['host_changed',['../classeagine_1_1msgbus_1_1node__tracker.html#acc12de9edcf82cf3aef7fb7137c2f064',1,'eagine::msgbus::node_tracker']]],
+  ['host_5fid_5freceived_9168',['host_id_received',['../classeagine_1_1msgbus_1_1host__info__consumer.html#a14f478e0b8345ed4a543d547bd287108',1,'eagine::msgbus::host_info_consumer']]],
+  ['hostname_5freceived_9169',['hostname_received',['../classeagine_1_1msgbus_1_1host__info__consumer.html#a1a3988138527719583860ec0a24aa3c7',1,'eagine::msgbus::host_info_consumer']]],
+  ['hrtf_5fid_5fsoft_9170',['hrtf_id_soft',['../classeagine_1_1oalplus_1_1basic__alc__constants.html#af86ce69886656505d8c10a20315f8cb3',1,'eagine::oalplus::basic_alc_constants']]],
+  ['hrtf_5fsoft_9171',['hrtf_soft',['../classeagine_1_1oalplus_1_1basic__alc__constants.html#ad92aa4b21f0a977567f58f4f2ff109de',1,'eagine::oalplus::basic_alc_constants']]],
+  ['hrtf_5fspecifier_5fsoft_9172',['hrtf_specifier_soft',['../classeagine_1_1oalplus_1_1basic__alc__constants.html#aafa20c01d5831b6e8bde5a6d04c42a14',1,'eagine::oalplus::basic_alc_constants']]],
+  ['hsl_5fcolor_5fkhr_9173',['hsl_color_khr',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#a2e0f0c3f885b5e8f365c9a538538d290',1,'eagine::oglplus::basic_gl_constants']]],
+  ['hsl_5fhue_5fkhr_9174',['hsl_hue_khr',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#a33fd5919b5499b2ac8374f67486cc4b8',1,'eagine::oglplus::basic_gl_constants']]],
+  ['hsl_5fluminosity_5fkhr_9175',['hsl_luminosity_khr',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#a00916ba11c9e366fbaa7d7aca9372743',1,'eagine::oglplus::basic_gl_constants']]],
+  ['hsl_5fsaturation_5fkhr_9176',['hsl_saturation_khr',['../classeagine_1_1oglplus_1_1basic__gl__constants.html#a5abbbb45a5558617fe434ce5919f0db0',1,'eagine::oglplus::basic_gl_constants']]]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/str_format.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,72 +73,83 @@ $(function() {
 <div class="title">str_format.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="str__format_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_STR_FORMAT_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_STR_FORMAT_HPP</span></div>
+<a href="str__format_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_STR_FORMAT_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_STR_FORMAT_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="basic_8hpp.html">config/basic.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="integer__range_8hpp.html">integer_range.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="selector_8hpp.html">selector.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="span_8hpp.html">span.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;config/basic.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="integer__range_8hpp.html">&quot;integer_range.hpp&quot;</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="selector_8hpp.html">&quot;selector.hpp&quot;</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="span_8hpp.html">&quot;span.hpp&quot;</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">array</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span>format_string_and_list_base {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class</span> format_string_and_list_base {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    format_string_and_list_base(std::string fmt_str) noexcept</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    format_string_and_list_base(std::string fmt_str) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      : _fmt_str{std::move(fmt_str)} {}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    format_string_and_list_base(</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keyword">const</span> <a class="code" href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972">construct_from_t</a>,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      format_string_and_list_base&amp; that) noexcept</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keyword">const</span> construct_from_t,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      format_string_and_list_base&amp; that) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      : _fmt_str{std::move(that._fmt_str)} {}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">auto</span> _fmt(span&lt;const std::string&gt; values) <span class="keyword">const</span> noexcept -&gt; std::string;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">auto</span> _fmt(span&lt;<span class="keyword">const</span> std::string&gt; values) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; std::string;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::string _fmt_str{};</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> &lt;span_<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">class </span>format_string_and_list;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> &lt;span_size_t N&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">class</span> format_string_and_list;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">class </span>format_string_and_list&lt;0&gt; : <span class="keyword">public</span> format_string_and_list_base {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">class</span> format_string_and_list&lt;0&gt; : <span class="keyword">public</span> format_string_and_list_base {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    format_string_and_list(std::string&amp; fmt_str) noexcept</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    format_string_and_list(std::string&amp; fmt_str) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      : format_string_and_list_base{std::move(fmt_str)} {}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">operator</span> std::string() const noexcept {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> _fmt({});</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    operator std::string() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> _fmt(<a class="code" href="classeagine_1_1memory_1_1basic__span.html#a857d9e4e61f16e6f1f921eb67dc0a115">{</a><a class="code" href="classeagine_1_1memory_1_1basic__span.html#a857d9e4e61f16e6f1f921eb67dc0a115">}</a>);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;span_<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classeagine_1_1format__string__and__list.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list</a> : <span class="keyword">public</span> format_string_and_list_base {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/// @brief Helper class used in implementation of string variable substitution.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/// @ingroup string_utils</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/// @see format</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span> &lt;span_size_t N&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classeagine_1_1format__string__and__list.html">   56</a></span>&#160;<span class="keyword">class</span> format_string_and_list : <span class="keyword">public</span> format_string_and_list_base {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt;std::size_t... I&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list</a>(</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list&lt;N - 1&gt;</a>&amp;&amp; prev,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    format_string_and_list(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      format_string_and_list&lt;N - 1&gt;&amp;&amp; prev,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      std::string&amp;&amp; val,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      std::index_sequence&lt;I...&gt;) noexcept</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      std::index_sequence&lt;I...&gt;) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      : format_string_and_list_base{<a class="code" href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">construct_from</a>, prev}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      , _list{{std::move(prev._list[I])..., std::move(val)}} {}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list</a>(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list&lt;N - 1&gt;</a>&amp;&amp; prev,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      std::string&amp;&amp; val) noexcept</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      : <a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list</a>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    format_string_and_list(</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      format_string_and_list&lt;N - 1&gt;&amp;&amp; prev,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      std::string&amp;&amp; val) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      : format_string_and_list{</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;          std::move(prev),</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          std::move(val),</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;          std::make_index_sequence&lt;N - 1&gt;()} {}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classeagine_1_1format__string__and__list.html#a849bcd978c172b5b189d9df4e2e87111">   76</a></span>&#160;    <span class="keyword">operator</span> std::string() const noexcept {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> _fmt(<a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(_list));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">/// @brief Implicit conversion to a string with the variable substituted.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classeagine_1_1format__string__and__list.html#a849bcd978c172b5b189d9df4e2e87111">   76</a></span>&#160;    <a class="code" href="classeagine_1_1format__string__and__list.html#a849bcd978c172b5b189d9df4e2e87111">operator</a> std::string() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> _fmt(view(_list));</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">public</span>:</div>
@@ -146,54 +157,47 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">class </span>format_string_and_list&lt;1&gt; : <span class="keyword">public</span> format_string_and_list_base {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">class</span> format_string_and_list&lt;1&gt; : <span class="keyword">public</span> format_string_and_list_base {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    format_string_and_list(</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      format_string_and_list&lt;0&gt;&amp;&amp; prev,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      std::string&amp;&amp; val) noexcept</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      std::string&amp;&amp; val) <span class="keyword">noexcept</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      : format_string_and_list_base{<a class="code" href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">construct_from</a>, prev}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      , _list{{val}} {}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">operator</span> std::string() const noexcept {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> _fmt(<a class="code" href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">view</a>(_list));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    operator std::string() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> _fmt(<a class="code" href="group__memory.html#ga1e8fd3ed063cbc9db585861aac2262f9">view</a><a class="code" href="group__memory.html#ga1e8fd3ed063cbc9db585861aac2262f9">(</a>_list<a class="code" href="group__memory.html#ga1e8fd3ed063cbc9db585861aac2262f9">)</a>);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::array&lt;std::string, 1&gt; _list{};</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"></span><span class="keyword">template</span> &lt;span_<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="group__string__utils.html#ga52258cab6149a57962227c1ae20a7ae2">  106</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code" href="group__string__utils.html#ga52258cab6149a57962227c1ae20a7ae2">operator%</a>(</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list&lt;N&gt;</a>&amp;&amp; fsal,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  std::string&amp;&amp; val) noexcept -&gt; <a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list&lt;N + 1&gt;</a> {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">/// @brief Operator for adding variable name and value for string formatting.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/// @ingroup string_utils</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">/// @see format</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">template</span> &lt;span_size_t N&gt;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="group__string__utils.html#ga52258cab6149a57962227c1ae20a7ae2">  106</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code" href="group__string__utils.html#ga52258cab6149a57962227c1ae20a7ae2">operator</a>%(</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  format_string_and_list&lt;N&gt;&amp;&amp; fsal,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  std::string&amp;&amp; val) <span class="keyword">noexcept</span> -&gt; format_string_and_list&lt;N + 1&gt; {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> {std::move(fsal), std::move(val)};</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="group__string__utils.html#ga50255ff92fdbf827cfd3665b6dcf849e">  114</a></span>&#160;<span class="comment"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code" href="group__string__utils.html#ga50255ff92fdbf827cfd3665b6dcf849e">format</a>(std::string&amp;&amp; fmt_str) noexcept</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  -&gt; <a class="code" href="classeagine_1_1format__string__and__list.html">format_string_and_list&lt;0&gt;</a> {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/// @brief Takes a format string, returns an object for variable specification.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">/// @ingroup string_utils</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="group__string__utils.html#ga50255ff92fdbf827cfd3665b6dcf849e">  114</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code" href="group__string__utils.html#ga50255ff92fdbf827cfd3665b6dcf849e">format</a>(std::string&amp;&amp; fmt_str) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  -&gt; format_string_and_list&lt;0&gt; {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> {fmt_str};</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#if !EAGINE_CORE_LIBRARY || defined(EAGINE_IMPLEMENTING_CORE_LIBRARY)</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="str__format_8inl.html">eagine/str_format.inl</a>&gt;</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">!</span><a class="code" href="eagine-core_2include_2eagine_2config_2basic_8hpp.html#a42b87b5f1b680c3bc7dac19c6741f7ad">EAGINE_CORE_LIBRARY</a> <span class="preprocessor">||</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">EAGINE_IMPLEMENTING_CORE_LIBRARY</span><span class="preprocessor">)</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">eagine</span><span class="preprocessor">/</span><span class="preprocessor">str_format</span><span class="preprocessor">.</span><span class="preprocessor">inl</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_STR_FORMAT_HPP</span></div>
-<div class="ttc" id="abasic_8hpp_html"><div class="ttname"><a href="basic_8hpp.html">basic.hpp</a></div></div>
-<div class="ttc" id="aclasseagine_1_1format__string__and__list_html"><div class="ttname"><a href="classeagine_1_1format__string__and__list.html">eagine::format_string_and_list</a></div><div class="ttdoc">Helper class used in implementation of string variable substitution.</div><div class="ttdef"><b>Definition:</b> str_format.hpp:56</div></div>
-<div class="ttc" id="agroup__memory_html_ga9534fdd13884329a5c5e5c10b3337f80"><div class="ttname"><a href="group__memory.html#ga9534fdd13884329a5c5e5c10b3337f80">eagine::memory::view</a></div><div class="ttdeci">static constexpr auto view(T *addr, const S size) noexcept -&gt; const_span&lt; T &gt;</div><div class="ttdoc">Creates a view starting at the specified pointer and specified length.</div><div class="ttdef"><b>Definition:</b> span.hpp:478</div></div>
-<div class="ttc" id="agroup__metaprogramming_html_ga4a036d64c1fd49335cc8ca2e2b01c1a7"><div class="ttname"><a href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">eagine::construct_from</a></div><div class="ttdeci">constexpr const construct_from_t construct_from</div><div class="ttdoc">The construct-from tag-dispatch constant.</div><div class="ttdef"><b>Definition:</b> selector.hpp:47</div></div>
-<div class="ttc" id="agroup__metaprogramming_html_gae3457cb5bd31ad02372e8c0676902972"><div class="ttname"><a href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972">eagine::construct_from_t</a></div><div class="ttdeci">selector&lt; 0xFU &gt; construct_from_t</div><div class="ttdoc">Type alias for the construct-from tag-dispatch selector.</div><div class="ttdef"><b>Definition:</b> selector.hpp:42</div></div>
-<div class="ttc" id="agroup__string__utils_html_ga50255ff92fdbf827cfd3665b6dcf849e"><div class="ttname"><a href="group__string__utils.html#ga50255ff92fdbf827cfd3665b6dcf849e">eagine::format</a></div><div class="ttdeci">static auto format(std::string &amp;&amp;fmt_str) noexcept -&gt; format_string_and_list&lt; 0 &gt;</div><div class="ttdoc">Takes a format string, returns an object for variable specification.</div><div class="ttdef"><b>Definition:</b> str_format.hpp:114</div></div>
-<div class="ttc" id="agroup__string__utils_html_ga52258cab6149a57962227c1ae20a7ae2"><div class="ttname"><a href="group__string__utils.html#ga52258cab6149a57962227c1ae20a7ae2">eagine::operator%</a></div><div class="ttdeci">static auto operator%(format_string_and_list&lt; N &gt; &amp;&amp;fsal, std::string &amp;&amp;val) noexcept -&gt; format_string_and_list&lt; N+1 &gt;</div><div class="ttdoc">Operator for adding variable name and value for string formatting.</div><div class="ttdef"><b>Definition:</b> str_format.hpp:106</div></div>
-<div class="ttc" id="ainteger__range_8hpp_html"><div class="ttname"><a href="integer__range_8hpp.html">integer_range.hpp</a></div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="aselector_8hpp_html"><div class="ttname"><a href="selector_8hpp.html">selector.hpp</a></div></div>
-<div class="ttc" id="aspan_8hpp_html"><div class="ttname"><a href="span_8hpp.html">span.hpp</a></div></div>
-<div class="ttc" id="astr__format_8inl_html"><div class="ttname"><a href="str__format_8inl.html">str_format.inl</a></div></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_STR_FORMAT_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

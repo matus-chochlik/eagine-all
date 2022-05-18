@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/vect/data.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,53 +73,56 @@ $(function() {
 <div class="title">data.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="data_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EAGINE_VECT_DATA_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define EAGINE_VECT_DATA_HPP</span></div>
+<a href="data_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_VECT_DATA_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_VECT_DATA_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="data__ary_8hpp.html">data_ary.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if EAGINE_USE_SIMD</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="data__vec_8hpp.html">data_vec.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="data__ary_8hpp.html">&quot;data_ary.hpp&quot;</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">if</span> <a class="code" href="eagine-core_2include_2eagine_2vect_2config_8hpp.html#aa25f982266edd8de3d3ec6b1bfc29833">EAGINE_USE_SIMD</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;data_vec.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>eagine::vect {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a>::vect {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// data</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct </span>data</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct</span> data</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  : std::conditional_t&lt;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      _has_vec_data&lt;T, N&gt;::value &amp;&amp; V,</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      _vec_data&lt;T, N&gt;,</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      _ary_data&lt;T, N&gt;&gt; {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">using</span> <a class="code" href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">value_type</a> = T;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> size = N;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">using</span> value_type = T;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> size = N;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// has_vect_data</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">struct </span>has_vect_data : <a class="code" href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">bool_constant</a>&lt;V &amp;&amp; _has_vec_data&lt;T, N&gt;::value&gt; {};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">struct</span> has_vect_data : bool_constant&lt;V &amp;&amp; _has_vec_data&lt;T, N&gt;::value&gt; {};</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// data_param</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">struct </span>data_param</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">struct</span> data_param</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  : std::conditional_t&lt;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      V &amp;&amp; _has_vec_data&lt;T, N&gt;::value,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      const _vec_data&lt;T, N&gt;,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      const _ary_param&lt;T, N&gt;&gt; {};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keyword">const</span> _vec_data&lt;T, N&gt;,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">const</span> _ary_param&lt;T, N&gt;&gt; {};</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// param</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Data&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">struct </span>param;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">struct</span> param;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> N, <span class="keywordtype">bool</span> V&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">struct </span>param&lt;data&lt;T, N, V&gt;&gt; : data_param&lt;T, N, V&gt; {};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">struct</span> param&lt;data&lt;T, N, V&gt;&gt; : data_param&lt;T, N, V&gt; {};</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;} <span class="comment">// namespace eagine::vect</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_VECT_DATA_HPP</span></div>
-<div class="ttc" id="adata__ary_8hpp_html"><div class="ttname"><a href="data__ary_8hpp.html">data_ary.hpp</a></div></div>
-<div class="ttc" id="adata__vec_8hpp_html"><div class="ttname"><a href="data__vec_8hpp.html">data_vec.hpp</a></div></div>
-<div class="ttc" id="agroup__type__utils_html_gadda8aac5370bd7ae56cb5a16defd16f4"><div class="ttname"><a href="group__type__utils.html#gadda8aac5370bd7ae56cb5a16defd16f4">eagine::bool_constant</a></div><div class="ttdeci">std::integral_constant&lt; bool, B &gt; bool_constant</div><div class="ttdoc">Alias for boolean constant type.</div><div class="ttdef"><b>Definition:</b> int_constant.hpp:20</div></div>
-<div class="ttc" id="agroup__valtree_html_ga0e53392d6125e3cce82766e30b728449"><div class="ttname"><a href="group__valtree.html#ga0e53392d6125e3cce82766e30b728449">eagine::valtree::value_type</a></div><div class="ttdeci">value_type</div><div class="ttdoc">Value tree value element data type enumeration.</div><div class="ttdef"><b>Definition:</b> interface.hpp:28</div></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_VECT_DATA_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

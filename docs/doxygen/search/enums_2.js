@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['log_5fevent_5fseverity_3281',['log_event_severity',['../group__logging.html#ga724b65c5c81a873b5baabe72407177ea',1,'eagine']]]
+  ['data_5fcompression_5flevel_11008',['data_compression_level',['../group__main__context.html#gad59fd8604fb2c5cc5dad36fe0b5f4634',1,'eagine']]],
+  ['deserialization_5ferror_5fcode_11009',['deserialization_error_code',['../group__serialization.html#ga25c258849fb442ed314588203803f7cd',1,'eagine']]]
 ];

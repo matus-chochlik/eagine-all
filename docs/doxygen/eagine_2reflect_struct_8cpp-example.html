@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/reflect_struct.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,60 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="console_8hpp.html">eagine/console/console.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="data__members_8hpp.html">eagine/reflect/data_members.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>example_struct {</div>
+<div class="line">    <span class="keywordtype">bool</span> b{<span class="keyword">false</span>};</div>
+<div class="line">    <span class="keywordtype">char</span> c{<span class="charliteral">&#39;\0&#39;</span>};</div>
+<div class="line">    <span class="keywordtype">float</span> f{0.F};</div>
+<div class="line">    <span class="keywordtype">int</span> i{0};</div>
+<div class="line">    std::string s{};</div>
+<div class="line">    <span class="keywordtype">unsigned</span> u{0U};</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Selector&gt;</div>
+<div class="line">constexpr <span class="keyword">auto</span> data_member_mapping(</div>
+<div class="line">  <span class="keyword">const</span> type_identity&lt;example_struct&gt;,</div>
+<div class="line">  <span class="keyword">const</span> Selector) noexcept {</div>
+<div class="line">    <span class="keyword">using</span> S = example_struct;</div>
+<div class="line">    <span class="keywordflow">return</span> make_data_member_mapping&lt;S, bool, char, float, int, std::string, unsigned&gt;(</div>
+<div class="line">      {<span class="stringliteral">&quot;b&quot;</span>, &amp;S::b},</div>
+<div class="line">      {<span class="stringliteral">&quot;c&quot;</span>, &amp;S::c},</div>
+<div class="line">      {<span class="stringliteral">&quot;f&quot;</span>, &amp;S::f},</div>
+<div class="line">      {<span class="stringliteral">&quot;i&quot;</span>, &amp;S::i},</div>
+<div class="line">      {<span class="stringliteral">&quot;s&quot;</span>, &amp;S::s},</div>
+<div class="line">      {<span class="stringliteral">&quot;u&quot;</span>, &amp;S::u});</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line">    <span class="keyword">using</span> std::get;</div>
+<div class="line"> </div>
+<div class="line">    example_struct s{};</div>
+<div class="line">    <span class="keyword">auto</span> m = map_data_members(s);</div>
+<div class="line">    std::get&lt;1&gt;(get&lt;0&gt;(m)) = <span class="keyword">true</span>;</div>
+<div class="line">    std::get&lt;1&gt;(get&lt;1&gt;(m)) = <span class="charliteral">&#39;R&#39;</span>;</div>
+<div class="line">    std::get&lt;1&gt;(get&lt;2&gt;(m)) = 3.F;</div>
+<div class="line"> </div>
+<div class="line">    ctx.cio().print(<a name="a0"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(<span class="keyword">struct</span>), <span class="stringliteral">&quot;b: ${b}&quot;</span>).arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(b), s.b);</div>
+<div class="line">    ctx.cio().print(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(<span class="keyword">struct</span>), <span class="stringliteral">&quot;c: ${c}&quot;</span>).arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(c), s.c);</div>
+<div class="line">    ctx.cio().print(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(<span class="keyword">struct</span>), <span class="stringliteral">&quot;f: ${f}&quot;</span>).arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(f), s.f);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="line"> </div>
+<div class="ttc" id="aconsole_8hpp_html"><div class="ttname"><a href="console_8hpp.html">console.hpp</a></div></div>
+<div class="ttc" id="adata__members_8hpp_html"><div class="ttname"><a href="data__members_8hpp.html">data_members.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

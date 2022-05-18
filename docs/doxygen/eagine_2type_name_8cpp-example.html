@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/type_name.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,29 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="type__name_8hpp.html">eagine/type_name.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line">    <span class="keyword">using</span> std::cout;</div>
+<div class="line">    <span class="keyword">using</span> std::endl;</div>
+<div class="line"> </div>
+<div class="line">    cout &lt;&lt; type_name&lt;int&gt;() &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; type_name&lt;double&gt;() &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; type_name&lt;std::vector&lt;short&gt;&gt;() &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; type_name&lt;std::array&lt;char, 10&gt;&gt;() &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; type_name&lt;std::string&gt;() &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; type_name&lt;std::vector&lt;std::string&gt;&gt;() &lt;&lt; endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="atype__name_8hpp_html"><div class="ttname"><a href="type__name_8hpp.html">type_name.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

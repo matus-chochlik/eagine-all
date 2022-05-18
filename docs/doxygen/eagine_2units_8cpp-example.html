@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/units.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,75 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="console_8hpp.html">eagine/console/console.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="main__ctx_8hpp.html">eagine/main_ctx.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="tagged__quantity_8hpp.html">eagine/tagged_quantity.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="dimensions_8hpp.html">eagine/units/dimensions.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="strings_8hpp.html">eagine/units/strings.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="si_8hpp.html">eagine/units/unit/si.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Unit&gt;</div>
+<div class="line"><span class="keyword">using</span> qty = tagged_quantity&lt;float, Unit&gt;;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span>units;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span> print = [&amp;ctx](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; q) {</div>
+<div class="line">        <span class="keyword">using</span> units::get_name;</div>
+<div class="line">        <span class="keyword">using</span> units::get_name_form;</div>
+<div class="line">        <span class="keyword">using</span> units::get_symbol;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span> dim = get_dimension(q.unit());</div>
+<div class="line">        ctx.cio()</div>
+<div class="line">          .print(</div>
+<div class="line">            <a name="a0"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(units),</div>
+<div class="line">            <span class="stringliteral">&quot;${dimName} (${dimForm}): &quot;</span></div>
+<div class="line">            <span class="stringliteral">&quot;${value} [${unitSymbol} (${unitForm})]&quot;</span>)</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(dimName), get_name(dim))</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(dimForm), get_name_form(dim))</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(unitSymbol), get_symbol(q.unit()))</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(unitForm), get_name_form(q.unit()))</div>
+<div class="line">          .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(value), q.value());</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    qty&lt;meter&gt; x{2.F};</div>
+<div class="line">    qty&lt;meter&gt; y{3.F};</div>
+<div class="line">    qty&lt;meter&gt; z{4.F};</div>
+<div class="line">    qty&lt;newton&gt; f{12.F};</div>
+<div class="line">    qty&lt;second&gt; t{6.F};</div>
+<div class="line">    <span class="keyword">auto</span> a = x * y;</div>
+<div class="line">    <span class="keyword">auto</span> v = a * z;</div>
+<div class="line">    <span class="keyword">auto</span> s = f / a;</div>
+<div class="line">    <span class="keyword">auto</span> e = v * s;</div>
+<div class="line">    <span class="keyword">auto</span> p = e / t;</div>
+<div class="line"> </div>
+<div class="line">    print(x);</div>
+<div class="line">    print(y);</div>
+<div class="line">    print(a);</div>
+<div class="line">    print(v);</div>
+<div class="line">    print(t);</div>
+<div class="line">    print(f);</div>
+<div class="line">    print(s);</div>
+<div class="line">    print(e);</div>
+<div class="line">    print(p);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aconsole_8hpp_html"><div class="ttname"><a href="console_8hpp.html">console.hpp</a></div></div>
+<div class="ttc" id="adimensions_8hpp_html"><div class="ttname"><a href="dimensions_8hpp.html">dimensions.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="amain__ctx_8hpp_html"><div class="ttname"><a href="main__ctx_8hpp.html">main_ctx.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="asi_8hpp_html"><div class="ttname"><a href="si_8hpp.html">si.hpp</a></div></div>
+<div class="ttc" id="astrings_8hpp_html"><div class="ttname"><a href="strings_8hpp.html">strings.hpp</a></div></div>
+<div class="ttc" id="atagged__quantity_8hpp_html"><div class="ttname"><a href="tagged__quantity_8hpp.html">tagged_quantity.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

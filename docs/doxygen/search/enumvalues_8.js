@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['low_3313',['low',['../namespaceeagine.html#a0cc6098c4cadc628404b921787fe6df1a53cced8d281a1a0ace3cb6594daaa4f7',1,'eagine']]],
-  ['lowest_3314',['lowest',['../group__main__context.html#ggad59fd8604fb2c5cc5dad36fe0b5f4634a21f25aaeda95888270706e909e7c919d',1,'eagine']]]
+  ['kind_11092',['kind',['../group__msgbus.html#gga9d34c5194a194451e3d4a57a22f85786ad939aaf7d2291c6f69ceecee94880d7c',1,'eagine::msgbus']]]
 ];

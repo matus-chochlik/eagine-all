@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/application_config.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,62 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="app__config_8hpp.html">eagine/app_config.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="console_8hpp.html">eagine/console/console.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">const</span> std::string na{<span class="stringliteral">&quot;N/A&quot;</span>};</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span>&amp; cfg = ctx.config();</div>
+<div class="line">    std::string s;</div>
+<div class="line">    <span class="keywordtype">int</span> i;</div>
+<div class="line">    std::vector&lt;float&gt; v;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(cfg.fetch(<span class="stringliteral">&quot;value_1&quot;</span>, s)) {</div>
+<div class="line">        cfg.cio_print(<span class="stringliteral">&quot;string: ${s}&quot;</span>).arg(<a name="a0"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(s), s);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(cfg.fetch(<span class="stringliteral">&quot;value_2&quot;</span>, s)) {</div>
+<div class="line">        cfg.cio_print(<span class="stringliteral">&quot;string: ${s}&quot;</span>).arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(s), s);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(cfg.fetch(<span class="stringliteral">&quot;section_a.subsection_b.value_c&quot;</span>, i)) {</div>
+<div class="line">        cfg.cio_print(<span class="stringliteral">&quot;integer : ${i}&quot;</span>).arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(i), i);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(cfg.fetch(<span class="stringliteral">&quot;section_a.subsection_b.values&quot;</span>, v)) {</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keyword">auto</span> e : v) {</div>
+<div class="line">            cfg.cio_print(<span class="stringliteral">&quot;float : ${f}&quot;</span>).arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(f), e);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> application_reconfig_value&lt;std::chrono::duration&lt;float&gt;&gt; delay{</div>
+<div class="line">      cfg, <span class="stringliteral">&quot;section_a.subsection_b.delay&quot;</span>, std::chrono::seconds(1)};</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> start{std::chrono::steady_clock::now()};</div>
+<div class="line">    <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span> elapsed = std::chrono::steady_clock::now() - start;</div>
+<div class="line">        <span class="keywordflow">if</span>(elapsed &gt; delay.value()) {</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">        std::this_thread::sleep_for(std::chrono::seconds(1));</div>
+<div class="line">        cfg.reload();</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aapp__config_8hpp_html"><div class="ttname"><a href="app__config_8hpp.html">app_config.hpp</a></div></div>
+<div class="ttc" id="aconsole_8hpp_html"><div class="ttname"><a href="console_8hpp.html">console.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

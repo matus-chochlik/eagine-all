@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/url.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,46 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="url_8hpp.html">eagine/url.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {} <span class="comment">// namespace eagine</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <a name="a0"></a><a class="code" href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">string_view</a> n{<span class="stringliteral">&quot;N/A&quot;</span>};</div>
+<div class="line"> </div>
+<div class="line">    std::string <a name="a1"></a><a class="code" href="group__math.html#ga6ac580bd1d09a27ab282de83c16df15f">line</a>;</div>
+<div class="line">    <span class="keywordflow">while</span>((std::cin &gt;&gt; <a class="code" href="group__math.html#ga6ac580bd1d09a27ab282de83c16df15f">line</a>).good()) {</div>
+<div class="line">        url u{<a class="code" href="group__math.html#ga6ac580bd1d09a27ab282de83c16df15f">line</a>};</div>
+<div class="line"> </div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;scheme:     &quot;</span> &lt;&lt; <a name="a2"></a><a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(u.scheme(), n) &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;login:      &quot;</span> &lt;&lt; <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(u.login(), n) &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;password:   &quot;</span> &lt;&lt; <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(u.password(), n) &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;host:       &quot;</span> &lt;&lt; <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(u.host(), n) &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;port:       &quot;</span> &lt;&lt; <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(u.port(), n) &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;path:       &quot;</span> &lt;&lt; <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(u.path_str(), n) &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;path entries:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; entry : u.path()) {</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;  &#39;&quot;</span> &lt;&lt; entry &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;query:      &quot;</span> &lt;&lt; <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(u.query_str(), n) &lt;&lt; std::endl;</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;query arguments:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; [name, value] : u.query()) {</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;: &#39;&quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;fragment:   &quot;</span> &lt;&lt; <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(u.fragment(), n) &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__math_html_ga6ac580bd1d09a27ab282de83c16df15f"><div class="ttname"><a href="group__math.html#ga6ac580bd1d09a27ab282de83c16df15f">eagine::math::line</a></div><div class="ttdeci">basic_line&lt; T, 3, V &gt; line</div><div class="ttdoc">Alias for lines in 3D space.</div><div class="ttdef"><b>Definition:</b> primitives.hpp:54</div></div>
+<div class="ttc" id="agroup__string__utils_html_gae76dd3f0edeca37e438f5bbc2374e1b9"><div class="ttname"><a href="group__string__utils.html#gae76dd3f0edeca37e438f5bbc2374e1b9">eagine::string_view</a></div><div class="ttdeci">basic_string_span&lt; const char &gt; string_view</div><div class="ttdoc">Alias for const string views.</div><div class="ttdef"><b>Definition:</b> string_span.hpp:140</div></div>
+<div class="ttc" id="agroup__valid__if_html_gad46d1f9ac83e8634b9cbfb7e96ea3fd5"><div class="ttname"><a href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">eagine::either_or</a></div><div class="ttdeci">static auto either_or(basic_valid_if&lt; T, P, L &gt; vi, F f) noexcept(noexcept(basic_valid_if&lt; T, P, L &gt;(std::declval&lt; basic_valid_if&lt; T, P, L &gt; &amp;&amp; &gt;())) &amp;&amp;noexcept(F(std::declval&lt; F &amp;&amp; &gt;()))) -&gt; valid_if_or_fallback&lt; F, T, P, L &gt;</div><div class="ttdoc">Constructor function for valid_if_or_fallback.</div><div class="ttdef"><b>Definition:</b> decl.hpp:83</div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="aurl_8hpp_html"><div class="ttname"><a href="url_8hpp.html">url.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

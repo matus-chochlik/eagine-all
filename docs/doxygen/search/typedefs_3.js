@@ -1,10 +1,22 @@
 var searchData=
 [
-  ['data_5fhandler_3139',['data_handler',['../classeagine_1_1data__compressor.html#abb4ff7918dde4ed425f59c576241c31f',1,'eagine::data_compressor']]],
-  ['default_5fselector_5ft_3140',['default_selector_t',['../group__metaprogramming.html#gaf8fd014e7784f3ed1e8236c92455434b',1,'eagine']]],
-  ['degrees_5ft_3141',['degrees_t',['../group__units.html#ga64fb00ac39630b48b145ab65edce2418',1,'eagine']]],
-  ['deserialization_5ferrors_3142',['deserialization_errors',['../group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3',1,'eagine']]],
-  ['deserialization_5fresult_3143',['deserialization_result',['../group__serialization.html#gac1870d0bf255221a698137e22516e97d',1,'eagine']]],
-  ['difference_5ftype_3144',['difference_type',['../classeagine_1_1biteset.html#aa65e7b27ba6887511177ec7a2f0baeb7',1,'eagine::biteset::difference_type()'],['../classeagine_1_1basic__iterable__type.html#a9c06236804af29bfda820a31e44fec19',1,'eagine::basic_iterable_type::difference_type()'],['../classeagine_1_1program__arg__iterator.html#a512bab672ecf0463b3d1d0fdec7cdc8e',1,'eagine::program_arg_iterator::difference_type()']]],
-  ['duration_5ftype_3145',['duration_type',['../classeagine_1_1timeout.html#a4ec2d0006927426dec906d56615a75d8',1,'eagine::timeout::duration_type()'],['../classeagine_1_1referencing__timeout.html#a80815797b00929776ab43d6897ce61ee',1,'eagine::referencing_timeout::duration_type()']]]
+  ['data_5fhandler_10665',['data_handler',['../classeagine_1_1data__compressor.html#abb4ff7918dde4ed425f59c576241c31f',1,'eagine::data_compressor']]],
+  ['datagram_5fprotocol_5ftag_10666',['datagram_protocol_tag',['../group__msgbus.html#ga26e9c94d2df38a500d09c9ea66bdf636',1,'eagine::msgbus']]],
+  ['debug_5fcallback_5ftype_10667',['debug_callback_type',['../classeagine_1_1oglplus_1_1basic__gl__c__api.html#a78902f0cd08645e545f07ead1ff5e23e',1,'eagine::oglplus::basic_gl_c_api']]],
+  ['default_5fdeserializer_5fbackend_10668',['default_deserializer_backend',['../group__msgbus.html#ga02de0e7b77ed5f2ada757dfcfa4ce42d',1,'eagine::msgbus']]],
+  ['default_5fselector_5ft_10669',['default_selector_t',['../group__metaprogramming.html#gaf8fd014e7784f3ed1e8236c92455434b',1,'eagine']]],
+  ['default_5fserializer_5fbackend_10670',['default_serializer_backend',['../group__msgbus.html#ga2fe9b055f544773bd34fc8f6888cf50e',1,'eagine::msgbus']]],
+  ['degrees_5ft_10671',['degrees_t',['../group__units.html#ga64fb00ac39630b48b145ab65edce2418',1,'eagine']]],
+  ['deserialization_5ferrors_10672',['deserialization_errors',['../group__serialization.html#ga1620f00a093e943448e81a896f8fd4d3',1,'eagine']]],
+  ['deserialization_5fresult_10673',['deserialization_result',['../group__serialization.html#gac1870d0bf255221a698137e22516e97d',1,'eagine']]],
+  ['device_5fhandle_10674',['device_handle',['../group__egl__api__wrap.html#ga999a940a0874241b52a168b820d037a4',1,'eagine::eglplus::device_handle()'],['../group__egl__api__wrap.html#ga69529a8fc8c113478ffdc49a9e5295a3',1,'eagine::oalplus::device_handle()']]],
+  ['device_5ftag_10675',['device_tag',['../group__egl__api__wrap.html#ga74b1ffe97ac040bb357af3458fbaa2da',1,'eagine::eglplus::device_tag()'],['../group__al__api__wrap.html#gad3e9cb7f67b9e9167ebe6b471811a7c4',1,'eagine::oalplus::device_tag()']]],
+  ['device_5ftype_10676',['device_type',['../structeagine_1_1eglplus_1_1egl__types.html#a0a93094dc96730828a051dd28fe419c0',1,'eagine::eglplus::egl_types::device_type()'],['../classeagine_1_1oalplus_1_1basic__alc__c__api.html#a2121a8203c0bd6106fc886134d1dcc75',1,'eagine::oalplus::basic_alc_c_api::device_type()'],['../classeagine_1_1eglplus_1_1basic__egl__c__api.html#a7fb9f92ee22ecc0ba45b6ff360e87506',1,'eagine::eglplus::basic_egl_c_api::device_type()']]],
+  ['difference_5ftype_10677',['difference_type',['../classeagine_1_1basic__iterable__type.html#a9c06236804af29bfda820a31e44fec19',1,'eagine::basic_iterable_type::difference_type()'],['../classeagine_1_1biteset.html#aa65e7b27ba6887511177ec7a2f0baeb7',1,'eagine::biteset::difference_type()'],['../classeagine_1_1program__arg__iterator.html#a512bab672ecf0463b3d1d0fdec7cdc8e',1,'eagine::program_arg_iterator::difference_type()']]],
+  ['display_5fhandle_10678',['display_handle',['../group__egl__api__wrap.html#ga645e45aef445fa9d5576fbe9712d065f',1,'eagine::eglplus']]],
+  ['display_5ftag_10679',['display_tag',['../group__egl__api__wrap.html#ga41c5a00a0ea157663f9a8c4549c84f5c',1,'eagine::eglplus']]],
+  ['display_5ftype_10680',['display_type',['../classeagine_1_1eglplus_1_1basic__egl__c__api.html#a044f98e0c89670dac75b448e0fd7543e',1,'eagine::eglplus::basic_egl_c_api']]],
+  ['double_5ftype_10681',['double_type',['../classeagine_1_1oalplus_1_1basic__al__c__api.html#a32525033d0f36bbd526661ef50153d48',1,'eagine::oalplus::basic_al_c_api::double_type()'],['../classeagine_1_1oglplus_1_1basic__gl__c__api.html#a12bcc2dfa9b7f142bde62380b8a459ed',1,'eagine::oglplus::basic_gl_c_api::double_type()']]],
+  ['drawing_5fvariant_10682',['drawing_variant',['../group__shapes.html#ga20f5e77c179407df5e6fd9826c062c13',1,'eagine::shapes']]],
+  ['duration_5ftype_10683',['duration_type',['../classeagine_1_1referencing__timeout.html#a80815797b00929776ab43d6897ce61ee',1,'eagine::referencing_timeout::duration_type()'],['../classeagine_1_1timeout.html#a4ec2d0006927426dec906d56615a75d8',1,'eagine::timeout::duration_type()']]]
 ];

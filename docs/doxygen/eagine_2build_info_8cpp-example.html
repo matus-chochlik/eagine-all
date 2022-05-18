@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/build_info.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,57 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="home_2matus__chochlik_2Code_2eagine-all_2submodules_2eagine-core_2include_2eagine_2build__info_8hpp.html">eagine/build_info.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2compiler__info_8hpp.html">eagine/compiler_info.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="console_8hpp.html">eagine/console/console.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2main_8hpp.html">eagine/main.hpp</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(main_ctx&amp; ctx) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <span class="keyword">const</span> std::string na{<span class="stringliteral">&quot;N/A&quot;</span>};</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">auto</span>&amp; compiler = ctx.compiler();</div>
+<div class="line">    <span class="keyword">auto</span>&amp; build = ctx.build();</div>
+<div class="line"> </div>
+<div class="line">    ctx.cio()</div>
+<div class="line">      .print(<a name="a0"></a><a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(build), <span class="stringliteral">&quot;architecture: ${arch}&quot;</span>)</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(arch), <a name="a1"></a><a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(compiler.architecture_name(), na));</div>
+<div class="line">    ctx.cio()</div>
+<div class="line">      .print(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(build), <span class="stringliteral">&quot;compiler name: ${name}&quot;</span>)</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(name), <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(compiler.name(), na));</div>
+<div class="line"> </div>
+<div class="line">    ctx.cio()</div>
+<div class="line">      .print(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(build), <span class="stringliteral">&quot;compiler version: ${major}.${minor}.${patch}&quot;</span>)</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(major), <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(compiler.version_major(), na))</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(minor), <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(compiler.version_minor(), na))</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(patch), <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(compiler.version_patch(), na));</div>
+<div class="line"> </div>
+<div class="line">    ctx.cio()</div>
+<div class="line">      .print(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(build), <span class="stringliteral">&quot;build version: ${major}.${minor}.${patch}&quot;</span>)</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(major), <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(build.version_major(), na))</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(minor), <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(build.version_minor(), na))</div>
+<div class="line">      .arg(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(patch), <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(build.version_patch(), na));</div>
+<div class="line"> </div>
+<div class="line">    ctx.cio()</div>
+<div class="line">      .print(<a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(build), <span class="stringliteral">&quot;install prefix: ${path}&quot;</span>)</div>
+<div class="line">      .arg(</div>
+<div class="line">        <a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(path),</div>
+<div class="line">        <a class="code" href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a>(FsPath),</div>
+<div class="line">        <a class="code" href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">either_or</a>(build.install_prefix(), na));</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace eagine</span></div>
+<div class="ttc" id="aconsole_8hpp_html"><div class="ttname"><a href="console_8hpp.html">console.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2compiler__info_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2compiler__info_8hpp.html">compiler_info.hpp</a></div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2main_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2main_8hpp.html">main.hpp</a></div></div>
+<div class="ttc" id="agroup__identifiers_html_ga5811da4ab8e76916f5fad61d7c13d01f"><div class="ttname"><a href="group__identifiers.html#ga5811da4ab8e76916f5fad61d7c13d01f">EAGINE_ID</a></div><div class="ttdeci">#define EAGINE_ID(NAME)</div><div class="ttdoc">Macro for constructing instances of eagine::identifier.</div><div class="ttdef"><b>Definition:</b> identifier.hpp:368</div></div>
+<div class="ttc" id="agroup__valid__if_html_gad46d1f9ac83e8634b9cbfb7e96ea3fd5"><div class="ttname"><a href="group__valid__if.html#gad46d1f9ac83e8634b9cbfb7e96ea3fd5">eagine::either_or</a></div><div class="ttdeci">static auto either_or(basic_valid_if&lt; T, P, L &gt; vi, F f) noexcept(noexcept(basic_valid_if&lt; T, P, L &gt;(std::declval&lt; basic_valid_if&lt; T, P, L &gt; &amp;&amp; &gt;())) &amp;&amp;noexcept(F(std::declval&lt; F &amp;&amp; &gt;()))) -&gt; valid_if_or_fallback&lt; F, T, P, L &gt;</div><div class="ttdoc">Constructor function for valid_if_or_fallback.</div><div class="ttdef"><b>Definition:</b> decl.hpp:83</div></div>
+<div class="ttc" id="ahome_2matus__chochlik_2Code_2eagine-all_2submodules_2eagine-core_2include_2eagine_2build__info_8hpp_html"><div class="ttname"><a href="home_2matus__chochlik_2Code_2eagine-all_2submodules_2eagine-core_2include_2eagine_2build__info_8hpp.html">build_info.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

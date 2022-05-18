@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/serialize/packed_block_sink.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,37 +73,50 @@ $(function() {
 <div class="title">packed_block_sink.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="packed__block__sink_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_SERIALIZE_PACKED_BLOCK_SINK_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_SERIALIZE_PACKED_BLOCK_SINK_HPP</span></div>
+<a href="packed__block__sink_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_SERIALIZE_PACKED_BLOCK_SINK_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_SERIALIZE_PACKED_BLOCK_SINK_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../compression.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="block__sink_8hpp.html">block_sink.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../compression.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="block__sink_8hpp.html">&quot;block_sink.hpp&quot;</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classeagine_1_1packed__block__data__sink.html">   21</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classeagine_1_1packed__block__data__sink.html">packed_block_data_sink</a> : <span class="keyword">public</span> <a class="code" href="classeagine_1_1block__data__sink.html">block_data_sink</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @brief Packing serialization data sink backed by a pre-allocated memory block.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/// @ingroup serialization</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/// @see packed_block_data_source</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/// @see data_compressor</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classeagine_1_1packed__block__data__sink.html">   21</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classeagine_1_1packed__block__data__sink.html">packed_block_data_sink</a> : <span class="keyword">public</span> <a class="code" href="classeagine_1_1block__data__sink.html">block_data_sink</a> {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">   24</a></span>&#160;    <a class="code" href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">packed_block_data_sink</a>() noexcept = default;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/// @brief Default constructor.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">   24</a></span>&#160;    <a class="code" href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">packed_block_data_sink</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">   27</a></span>&#160;    <a class="code" href="classeagine_1_1packed__block__data__sink.html">packed_block_data_sink</a>(</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">/// @brief Constructor setting the backing block and data compressor.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">   27</a></span>&#160;    <a class="code" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">packed_block_data_sink</a>(</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <a class="code" href="classeagine_1_1data__compressor.html">data_compressor</a> compressor,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      const memory::<a class="code" href="group__memory.html#ga5dd5ce1a14209336eb031bc930d736f4">block</a> dst) noexcept</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      : <a class="code" href="classeagine_1_1block__data__sink.html">block_data_sink</a>{dst}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      , _compressor{std::move(compressor)} {}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keyword">const</span> memory::block dst) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      : <a class="code" href="classeagine_1_1block__data__sink.html">block_data_sink</a><a class="code" href="classeagine_1_1block__data__sink.html#a3b28bd36cefc71ceb99df45fd8de7985">{</a>dst<a class="code" href="classeagine_1_1block__data__sink.html#a3b28bd36cefc71ceb99df45fd8de7985">}</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      , <a class="code" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">_compressor</a>{<a class="code" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">std</a>::<a class="code" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">move</a>(<a class="code" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">compressor</a>)} {}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">packed_block_data_sink</a>(<span class="keyword">const</span> <a class="code" href="group__memory.html#ga5dd5ce1a14209336eb031bc930d736f4">memory::block</a> dst) noexcept</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      : <a class="code" href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">packed_block_data_sink</a>{{}, dst} {}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    packed_block_data_sink(<span class="keyword">const</span> memory::block dst) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      : <a class="code" href="classeagine_1_1packed__block__data__sink.html">packed_block_data_sink</a><a class="code" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">{</a><a class="code" href="classeagine_1_1data__compressor.html#a96bbb1876df92635efc52353b9c64dee">{</a><a class="code" href="classeagine_1_1data__compressor.html#a96bbb1876df92635efc52353b9c64dee">}</a><a class="code" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">,</a> dst<a class="code" href="classeagine_1_1packed__block__data__sink.html#ab9e6b5c456fe56b4a52724ef06199d6a">}</a> {}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">packed_block_data_sink</a>(data_compressor compressor) noexcept</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      : <a class="code" href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">packed_block_data_sink</a>{std::move(compressor), {}} {}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    packed_block_data_sink(<a class="code" href="classeagine_1_1data__compressor.html">data_compressor</a> compressor) <span class="keyword">noexcept</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      : packed_block_data_sink{std::move(compressor), {}} {}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classeagine_1_1packed__block__data__sink.html#aa69a79f745ccb0508b2f5b11e92b2833">   39</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1packed__block__data__sink.html#aa69a79f745ccb0508b2f5b11e92b2833">finalize</a>() noexcept -&gt; <a class="code" href="classeagine_1_1bitfield.html">serialization_errors</a> final {</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classeagine_1_1packed__block__data__sink.html#aa69a79f745ccb0508b2f5b11e92b2833">   39</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classeagine_1_1packed__block__data__sink.html#aa69a79f745ccb0508b2f5b11e92b2833">finalize</a>() <span class="keyword">noexcept</span> -&gt; serialization_errors <span class="keyword">final</span> {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span>(<span class="keyword">const</span> <span class="keyword">auto</span> packed{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;             _compressor.<a class="code" href="classeagine_1_1data__compressor.html#abfa727a0d505731b28ffc5a1fd7417b5">compress</a>(<a class="code" href="classeagine_1_1block__data__sink.html#aa83c1a3382952caa03e7d4c4a76ead23">done</a>(), <a class="code" href="group__main__context.html#ggad59fd8604fb2c5cc5dad36fe0b5f4634afea087517c26fadd409bd4b9dc642555">data_compression_level::normal</a>)}) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classeagine_1_1block__data__sink.html#a2bb8e4b9374e70a3a62ace1e07b0c40b">replace_with</a>(packed);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;             _compressor.compress(done(), data_compression_level::normal)}) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>-&gt;replace_with(packed);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="group__serialization.html#ggafee717c442dcb978e0d9e9c163be4024a16d66afab4306c18516ebaa8e9060ec7">serialization_error_code::backend_error</a>};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> {serialization_error_code::backend_error};</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
@@ -112,21 +125,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_SERIALIZE_PACKED_BLOCK_SINK_HPP</span></div>
-<div class="ttc" id="ablock__sink_8hpp_html"><div class="ttname"><a href="block__sink_8hpp.html">block_sink.hpp</a></div></div>
-<div class="ttc" id="aclasseagine_1_1bitfield_html"><div class="ttname"><a href="classeagine_1_1bitfield.html">eagine::bitfield</a></div><div class="ttdoc">Class for manipulating and testing a group of enumeration-based bits.</div><div class="ttdef"><b>Definition:</b> bitfield.hpp:19</div></div>
-<div class="ttc" id="aclasseagine_1_1block__data__sink_html"><div class="ttname"><a href="classeagine_1_1block__data__sink.html">eagine::block_data_sink</a></div><div class="ttdoc">Serialization data sink backed by a pre-allocated memory block.</div><div class="ttdef"><b>Definition:</b> block_sink.hpp:23</div></div>
-<div class="ttc" id="aclasseagine_1_1block__data__sink_html_a2bb8e4b9374e70a3a62ace1e07b0c40b"><div class="ttname"><a href="classeagine_1_1block__data__sink.html#a2bb8e4b9374e70a3a62ace1e07b0c40b">eagine::block_data_sink::replace_with</a></div><div class="ttdeci">auto replace_with(const memory::const_block blk) noexcept -&gt; serialization_errors</div><div class="ttdoc">Replaces the content of the backing block with the content of the argument.</div><div class="ttdef"><b>Definition:</b> block_sink.hpp:87</div></div>
-<div class="ttc" id="aclasseagine_1_1block__data__sink_html_aa83c1a3382952caa03e7d4c4a76ead23"><div class="ttname"><a href="classeagine_1_1block__data__sink.html#aa83c1a3382952caa03e7d4c4a76ead23">eagine::block_data_sink::done</a></div><div class="ttdeci">auto done() const noexcept -&gt; memory::block</div><div class="ttdoc">Returns the part of the backing block already written to.</div><div class="ttdef"><b>Definition:</b> block_sink.hpp:43</div></div>
-<div class="ttc" id="aclasseagine_1_1data__compressor_html"><div class="ttname"><a href="classeagine_1_1data__compressor.html">eagine::data_compressor</a></div><div class="ttdoc">Class implementing data compression and decompresson.</div><div class="ttdef"><b>Definition:</b> compression.hpp:37</div></div>
-<div class="ttc" id="aclasseagine_1_1data__compressor_html_abfa727a0d505731b28ffc5a1fd7417b5"><div class="ttname"><a href="classeagine_1_1data__compressor.html#abfa727a0d505731b28ffc5a1fd7417b5">eagine::data_compressor::compress</a></div><div class="ttdeci">auto compress(const memory::const_block input, const data_handler &amp;handler, const data_compression_level level) noexcept -&gt; bool</div><div class="ttdoc">Compress the input block, passing the packed data to handler.</div><div class="ttdef"><b>Definition:</b> compression.inl:297</div></div>
-<div class="ttc" id="aclasseagine_1_1packed__block__data__sink_html"><div class="ttname"><a href="classeagine_1_1packed__block__data__sink.html">eagine::packed_block_data_sink</a></div><div class="ttdoc">Packing serialization data sink backed by a pre-allocated memory block.</div><div class="ttdef"><b>Definition:</b> packed_block_sink.hpp:21</div></div>
-<div class="ttc" id="aclasseagine_1_1packed__block__data__sink_html_aa69a79f745ccb0508b2f5b11e92b2833"><div class="ttname"><a href="classeagine_1_1packed__block__data__sink.html#aa69a79f745ccb0508b2f5b11e92b2833">eagine::packed_block_data_sink::finalize</a></div><div class="ttdeci">auto finalize() noexcept -&gt; serialization_errors final</div><div class="ttdoc">Does additional finalization, like compression after serialization operation.</div><div class="ttdef"><b>Definition:</b> packed_block_sink.hpp:39</div></div>
-<div class="ttc" id="aclasseagine_1_1packed__block__data__sink_html_aa8e1146534075929be0b553140cbc26e"><div class="ttname"><a href="classeagine_1_1packed__block__data__sink.html#aa8e1146534075929be0b553140cbc26e">eagine::packed_block_data_sink::packed_block_data_sink</a></div><div class="ttdeci">packed_block_data_sink() noexcept=default</div><div class="ttdoc">Default constructor.</div></div>
-<div class="ttc" id="agroup__main__context_html_ggad59fd8604fb2c5cc5dad36fe0b5f4634afea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="group__main__context.html#ggad59fd8604fb2c5cc5dad36fe0b5f4634afea087517c26fadd409bd4b9dc642555">eagine::data_compression_level::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdoc">Normal compression level.</div></div>
-<div class="ttc" id="agroup__memory_html_ga5dd5ce1a14209336eb031bc930d736f4"><div class="ttname"><a href="group__memory.html#ga5dd5ce1a14209336eb031bc930d736f4">eagine::memory::block</a></div><div class="ttdeci">basic_block&lt; false &gt; block</div><div class="ttdoc">Alias for non-const byte memory span.</div><div class="ttdef"><b>Definition:</b> block.hpp:27</div></div>
-<div class="ttc" id="agroup__serialization_html_ggafee717c442dcb978e0d9e9c163be4024a16d66afab4306c18516ebaa8e9060ec7"><div class="ttname"><a href="group__serialization.html#ggafee717c442dcb978e0d9e9c163be4024a16d66afab4306c18516ebaa8e9060ec7">eagine::serialization_error_code::backend_error</a></div><div class="ttdeci">@ backend_error</div><div class="ttdoc">Internal error in the serialization backend.</div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_SERIALIZE_PACKED_BLOCK_SINK_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

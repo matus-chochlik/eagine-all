@@ -1,11 +1,22 @@
 var searchData=
 [
-  ['element_5ftype_3146',['element_type',['../structeagine_1_1math_1_1matrix.html#a0541975e5f69cf19e4d611b3a7659288',1,'eagine::math::matrix']]],
-  ['enable_5fif_5fconvertible_3147',['enable_if_convertible',['../classeagine_1_1memory_1_1basic__offset__ptr.html#a1e773532247a457fffd5353033a40fed',1,'eagine::memory::basic_offset_ptr']]],
-  ['encoding_3148',['encoding',['../classeagine_1_1basic__identifier.html#a6f354871851785d66ae6f76e6343ebc8',1,'eagine::basic_identifier']]],
-  ['entry_5ftype_3149',['entry_type',['../classeagine_1_1basic__logger.html#a1de4f4dcc37423c07adea19357e75813',1,'eagine::basic_logger::entry_type()'],['../classeagine_1_1named__logging__object.html#ab0ce9db86aed6e4c909ff85bf643a8bc',1,'eagine::named_logging_object::entry_type()']]],
-  ['enum_5fclass_5farray_3150',['enum_class_array',['../group__c__api__wrap.html#ga79eabbc68fe3d1905e96f3fe29b69adb',1,'eagine::c_api']]],
-  ['enum_5fclass_5fspan_3151',['enum_class_span',['../group__c__api__wrap.html#gac3df71ff5a2e8568114a97475eb89590',1,'eagine::c_api']]],
-  ['enum_5fclass_5fview_3152',['enum_class_view',['../group__c__api__wrap.html#gaba454b9d8e68176b2f6592bb905d2113',1,'eagine::c_api']]],
-  ['extracted_5ftype_5ft_3153',['extracted_type_t',['../namespaceeagine.html#a8a35b3e19950f87bec9082de91290511',1,'eagine']]]
+  ['egl_5fany_5fenum_5fclass_10684',['egl_any_enum_class',['../group__egl__api__wrap.html#ga104c83876dd001a891640ed45ce9cc46',1,'eagine::eglplus']]],
+  ['egl_5fany_5fenum_5fvalue_10685',['egl_any_enum_value',['../group__egl__api__wrap.html#ga7f942f03deb1444d683d2c83db54af83',1,'eagine::eglplus']]],
+  ['egl_5fapi_10686',['egl_api',['../group__egl__api__wrap.html#ga0736555608c8cd48575fe55ef513c22b',1,'eagine::eglplus']]],
+  ['egl_5fapi_5ffunction_10687',['egl_api_function',['../classeagine_1_1eglplus_1_1basic__egl__c__api.html#a435d33da3754e66a1dfb84ce34a5c6f8',1,'eagine::eglplus::basic_egl_c_api']]],
+  ['egl_5fc_5fapi_10688',['egl_c_api',['../group__egl__api__wrap.html#gad16999f8835d8a84adca8e02b038ca31',1,'eagine::eglplus']]],
+  ['egl_5fint_5fclass_10689',['egl_int_class',['../group__egl__api__wrap.html#ga31a3ef53eaaa483ccd4fe176a0ed91d7',1,'eagine::eglplus']]],
+  ['egl_5fno_5fresult_10690',['egl_no_result',['../group__egl__api__wrap.html#ga677d7628964d2da7c502fd73668e495e',1,'eagine::eglplus']]],
+  ['egl_5fopt_5fresult_10691',['egl_opt_result',['../group__gl__api__wrap.html#ga4a232d038f5cc0856f210d091b7710c2',1,'eagine::eglplus']]],
+  ['egl_5fresult_10692',['egl_result',['../group__egl__api__wrap.html#ga46d92e4a8080fc31c77740003f30f6bf',1,'eagine::eglplus']]],
+  ['element_5ftype_10693',['element_type',['../structeagine_1_1math_1_1matrix.html#a0541975e5f69cf19e4d611b3a7659288',1,'eagine::math::matrix']]],
+  ['enable_5fif_5fconvertible_10694',['enable_if_convertible',['../classeagine_1_1memory_1_1basic__offset__ptr.html#a1e773532247a457fffd5353033a40fed',1,'eagine::memory::basic_offset_ptr']]],
+  ['encoding_10695',['encoding',['../classeagine_1_1basic__identifier.html#a6f354871851785d66ae6f76e6343ebc8',1,'eagine::basic_identifier']]],
+  ['entry_5ftype_10696',['entry_type',['../classeagine_1_1named__logging__object.html#ab0ce9db86aed6e4c909ff85bf643a8bc',1,'eagine::named_logging_object::entry_type()'],['../classeagine_1_1basic__logger.html#a1de4f4dcc37423c07adea19357e75813',1,'eagine::basic_logger::entry_type()']]],
+  ['enum_5fclass_5farray_10697',['enum_class_array',['../group__c__api__wrap.html#ga79eabbc68fe3d1905e96f3fe29b69adb',1,'eagine::c_api']]],
+  ['enum_5fclass_5fspan_10698',['enum_class_span',['../group__c__api__wrap.html#gac3df71ff5a2e8568114a97475eb89590',1,'eagine::c_api']]],
+  ['enum_5fclass_5fview_10699',['enum_class_view',['../group__c__api__wrap.html#gaba454b9d8e68176b2f6592bb905d2113',1,'eagine::c_api']]],
+  ['enum_5ftype_10700',['enum_type',['../classeagine_1_1oalplus_1_1basic__alut__c__api.html#adf9eccf1128d92f48a9683c59383602d',1,'eagine::oalplus::basic_alut_c_api::enum_type()'],['../structeagine_1_1oalplus_1_1alut__types.html#a23521cc0050097943523b54e32dcd1e6',1,'eagine::oalplus::alut_types::enum_type()'],['../classeagine_1_1oalplus_1_1basic__al__c__api.html#a104ff3197ed3b1ae050e09a6cef09ed9',1,'eagine::oalplus::basic_al_c_api::enum_type()'],['../classeagine_1_1oglplus_1_1basic__gl__c__api.html#a3fdd37d950cd8393260b1afb06186149',1,'eagine::oglplus::basic_gl_c_api::enum_type()'],['../classeagine_1_1eglplus_1_1basic__egl__c__api.html#adee4fb00f515e489a6b365d02f96a6e0',1,'eagine::eglplus::basic_egl_c_api::enum_type()'],['../classeagine_1_1oalplus_1_1basic__alc__c__api.html#a885ff7f8bb33933a26e9c9d36de9635a',1,'eagine::oalplus::basic_alc_c_api::enum_type()']]],
+  ['extension_10701',['extension',['../classeagine_1_1oglplus_1_1basic__gl__operations.html#a632364720302a36b76f75c3c3fe6ac7d',1,'eagine::oglplus::basic_gl_operations']]],
+  ['extracted_5ftype_5ft_10702',['extracted_type_t',['../namespaceeagine.html#a8a35b3e19950f87bec9082de91290511',1,'eagine']]]
 ];

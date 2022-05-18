@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Metaprogramming utilities</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -77,7 +77,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1instead__of.html">eagine::instead_of&lt; Src, Dst &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1type__identity.html">eagine::type_identity&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template type used mostly for function type-tag dispatching.  <a href="structeagine_1_1type__identity.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1get__type.html">eagine::get_type&lt; T, F &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation detail of the <code>type_t</code> template.  <a href="structeagine_1_1get__type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1selector.html">eagine::selector&lt; V &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template used to construct tag-types used mostly in tag-dispatching.  <a href="structeagine_1_1selector.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1mp__plus.html">eagine::mp_plus&lt; T1, T2 &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of addition on types representing numbers.  <a href="structeagine_1_1mp__plus.html#details">More...</a><br /></td></tr>
@@ -100,21 +107,25 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1mp__union__add.html">eagine::mp_union_add&lt; TL1, TL2, TL3 &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the union operation on compile-time type lists.  <a href="structeagine_1_1mp__union__add.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1selector.html">eagine::selector&lt; V &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template used to construct tag-types used mostly in tag-dispatching.  <a href="structeagine_1_1selector.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1type__identity.html">eagine::type_identity&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template type used mostly for function type-tag dispatching.  <a href="structeagine_1_1type__identity.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1get__type.html">eagine::get_type&lt; T, F &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation detail of the <code>type_t</code> template.  <a href="structeagine_1_1get__type.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeagine_1_1instead__of.html">eagine::instead_of&lt; Src, Dst &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga33288aed9c58cecfbfa62110d8f29c51"><td class="memTemplParams" colspan="2">template&lt;typename Src , typename Dst &gt; </td></tr>
-<tr class="memitem:ga33288aed9c58cecfbfa62110d8f29c51"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga33288aed9c58cecfbfa62110d8f29c51">eagine::instead_of_t</a> = typename <a class="el" href="structeagine_1_1instead__of.html">instead_of</a>&lt; Src, Dst &gt;::type</td></tr>
-<tr class="separator:ga33288aed9c58cecfbfa62110d8f29c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6ca906d4776d7049ba0e0a6d11b06ff"><td class="memTemplParams" colspan="2"><a id="gaa6ca906d4776d7049ba0e0a6d11b06ff"></a>
+template&lt;typename T , typename F  = void&gt; </td></tr>
+<tr class="memitem:gaa6ca906d4776d7049ba0e0a6d11b06ff"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gaa6ca906d4776d7049ba0e0a6d11b06ff">eagine::type_t</a> = typename <a class="el" href="structeagine_1_1get__type.html">get_type</a>&lt; T, F &gt;::type</td></tr>
+<tr class="memdesc:gaa6ca906d4776d7049ba0e0a6d11b06ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template returning nested alias <code>type</code> of type <code>T</code> or <code>void</code>. <br /></td></tr>
+<tr class="separator:gaa6ca906d4776d7049ba0e0a6d11b06ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8fd014e7784f3ed1e8236c92455434b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gaf8fd014e7784f3ed1e8236c92455434b">eagine::default_selector_t</a> = <a class="el" href="structeagine_1_1selector.html">selector</a>&lt; 0U &gt;</td></tr>
+<tr class="memdesc:gaf8fd014e7784f3ed1e8236c92455434b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for the default overload selector type.  <a href="group__metaprogramming.html#gaf8fd014e7784f3ed1e8236c92455434b">More...</a><br /></td></tr>
+<tr class="separator:gaf8fd014e7784f3ed1e8236c92455434b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3457cb5bd31ad02372e8c0676902972"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972">eagine::construct_from_t</a> = <a class="el" href="structeagine_1_1selector.html">selector</a>&lt; 0xFU &gt;</td></tr>
+<tr class="memdesc:gae3457cb5bd31ad02372e8c0676902972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for the construct-from tag-dispatch selector.  <a href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972">More...</a><br /></td></tr>
+<tr class="separator:gae3457cb5bd31ad02372e8c0676902972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03d75b9aa52ca00efedd7c853c5134ca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga03d75b9aa52ca00efedd7c853c5134ca">eagine::immediate_function_t</a> = <a class="el" href="structeagine_1_1selector.html">selector</a>&lt; 0x1FU &gt;</td></tr>
+<tr class="memdesc:ga03d75b9aa52ca00efedd7c853c5134ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for immediate function selector.  <a href="group__metaprogramming.html#ga03d75b9aa52ca00efedd7c853c5134ca">More...</a><br /></td></tr>
+<tr class="separator:ga03d75b9aa52ca00efedd7c853c5134ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaac647badb9681c0392872b321617155f"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
 <tr class="memitem:gaac647badb9681c0392872b321617155f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gaac647badb9681c0392872b321617155f">eagine::mp_plus_t</a> = typename <a class="el" href="structeagine_1_1mp__plus.html">mp_plus</a>&lt; T1, T2 &gt;::type</td></tr>
 <tr class="memdesc:gaac647badb9681c0392872b321617155f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition operation on types representing numbers.  <a href="group__metaprogramming.html#gaac647badb9681c0392872b321617155f">More...</a><br /></td></tr>
@@ -139,20 +150,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga619b5fba5162458e9e18d945ebbadc5e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga619b5fba5162458e9e18d945ebbadc5e">eagine::mp_union_t</a> = typename <a class="el" href="group__metaprogramming.html#gaf1c08552bbcbecabb88046f94f8e726b">mp_union</a>&lt; TL1, TL2 &gt;::type</td></tr>
 <tr class="memdesc:ga619b5fba5162458e9e18d945ebbadc5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trait returning the union of types in two type lists.  <a href="group__metaprogramming.html#ga619b5fba5162458e9e18d945ebbadc5e">More...</a><br /></td></tr>
 <tr class="separator:ga619b5fba5162458e9e18d945ebbadc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf8fd014e7784f3ed1e8236c92455434b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gaf8fd014e7784f3ed1e8236c92455434b">eagine::default_selector_t</a> = <a class="el" href="structeagine_1_1selector.html">selector</a>&lt; 0U &gt;</td></tr>
-<tr class="memdesc:gaf8fd014e7784f3ed1e8236c92455434b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for the default overload selector type.  <a href="group__metaprogramming.html#gaf8fd014e7784f3ed1e8236c92455434b">More...</a><br /></td></tr>
-<tr class="separator:gaf8fd014e7784f3ed1e8236c92455434b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae3457cb5bd31ad02372e8c0676902972"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972">eagine::construct_from_t</a> = <a class="el" href="structeagine_1_1selector.html">selector</a>&lt; 0xFU &gt;</td></tr>
-<tr class="memdesc:gae3457cb5bd31ad02372e8c0676902972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for the construct-from tag-dispatch selector.  <a href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972">More...</a><br /></td></tr>
-<tr class="separator:gae3457cb5bd31ad02372e8c0676902972"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga03d75b9aa52ca00efedd7c853c5134ca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga03d75b9aa52ca00efedd7c853c5134ca">eagine::immediate_function_t</a> = <a class="el" href="structeagine_1_1selector.html">selector</a>&lt; 0x1FU &gt;</td></tr>
-<tr class="memdesc:ga03d75b9aa52ca00efedd7c853c5134ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for immediate function selector.  <a href="group__metaprogramming.html#ga03d75b9aa52ca00efedd7c853c5134ca">More...</a><br /></td></tr>
-<tr class="separator:ga03d75b9aa52ca00efedd7c853c5134ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa6ca906d4776d7049ba0e0a6d11b06ff"><td class="memTemplParams" colspan="2"><a id="gaa6ca906d4776d7049ba0e0a6d11b06ff"></a>
-template&lt;typename T , typename F  = void&gt; </td></tr>
-<tr class="memitem:gaa6ca906d4776d7049ba0e0a6d11b06ff"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gaa6ca906d4776d7049ba0e0a6d11b06ff">eagine::type_t</a> = typename <a class="el" href="structeagine_1_1get__type.html">get_type</a>&lt; T, F &gt;::type</td></tr>
-<tr class="memdesc:gaa6ca906d4776d7049ba0e0a6d11b06ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template returning nested alias <code>type</code> of type <code>T</code> or <code>void</code>. <br /></td></tr>
-<tr class="separator:gaa6ca906d4776d7049ba0e0a6d11b06ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33288aed9c58cecfbfa62110d8f29c51"><td class="memTemplParams" colspan="2">template&lt;typename Src , typename Dst &gt; </td></tr>
+<tr class="memitem:ga33288aed9c58cecfbfa62110d8f29c51"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga33288aed9c58cecfbfa62110d8f29c51">eagine::instead_of_t</a> = typename <a class="el" href="structeagine_1_1instead__of.html">instead_of</a>&lt; Src, Dst &gt;::type</td></tr>
+<tr class="separator:ga33288aed9c58cecfbfa62110d8f29c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -164,6 +164,15 @@ template&lt;typename T &gt; </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:gabca59eaccd8c5421e53e824bf3db09ab"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="group__metaprogramming.html#gaf8fd014e7784f3ed1e8236c92455434b">default_selector_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gabca59eaccd8c5421e53e824bf3db09ab">eagine::default_selector</a></td></tr>
+<tr class="memdesc:gabca59eaccd8c5421e53e824bf3db09ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default overload selector constant.  <a href="group__metaprogramming.html#gabca59eaccd8c5421e53e824bf3db09ab">More...</a><br /></td></tr>
+<tr class="separator:gabca59eaccd8c5421e53e824bf3db09ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a036d64c1fd49335cc8ca2e2b01c1a7"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972">construct_from_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">eagine::construct_from</a></td></tr>
+<tr class="memdesc:ga4a036d64c1fd49335cc8ca2e2b01c1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The construct-from tag-dispatch constant.  <a href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">More...</a><br /></td></tr>
+<tr class="separator:ga4a036d64c1fd49335cc8ca2e2b01c1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02a7bac397ce2ed48bc0bb51b7278d5d"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="group__metaprogramming.html#ga03d75b9aa52ca00efedd7c853c5134ca">immediate_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga02a7bac397ce2ed48bc0bb51b7278d5d">eagine::immediate_function</a></td></tr>
+<tr class="memdesc:ga02a7bac397ce2ed48bc0bb51b7278d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The use immediate function tag-dispatch constant.  <a href="group__metaprogramming.html#ga02a7bac397ce2ed48bc0bb51b7278d5d">More...</a><br /></td></tr>
+<tr class="separator:ga02a7bac397ce2ed48bc0bb51b7278d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6a0fb0f1ef73b0d276884fa539f9e68f"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
 <tr class="memitem:ga6a0fb0f1ef73b0d276884fa539f9e68f"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga6a0fb0f1ef73b0d276884fa539f9e68f">eagine::mp_plus_v</a></td></tr>
 <tr class="memdesc:ga6a0fb0f1ef73b0d276884fa539f9e68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition operation on types representing numbers.  <a href="group__metaprogramming.html#ga6a0fb0f1ef73b0d276884fa539f9e68f">More...</a><br /></td></tr>
@@ -184,15 +193,6 @@ Variables</h2></td></tr>
 <tr class="memitem:ga7c6ff4eb5827e99a988979cc18a90e07"><td class="memTemplItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga7c6ff4eb5827e99a988979cc18a90e07">eagine::mp_contains_v</a></td></tr>
 <tr class="memdesc:ga7c6ff4eb5827e99a988979cc18a90e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trait indicating whether a type list contains a specified type.  <a href="group__metaprogramming.html#ga7c6ff4eb5827e99a988979cc18a90e07">More...</a><br /></td></tr>
 <tr class="separator:ga7c6ff4eb5827e99a988979cc18a90e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabca59eaccd8c5421e53e824bf3db09ab"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="group__metaprogramming.html#gaf8fd014e7784f3ed1e8236c92455434b">default_selector_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#gabca59eaccd8c5421e53e824bf3db09ab">eagine::default_selector</a></td></tr>
-<tr class="memdesc:gabca59eaccd8c5421e53e824bf3db09ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default overload selector constant.  <a href="group__metaprogramming.html#gabca59eaccd8c5421e53e824bf3db09ab">More...</a><br /></td></tr>
-<tr class="separator:gabca59eaccd8c5421e53e824bf3db09ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4a036d64c1fd49335cc8ca2e2b01c1a7"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972">construct_from_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">eagine::construct_from</a></td></tr>
-<tr class="memdesc:ga4a036d64c1fd49335cc8ca2e2b01c1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The construct-from tag-dispatch constant.  <a href="group__metaprogramming.html#ga4a036d64c1fd49335cc8ca2e2b01c1a7">More...</a><br /></td></tr>
-<tr class="separator:ga4a036d64c1fd49335cc8ca2e2b01c1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga02a7bac397ce2ed48bc0bb51b7278d5d"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="group__metaprogramming.html#ga03d75b9aa52ca00efedd7c853c5134ca">immediate_function_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaprogramming.html#ga02a7bac397ce2ed48bc0bb51b7278d5d">eagine::immediate_function</a></td></tr>
-<tr class="memdesc:ga02a7bac397ce2ed48bc0bb51b7278d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The use immediate function tag-dispatch constant.  <a href="group__metaprogramming.html#ga02a7bac397ce2ed48bc0bb51b7278d5d">More...</a><br /></td></tr>
-<tr class="separator:ga02a7bac397ce2ed48bc0bb51b7278d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -405,8 +405,10 @@ template&lt;typename TL1 , typename TL2 &gt; </div>
 
 <p>The construct-from tag-dispatch constant. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__metaprogramming.html#gae3457cb5bd31ad02372e8c0676902972" title="Type alias for the construct-from tag-dispatch selector.">construct_from_t</a> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="eagine_2bindump_8cpp-example.html#a3">eagine/bindump.cpp</a>, <a class="el" href="eagine_2c_api_wrap_8cpp-example.html#a8">eagine/c_api_wrap.cpp</a>, <a class="el" href="eagine_2ecs_2elements_2main_decay_chain_8cpp-example.html#a2">eagine/ecs/elements/main_decay_chain.cpp</a>, <a class="el" href="eagine_2for_each_triangle_8cpp-example.html#a9">eagine/for_each_triangle.cpp</a>, <a class="el" href="eagine_2hexdump_8cpp-example.html#a3">eagine/hexdump.cpp</a>, <a class="el" href="eagine_2msgbus_2001_signal_8cpp-example.html#a2">eagine/msgbus/001_signal.cpp</a>, <a class="el" href="eagine_2msgbus_2006_file_histogram_8cpp-example.html#a10">eagine/msgbus/006_file_histogram.cpp</a>, <a class="el" href="eagine_2msgbus_2015_stream_8cpp-example.html#a5">eagine/msgbus/015_stream.cpp</a>, <a class="el" href="eagine_2progress_8cpp-example.html#a7">eagine/progress.cpp</a>, <a class="el" href="eagine_2value_tree_8cpp-example.html#a9">eagine/value_tree.cpp</a>, <a class="el" href="eagine_2value_tree_overlay_8cpp-example.html#a10">eagine/value_tree_overlay.cpp</a>, <a class="el" href="oglplus_2009_occlusion_8cpp-example.html#a3">oglplus/009_occlusion.cpp</a>, and <a class="el" href="oglplus_2015_cloud_morphing_8cpp-example.html#a3">oglplus/015_cloud_morphing.cpp</a>.</dd>
+</dl>
 
-<p class="reference">Referenced by <a class="el" href="classeagine_1_1on__scope__exit.html#a8f7de334cd64cafa10cb128fdd18c7c9">eagine::on_scope_exit&lt; OnException &gt;::on_scope_exit()</a>, <a class="el" href="group__string__utils.html#ga018a789a9cc4e0b5e280187f8cc569c5">eagine::substitute_variables()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae7bbaaf5d281e77955352ae35424523f">eagine::valtree::compound::traverse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classeagine_1_1on__scope__exit.html#a8f7de334cd64cafa10cb128fdd18c7c9">eagine::on_scope_exit&lt; OnException &gt;::on_scope_exit()</a>, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue__acceptor.html#a004ffc7228b06ba8274a81ef10833495">eagine::msgbus::posix_mqueue_acceptor::process_accepted()</a>, <a class="el" href="structeagine_1_1shapes_1_1generator.html#a8a436715711d5cf698e5115e12b3ba38">eagine::shapes::generator::ray_intersections()</a>, <a class="el" href="group__string__utils.html#ga018a789a9cc4e0b5e280187f8cc569c5">eagine::substitute_variables()</a>, and <a class="el" href="classeagine_1_1valtree_1_1compound.html#ae7bbaaf5d281e77955352ae35424523f">eagine::valtree::compound::traverse()</a>.</p>
 
 </div>
 </div>

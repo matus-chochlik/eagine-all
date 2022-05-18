@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/valid_if/size_gt.hpp Source File</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -73,44 +73,52 @@ $(function() {
 <div class="title">size_gt.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="size__gt_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EAGINE_VALID_IF_SIZE_GT_HPP</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EAGINE_VALID_IF_SIZE_GT_HPP</span></div>
+<a href="size__gt_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/// @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/// Copyright Matus Chochlik.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">///  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">EAGINE_VALID_IF_SIZE_GT_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">EAGINE_VALID_IF_SIZE_GT_HPP</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="in__class_8hpp.html">in_class.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="in__class_8hpp.html">&quot;in_class.hpp&quot;</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceeagine.html">eagine</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span> <a class="code" href="namespaceeagine.html">eagine</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/// @brief Policy class for containers valid if their size is larger than specified number.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// @ingroup valid_if</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> C, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structeagine_1_1valid__if__size__gt__policy.html">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structeagine_1_1valid__if__size__gt__policy.html">valid_if_size_gt_policy</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structeagine_1_1valid__if__size__gt__policy.html">   19</a></span>&#160;<span class="keyword">struct</span> <a class="code" href="structeagine_1_1valid__if__size__gt__policy.html">valid_if_size_gt_policy</a> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structeagine_1_1valid__if__size__gt__policy.html#abd03232a41ea8188be4b57f38b5209c4">   22</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="structeagine_1_1valid__if__size__gt__policy.html#abd03232a41ea8188be4b57f38b5209c4">operator()</a>(<span class="keyword">const</span> C&amp; c, <span class="keyword">const</span> T s)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/// @brief Indicates value validity, true if c.size() &gt; s.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structeagine_1_1valid__if__size__gt__policy.html#abd03232a41ea8188be4b57f38b5209c4">   22</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="structeagine_1_1valid__if__size__gt__policy.html#abd03232a41ea8188be4b57f38b5209c4">operator</a>()(<span class="keyword">const</span> C&amp; c, <span class="keyword">const</span> T s) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> c.size() &gt; s;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">struct </span>do_log {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">struct</span> do_log {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> = disable_if_same_t&lt;X, do_log&gt;&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        constexpr do_log(X&amp;&amp;) noexcept {}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">constexpr</span> do_log(X&amp;&amp;) <span class="keyword">noexcept</span> {}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Log&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structeagine_1_1valid__if__size__gt__policy.html#abd03232a41ea8188be4b57f38b5209c4">operator()</a>(Log&amp; log, <span class="keyword">const</span> C&amp; c, <span class="keyword">const</span> T&amp; s)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> operator()(Log&amp; log, <span class="keyword">const</span> C&amp; c, <span class="keyword">const</span> T&amp; s) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            log &lt;&lt; <span class="stringliteral">&quot;Size &quot;</span> &lt;&lt; c.size() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;not greater than value &quot;</span> &lt;&lt; s &lt;&lt; <span class="stringliteral">&quot; is invalid&quot;</span>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/// @brief Specialization of valid_if, for values valid if they contain more than n items.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/// @ingroup valid_if</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/// @see valid_if_not_empty</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> C, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="group__valid__if.html#ga102a713a62ef831b369f8c17d4689bbf">   42</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classeagine_1_1basic__valid__if.html">valid_if_size_gt</a> = <a class="code" href="classeagine_1_1basic__valid__if.html">in_class_valid_if&lt;C, T, valid_if_size_gt_policy&lt;C, T&gt;</a>&gt;;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="group__valid__if.html#ga102a713a62ef831b369f8c17d4689bbf">   42</a></span>&#160;<span class="keyword">using</span> valid_if_size_gt = in_class_valid_if&lt;C, T, <a class="code" href="structeagine_1_1valid__if__size__gt__policy.html">valid_if_size_gt_policy</a>&lt;C, T&gt;&gt;;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace eagine</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EAGINE_VALID_IF_SIZE_GT_HPP</span></div>
-<div class="ttc" id="aclasseagine_1_1basic__valid__if_html"><div class="ttname"><a href="classeagine_1_1basic__valid__if.html">eagine::basic_valid_if</a></div><div class="ttdoc">Basic template for conditionally-valid values.</div><div class="ttdef"><b>Definition:</b> base.hpp:55</div></div>
-<div class="ttc" id="ain__class_8hpp_html"><div class="ttname"><a href="in__class_8hpp.html">in_class.hpp</a></div></div>
-<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> core.hpp:21</div></div>
-<div class="ttc" id="astructeagine_1_1valid__if__size__gt__policy_html"><div class="ttname"><a href="structeagine_1_1valid__if__size__gt__policy.html">eagine::valid_if_size_gt_policy</a></div><div class="ttdoc">Policy class for containers valid if their size is larger than specified number.</div><div class="ttdef"><b>Definition:</b> size_gt.hpp:19</div></div>
-<div class="ttc" id="astructeagine_1_1valid__if__size__gt__policy_html_abd03232a41ea8188be4b57f38b5209c4"><div class="ttname"><a href="structeagine_1_1valid__if__size__gt__policy.html#abd03232a41ea8188be4b57f38b5209c4">eagine::valid_if_size_gt_policy::operator()</a></div><div class="ttdeci">auto operator()(const C &amp;c, const T s) const</div><div class="ttdoc">Indicates value validity, true if c.size() &gt; s.</div><div class="ttdef"><b>Definition:</b> size_gt.hpp:22</div></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// EAGINE_VALID_IF_SIZE_GT_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <br/>
 <div id="eagine-bottom">

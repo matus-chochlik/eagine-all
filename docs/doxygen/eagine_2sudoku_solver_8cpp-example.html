@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>eagine/sudoku_solver.cpp</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -70,7 +70,73 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Copyright Matus Chochlik. Distributed under the Boost Software License, Version 1.0. See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a></p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="program__args_8hpp.html">eagine/program_args.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="eagine-core_2include_2eagine_2sudoku_8hpp.html">eagine/sudoku.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keywordtype">unsigned</span> S&gt;</div>
+<div class="line"><span class="keywordtype">void</span> solve_sudoku(<span class="keyword">const</span> <a name="_a0"></a><a class="code" href="classeagine_1_1program__args.html">eagine::program_args</a>&amp; args) {</div>
+<div class="line">    <span class="keyword">using namespace </span><a class="code" href="namespaceeagine.html">eagine</a>;</div>
+<div class="line">    <span class="keyword">const</span> default_sudoku_board_traits&lt;S&gt; traits;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">bool</span> tight = args.<a name="a1"></a><a class="code" href="classeagine_1_1program__args.html#ad3c3017d89ed405ae5a97f2a93d6121b">find</a>(<span class="stringliteral">&quot;--tight&quot;</span>);</div>
+<div class="line">    std::stack&lt;<span class="keyword">typename</span> decltype(traits)::board_type&gt; solutions;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(args.<a class="code" href="classeagine_1_1program__args.html#ad3c3017d89ed405ae5a97f2a93d6121b">find</a>(<span class="stringliteral">&quot;--gen-one&quot;</span>)) {</div>
+<div class="line">        solutions.push(traits.make_generator().generate_one());</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(args.<a class="code" href="classeagine_1_1program__args.html#ad3c3017d89ed405ae5a97f2a93d6121b">find</a>(<span class="stringliteral">&quot;--gen-few&quot;</span>)) {</div>
+<div class="line">        solutions.push(traits.make_generator().generate_few());</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(args.<a class="code" href="classeagine_1_1program__args.html#ad3c3017d89ed405ae5a97f2a93d6121b">find</a>(<span class="stringliteral">&quot;--gen-medium&quot;</span>)) {</div>
+<div class="line">        solutions.push(traits.make_generator().generate_medium());</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(args.<a class="code" href="classeagine_1_1program__args.html#ad3c3017d89ed405ae5a97f2a93d6121b">find</a>(<span class="stringliteral">&quot;--gen-many&quot;</span>)) {</div>
+<div class="line">        solutions.push(traits.make_generator().generate_many());</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        solutions.push(traits.make_diagonal());</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> print = [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; b) {</div>
+<div class="line">        (tight ? std::cout &lt;&lt; b.tight() : std::cout &lt;&lt; b) &lt;&lt; std::endl;</div>
+<div class="line">    };</div>
+<div class="line">    <span class="keyword">auto</span> board = solutions.top();</div>
+<div class="line">    print(board);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> done = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordflow">while</span>(!solutions.empty() &amp;&amp; !done) {</div>
+<div class="line">        print(board);</div>
+<div class="line">        board = solutions.top();</div>
+<div class="line">        solutions.pop();</div>
+<div class="line"> </div>
+<div class="line">        board.for_each_alternative(board.find_unsolved(), [&amp;](<span class="keyword">auto</span> candidate) {</div>
+<div class="line">            if(candidate.is_solved()) {</div>
+<div class="line">                print(board);</div>
+<div class="line">                done = true;</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                solutions.push(candidate);</div>
+<div class="line">            }</div>
+<div class="line">        });</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>** argv) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    <a class="code" href="classeagine_1_1program__args.html">eagine::program_args</a> args{argc, argv};</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(args.find(<span class="stringliteral">&quot;--4&quot;</span>)) {</div>
+<div class="line">        solve_sudoku&lt;4&gt;(args);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(args.find(<span class="stringliteral">&quot;--2&quot;</span>)) {</div>
+<div class="line">        solve_sudoku&lt;2&gt;(args);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        solve_sudoku&lt;3&gt;(args);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasseagine_1_1program__args_html"><div class="ttname"><a href="classeagine_1_1program__args.html">eagine::program_args</a></div><div class="ttdoc">Class wrapping the main function arguments, providing a convenient API.</div><div class="ttdef"><b>Definition:</b> program_args.hpp:606</div></div>
+<div class="ttc" id="aclasseagine_1_1program__args_html_ad3c3017d89ed405ae5a97f2a93d6121b"><div class="ttname"><a href="classeagine_1_1program__args.html#ad3c3017d89ed405ae5a97f2a93d6121b">eagine::program_args::find</a></div><div class="ttdeci">auto find(const string_view what) const noexcept -&gt; program_arg</div><div class="ttdoc">Finds and returns the argument with the specified value.</div><div class="ttdef"><b>Definition:</b> program_args.hpp:699</div></div>
+<div class="ttc" id="aeagine-core_2include_2eagine_2sudoku_8hpp_html"><div class="ttname"><a href="eagine-core_2include_2eagine_2sudoku_8hpp.html">sudoku.hpp</a></div></div>
+<div class="ttc" id="anamespaceeagine_html"><div class="ttname"><a href="namespaceeagine.html">eagine</a></div><div class="ttdoc">Common code is placed in this namespace.</div><div class="ttdef"><b>Definition:</b> app_config.inl:25</div></div>
+<div class="ttc" id="aprogram__args_8hpp_html"><div class="ttname"><a href="program__args_8hpp.html">program_args.hpp</a></div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <br/>
 <div id="eagine-bottom">
 <em>Copyright &copy; 2015-2022</em> <strong>Matúš Chochlík</strong>.<br/>

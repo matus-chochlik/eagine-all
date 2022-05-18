@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta name="author" content="Matus Chochlik"/>
-<meta name="copyright" content="Copyright 2015-2021 Matus Chochlik"/>
+<meta name="copyright" content="Copyright 2015-2022 Matus Chochlik"/>
 <meta name="keywords" content="C++ EGL OpenGL OpenAL Graphics Rendering"/>
 <meta name="description" content="C++ wrapper for rendering C APIs"/>
 <title>Class Members - Functions</title>
@@ -28,7 +28,7 @@
 	</div>
 	</div>
 	<div id="eagine-icon">
-		<a href="http://oglplus.org/"><img src="../eagine.png"/></a>
+		<a href="http://oglplus.org/"><img src="../oglplus-circular.png"/></a>
 	</div>
 </div>
 <div id="eagine-content">
@@ -71,6 +71,9 @@ $(function() {
 <li>eat()
 : <a class="el" href="classeagine_1_1memory_1_1buffer__pool.html#ad2e049ace93d6ae73309c3a3a5df9ada">eagine::memory::buffer_pool</a>
 </li>
+<li>edge_vertices()
+: <a class="el" href="classeagine_1_1shapes_1_1mesh__edge.html#a614e45396138af7724e42179e6f759f6">eagine::shapes::mesh_edge</a>
+</li>
 <li>elapsed_time()
 : <a class="el" href="classeagine_1_1referencing__timeout.html#af4a14ac3b9b91dfa2fefe1a2e1528744">eagine::referencing_timeout</a>
 , <a class="el" href="classeagine_1_1time__measure.html#a53738c97c10cf022073d9f9c76366133">eagine::time_measure</a>
@@ -81,9 +84,13 @@ $(function() {
 </li>
 <li>elevation()
 : <a class="el" href="classeagine_1_1math_1_1unit__spherical__coordinate.html#a02a25a9fc5381f04152dde44ae2c67f7">eagine::math::unit_spherical_coordinate&lt; T, V &gt;</a>
+, <a class="el" href="classeagine_1_1oglplus_1_1orbiting__camera.html#a04ee0edf1def7155047da84d153ad6a4">eagine::oglplus::orbiting_camera</a>
 </li>
 <li>embedded_resource()
 : <a class="el" href="classeagine_1_1embedded__resource.html#a16803585a2b62d684072bb50c007af5f">eagine::embedded_resource</a>
+</li>
+<li>emplace()
+: <a class="el" href="classeagine_1_1msgbus_1_1registry.html#a2c2b6b5cd06bda762dfac4ffb37d597b">eagine::msgbus::registry</a>
 </li>
 <li>empty()
 : <a class="el" href="classeagine_1_1basic__string__path.html#a24c4b86558740032adcb79a910218eb8">eagine::basic_string_path</a>
@@ -92,7 +99,15 @@ $(function() {
 , <a class="el" href="classeagine_1_1fixed__size__string.html#a4a141708827ad3d724d49c9540bb9b4c">eagine::fixed_size_string&lt; N &gt;</a>
 , <a class="el" href="classeagine_1_1memory_1_1basic__span.html#a1b226a646d65cfc68985e13923489809">eagine::memory::basic_span&lt; ValueType, Pointer, SizeType &gt;</a>
 , <a class="el" href="classeagine_1_1memory_1_1buffer.html#a1dae8f2577ec11e1a6fae47e1e451a79">eagine::memory::buffer</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1message__storage.html#a61187bc8f58f597da38badd9eaf69329">eagine::msgbus::message_storage</a>
 , <a class="el" href="classeagine_1_1program__args.html#aa70a8b15dddb0780307d5a258cd1a2fd">eagine::program_args</a>
+</li>
+<li>enable()
+: <a class="el" href="classeagine_1_1shapes_1_1cached__gen.html#afd3a53d1e75d0c57139f1e0aed80ecd4">eagine::shapes::cached_gen</a>
+, <a class="el" href="classeagine_1_1shapes_1_1delegated__gen.html#a2f0351b49a280d2547b4928e48a098f1">eagine::shapes::delegated_gen</a>
+, <a class="el" href="structeagine_1_1shapes_1_1generator.html#a70d1ac6897a2959f39492c10d3416faf">eagine::shapes::generator</a>
+, <a class="el" href="classeagine_1_1shapes_1_1generator__base.html#aeb3519b5de7c0625754aa5f1a55df1ed">eagine::shapes::generator_base</a>
+, <a class="el" href="classeagine_1_1shapes_1_1triangle__adjacency__gen.html#aa95e77447f404c9c2c00a2c39611419c">eagine::shapes::triangle_adjacency_gen</a>
 </li>
 <li>encloses()
 : <a class="el" href="classeagine_1_1memory_1_1basic__span.html#aeedaaf98ec474bd5376a2d62f07d99dc">eagine::memory::basic_span&lt; ValueType, Pointer, SizeType &gt;</a>
@@ -101,11 +116,14 @@ $(function() {
 : <a class="el" href="classeagine_1_1identifier__encoding.html#ace1055d36ab376426a37bcb91909a2e8">eagine::identifier_encoding&lt; CharSet &gt;</a>
 </li>
 <li>end()
-: <a class="el" href="classeagine_1_1basic__string__path.html#a6bfa801a7217b6bbac30a019ffe87b2c">eagine::basic_string_path</a>
+: <a class="el" href="classeagine_1_1app_1_1audio__context.html#ab1e7dbd34c9f5daf86d1a8b92b4b184b">eagine::app::audio_context</a>
+, <a class="el" href="classeagine_1_1app_1_1video__context.html#a01f6794cb675368f016dba6a9eaeaf74">eagine::app::video_context</a>
+, <a class="el" href="classeagine_1_1basic__string__path.html#a6bfa801a7217b6bbac30a019ffe87b2c">eagine::basic_string_path</a>
 , <a class="el" href="classeagine_1_1basic__wrapping__container.html#a520f6ef4893c258df9d23c4782a56ff6">eagine::basic_wrapping_container&lt; Container, Wrapper, T, initial, Transform &gt;</a>
 , <a class="el" href="classeagine_1_1fixed__size__string.html#a39ec92955cf4466adeed2cd938f26bd7">eagine::fixed_size_string&lt; N &gt;</a>
 , <a class="el" href="classeagine_1_1identifier__name.html#aa610f1a3ed1633097d44e3ea33770a39">eagine::identifier_name&lt; M &gt;</a>
 , <a class="el" href="classeagine_1_1memory_1_1basic__span.html#a583e36d69ca7883b93409c2d2318711f">eagine::memory::basic_span&lt; ValueType, Pointer, SizeType &gt;</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1router__address.html#aac9922e8d006a734307ed5a8a141d424">eagine::msgbus::router_address</a>
 , <a class="el" href="classeagine_1_1ok.html#a956f1fcdc799f6a5c9c928e004d152cf">eagine::ok&lt; Outcome &gt;</a>
 , <a class="el" href="classeagine_1_1program__args.html#ab2e30dc90ab53d6faa8eb169e5295cbb">eagine::program_args</a>
 , <a class="el" href="classeagine_1_1reverse.html#a55e29e8e02e39dd3a9e302895c57864b">eagine::reverse&lt; Range &gt;</a>
@@ -114,11 +132,25 @@ $(function() {
 <li>end_addr()
 : <a class="el" href="classeagine_1_1memory_1_1basic__span.html#a13d1a15a8ddda02387f0d6c20c992c4b">eagine::memory::basic_span&lt; ValueType, Pointer, SizeType &gt;</a>
 </li>
+<li>endpoint()
+: <a class="el" href="classeagine_1_1msgbus_1_1endpoint.html#adc66182de6ceab755da435e0826a60fa">eagine::msgbus::endpoint</a>
+</li>
 <li>ends_with()
 : <a class="el" href="classeagine_1_1program__arg.html#a59ef16beb23bc0dffb31be9567613046">eagine::program_arg</a>
 </li>
 <li>enlarge_by()
 : <a class="el" href="classeagine_1_1memory_1_1buffer.html#ac3160689e6476a2fe50b522c9c5aa9fb">eagine::memory::buffer</a>
+</li>
+<li>enough_frames()
+: <a class="el" href="classeagine_1_1app_1_1execution__context.html#a057d952478aba1f43b580db51f6a7991">eagine::app::execution_context</a>
+, <a class="el" href="classeagine_1_1app_1_1launch__options.html#a1a8079941a75e130aea7dbb23d5b70e1">eagine::app::launch_options</a>
+</li>
+<li>enough_run_time()
+: <a class="el" href="classeagine_1_1app_1_1execution__context.html#a2c562bb299b4c2d5565f8c0391cd87ad">eagine::app::execution_context</a>
+, <a class="el" href="classeagine_1_1app_1_1launch__options.html#a0ee4158bd0654a19f285521957a37f71">eagine::app::launch_options</a>
+</li>
+<li>enqueue()
+: <a class="el" href="classeagine_1_1msgbus_1_1sudoku__solver.html#a4a134323fd8f1f8aef82d9572a372a3e">eagine::msgbus::sudoku_solver&lt; Base, Key &gt;</a>
 </li>
 <li>ensure()
 : <a class="el" href="classeagine_1_1memory_1_1buffer.html#a410e57eafcf27ec24cc6fa08b595449d">eagine::memory::buffer</a>
@@ -141,7 +173,7 @@ $(function() {
 , <a class="el" href="classeagine_1_1string__serializer__backend.html#a6f4b479460074ee3aed97aa014b0137a">eagine::string_serializer_backend</a>
 </li>
 <li>enum_class()
-: <a class="el" href="structeagine_1_1c__api_1_1enum__class.html#ae97c680fdd80e2662583f88a6c60f5c7">eagine::c_api::enum_class&lt; Self, T, LibId, Id &gt;</a>
+: <a class="el" href="structeagine_1_1c__api_1_1enum__class.html#a477074416638c54fa11e94e7da48bd4a">eagine::c_api::enum_class&lt; Self, T, LibId, Id &gt;</a>
 </li>
 <li>enum_value()
 : <a class="el" href="structeagine_1_1c__api_1_1enum__value_3_01T_00_01mp__list_3_01Classes_8_8_8_01_4_00_01Tag_01_4.html#aa0bb6a97237876cd81936ea8b8bcd386">eagine::c_api::enum_value&lt; T, mp_list&lt; Classes... &gt;, Tag &gt;</a>
@@ -149,12 +181,19 @@ $(function() {
 <li>error()
 : <a class="el" href="classeagine_1_1logger.html#ac959c71734fc3e175da4e37c9bee8073">eagine::logger</a>
 </li>
+<li>error_code_no_error()
+: <a class="el" href="structeagine_1_1oglplus_1_1gl__types.html#a48efa8c84b414f5e400a9158fcf61952">eagine::oglplus::gl_types</a>
+</li>
 <li>error_message()
 : <a class="el" href="classeagine_1_1executable__module.html#a25b4c61edf67ab620a7e6fde7372d9be">eagine::executable_module</a>
+, <a class="el" href="classeagine_1_1msgbus_1_1posix__mqueue.html#a34cff65366ec9574c5fa28776874f87e">eagine::msgbus::posix_mqueue</a>
 , <a class="el" href="classeagine_1_1shared__executable__module.html#ad7f8e5e365275e81e7b1cdf94a02bb23">eagine::shared_executable_module</a>
 </li>
 <li>error_stream()
 : <a class="el" href="classeagine_1_1logger.html#aeb007aec5d27b7c09b305f6cf5074754">eagine::logger</a>
+</li>
+<li>establish()
+: <a class="el" href="classeagine_1_1msgbus_1_1registry.html#a1adf3cbbe0db0d1a7019f49e1f1a10c2">eagine::msgbus::registry</a>
 </li>
 <li>exe_path()
 : <a class="el" href="classeagine_1_1main__ctx.html#af0d92b4aff2567c6baf93f9033fd4b40">eagine::main_ctx</a>
