@@ -41,7 +41,6 @@ INHERIT_DOCS            = YES
 SEPARATE_MEMBER_PAGES   = NO
 TAB_SIZE                = 4
 ALIASES                 =
-TCL_SUBST               =
 OPTIMIZE_OUTPUT_FOR_C   = NO
 OPTIMIZE_OUTPUT_JAVA    = NO
 OPTIMIZE_FOR_FORTRAN    = NO
@@ -92,6 +91,9 @@ ENABLE_PREPROCESSING    = YES
 MACRO_EXPANSION         = YES
 EXPAND_ONLY_PREDEF      = YES
 PREDEFINED             += "__SIZEOF_INT128__"
+
+CLANG_ASSISTED_PARSING  = YES
+CLANG_OPTIONS          += -std=c++2a
 
 QUIET                   = YES
 WARN_IF_DOC_ERROR       = YES
