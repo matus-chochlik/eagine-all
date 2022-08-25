@@ -4,7 +4,7 @@
 #  http://www.boost.org/LICENSE_1_0.txt
 #
 
-if(NOT TARGET EAGine::Core)
+if(NOT TARGET EAGine::Core AND NOT TARGET eagine.core)
 	if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/eagine-core/CMakeLists.txt")
 		unset(SUBMODULE_INIT_ARG)
 	else()
@@ -69,7 +69,7 @@ if(NOT TARGET EAGine::EGLplus)
 	add_subdirectory(eagine-eglplus)
 endif()
 
-if(NOT TARGET EAGine::OGLplus)
+if(NOT TARGET EAGine::OGLplus AND NOT TARGET eagine.oglplus)
 	if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/eagine-oglplus/CMakeLists.txt")
 		unset(SUBMODULE_INIT_ARG)
 	else()
@@ -108,7 +108,7 @@ if(NOT TARGET EAGine::ECS)
 	add_subdirectory(eagine-ecs)
 endif()
 
-if(NOT TARGET EAGine::App)
+if(NOT TARGET EAGine::App AND NOT TARGET eagine.app)
 	if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/eagine-app/CMakeLists.txt")
 		unset(SUBMODULE_INIT_ARG)
 	else()
