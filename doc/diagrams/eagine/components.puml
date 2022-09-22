@@ -24,5 +24,6 @@ app --> eglplus
 app --> oglplus
 app --> oalplus
 app --> shapes
+app --> msgbus
 
 @enduml
