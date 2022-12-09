@@ -15,6 +15,7 @@ endif()
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/config)
 list(APPEND CMAKE_MODULE_PATH ${EAGINE_CORE_ROOT}/config)
 
+enable_testing()
 add_subdirectory(submodules)
 
 include(EAGineCoreCommon)
