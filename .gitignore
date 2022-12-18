@@ -1,5 +1,6 @@
 /INSTALL_PREFIX
 /BINARY_DIR
+/compile_commands.json
 .*.swp
 *.deb
 Packages
