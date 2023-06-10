@@ -7,11 +7,15 @@ source "$(dirname ${0})/common.sh"
 
 branch=develop
 
+function print_usage() {
+	printf "Usage: %s [-b <branch>]\n" "$(basename ${0})"
+}
+
 while getopts "b:" optname
 do
 	case ${optname} in
 		b) branch="${OPTARG}";;
-		?) printf "Usage: %s [-b <branch>]\n" ${0}
+		?) print_usage
 			exit 1;;
 	esac
 done

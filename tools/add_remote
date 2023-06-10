@@ -10,7 +10,8 @@ unset url_format
 unset remote_name
 
 function print_usage() {
-	printf "Usage: %s -n <remote-name> -u <url-format> [-b <branch>]\n" ${0}
+	printf "Usage: %s -n <remote-name> -u <url-format> [-b <branch>]\n" \
+		"$(basename ${0})"
 }
 
 while getopts "n:u:b:" optname

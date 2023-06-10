@@ -8,7 +8,7 @@ source "$(dirname ${0})/common.sh"
 unset remote_name
 
 function print_usage() {
-	printf "Usage: %s -n <remote-name>\n" ${0}
+	printf "Usage: %s -n <remote-name>\n" "$(basename ${0})"
 }
 
 while getopts "n:" optname

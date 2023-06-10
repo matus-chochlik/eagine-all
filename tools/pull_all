@@ -9,13 +9,18 @@ sub_remote=
 remote=origin
 branch=develop
 
+function print_usage() {
+	printf "Usage: %s [-r <remote>] [-s <submodule-remote>] [-b <branch>]\n" \
+		"$(basename ${0})"
+}
+
 while getopts "r:s:b:" optname
 do
 	case ${optname} in
 		s) sub_remote="${OPTARG}";;
 		r) remote="${OPTARG}";;
 		b) branch="${OPTARG}";;
-		?) printf "Usage: %s [-r <remote>] [-s <submodule-remote>] [-b <branch>]\n" ${0}
+		?) print_usage
 			exit 1;;
 	esac
 done
