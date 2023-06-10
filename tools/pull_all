@@ -15,7 +15,7 @@ do
 		s) sub_remote="${OPTARG}";;
 		r) remote="${OPTARG}";;
 		b) branch="${OPTARG}";;
-		?) printf "Usage: %s [-r remote] [-s submodule-remote] [-b branch]\n" ${0}
+		?) printf "Usage: %s [-r <remote>] [-s <submodule-remote>] [-b <branch>]\n" ${0}
 			exit 1;;
 	esac
 done
