@@ -31,7 +31,13 @@ do
 	if [[ -f "${repo_dir}/CMakeLists.txt" ]]
 	then
 		pushd "${repo_dir}"
-		submodules/eagine-core/tools/workflow.py \
+		if [[ -x submodules/eagine-core/tools/workflow.py ]]
+		then workflow_py=submodules/eagine-core/tools/workflow.py
+		elif [[ -x tools/workflow.py ]]
+		then workflow_py=tools/workflow.py
+		else echo "Could not find workflow.py script!"; exit 1
+		fi
+		"${workflow_py}" \
 			--remote "${remote}" \
 			--submodule-remote "${sub_remote}" \
 			--branch "${branch}" \
