@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# Copyright Matus Chochlik.
+# Distributed under the Boost Software License, Version 1.0.
+# See accompanying file LICENSE_1_0.txt or copy at
+#  http://www.boost.org/LICENSE_1_0.txt
+source "$(dirname ${0})/common.sh"
+
+sub_remote=origin
+remote=origin
+branch=develop
+
+function print_usage() {
+	printf "Usage: %s [-r <remote>] [-s <submodule-remote>] [-b <branch>]\n" \
+		"$(basename ${0})"
+}
+
+while getopts "r:s:b:" optname
+do
+	case ${optname} in
+		s) sub_remote="${OPTARG}";;
+		r) remote="${OPTARG}";;
+		b) branch="${OPTARG}";;
+		?) print_usage
+			exit 1;;
+	esac
+done
+
+function do_update_submodules() {
+	git checkout "${2}" &&\
+	git pull "${1}" "${2}"
+}
+
+function do_commit_and_push_updates() {
+	git commit -a -m 'Updated sub-modules' &&\
+	git push "${1}" "${2}"
+}
+
+ordered_all_repo_dirs |\
+while read repo_dir
+do
+	if [[ -f "${repo_dir}/CMakeLists.txt" ]]
+	then
+		pushd "${repo_dir}"
+		do_update_submodules "${remote}" "${branch}"
+		if compgen -G "${repo_dir}/submodules/eagine-*" > /dev/null
+		then
+			compgen -G "${repo_dir}/submodules/eagine-*" |\
+			while read submod_dir
+			do
+				if [[ -f "${submod_dir}/CMakeLists.txt" ]]
+				then
+					pushd "${submod_dir}"
+					do_update_submodules "${sub_remote}" "${branch}"
+					popd
+				fi
+			done
+			do_commit_and_push_updates "${remote}" "${branch}"
+		fi
+		popd
+	fi
+done

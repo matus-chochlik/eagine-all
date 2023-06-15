@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+# Copyright Matus Chochlik.
+# Distributed under the Boost Software License, Version 1.0.
+# See accompanying file LICENSE_1_0.txt or copy at
+#  http://www.boost.org/LICENSE_1_0.txt
+source "$(dirname ${0})/common.sh"
+
+unset remote_name
+
+function print_usage() {
+	printf "Usage: %s -n <remote-name>\n" "$(basename ${0})"
+}
+
+while getopts "n:" optname
+do
+	case ${optname} in
+		n) remote_name="${OPTARG}";;
+		?) print_usage
+			exit 1;;
+	esac
+done
+
+if [[ "${remote_name}" == "" ]]
+then print_usage; exit 2
+fi
+
+function do_remove_remote() {
+	path="${1}"
+	git remote | grep -qxe "${remote_name}" &&\
+	git remote remove "${remote_name}"
+}
+
+ordered_all_repo_dirs |\
+while read repo_dir
+do
+	if [[ -f "${repo_dir}/CMakeLists.txt" ]]
+	then
+		pushd "${repo_dir}"
+		if compgen -G "${repo_dir}/submodules/eagine-*" > /dev/null
+		then
+			compgen -G "${repo_dir}/submodules/eagine-*" |\
+			while read submod_dir
+			do
+				if [[ -f "${submod_dir}/CMakeLists.txt" ]]
+				then
+					pushd "${submod_dir}"
+					do_remove_remote "${submod_dir}"
+					popd
+				fi
+			done
+		fi
+		do_add_remote "${repo_dir}"
+		popd
+	fi
+done

@@ -8,12 +8,16 @@ repo_root=$(realpath $(dirname ${0})/..)
 remote=origin
 branch=develop
 
+function print_usage() {
+	printf "Usage: %s [-r <remote>] [-b <branch>]\n" "$(basename ${0})"
+}
+
 while getopts "r:b:" optname
 do
 	case ${optname} in
 		r) remote="${OPTARG}";;
 		b) branch="${OPTARG}";;
-		?) printf "Usage: %s [-r remote] [-b branch]\n" ${0}
+		?) print_usage
 			exit 1;;
 	esac
 done

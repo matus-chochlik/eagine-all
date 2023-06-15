@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# Copyright Matus Chochlik.
+# Distributed under the Boost Software License, Version 1.0.
+# See accompanying file LICENSE_1_0.txt or copy at
+#  http://www.boost.org/LICENSE_1_0.txt
+source "$(dirname ${0})/common.sh"
+
+branch=develop
+unset url_format
+unset remote_name
+
+function print_usage() {
+	printf "Usage: %s -n <remote-name> -u <url-format> [-b <branch>]\n" \
+		"$(basename ${0})"
+}
+
+while getopts "n:u:b:" optname
+do
+	case ${optname} in
+		n) remote_name="${OPTARG}";;
+		u) url_format="${OPTARG}";;
+		b) branch="${OPTARG}";;
+		?) print_usage
+			exit 1;;
+	esac
+done
+
+if [[ "${remote_name}" == "" ]]
+then print_usage; exit 2
+fi
+
+if [[ "${url_format}" == "" ]]
+then print_usage; exit 3
+fi
+
+function do_add_remote() {
+	path="${1}"
+	module="$(basename ${path})"
+	module="${module#eagine-}"
+	url=$(printf "${url_format}" "${module}")
+	git remote | grep -qxe "${remote_name}" ||\
+	git remote add -t "${branch}" "${remote_name}" "${url}"
+}
+
+ordered_all_repo_dirs |\
+while read repo_dir
+do
+	if [[ -f "${repo_dir}/CMakeLists.txt" ]]
+	then
+		pushd "${repo_dir}"
+		if compgen -G "${repo_dir}/submodules/eagine-*" > /dev/null
+		then
+			compgen -G "${repo_dir}/submodules/eagine-*" |\
+			while read submod_dir
+			do
+				if [[ -f "${submod_dir}/CMakeLists.txt" ]]
+				then
+					pushd "${submod_dir}"
+					do_add_remote "${submod_dir}"
+					popd
+				fi
+			done
+		fi
+		do_add_remote "${repo_dir}"
+		popd
+	fi
+done

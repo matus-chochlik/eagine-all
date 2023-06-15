@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Copyright Matus Chochlik.
+# Distributed under the Boost Software License, Version 1.0.
+# See accompanying file LICENSE_1_0.txt or copy at
+#  http://www.boost.org/LICENSE_1_0.txt
+source "$(dirname ${0})/common.sh"
+
+sub_remote=origin
+remote=origin
+branch=develop
+
+function print_usage() {
+	printf "Usage: %s [-r <remote>] [-s <submodule-remote>] [-b <branch>]\n" \
+		"$(basename ${0})"
+}
+
+while getopts "r:s:b:" optname
+do
+	case ${optname} in
+		s) sub_remote="${OPTARG}";;
+		r) remote="${OPTARG}";;
+		b) branch="${OPTARG}";;
+		?) print_usage
+			exit 1;;
+	esac
+done
+
+ordered_all_repo_dirs |\
+while read repo_dir
+do
+	if [[ -f "${repo_dir}/CMakeLists.txt" ]]
+	then
+		pushd "${repo_dir}"
+		if [[ -x submodules/eagine-core/tools/workflow.py ]]
+		then workflow_py=submodules/eagine-core/tools/workflow.py
+		elif [[ -x tools/workflow.py ]]
+		then workflow_py=tools/workflow.py
+		else echo "Could not find workflow.py script!"; exit 1
+		fi
+		"${workflow_py}" \
+			--remote "${remote}" \
+			--submodule-remote "${sub_remote}" \
+			--branch "${branch}" \
+			--do-release
+		popd
+	fi
+done
