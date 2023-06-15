@@ -5,7 +5,7 @@
 #  http://www.boost.org/LICENSE_1_0.txt
 
 repo_root=$(realpath $(dirname ${0})/..)
-remote=origin
+remote=$(eagine_default_remote)
 branch=develop
 
 function print_usage() {

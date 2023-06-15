@@ -5,8 +5,8 @@
 #  http://www.boost.org/LICENSE_1_0.txt
 source "$(dirname ${0})/common.sh"
 
-sub_remote=origin
-remote=origin
+sub_remote=$(eagine_default_sub_remote)
+remote=origin$(eagine_default_remote)
 branch=develop
 
 function print_usage() {
@@ -38,8 +38,8 @@ do
 		else echo "Could not find workflow.py script!"; exit 1
 		fi
 		"${workflow_py}" \
-			--remote "${remote}" \
-			--submodule-remote "${sub_remote}" \
+			--remote "${remote:-origin}" \
+			--submodule-remote "${sub_remote:-origin}" \
 			--branch "${branch}" \
 			--do-release
 		popd

@@ -5,8 +5,8 @@
 #  http://www.boost.org/LICENSE_1_0.txt
 source "$(dirname ${0})/common.sh"
 
-sub_remote=origin
-remote=origin
+sub_remote=$(eagine_sub_default_remote)
+remote=$(eagine_default_remote)
 branch=develop
 
 function print_usage() {
@@ -41,7 +41,7 @@ do
 	if [[ -f "${repo_dir}/CMakeLists.txt" ]]
 	then
 		pushd "${repo_dir}"
-		do_update_submodules "${remote}" "${branch}"
+		do_update_submodules "${remote:-origin}" "${branch}"
 		if compgen -G "${repo_dir}/submodules/eagine-*" > /dev/null
 		then
 			compgen -G "${repo_dir}/submodules/eagine-*" |\
@@ -50,11 +50,11 @@ do
 				if [[ -f "${submod_dir}/CMakeLists.txt" ]]
 				then
 					pushd "${submod_dir}"
-					do_update_submodules "${sub_remote}" "${branch}"
+					do_update_submodules "${sub_remote:-origin}" "${branch}"
 					popd
 				fi
 			done
-			do_commit_and_push_updates "${remote}" "${branch}"
+			do_commit_and_push_updates "${remote:-origin}" "${branch}"
 		fi
 		popd
 	fi
