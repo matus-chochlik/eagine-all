@@ -6,7 +6,7 @@
 source "$(dirname ${0})/common.sh"
 
 sub_remote=$(eagine_default_sub_remote)
-remote=origin$(eagine_default_remote)
+remote=$(eagine_default_remote)
 branch=develop
 
 function print_usage() {
