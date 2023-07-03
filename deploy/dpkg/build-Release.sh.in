@@ -1,0 +1,50 @@
+#!/bin/bash
+# Copyright Matus Chochlik.
+# Distributed under the Boost Software License, Version 1.0.
+# See accompanying file LICENSE_1_0.txt or copy at
+#  http://www.boost.org/LICENSE_1_0.txt
+#
+# ------------------------------------------------------------------------------
+this_dir="$(realpath $(dirname ${0}))"
+build_dir="@CMAKE_CURRENT_BINARY_DIR@"
+pkg_dir="${build_dir}/Release"
+rm -rf "${pkg_dir}/"*
+mkdir -p "${pkg_dir}"
+# ------------------------------------------------------------------------------
+find "${build_dir}" -not -path "${pkg_dir}" -type f -name '*.deb' |\
+while read deb_path
+do
+	deb_name="$(basename ${deb_path} | sed 's/-[0-9]\+_[A-Za-z0-9]\+//;s/_[0-9]\+\.[0-9]\+\.[0-9]\+//;')"
+	ln -s -T "${deb_path}" "${pkg_dir}/${deb_name}"
+done
+# ------------------------------------------------------------------------------
+pushd "${pkg_dir}"
+"@DPKG_SCANPACKAGES_COMMAND@" . > Packages
+"@GZIP_COMMAND@" -9 Packages
+# ------------------------------------------------------------------------------
+exec > Release
+echo "Origin: OGLplus"
+echo "Label: EAGine"
+echo "Suite: dev-all"
+echo "Version: @PKG_VERSION@"
+echo "Codename: eagine"
+echo "Date: $(date -R -u)"
+echo "Architectures: @PKG_ARCH@"
+echo "Components:"
+echo "Description: EAGine packages"
+echo "MD5Sum:"
+for f in Packages* *.deb
+do printf " %s %20d %s\n" "$(md5sum ${f} | cut -d' ' -f1)" "$(stat -L -c%s ${f})"  "${f}"
+done
+echo "SHA256:"
+for f in Packages* *.deb
+do printf " %s %20d %s\n" "$(sha256sum ${f} | cut -d' ' -f1)" "$(stat -L -c%s ${f})"  "${f}"
+done
+# ------------------------------------------------------------------------------
+if [[ ! -z "${GPG_USER}" ]]
+then
+	gpg --local-user "${GPG_USER}" --armor --detach-sign --output Release.gpg Release
+	gpg --local-user "${GPG_USER}" --clear-sign --output InRelease Release
+	test -f EAGine.gpg || gpg --local-user "${GPG_USER}" --export --output EAGine.gpg
+fi
+# ------------------------------------------------------------------------------
