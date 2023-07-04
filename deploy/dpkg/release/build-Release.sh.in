@@ -6,12 +6,12 @@
 #
 # ------------------------------------------------------------------------------
 this_dir="$(realpath $(dirname ${0}))"
-build_dir="@CMAKE_CURRENT_BINARY_DIR@"
-pkg_dir="${build_dir}/Release"
-rm -rf "${pkg_dir}/"*
+root_dir="@PROJECT_BINARY_DIR@"
+pkg_dir="@CMAKE_CURRENT_BINARY_DIR@"
+rm -rf "${pkg_dir}/"{*.gpg,*.deb,Package*,Release*,InRelease}
 mkdir -p "${pkg_dir}"
 # ------------------------------------------------------------------------------
-find "${build_dir}" -not -path "${pkg_dir}" -type f -name '*.deb' |\
+find "${root_dir}" -not -path "${pkg_dir}" -type f -name '*.deb' |\
 while read deb_path
 do
 	deb_name="$(basename ${deb_path} | sed 's/-[0-9]\+_[A-Za-z0-9]\+//;s/_[0-9]\+\.[0-9]\+\.[0-9]\+//;')"
@@ -41,10 +41,17 @@ for f in Packages* *.deb
 do printf " %s %20d %s\n" "$(sha256sum ${f} | cut -d' ' -f1)" "$(stat -L -c%s ${f})"  "${f}"
 done
 # ------------------------------------------------------------------------------
+release_files=(Packages* *.deb Release)
+# ------------------------------------------------------------------------------
 if [[ ! -z "${GPG_USER}" ]]
 then
 	gpg --local-user "${GPG_USER}" --armor --detach-sign --output Release.gpg Release
+	release_files+=(Release.gpg)
 	gpg --local-user "${GPG_USER}" --clear-sign --output InRelease Release
+	release_files+=(InReleasepg)
 	test -f EAGine.gpg || gpg --local-user "${GPG_USER}" --export --output EAGine.gpg
+	release_files+=(EAGine.gpg)
 fi
+# ------------------------------------------------------------------------------
+tar -zhcf release.tar.gz "${release_files[@]}"
 # ------------------------------------------------------------------------------

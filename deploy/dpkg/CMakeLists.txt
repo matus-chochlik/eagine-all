@@ -5,7 +5,6 @@
 #
 # ------------------------------------------------------------------------------
 configure_file(deb_common.sh deb_common.sh COPYONLY)
-configure_file(build-Release.sh.in build-Release.sh @ONLY)
 # ------------------------------------------------------------------------------
 execute_process(
 	COMMAND ${DPKG_ARCHITECTURE_COMMAND} --query DEB_BUILD_ARCH
@@ -32,4 +31,6 @@ if(NOT TARGET eagine-deb)
 endif()
 
 add_dependencies(eagine-deb eagine-all-deb)
+# ------------------------------------------------------------------------------
+add_subdirectory(release)
 # ------------------------------------------------------------------------------
