@@ -6,7 +6,7 @@
 repo_root="$(realpath $(dirname ${BASH_SOURCE[0]})/..)"
 
 function ordered_submodules() {
-	for mod in core ecs sslplus msgbus shapes eglplus oalplus oglplus app
+	for mod in core ecs sslplus msgbus shapes eglplus oalplus oglplus guiplus app
 	do echo ${mod}
 	done
 }

@@ -35,3 +35,6 @@
 	url = https://github.com/matus-chochlik/eagine-app.git
 	branch = develop
 
+[submodule "submodules/eagine-guiplus"]
+	path = submodules/eagine-guiplus
+	url = https://github.com/matus-chochlik/eagine-guiplus.git
