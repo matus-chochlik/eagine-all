@@ -14,7 +14,7 @@ Package: eagine-all-dev
 Version: @PKG_VERSION@
 Architecture: all
 Installed-Size: $(eagine_deb_installed_size ${pkg_dir})
-Depends: eagine-core-dev (>= @EAGINE_VERSION@),eagine-ecs-dev (>= @EAGINE_VERSION@),eagine-sslplus-dev (>= @EAGINE_VERSION@),eagine-msgbus-dev (>= @EAGINE_VERSION@),eagine-shapes-dev (>= @EAGINE_VERSION@),eagine-eglplus-dev (>= @EAGINE_VERSION@),eagine-oalplus-dev (>= @EAGINE_VERSION@),eagine-oglplus-dev (>= @EAGINE_VERSION@),eagine-guiplus-dev (>= @EAGINE_VERSION@)
+Depends: eagine-core-dev (>= @EAGINE_VERSION@),eagine-ecs-dev (>= @EAGINE_VERSION@),eagine-sslplus-dev (>= @EAGINE_VERSION@),eagine-msgbus-dev (>= @EAGINE_VERSION@),eagine-shapes-dev (>= @EAGINE_VERSION@),eagine-eglplus-dev (>= @EAGINE_VERSION@),eagine-oalplus-dev (>= @EAGINE_VERSION@),eagine-oglplus-dev (>= @EAGINE_VERSION@),eagine-guiplus-dev (>= @EAGINE_VERSION@),eagine-app-dev (>= @EAGINE_VERSION@)
 Maintainer: Matus Chochlik <chochlik@gmail.com>
 Description: Metapackage installing C++ utilities for developing multimedia applications.
 CONTROL

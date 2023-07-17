@@ -49,7 +49,7 @@ do
 				fi
 			done
 		fi
-		do_add_remote "${repo_dir}"
+		do_remove_remote "${repo_dir}"
 		popd
 	fi
 done
