@@ -43,13 +43,13 @@ done
 # ------------------------------------------------------------------------------
 release_files=(Packages* *.deb Release)
 # ------------------------------------------------------------------------------
-if [[ ! -z "${GPG_USER}" ]]
+if [[ ! -z "${EAGINE_GPG_USER}" ]]
 then
-	gpg --local-user "${GPG_USER}" --armor --detach-sign --output Release.gpg Release
+	gpg --local-user "${EAGINE_GPG_USER}" --armor --detach-sign --output Release.gpg Release
 	release_files+=(Release.gpg)
-	gpg --local-user "${GPG_USER}" --clear-sign --output InRelease Release
-	release_files+=(InReleasepg)
-	test -f EAGine.gpg || gpg --local-user "${GPG_USER}" --export --output EAGine.gpg
+	gpg --local-user "${EAGINE_GPG_USER}" --clear-sign --output InRelease Release
+	release_files+=(InRelease)
+	test -f EAGine.gpg || gpg --local-user "${EAGINE_GPG_USER}" --export --output EAGine.gpg
 	release_files+=(EAGine.gpg)
 fi
 # ------------------------------------------------------------------------------
