@@ -20,7 +20,6 @@ done
 # ------------------------------------------------------------------------------
 pushd "${pkg_dir}"
 "@DPKG_SCANPACKAGES_COMMAND@" . > Packages
-"@GZIP_COMMAND@" -9 Packages
 # ------------------------------------------------------------------------------
 exec > Release
 echo "Origin: OGLplus"
@@ -33,15 +32,15 @@ echo "Architectures: @PKG_ARCH@"
 echo "Components:"
 echo "Description: EAGine packages"
 echo "MD5Sum:"
-for f in Packages* *.deb
+for f in Packages *.deb
 do printf " %s %20d %s\n" "$(md5sum ${f} | cut -d' ' -f1)" "$(stat -L -c%s ${f})"  "${f}"
 done
 echo "SHA256:"
-for f in Packages* *.deb
+for f in Packages *.deb
 do printf " %s %20d %s\n" "$(sha256sum ${f} | cut -d' ' -f1)" "$(stat -L -c%s ${f})"  "${f}"
 done
 # ------------------------------------------------------------------------------
-release_files=(Packages* *.deb Release)
+release_files=(Packages *.deb Release)
 # ------------------------------------------------------------------------------
 if [[ ! -z "${EAGINE_GPG_USER}" ]]
 then
