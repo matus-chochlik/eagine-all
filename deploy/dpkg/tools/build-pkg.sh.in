@@ -14,7 +14,7 @@ Package: eagine-all-tools
 Version: @PKG_VERSION@
 Architecture: all
 Installed-Size: $(eagine_deb_installed_size ${pkg_dir})
-Depends: eagine-core-tools (>= @EAGINE_VERSION@),eagine-oglplus-tools (>= @EAGINE_VERSION@)
+Depends: eagine-core-tools (>= @EAGINE_VERSION@),eagine-oglplus-tools (>= @EAGINE_VERSION@),eagine-app-tools (>= @EAGINE_VERSION@)
 Maintainer: Matus Chochlik <chochlik@gmail.com>
 Description: Collection of C++ comand-line tools for use with EAGine.
 CONTROL
