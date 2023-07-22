@@ -1,3 +1,6 @@
+<?php
+header('Content-type: application/json');
+?>
 { 
   "@context" : [ 
       "https://www.w3.org/ns/activitystreams",

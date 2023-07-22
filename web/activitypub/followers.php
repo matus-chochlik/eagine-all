@@ -1,8 +1,9 @@
 <?php
+header('Content-type: application/json');
 $followers_json="./followers.json";
 $followers=array();
 if(file_exists($followers_json)) {
-  $followers = json_decode(file_get_contents($followers_json), true);
+	$followers = json_decode(file_get_contents($followers_json), true);
 }
 ?>
 {
@@ -11,6 +12,6 @@ if(file_exists($followers_json)) {
   ],
   "type": "Collection",
   "id": "https://<?php echo getenv('EAGINE_HOST')?>/activitypub/followers",
-  "totalItems": <?php echo sizeof($followers) ?>,
-  "items": <?php echo json_encode($followers) ?>
+	"totalItems": <?php echo sizeof($followers) ?>,
+	"items": <?php echo json_encode($followers) ?>
 }

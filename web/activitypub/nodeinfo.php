@@ -1,3 +1,6 @@
+<?php
+header('Content-type: application/json');
+?>
 {
   "version": "2.0",
   "protocols": [

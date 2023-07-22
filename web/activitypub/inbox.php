@@ -1,3 +1,7 @@
+<?php
+header('Content-type: application/json');
+file_put_contents("./post.dump", json_encode($_POST), FILE_APPEND);
+?>
 {
   "@context": [
     "https://www.w3.org/ns/activitystreams"

@@ -1,4 +1,5 @@
 <?php
+header('Content-type: application/json');
 $uri = $_GET["uri"];
 $followers_json = "./followers.json";
 if ($uri != "") {
@@ -9,7 +10,7 @@ if ($uri != "") {
 		fclose($fd);
 	}
 ?>
-{}
+{ }
 <?php } else { ?>
 {}
 <?php } ?>

@@ -1,7 +1,7 @@
 SetEnv EAGINE_HOST eagine.oglplus.org
 RewriteEngine on
 RewriteRule "^.well-known/(nodeinfo|webfinger)" ".well-known/$1.php"
-RewriteRule "^activitypub/(inbox|outbox|following|followers)" "activitypub/$1.php"
+RewriteRule "^activitypub/(nodeinfo|actor|inbox|outbox|following|followers|subscribe)" "activitypub/$1.php"
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
