@@ -1,6 +1,8 @@
 <?php
+require './ap_utils.php';
+
 header('Content-type: application/json');
-file_put_contents("./post.dump", json_encode($_POST), FILE_APPEND);
+file_put_contents("./post.dump", json_encode(getRequestJson()), FILE_APPEND);
 ?>
 {
   "@context": [
