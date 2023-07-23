@@ -5,9 +5,40 @@
 ///  http://www.boost.org/LICENSE_1_0.txt
 ///
 //------------------------------------------------------------------------------
-function activityHeader() {
-  header("application/activity+json");
+//  Date
+//------------------------------------------------------------------------------
+function getHttpDate() {
+  return gmdate('D, d M Y H:i:s T');
 }
+//------------------------------------------------------------------------------
+//  Signatures
+//------------------------------------------------------------------------------
+function getSignKey() {
+	return openssl_pkey_get_private('file://../secret/eagine.pem');
+}
+//------------------------------------------------------------------------------
+function getSignDigestMethod() {
+	return "sha256";
+}
+//------------------------------------------------------------------------------
+function signData($data) {
+	$key = getSignKey();
+	$signature = "";
+	$signed = openssl_sign($data, $signature, $key, getSignDigestMethod());
+	openssl_free_key($key);
+	if($signed) {
+		return base64_encode($signature);
+	}
+	return "";
+}
+//------------------------------------------------------------------------------
+//  Response headers
+//------------------------------------------------------------------------------
+function activityHeader() {
+  header("Content-Type: application/activity+json");
+}
+//------------------------------------------------------------------------------
+//  API endpoint getters
 //------------------------------------------------------------------------------
 function getApEndpoint($ep) {
   return "https://" . getenv('EAGINE_HOST') . "/activitypub/" . $ep;
@@ -16,6 +47,8 @@ function getApEndpoint($ep) {
 function getActorId() {
   return getApEndpoint("actor");
 }
+//------------------------------------------------------------------------------
+//  UUID
 //------------------------------------------------------------------------------
 function getUUID() {
   return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
@@ -26,6 +59,8 @@ function getUUID() {
       mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
   );
 }
+//------------------------------------------------------------------------------
+//  Conversion to JSON
 //------------------------------------------------------------------------------
 function toJson($x) {
   return str_replace('\\/', '/', json_encode($x));
@@ -77,6 +112,8 @@ function isRequestOk($type, $request) {
   return true;
 }
 //------------------------------------------------------------------------------
+//  Response
+//------------------------------------------------------------------------------
 function activityResponseData($type) {
   return array(
     "@context" => "https://www.w3.org/ns/activitystreams",
@@ -91,11 +128,43 @@ function activityResponseDataObject($type, $object) {
   return $response;
 }
 //------------------------------------------------------------------------------
+function activityResponseHost() {
+  return 'Host: ' . getenv('EAGINE_HOST');
+}
+//------------------------------------------------------------------------------
+function activityResponseDate($date) {
+  return 'Date: ' . $date;
+}
+//------------------------------------------------------------------------------
+function activityResponseContentType() {
+  return 'Content-Type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"';
+}
+//------------------------------------------------------------------------------
+function activityResponseSignature($date, $postdata) {
+  $signed_string =
+    '(request-target): post /activitypub/inbox'
+    . '\nhost: ' . getenv('EAGINE_HOST')
+    . '\ndate: ' . $date;
+  $signature = signData($signed_string);
+  return 'Signature:'
+    . ' keyId="' . getActorId() . '#main-key"'
+    . ',headers="(request-target) host date"'
+    . ',signature="' . $signature . '"';
+}
+//------------------------------------------------------------------------------
+function activityResponseHeader($postdata) {
+  $date = getHttpDate();
+  return activityResponseHost() . "\r\n"
+       . activityResponseDate($date) . "\r\n"
+       . activityResponseContentType() . "\r\n"
+       . activityResponseSignature($date, $postdata) . "\r\n";
+}
+//------------------------------------------------------------------------------
 function activityResponse($postdata) {
   return array("http" =>
     array(
       "method" => "POST",
-      "header" => 'Content-type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"',
+      "header" => activityResponseHeader($postdata),
       "content" => $postdata));
 }
 //------------------------------------------------------------------------------
