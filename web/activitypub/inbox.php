@@ -16,7 +16,7 @@ if(isRequestOk("Follow", $request)) {
     removeFollower($request->object->actor);
   }
 }
-#file_put_contents("./post.dump", json_encode($request), FILE_APPEND);
+#file_put_contents("./post.dump", toJson($request), FILE_APPEND);
 
 activityHeader();
 ?>

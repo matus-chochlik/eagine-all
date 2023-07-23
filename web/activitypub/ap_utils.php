@@ -14,22 +14,22 @@ function getHttpDate() {
 //  Signatures
 //------------------------------------------------------------------------------
 function getSignKey() {
-	return openssl_pkey_get_private('file://../secret/eagine.pem');
+  return openssl_pkey_get_private('file://../secret/eagine.pem');
 }
 //------------------------------------------------------------------------------
 function getSignDigestMethod() {
-	return "sha256";
+  return "sha256";
 }
 //------------------------------------------------------------------------------
 function signData($data) {
-	$key = getSignKey();
-	$signature = "";
-	$signed = openssl_sign($data, $signature, $key, getSignDigestMethod());
-	openssl_free_key($key);
-	if($signed) {
-		return base64_encode($signature);
-	}
-	return "";
+  $key = getSignKey();
+  $signature = "";
+  $signed = openssl_sign($data, $signature, $key, getSignDigestMethod());
+  openssl_free_key($key);
+  if($signed) {
+    return base64_encode($signature);
+  }
+  return "";
 }
 //------------------------------------------------------------------------------
 //  Response headers
@@ -169,7 +169,10 @@ function activityResponse($postdata) {
 }
 //------------------------------------------------------------------------------
 function postResponseTo($actor, $response) {
-  return file_get_contents(getActorInbox($actor), false, stream_context_create($opts));
+  return file_get_contents(
+    getActorInbox($actor),
+    false,
+    stream_context_create($response));
 }
 //------------------------------------------------------------------------------
 function postResponseDataTo($actor, $data) {
