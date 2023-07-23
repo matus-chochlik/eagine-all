@@ -5,9 +5,17 @@
 ///  http://www.boost.org/LICENSE_1_0.txt
 ///
 require './ap_utils.php';
+$request = getRequestJson();
+if(isRequestOk("Follow", $request)) {
+	if(filter_var($request->actor, FILTER_VALIDATE_URL)) {
+	  addFollower($request->actor);
+	} else {
+		die("failed to validate actor");
+	}
+}
+file_put_contents("./post.dump", json_encode($request), FILE_APPEND);
 
 header('Content-type: application/json');
-#file_put_contents("./post.dump", json_encode(getRequestJson()), FILE_APPEND);
 ?>
 {
   "@context": [

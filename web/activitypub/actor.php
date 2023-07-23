@@ -21,7 +21,8 @@ header('Content-type: application/json');
         "schema" : "http://schema.org#",
         "toot" : "http://joinmastodon.org/ns#",
         "value" : "schema:value"
-      }
+			},
+      {"@language": "en"}
     ],
   "type" : "Person",
 	"id" : "<?php echo getActorId() ?>",
