@@ -5,7 +5,7 @@
 ///  http://www.boost.org/LICENSE_1_0.txt
 ///
 require './ap_utils.php';
-header('Content-type: application/json');
+activityHeader();
 ?>
 { 
   "@context" : [ 
@@ -21,11 +21,11 @@ header('Content-type: application/json');
         "schema" : "http://schema.org#",
         "toot" : "http://joinmastodon.org/ns#",
         "value" : "schema:value"
-			},
+      },
       {"@language": "en"}
     ],
   "type" : "Person",
-	"id" : "<?php echo getActorId() ?>",
+  "id" : "<?php echo getActorId() ?>",
   "preferredUsername" : "eagine",
   "name" : "EAGine",
   "summary" : "Experimental Activity pub server for EAGine / OGLplus.",

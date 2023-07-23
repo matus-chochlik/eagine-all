@@ -6,7 +6,7 @@
 ///
 require './ap_utils.php';
 $following = getFollowing();
-header('Content-type: application/json');
+activityHeader();
 ?>
 {
   "@context": [

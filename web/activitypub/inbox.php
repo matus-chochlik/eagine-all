@@ -7,15 +7,18 @@
 require './ap_utils.php';
 $request = getRequestJson();
 if(isRequestOk("Follow", $request)) {
-	if(filter_var($request->actor, FILTER_VALIDATE_URL)) {
-	  addFollower($request->actor);
-	} else {
-		die("failed to validate actor");
-	}
+    addFollower($request->actor);
+    postResponseDataTo(
+      $request->actor,
+      activityResponseDataObject("Accept", $request));
+} else if(isRequestOk("Undo", $request)) {
+  if($request->object->type == "Follow") {
+    removeFollower($request->object->actor);
+  }
 }
-file_put_contents("./post.dump", json_encode($request), FILE_APPEND);
+#file_put_contents("./post.dump", json_encode($request), FILE_APPEND);
 
-header('Content-type: application/json');
+activityHeader();
 ?>
 {
   "@context": [
