@@ -42,6 +42,18 @@ activityHeader();
       "type" : "Image",
       "url" : "https://<?php echo getenv('EAGINE_HOST')?>/profile.png"
     },
+  "attachment": [
+    {
+      "type": "PropertyValue",
+      "name": "Web",
+      "value": "<a href=\"https://eagine.oglplus.org\">eagine.oglplus.org</a>"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "Github",
+      "value": "<a href=\"https://github.com/matus-chochlik/eagine-all\">github.com/matus-chochlik/eagine-all</a>"
+    }
+  ],
   "publicKey" : { 
       "id" : "<?php echo getActorId() ?>#main-key",
       "owner" : "<?php echo getActorId() ?>",
