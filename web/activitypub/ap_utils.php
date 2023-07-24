@@ -32,6 +32,19 @@ function signData($data) {
   return "";
 }
 //------------------------------------------------------------------------------
+//  URL utilities
+//------------------------------------------------------------------------------
+function getHostFromUrl($url) {
+  return parse_url($url, PHP_URL_HOST);
+}
+//------------------------------------------------------------------------------
+function getTargetFromUrl($url) {
+  $url_parts = parse_url($url);
+  return str_replace(
+    $url_parts['scheme'] . "://" . $url_parts['host'],
+    '', $url);
+}
+//------------------------------------------------------------------------------
 //  Response headers
 //------------------------------------------------------------------------------
 function activityHeader() {
@@ -104,7 +117,7 @@ function isRequestOk($type, $request) {
     }
   } else if($request->type == "Undo") {
     if($request->object->type == "Follow") {
-      if($request->object != getActorId()) {
+      if($request->object->object != getActorId()) {
         return false;
       }
     }
@@ -128,8 +141,8 @@ function activityResponseDataObject($type, $object) {
   return $response;
 }
 //------------------------------------------------------------------------------
-function activityResponseHost() {
-  return 'Host: ' . getenv('EAGINE_HOST');
+function activityResponseHost($url) {
+  return 'Host: ' . getHostFromUrl($url);
 }
 //------------------------------------------------------------------------------
 function activityResponseDate($date) {
@@ -140,43 +153,46 @@ function activityResponseContentType() {
   return 'Content-Type: application/ld+json; profile="https://www.w3.org/ns/activitystreams"';
 }
 //------------------------------------------------------------------------------
-function activityResponseSignature($date, $postdata) {
+function requestHostFromUrl($url) {
+  return parse_url($url, PHP_URL_HOST);
+}
+//------------------------------------------------------------------------------
+function activityResponseSignature($date, $url, $postdata) {
   $signed_string =
-    '(request-target): post /activitypub/inbox'
-    . '\nhost: ' . getenv('EAGINE_HOST')
+    '(request-target): post ' . getTargetFromUrl($url)
+    . '\nhost: ' . getHostFromUrl($url)
     . '\ndate: ' . $date;
   $signature = signData($signed_string);
   return 'Signature:'
     . ' keyId="' . getActorId() . '#main-key"'
+    . ',algorithm="rsa-sha256"'
     . ',headers="(request-target) host date"'
     . ',signature="' . $signature . '"';
 }
 //------------------------------------------------------------------------------
-function activityResponseHeader($postdata) {
+function activityResponseHeader($url, $postdata) {
   $date = getHttpDate();
-  return activityResponseHost() . "\r\n"
+  return activityResponseHost($url) . "\r\n"
        . activityResponseDate($date) . "\r\n"
        . activityResponseContentType() . "\r\n"
-       . activityResponseSignature($date, $postdata) . "\r\n";
+       . activityResponseSignature($date, $url, $postdata) . "\r\n";
 }
 //------------------------------------------------------------------------------
-function activityResponse($postdata) {
+function activityResponse($url, $postdata) {
   return array("http" =>
     array(
       "method" => "POST",
-      "header" => activityResponseHeader($postdata),
+      "header" => activityResponseHeader($url, $postdata),
       "content" => $postdata));
 }
 //------------------------------------------------------------------------------
-function postResponseTo($actor, $response) {
-  return file_get_contents(
-    getActorInbox($actor),
-    false,
-    stream_context_create($response));
+function postResponseTo($url, $response) {
+  return file_get_contents($url, false, stream_context_create($response));
 }
 //------------------------------------------------------------------------------
-function postResponseDataTo($actor, $data) {
-  return postResponseTo($actor, activityResponse($data));
+function postResponseDataToActor($actor, $data) {
+  $inbox = getActorInbox($actor);
+  return postResponseTo($inbox, activityResponse($inbox, $data));
 }
 //------------------------------------------------------------------------------
 //  Followers
@@ -203,7 +219,9 @@ function removeFollower($uri) {
   if(file_exists($followers_json)) {
     $followers = json_decode(file_get_contents($followers_json), true);
     if(in_array($uri, $followers, true)) {
-      unset($followers[$uri]);
+      foreach (array_keys($followers, $uri) as $key) {
+        unset($followers[$key]);
+      }
       file_put_contents($followers_json, toJson($followers));
     }
   }

@@ -8,7 +8,7 @@ require './ap_utils.php';
 $request = getRequestJson();
 if(isRequestOk("Follow", $request)) {
     addFollower($request->actor);
-    postResponseDataTo(
+    postResponseDataToActor(
       $request->actor,
       activityResponseDataObject("Accept", $request));
 } else if(isRequestOk("Undo", $request)) {
