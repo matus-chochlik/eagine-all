@@ -21,6 +21,10 @@ function getSignDigestMethod() {
   return "sha256";
 }
 //------------------------------------------------------------------------------
+function dataDigest($data) {
+  return openssl_digest($data, getSignDigestMethod());
+}
+//------------------------------------------------------------------------------
 function signData($data) {
   $key = getSignKey();
   $signature = "";
@@ -159,15 +163,16 @@ function requestHostFromUrl($url) {
 //------------------------------------------------------------------------------
 function activityResponseSignature($date, $url, $postdata) {
   $signed_string =
-    '(request-target): post ' . getTargetFromUrl($url)
-    . '\nhost: ' . getHostFromUrl($url)
-    . '\ndate: ' . $date;
+    "(request-target): post " . getTargetFromUrl($url)
+    . "\nhost: " . getHostFromUrl($url)
+    . "\ndate: " . $date;
   $signature = signData($signed_string);
-  return 'Signature:'
+  $header = 'Signature:'
     . ' keyId="' . getActorId() . '#main-key"'
-    . ',algorithm="rsa-sha256"'
+    . ',algorithm="' . getSignDigestMethod() . '"'
     . ',headers="(request-target) host date"'
     . ',signature="' . $signature . '"';
+  return $header;
 }
 //------------------------------------------------------------------------------
 function activityResponseHeader($url, $postdata) {
@@ -187,7 +192,9 @@ function activityResponse($url, $postdata) {
 }
 //------------------------------------------------------------------------------
 function postResponseTo($url, $response) {
-  return file_get_contents($url, false, stream_context_create($response));
+  $content = file_get_contents($url, false, stream_context_create($response));
+  $headers = $http_response_header;
+  return array($headers, $content);
 }
 //------------------------------------------------------------------------------
 function postResponseDataToActor($actor, $data) {
