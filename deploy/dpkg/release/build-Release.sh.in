@@ -20,7 +20,6 @@ done
 # ------------------------------------------------------------------------------
 pushd "${pkg_dir}"
 "@DPKG_SCANPACKAGES_COMMAND@" . > Packages
-"@GZIP_COMMAND@" -9 Packages
 # ------------------------------------------------------------------------------
 exec > Release
 echo "Origin: OGLplus"
@@ -33,23 +32,23 @@ echo "Architectures: @PKG_ARCH@"
 echo "Components:"
 echo "Description: EAGine packages"
 echo "MD5Sum:"
-for f in Packages* *.deb
+for f in Packages *.deb
 do printf " %s %20d %s\n" "$(md5sum ${f} | cut -d' ' -f1)" "$(stat -L -c%s ${f})"  "${f}"
 done
 echo "SHA256:"
-for f in Packages* *.deb
+for f in Packages *.deb
 do printf " %s %20d %s\n" "$(sha256sum ${f} | cut -d' ' -f1)" "$(stat -L -c%s ${f})"  "${f}"
 done
 # ------------------------------------------------------------------------------
-release_files=(Packages* *.deb Release)
+release_files=(Packages *.deb Release)
 # ------------------------------------------------------------------------------
-if [[ ! -z "${GPG_USER}" ]]
+if [[ ! -z "${EAGINE_GPG_USER}" ]]
 then
-	gpg --local-user "${GPG_USER}" --armor --detach-sign --output Release.gpg Release
+	gpg --local-user "${EAGINE_GPG_USER}" --armor --detach-sign --output Release.gpg Release
 	release_files+=(Release.gpg)
-	gpg --local-user "${GPG_USER}" --clear-sign --output InRelease Release
-	release_files+=(InReleasepg)
-	test -f EAGine.gpg || gpg --local-user "${GPG_USER}" --export --output EAGine.gpg
+	gpg --local-user "${EAGINE_GPG_USER}" --clear-sign --output InRelease Release
+	release_files+=(InRelease)
+	test -f EAGine.gpg || gpg --local-user "${EAGINE_GPG_USER}" --export --output EAGine.gpg
 	release_files+=(EAGine.gpg)
 fi
 # ------------------------------------------------------------------------------
