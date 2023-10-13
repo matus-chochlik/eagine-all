@@ -26,7 +26,11 @@ done
 for repo_dir in "${repo_root}" "${repo_root}/submodules/eagine-"*
 do
 	pushd "${repo_dir}"
+	prev_rev="$(git symbolic-ref --short HEAD 2> /dev/null || git rev-parse --short HEAD 2> /dev/null)"
 	git checkout "${branch}" &&\
 	git push "${remote}" "${branch}"
+	if [[ "${prev_rev}" != "" ]]
+	then git checkout "${prev_rev}"
+	fi
 	popd
 done

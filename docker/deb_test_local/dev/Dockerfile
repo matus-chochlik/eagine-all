@@ -1,5 +1,5 @@
 FROM ubuntu
-LABEL maintainer="chochlik@gmail.com"
+LABEL maintainer="matus.chochlik@proton.me"
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get --yes update

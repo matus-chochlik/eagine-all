@@ -57,9 +57,8 @@
 		</div>
 	</div>
 	<div id="footer">
-		<em>Copyright &copy; 2008-2012</em> <strong>Matúš Chochlík</strong>, Žilina, Slovakia.<br/>
-		&lt;<a href="mailto:matus.chochlik@fri.uniza.sk">matus.chochlik -at- fri.uniza.sk</a>&gt;
-		&lt;<a href="mailto:chochlik@gmail.com">chochlik -at -gmail.com</a>&gt;<br/>
+		<em>Copyright &copy; 2008-2023</em> <strong>Matúš Chochlík</strong>, Žilina, Slovakia.<br/>
+		&lt;<a href="mailto:matus.chochlik@proton.me">matus.chochlik -at -proton.me</a>&gt;<br/>
 
 		<p>Distributed under the Boost Software License, Version 1.0. (See a copy at
 		<a href="https://www.boost.org/LICENSE_1_0.txt">www.boost.org/LICENSE_1_0.txt</a>)</p>

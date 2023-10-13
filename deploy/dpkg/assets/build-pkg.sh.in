@@ -10,12 +10,12 @@ pkg_dir=$(realpath "@PKG_DIR@")
 # ------------------------------------------------------------------------------
 mkdir -p "${pkg_dir}/DEBIAN"
 cat << CONTROL > "${pkg_dir}/DEBIAN/control"
-Package: eagine-all-tools
+Package: eagine-all-assets
 Version: @PKG_VERSION@
 Architecture: all
 Installed-Size: $(eagine_deb_installed_size ${pkg_dir})
-Depends: eagine-core-tools (>= @EAGINE_VERSION@),eagine-oglplus-tools (>= @EAGINE_VERSION@),eagine-app-tools (>= @EAGINE_VERSION@)
+Depends: eagine-oglplus-assets (>= @EAGINE_VERSION@),eagine-app-assets (>= @EAGINE_VERSION@)
 Maintainer: Matus Chochlik <matus.chochlik@proton.me>
-Description: Collection of C++ comand-line tools for use with EAGine.
+Description: Collection of various assets for use with EAGine.
 CONTROL
 # ------------------------------------------------------------------------------

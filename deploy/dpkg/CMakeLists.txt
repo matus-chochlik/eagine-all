@@ -23,6 +23,7 @@ set(BIN_DIR "${CMAKE_CURRENT_BINARY_DIR}/../..")
 
 add_custom_target(eagine-all-deb)
 
+add_subdirectory(assets)
 add_subdirectory(dev)
 add_subdirectory(tools)
 
