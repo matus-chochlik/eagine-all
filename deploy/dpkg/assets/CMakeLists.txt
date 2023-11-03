@@ -30,6 +30,3 @@ add_custom_target(
 	eagine-all-assets-deb
 	DEPENDS ${PKG_NAME}.deb
 )
-
-add_dependencies(eagine-all-deb eagine-all-assets-deb)
-
