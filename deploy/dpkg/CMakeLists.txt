@@ -21,16 +21,18 @@ set(PKG_VERSION ${EAGINE_VERSION}-${EAGINE_GIT_COMMITS_SINCE_VERSION})
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../..")
 set(BIN_DIR "${CMAKE_CURRENT_BINARY_DIR}/../..")
 
-add_custom_target(eagine-all-deb)
-
 add_subdirectory(assets)
 add_subdirectory(dev)
 add_subdirectory(tools)
+add_subdirectory(all)
 
 if(NOT TARGET eagine-deb)
 	add_custom_target(eagine-deb)
 endif()
 
+add_dependencies(eagine-all-deb eagine-all-assets-deb)
+add_dependencies(eagine-all-deb eagine-all-tools-deb)
+add_dependencies(eagine-all-deb eagine-all-dev-deb)
 add_dependencies(eagine-deb eagine-all-deb)
 # ------------------------------------------------------------------------------
 add_subdirectory(release)

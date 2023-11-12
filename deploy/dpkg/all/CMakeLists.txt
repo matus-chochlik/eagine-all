@@ -3,7 +3,7 @@
 # See accompanying file LICENSE_1_0.txt or copy at
 #  http://www.boost.org/LICENSE_1_0.txt
 #
-set(PKG_NAME "eagine-all-dev_${EAGINE_VERSION}-${EAGINE_GIT_COMMITS_SINCE_VERSION}_${PKG_ARCH}")
+set(PKG_NAME "eagine-all_${EAGINE_VERSION}-${EAGINE_GIT_COMMITS_SINCE_VERSION}_${PKG_ARCH}")
 set(PKG_DIR "${CMAKE_CURRENT_BINARY_DIR}/${PKG_NAME}")
 set(PKG_PREFIX "${PKG_DIR}/usr")
 
@@ -27,6 +27,6 @@ add_custom_command(
 )
 
 add_custom_target(
-	eagine-all-dev-deb
+	eagine-all-deb
 	DEPENDS ${PKG_NAME}.deb
 )

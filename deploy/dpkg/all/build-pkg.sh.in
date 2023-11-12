@@ -1,0 +1,21 @@
+#!/bin/bash
+# Copyright Matus Chochlik.
+# Distributed under the Boost Software License, Version 1.0.
+# See accompanying file LICENSE_1_0.txt or copy at
+#  http://www.boost.org/LICENSE_1_0.txt
+#
+source ../deb_common.sh
+pkg_dir=$(realpath "@PKG_DIR@")
+
+# ------------------------------------------------------------------------------
+mkdir -p "${pkg_dir}/DEBIAN"
+cat << CONTROL > "${pkg_dir}/DEBIAN/control"
+Package: eagine-all
+Version: @PKG_VERSION@
+Architecture: all
+Installed-Size: $(eagine_deb_installed_size ${pkg_dir})
+Depends: eagine-all-assets(>= @EAGINE_VERSION@),eagine-all-tools (>= @EAGINE_VERSION@),eagine-all-dev(>= @EAGINE_VERSION@)
+Maintainer: Matus Chochlik <matus.chochlik@proton.me>
+Description: Metapackage installing all EAGine packages.
+CONTROL
+# ------------------------------------------------------------------------------
