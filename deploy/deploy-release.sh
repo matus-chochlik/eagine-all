@@ -16,5 +16,5 @@ cmake --build "$(dirname ${thisdir})" --target eagine-deb-release &&\
 pushd "${tempdir}" &&\
 tar -zxf "${thisdir}/dpkg/release/release.tar.gz" &&\
 find . -type f |\
-	sed 's@^.*$@put & /sub/eagine/apt/latest/${arch:-amd64}@' |\
+	sed "s@^.*\$@put & /sub/eagine/apt/latest/${arch:-amd64}/@" |\
 	sftp oglplus.org@oglplus.org
