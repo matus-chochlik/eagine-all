@@ -14,5 +14,6 @@ if(
 	DPKG_DEB_COMMAND AND
 	DPKG_ARCHITECTURE_COMMAND AND
 	DPKG_SCANPACKAGES_COMMAND)
+	configure_file(deploy-release.sh deploy-release.sh @ONLY)
 	add_subdirectory(dpkg)
 endif()

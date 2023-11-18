@@ -14,8 +14,8 @@ mkdir -p "${pkg_dir}"
 find "${root_dir}" -not -path "${pkg_dir}" -type f -name '*.deb' |\
 while read deb_path
 do
-	deb_name="$(basename ${deb_path} | sed 's/-[0-9]\+_[A-Za-z0-9]\+//;s/_[0-9]\+\.[0-9]\+\.[0-9]\+//;')"
-	ln -s -T "${deb_path}" "${pkg_dir}/${deb_name}"
+	deb_name="$(basename ${deb_path} | sed 's/_[0-9]\+\.[0-9]\+\.[0-9]\+//;s/-[0-9]\+_[A-Za-z0-9]\+//;s/-[0-9]\+//;')"
+	ln -f -s -T "${deb_path}" "${pkg_dir}/${deb_name}"
 done
 # ------------------------------------------------------------------------------
 pushd "${pkg_dir}"
