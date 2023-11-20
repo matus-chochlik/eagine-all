@@ -1,0 +1,73 @@
+@startuml
+
+package External as ext_core {
+        component [Boost] as boost #LightBlue
+        component [SystemD] as systemd #LightBlue
+        component [Stack\nTrace] as stacktrace #LightBlue
+        component [ZLib] as zlib #LightBlue
+}
+package External as ext_ssl {
+        component [OpenSSL] as openssl #LightBlue
+}
+package External as ext_egl {
+        component [EGL] as egl #LightBlue
+}
+package External as ext_opengl {
+        component [GLEW] as glew #LightBlue
+        component [GLFW3] as glfw #LightBlue
+        component [OpenGL] as opengl #LightBlue
+}
+package External as ext_openal {
+        component [OpenAL] as openal #LightBlue
+}
+
+package EAGine {
+        component [Core] as core
+        component [SSLplus] as sslplus
+        component [Shapes] as shapes
+        component [Message\nBus] as msgbus
+        component [EGLplus] as eglplus
+        component [OGLplus] as oglplus
+        component [OALplus] as oalplus
+        component [GUIplus] as guiplus
+        component [Entity\nComponent\nSystem] as ecs
+        component [Application] as app
+}
+
+glew --> opengl
+glfw --> opengl
+
+core --> ext_core
+sslplus --> ext_ssl
+eglplus --> ext_egl
+oglplus --> ext_opengl
+guiplus --> ext_opengl
+oalplus --> ext_openal
+
+sslplus --> core
+shapes --> core
+msgbus --> sslplus
+msgbus --> core
+eglplus --> core
+oglplus --> core
+oglplus --> shapes
+oalplus --> core
+guiplus --> core
+ecs --> core
+app --> core
+app --> eglplus
+app --> oglplus
+app --> oalplus
+app --> guiplus
+app --> shapes
+app --> msgbus
+
+guiplus -[hidden]-> oglplus
+oglplus -[hidden]-> oalplus
+oalplus -[hidden]-> eglplus
+eglplus -[hidden]-> sslplus
+msgbus -[hidden]-> shapes
+shapes -[hidden]-> oalplus
+
+@enduml
+
