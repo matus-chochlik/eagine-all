@@ -1,0 +1,51 @@
+@startuml
+
+package Sub-modules {
+	component [ASIO] as asio #DodgerBlue
+	component [RapidJSON] as rapidjson #DodgerBlue
+	component [RapidYAML] as rapidyaml #DodgerBlue
+	component [IMGui] as imgui #DodgerBlue
+}
+
+package EAGine {
+	component [Core] as core
+	component [SSLplus] as sslplus
+	component [Shapes] as shapes
+	component [Message\nBus] as msgbus
+	component [EGLplus] as eglplus
+	component [OGLplus] as oglplus
+	component [OALplus] as oalplus
+	component [GUIplus] as guiplus
+	component [Entity\nComponent\nSystem] as ecs
+	component [Application] as app
+}
+
+core --> rapidjson
+core --> rapidyaml
+core --> asio
+msgbus --> asio
+guiplus --> imgui
+
+sslplus --> core
+shapes --> core
+msgbus --> sslplus
+msgbus --> core
+eglplus --> core
+oglplus --> core
+oglplus --> shapes
+oalplus --> core
+guiplus --> core
+ecs --> core
+app --> core
+app --> eglplus
+app --> oglplus
+app --> oalplus
+app --> guiplus
+app --> shapes
+app --> msgbus
+
+guiplus -[hidden]-> oglplus
+oglplus -[hidden]-> eglplus
+sslplus -[hidden]-> ecs
+
+@enduml
