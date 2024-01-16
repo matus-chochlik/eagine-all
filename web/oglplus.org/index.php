@@ -186,7 +186,7 @@
 		</div>
 	</div>
 	<div id="footer">
-		<em>Copyright &copy; 2008-2023</em> <strong>Matúš Chochlík</strong><br/>
+		<em>Copyright &copy; 2008-2024</em> <strong>Matúš Chochlík</strong><br/>
 		&lt;<a href="mailto:matus.chochlik@proton.me">matus.chochlik -at -proton.me</a>&gt;<br/>
 
 		<p>Distributed under the Boost Software License, Version 1.0. (See a copy at
