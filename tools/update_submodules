@@ -2,7 +2,7 @@
 # Copyright Matus Chochlik.
 # Distributed under the Boost Software License, Version 1.0.
 # See accompanying file LICENSE_1_0.txt or copy at
-#  http://www.boost.org/LICENSE_1_0.txt
+# https://www.boost.org/LICENSE_1_0.txt
 source "$(dirname ${0})/common.sh"
 
 sub_remote=$(eagine_default_sub_remote)
