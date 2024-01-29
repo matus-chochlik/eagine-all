@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+# coding=utf-8
+# Copyright Matus Chochlik.
+# Distributed under the Boost Software License, Version 1.0.
+# See accompanying file LICENSE_1_0.txt or copy at
+# https://www.boost.org/LICENSE_1_0.txt
+#
+import os
+import json
+import math
+import shutil
+# ------------------------------------------------------------------------------
+pkg_dir = os.path.realpath("@PKG_DIR@")
+deb_dir  = os.path.join(pkg_dir, "DEBIAN")
+pkg_prefix = os.path.join(pkg_dir, "usr")
+cpp_prefix = os.path.join(pkg_prefix, "share", "eagine", "source", "@CMAKE_BUILD_TYPE@", "all")
+lib_prefix = os.path.join(pkg_prefix, "lib")
+cmk_prefix = os.path.join(lib_prefix, "@PKG_MULTIARCH@", "cmake", "EAGine")
+
+for path in [cpp_prefix, lib_prefix, cmk_prefix, deb_dir]:
+    if not os.path.exists(path):
+        os.makedirs(path)
+# ------------------------------------------------------------------------------
+def copy_module_files(build_dir, info):
+    for cppm in info["interfaces"]:
+        dest = os.path.join(cpp_prefix, cppm)
+        if not os.path.exists(os.path.dirname(dest)):
+            os.makedirs(os.path.dirname(dest))
+        shutil.copy2(os.path.join(build_dir, cppm), dest)
+    for lib in info["libraries"]:
+        shutil.copy2(os.path.join(build_dir, lib), lib_prefix)
+    for cmake in info["cmakefiles"]:
+        dest = os.path.join(cmk_prefix, "@CMAKE_BUILD_TYPE@", os.path.basename(cmake))
+        if not os.path.exists(os.path.dirname(dest)):
+            os.makedirs(os.path.dirname(dest))
+        shutil.copy2(os.path.join(build_dir, cmake), dest)
+    for subinfo in info["submodules"]:
+        copy_module_files(build_dir, subinfo)
+
+with open(os.path.join("@CMAKE_CURRENT_BINARY_DIR@", "eagine.all.json"), "rb") as module_json:
+    info = json.load(module_json)
+    copy_module_files(info["build_directory"], info["module"])
+# ------------------------------------------------------------------------------
+for cmake_file in ["module-eagine.all-opts.cmake"]:
+	shutil.copy2(
+		os.path.join("@CMAKE_CURRENT_SOURCE_DIR@", cmake_file),
+		os.path.join(cmk_prefix, "@CMAKE_BUILD_TYPE@", cmake_file))
+# ------------------------------------------------------------------------------
+def dir_file_size(path):
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(path):
+        for d in dirnames:
+            total_size += dir_file_size(os.path.join(dirpath, d))
+        for f in filenames:
+            total_size += os.path.getsize(os.path.join(dirpath, f))
+    return total_size
+# ------------------------------------------------------------------------------
+with open(os.path.join(deb_dir, "control"), "wt") as control:
+    control.write("""\
+Package: eagine-all-dev
+Version: %s
+Architecture: %s
+Installed-Size: %d
+Depends: eagine-core-dev (>= @EAGINE_VERSION@),eagine-ecs-dev (>= @EAGINE_VERSION@),eagine-sslplus-dev (>= @EAGINE_VERSION@),eagine-msgbus-dev (>= @EAGINE_VERSION@),eagine-shapes-dev (>= @EAGINE_VERSION@),eagine-eglplus-dev (>= @EAGINE_VERSION@),eagine-oalplus-dev (>= @EAGINE_VERSION@),eagine-oglplus-dev (>= @EAGINE_VERSION@),eagine-guiplus-dev (>= @EAGINE_VERSION@),eagine-app-dev (>= @EAGINE_VERSION@)
+Maintainer: Matus Chochlik <matus.chochlik@proton.me>
+Description: Metapackage installing C++ utilities for developing multimedia applications.
+""" % (
+    "@PKG_VERSION@",
+    "@PKG_ARCH@",
+    int(math.ceil(dir_file_size(pkg_dir) / 1024))
+))

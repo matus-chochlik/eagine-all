@@ -1,7 +1,7 @@
 # Copyright Matus Chochlik.
 # Distributed under the Boost Software License, Version 1.0.
 # See accompanying file LICENSE_1_0.txt or copy at
-#  http://www.boost.org/LICENSE_1_0.txt
+# https://www.boost.org/LICENSE_1_0.txt
 #
 cmake_minimum_required(VERSION 3.10)
 
@@ -24,5 +24,6 @@ add_subdirectory(submodules)
 include(EAGineCoreCommon)
 file(STRINGS submodules/eagine-core/VERSION EAGINE_VERSION)
 
+add_subdirectory(source)
 add_subdirectory(doc)
 add_subdirectory(deploy)
