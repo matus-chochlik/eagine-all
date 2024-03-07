@@ -12,6 +12,8 @@ target_link_libraries(
 		eagine.oglplus
 		eagine.guiplus
 		eagine.app
+		eagine.app.resource_provider
+		zip
 		EGL
 		GL
 		GLEW

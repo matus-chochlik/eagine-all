@@ -16,5 +16,6 @@ eagine_add_module(
 		eagine.oalplus
 		eagine.oglplus
 		eagine.guiplus
-		eagine.app)
+		eagine.app
+		eagine.app.resource_provider)
 

@@ -17,4 +17,5 @@ export import eagine.oalplus;
 export import eagine.oglplus;
 export import eagine.guiplus;
 export import eagine.app;
+export import eagine.app.resource_provider;
 
