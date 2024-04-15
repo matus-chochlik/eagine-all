@@ -45,7 +45,7 @@ function list_sub_remotes() {
 function eagine_get_default_remote() {
 	if [[ -x "$(which yq)" ]]
 	then
-		for yaml in ~/.config/eagine/defaults.yaml
+		for yaml in ~/.config/eagine/defaults.yaml /etc/eagine/defaults.yaml
 		do
 			if [[ -r "${yaml}" ]]
 			then
@@ -62,7 +62,7 @@ function eagine_get_default_remote() {
 
 	if [[ -x "$(which jq)" ]]
 	then
-		for json in ~/.config/eagine/defaults.json
+		for json in ~/.config/eagine/defaults.json /etc/eagine/defaults/json
 		do
 			if [[ -r "${json}" ]]
 			then
