@@ -3,7 +3,7 @@
 # See accompanying file LICENSE_1_0.txt or copy at
 # https://www.boost.org/LICENSE_1_0.txt
 #
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.27)
 
 project(EAGineApp)
 if(NOT EAGINE_CORE_ROOT)
