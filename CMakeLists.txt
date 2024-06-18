@@ -5,7 +5,11 @@
 #
 cmake_minimum_required(VERSION 3.27)
 
-project(EAGineApp)
+project(
+	EAGineAll
+	LANGUAGES CXX
+	HOMEPAGE_URL https://github.com/matus-chochlik/eagine-all)
+
 if(NOT EAGINE_CORE_ROOT)
 	set(EAGINE_CORE_ROOT ${PROJECT_SOURCE_DIR}/submodules/eagine-core)
 endif()
@@ -17,12 +21,12 @@ if(NOT EAGINE_OGLPLUS_ROOT)
 endif()
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/config)
 list(APPEND CMAKE_MODULE_PATH ${EAGINE_CORE_ROOT}/config)
+file(STRINGS submodules/eagine-core/VERSION EAGINE_VERSION)
 
 enable_testing()
 add_subdirectory(submodules)
 
 include(EAGineCoreCommon)
-file(STRINGS submodules/eagine-core/VERSION EAGINE_VERSION)
 
 add_subdirectory(source)
 add_subdirectory(doc)

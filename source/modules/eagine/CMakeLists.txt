@@ -4,6 +4,7 @@
 # https://www.boost.org/LICENSE_1_0.txt
 eagine_add_module(
 	eagine.all
+	COMPONENT all-dev
 	IMPORTS
 		std
 		eagine.core.resource
