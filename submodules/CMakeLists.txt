@@ -27,16 +27,6 @@ foreach(SUBMODULE
 	endif()
 endforeach()
 
-include(eagine-ecs/config/EAGinePackageECS.cmake)
-include(eagine-shapes/config/EAGinePackageShapes.cmake)
-include(eagine-sslplus/config/EAGinePackageSSLplus.cmake)
-include(eagine-guiplus/config/EAGinePackageGUIplus.cmake)
-include(eagine-eglplus/config/EAGinePackageEGLplus.cmake)
-include(eagine-oalplus/config/EAGinePackageOALplus.cmake)
-include(eagine-oglplus/config/EAGinePackageOGLplus.cmake)
-include(eagine-msgbus/config/EAGinePackageMsgBus.cmake)
-include(eagine-app/config/EAGinePackageApp.cmake)
-
 foreach(SUBMODULE
 		core
 		ecs
