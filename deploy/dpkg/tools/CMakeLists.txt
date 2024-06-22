@@ -3,30 +3,22 @@
 # See accompanying file LICENSE_1_0.txt or copy at
 # https://www.boost.org/LICENSE_1_0.txt
 #
-set(PKG_NAME "eagine-all-tools_${EAGINE_VERSION}-${EAGINE_GIT_COMMITS_SINCE_VERSION}_${PKG_ARCH}")
-set(PKG_DIR "${CMAKE_CURRENT_BINARY_DIR}/${PKG_NAME}")
-set(PKG_PREFIX "${PKG_DIR}/usr")
+cpack_add_component(
+	all-tools
+	DESCRIPTION "Collection of C++ comand-line tools for use with EAGine.")
 
-configure_file(build-pkg.sh.in build-pkg.sh @ONLY)
+eagine_add_license(all-tools)
+eagine_add_debian_changelog(all-tools)
 
-add_custom_command(
-	OUTPUT "${PKG_DIR}/DEBIAN/control"
-	COMMAND ${BASH_COMMAND}
-	ARGS "${CMAKE_CURRENT_BINARY_DIR}/build-pkg.sh"
-	WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-	COMMENT "Copying files for ${PKG_NAME}.deb package"
-)
+eagine_add_package_property(
+	all-tools
+	GENERATOR DEBIAN
+	VARIABLE PACKAGE_DEPENDS
+	VALUE "eagine-core-tools (>= ${EAGINE_VERSION}),eagine-oglplus-tools (>= ${EAGINE_VERSION}),eagine-app-tools (>= ${EAGINE_VERSION})")
 
-add_custom_command(
-	OUTPUT ${PKG_NAME}.deb
-	COMMAND ${DPKG_DEB_COMMAND}
-	ARGS --build --root-owner-group ${PKG_NAME}
-	WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-	DEPENDS "${PKG_DIR}/DEBIAN/control"
-	COMMENT "Building ${PKG_NAME}.deb package"
-)
+eagine_add_package_property(
+	all-tools
+	GENERATOR DEBIAN
+	VARIABLE DESCRIPTION
+	VALUE "Collection of C++ comand-line tools for use with EAGine.")
 
-add_custom_target(
-	eagine-all-tools-deb
-	DEPENDS ${PKG_NAME}.deb
-)
