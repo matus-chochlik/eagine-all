@@ -22,3 +22,9 @@ eagine_add_package_property(
 	VARIABLE DESCRIPTION
 	VALUE "Collection of C++ comand-line tools for use with EAGine.")
 
+eagine_add_package_property(
+	all-tools
+	GENERATOR DEBIAN
+	VARIABLE PACKAGE_ARCHITECTURE
+	VALUE "all")
+

@@ -22,3 +22,9 @@ eagine_add_package_property(
 	VARIABLE DESCRIPTION
 	VALUE "Meta-package of collection of assets usable with EAGine.")
 
+eagine_add_package_property(
+	all-assets
+	GENERATOR DEBIAN
+	VARIABLE PACKAGE_ARCHITECTURE
+	VALUE "all")
+

@@ -22,3 +22,9 @@ eagine_add_package_property(
 	VARIABLE DESCRIPTION
 	VALUE "Metapackage installing all EAGine packages.")
 
+eagine_add_package_property(
+	all
+	GENERATOR DEBIAN
+	VARIABLE PACKAGE_ARCHITECTURE
+	VALUE "all")
+
