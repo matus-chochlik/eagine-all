@@ -6,4 +6,3 @@
 add_subdirectory(assets)
 add_subdirectory(tools)
 add_subdirectory(all)
-add_subdirectory(release)
