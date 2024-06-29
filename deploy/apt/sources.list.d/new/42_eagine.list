@@ -1,0 +1,5 @@
+Types: deb
+URIs: https://eagine.oglplus.org/apt
+Suites: latest
+Components: main
+Signed-By: /usr/share/keyrings/EAGine.gpg
