@@ -1,1 +1,1 @@
-deb http://eagine.oglplus.org/apt/latest/amd64 ./
+deb https://eagine.oglplus.org/apt latest main
