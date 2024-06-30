@@ -25,7 +25,7 @@ for the following sub-modules:
 
 This diagram shows the dependencies between the sub-modules:
 
-.. figure:: doc/diagrams/eagine/components.svg
+.. figure:: doc/diagrams/eagine/components_sub.svg
    :alt: Component dependency graph
 
 Cloning the repo

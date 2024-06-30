@@ -3,37 +3,6 @@
 # See accompanying file LICENSE_1_0.txt or copy at
 # https://www.boost.org/LICENSE_1_0.txt
 #
-# ------------------------------------------------------------------------------
-configure_file(deb_common.sh deb_common.sh COPYONLY)
-# ------------------------------------------------------------------------------
-execute_process(
-	COMMAND ${DPKG_ARCHITECTURE_COMMAND} --query DEB_BUILD_ARCH
-	OUTPUT_VARIABLE PKG_ARCH
-	OUTPUT_STRIP_TRAILING_WHITESPACE
-)
-execute_process(
-	COMMAND ${DPKG_ARCHITECTURE_COMMAND} --query DEB_BUILD_MULTIARCH
-	OUTPUT_VARIABLE PKG_MULTIARCH
-	OUTPUT_STRIP_TRAILING_WHITESPACE
-)
-
-set(PKG_VERSION ${EAGINE_VERSION}-${EAGINE_GIT_COMMITS_SINCE_VERSION})
-set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../..")
-set(BIN_DIR "${CMAKE_CURRENT_BINARY_DIR}/../..")
-
 add_subdirectory(assets)
-add_subdirectory(dev)
 add_subdirectory(tools)
 add_subdirectory(all)
-
-if(NOT TARGET eagine-deb)
-	add_custom_target(eagine-deb)
-endif()
-
-add_dependencies(eagine-all-deb eagine-all-assets-deb)
-add_dependencies(eagine-all-deb eagine-all-tools-deb)
-add_dependencies(eagine-all-deb eagine-all-dev-deb)
-add_dependencies(eagine-deb eagine-all-deb)
-# ------------------------------------------------------------------------------
-add_subdirectory(release)
-# ------------------------------------------------------------------------------

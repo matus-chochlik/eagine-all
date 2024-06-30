@@ -1,0 +1,5 @@
+eagine-all-tools (0.125.0) unstable; urgency=medium
+
+  * Initial version with CPack-based packaging.
+
+ -- Matúš Chochlík <matus.chochlik@proton.me>  Tue, 22 Jun 2024 09:00:00 +0200

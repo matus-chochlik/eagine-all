@@ -1,0 +1,5 @@
+eagine-all-dev (0.125.0) unstable; urgency=medium
+
+  * Initial version with CPack-based packaging.
+
+ -- Matúš Chochlík <matus.chochlik@proton.me>  Tue, 20 Jun 2024 07:00:00 +0200
