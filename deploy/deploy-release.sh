@@ -18,15 +18,16 @@ find . -type f -executable -exec file {} \; | grep -e ELF | cut -d: -f1 | xargs 
 cpack -G DEB
 pushd "${pkgdir}"
 # ------------------------------------------------------------------------------
-mkdir -p "pool/latest/${arch}/"
 mkdir -p "dists/latest/main/binary-${arch}/"
 for deb_old in *.deb
 do
+	deb_arch=$(dpkg-deb --field "${deb_old}" Architecture)
 	deb_new="$(echo ${deb_old} | sed 's/_[0-9]\+\.[0-9]\+\.[0-9]\+//;s/-[0-9]\+_[A-Za-z0-9]\+//;s/-[0-9]\+//;')"
-	mv "${deb_old}" "pool/latest/${arch}/${deb_new}"
+	mkdir -p "pool/latest/${deb_arch:=${arch}}/"
+	mv "${deb_old}" "pool/latest/${deb_arch}/${deb_new}"
 done
 # ------------------------------------------------------------------------------
-dpkg-scanpackages "pool/latest/${arch}" > "dists/latest/main/binary-${arch}/Packages"
+dpkg-scanpackages pool/latest > "dists/latest/main/binary-${arch}/Packages"
 gzip -9 < "dists/latest/main/binary-${arch}/Packages" > "dists/latest/main/binary-${arch}/Packages.gz"
 # ------------------------------------------------------------------------------
 (
@@ -54,7 +55,7 @@ then
 	pushd "dists/latest"
 	gpg --local-user "${EAGINE_GPG_USER}" --armor --detach-sign --output Release.gpg Release
 	gpg --local-user "${EAGINE_GPG_USER}" --clear-sign --output InRelease Release
-	gpg --local-user "${EAGINE_GPG_USER}" --export --output EAGine.gpg
+	gpg --local-user "${EAGINE_GPG_USER}" --export --output eagine.gpg
 	popd
 fi
 # ------------------------------------------------------------------------------
