@@ -1,40 +1,41 @@
 [submodule "submodules/eagine-core"]
 	path = submodules/eagine-core
-	url = https://github.com/matus-chochlik/eagine-core.git
+	url = ../eagine-core.git
 	branch = develop
 [submodule "submodules/eagine-sslplus"]
 	path = submodules/eagine-sslplus
-	url = https://github.com/matus-chochlik/eagine-sslplus.git
+	url = ../eagine-sslplus.git
 	branch = develop
 [submodule "submodules/eagine-msgbus"]
 	path = submodules/eagine-msgbus
-	url = https://github.com/matus-chochlik/eagine-msgbus.git
+	url = ../eagine-msgbus.git
 	branch = develop
 [submodule "submodules/eagine-shapes"]
 	path = submodules/eagine-shapes
-	url = https://github.com/matus-chochlik/eagine-shapes.git
+	url = ../eagine-shapes.git
 	branch = develop
 [submodule "submodules/eagine-eglplus"]
 	path = submodules/eagine-eglplus
-	url = https://github.com/matus-chochlik/eagine-eglplus.git
+	url = ../eagine-eglplus.git
 	branch = develop
 [submodule "submodules/eagine-oglplus"]
 	path = submodules/eagine-oglplus
-	url = https://github.com/matus-chochlik/eagine-oglplus.git
+	url = ../eagine-oglplus.git
 	branch = develop
 [submodule "submodules/eagine-oalplus"]
 	path = submodules/eagine-oalplus
-	url = https://github.com/matus-chochlik/eagine-oalplus.git
+	url = ../eagine-oalplus.git
+	branch = develop
+[submodule "submodules/eagine-guiplus"]
+	path = submodules/eagine-guiplus
+	url = ../eagine-guiplus.git
 	branch = develop
 [submodule "submodules/eagine-ecs"]
 	path = submodules/eagine-ecs
-	url = https://github.com/matus-chochlik/eagine-ecs.git
+	url = ../eagine-ecs.git
 	branch = develop
 [submodule "submodules/eagine-app"]
 	path = submodules/eagine-app
-	url = https://github.com/matus-chochlik/eagine-app.git
+	url = ../eagine-app.git
 	branch = develop
 
-[submodule "submodules/eagine-guiplus"]
-	path = submodules/eagine-guiplus
-	url = https://github.com/matus-chochlik/eagine-guiplus.git

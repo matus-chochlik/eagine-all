@@ -35,7 +35,7 @@ install(
 	DESTINATION share/keyrings)
 
 install(
-	FILES "42_eagine.source"
+	FILES "eagine.sources"
 	COMPONENT bootstrap
 	PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ
 	DESTINATION /etc/apt/sources.list.d)
