@@ -22,24 +22,7 @@ foreach(SUBMODULE
 		endif()
 		execute_process(
 			COMMAND git submodule update ${SUBMODULE_INIT_ARG}
-			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/eagine-${SUBMODULE}"
-		)
-	endif()
-endforeach()
-
-foreach(SUBMODULE
-		core
-		ecs
-		shapes
-		sslplus
-		guiplus
-		eglplus
-		oalplus
-		oglplus
-		msgbus
-		app)
-	if(NOT TARGET eagine.${SUBMODULE})
+			WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/eagine-${SUBMODULE}")
 		add_subdirectory(eagine-${SUBMODULE})
 	endif()
 endforeach()
-

@@ -2,8 +2,9 @@
 
 package Sub-modules {
 	component [ASIO] as asio #DodgerBlue
-	component [RapidJSON] as rapidjson #DodgerBlue
-	component [RapidYAML] as rapidyaml #DodgerBlue
+	component [PAHO\nMQTT] as paho #DodgerBlue
+	component [Rapid\nJSON] as rapidjson #DodgerBlue
+	component [Rapid\nYAML] as rapidyaml #DodgerBlue
 	component [IMGui] as imgui #DodgerBlue
 }
 
@@ -24,6 +25,7 @@ core --> rapidjson
 core --> rapidyaml
 core --> asio
 msgbus --> asio
+msgbus --> paho
 guiplus --> imgui
 
 sslplus --> core
