@@ -7,6 +7,7 @@ add_subdirectory(apt)
 
 find_program(DPKG_SCANPACKAGES_COMMAND dpkg-scanpackages)
 if(DPKG_SCANPACKAGES_COMMAND)
+	configure_file(build-release.sh  build-release.sh  @ONLY)
 	configure_file(deploy-release.sh deploy-release.sh @ONLY)
 	add_subdirectory(dpkg)
 endif()
