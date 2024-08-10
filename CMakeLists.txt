@@ -23,10 +23,10 @@ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/config")
 list(APPEND CMAKE_MODULE_PATH "${EAGINE_CORE_ROOT}/config")
 file(STRINGS "${EAGINE_CORE_ROOT}/VERSION" EAGINE_VERSION)
 
+include(CTest)
 add_subdirectory(submodules)
 include(EAGineCoreCommon)
 
-enable_testing()
 add_subdirectory(source)
 add_subdirectory(doc)
 add_subdirectory(deploy)
