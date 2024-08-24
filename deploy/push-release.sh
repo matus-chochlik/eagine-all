@@ -5,7 +5,13 @@
 # https://www.boost.org/LICENSE_1_0.txt
 #
 # ------------------------------------------------------------------------------
-"$(dirname ${0})/build-release.sh"
-"$(dirname ${0})/sign-release.sh"
-"$(dirname ${0})/push-release.sh"
+bindir="@PROJECT_BINARY_DIR@"
+pkgdir="$(realpath ${bindir}/release)"
+# ------------------------------------------------------------------------------
+pushd "${pkgdir}"
+(
+find . -type d | sed -n 's@^\./\(.*\)$@mkdir /sub/eagine/apt/\1@p'
+find . -type f | sed -n 's@^\./\(\([^/]\+/\)*\)[^/]\+$@put & /sub/eagine/apt/\1@p'
+) | sftp oglplus.org@oglplus.org
+popd
 # ------------------------------------------------------------------------------
